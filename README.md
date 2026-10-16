@@ -103,11 +103,11 @@ Add the domain in the host’s settings and create the DNS record it shows (CNAM
 
 | Item | Where | Current state |
 |---|---|---|
-| LinkedIn URL | `src/content/profile.ts` → `linkedinUrl` | `null` (hidden). Set the verified URL to show it in the footer and contact page. |
+| LinkedIn URL | `src/content/profile.ts` → `linkedinUrl` | `https://www.linkedin.com/in/tunde-o-tech` (verified by Gabriel) |
 | Email | `src/content/profile.ts` → `email` | `gabriel.olatundun@gmail.com` (from the resume) |
-| Phone | — | Not shown anywhere; the web resume PDF omits it |
-| Client names | `src/content/profile.ts`, `public/resume/` | Withheld: “a bank payment API ↔ Sage 300 integration for a financial-services client”. Restore names only with approval. |
-| Resume PDF | `public/resume/Gabriel_Olatundun_Resume.pdf` | Web copy generated from the supplied Word resume with the phone number and the two client names removed. Replace if the resume changes. |
+| Phone | `src/content/profile.ts` → `phone` | `902-880-9877` — approved for publication; shown on the contact page, footer and resume PDF |
+| Client names | `src/content/profile.ts`, `public/resume/` | Withheld by decision: “a bank payment API ↔ Sage 300 integration for a financial-services client”. |
+| Resume PDF | `public/resume/Gabriel_Olatundun_Resume.pdf` | Web copy generated from the supplied Word resume with the two client names removed (phone kept). Replace if the resume changes. |
 
 ## Known limitations
 

@@ -1,8 +1,8 @@
 /** Feature status — rendered on /status and exported to docs/FEATURE_STATUS.md. Keep honest. */
 export const FEATURE_STATUS: { area: string; feature: string; status: 'Implemented' | 'Partial' | 'Planned'; tested: string; note?: string }[] = [
   { area: 'Site', feature: 'Home, experience, project lab, case studies, architecture, resume & contact, recruiter guide, data dictionary', status: 'Implemented', tested: 'Browser smoke test' },
-  { area: 'Site', feature: 'Resume PDF download (web copy without phone number)', status: 'Implemented', tested: 'Browser smoke test' },
-  { area: 'Site', feature: 'LinkedIn link', status: 'Planned', tested: '—', note: 'Hidden until a verified URL is set in src/content/profile.ts.' },
+  { area: 'Site', feature: 'Resume PDF download (web copy with client names withheld)', status: 'Implemented', tested: 'Browser smoke test' },
+  { area: 'Site', feature: 'Contact: email, phone and verified LinkedIn link', status: 'Implemented', tested: 'Browser smoke test' },
   { area: 'Site', feature: 'Responsive layout, keyboard navigation, focus styles, labelled controls, light/dark themes', status: 'Implemented', tested: 'Manual + automated checks at 390 px and 1280 px', note: 'No formal WCAG audit performed.' },
   { area: 'AML lab', feature: 'Seeded dataset (40 customers, ~2,400 transactions), 8 documented scenarios', status: 'Implemented', tested: 'Unit tests' },
   { area: 'AML lab', feature: '7 deterministic rules, explainable scoring, bands', status: 'Implemented', tested: 'Unit tests + SQL parity' },

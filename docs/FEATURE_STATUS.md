@@ -5,8 +5,8 @@
 | Area | Feature | Status | Verified by | Notes |
 |---|---|---|---|---|
 | Site | Home, experience, project lab, case studies, architecture, resume & contact, recruiter guide, data dictionary | **Implemented** | Browser smoke test |  |
-| Site | Resume PDF download (web copy without phone number) | **Implemented** | Browser smoke test |  |
-| Site | LinkedIn link | **Planned** | — | Hidden until a verified URL is set in src/content/profile.ts. |
+| Site | Resume PDF download (web copy with client names withheld) | **Implemented** | Browser smoke test |  |
+| Site | Contact: email, phone and verified LinkedIn link | **Implemented** | Browser smoke test |  |
 | Site | Responsive layout, keyboard navigation, focus styles, labelled controls, light/dark themes | **Implemented** | Manual + automated checks at 390 px and 1280 px | No formal WCAG audit performed. |
 | AML lab | Seeded dataset (40 customers, ~2,400 transactions), 8 documented scenarios | **Implemented** | Unit tests |  |
 | AML lab | 7 deterministic rules, explainable scoring, bands | **Implemented** | Unit tests + SQL parity |  |

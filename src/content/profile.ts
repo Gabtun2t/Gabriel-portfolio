@@ -1,15 +1,17 @@
 /**
  * Professional facts. SOURCE OF TRUTH: Gabriel Olatundun's latest resume (2026).
  * Do not add claims here that are not on the resume or explicitly confirmed by Gabriel.
- * Client names are withheld pending Gabriel's approval (see README "Open questions").
+ * Client names are deliberately withheld (Gabriel's decision).
  */
 export const PROFILE = {
   name: 'Gabriel Olatundun',
   headline: 'Financial Systems, AML Investigations & Integration Architecture',
   location: 'Ottawa, Ontario, Canada',
   email: 'gabriel.olatundun@gmail.com',
-  /** Set to the verified URL to show LinkedIn in the header, footer and contact page. */
-  linkedinUrl: null as string | null,
+  /** Approved for publication by Gabriel (Oct 2026). */
+  phone: '902-880-9877',
+  /** Verified by Gabriel (Oct 2026). */
+  linkedinUrl: 'https://www.linkedin.com/in/tunde-o-tech' as string | null,
   resumePdf: 'resume/Gabriel_Olatundun_Resume.pdf',
   proposition:
     'I investigate financial and transactional problems across business processes, ERP systems, payments and data; I identify root causes and design reliable integrations and controls.',
