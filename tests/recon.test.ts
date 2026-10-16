@@ -65,7 +65,7 @@ describe('baseline reconciliation', () => {
   });
   test('reference normalization', () => {
     assert.equal(normalizeRef(' rcpt 45123 '), 'RCPT45123');
-    assert.equal(normalizeRef('RCPT-451�23'), 'RCPT45123');
+    assert.equal(normalizeRef('RCPT-451\uFFFD23'), 'RCPT45123');
   });
   test('the matcher does not rely on lineage keys', () => {
     const stripped = ds.target.map((t) => ({ ...t, stagingRowId: null }));

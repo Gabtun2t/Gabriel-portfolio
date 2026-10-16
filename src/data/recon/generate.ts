@@ -174,7 +174,7 @@ export function generateReconDataset(seed: number = RECON_SEED): ReconDataset {
     };
     switch (c) {
       case 'date_tolerance': base.postingDate = addDays(s.postingDate, rng.int(1, 2)); break;
-      case 'ref_encoding': base.reference = s.reference.slice(0, 8) + '�' + s.reference.slice(8); break;
+      case 'ref_encoding': base.reference = s.reference.slice(0, 8) + '\uFFFD' + s.reference.slice(8); break;
       case 'ref_format': base.reference = ` ${s.reference.toLowerCase().replace('-', ' ')} `; break;
       case 'ref_truncated': base.reference = s.reference.slice(0, 7); break;
       case 'ref_transposed': {

@@ -42,8 +42,11 @@ export const MATCHING_RULES = [
   { id: 'M5', text: 'Sources with no pair → MISSING_IN_TARGET. Posted targets never claimed → UNMATCHED_IN_TARGET. Reversed targets are ignored.' },
 ];
 
+// Built from a string so the U+FFFD escape survives bundling (no raw replacement character in the output).
+const REF_NOISE = new RegExp('[\\s\\-\\uFFFD]', 'g');
+
 export function normalizeRef(ref: string): string {
-  return ref.trim().toUpperCase().replace(/[\s\-�]/g, '');
+  return ref.trim().toUpperCase().replace(REF_NOISE, '');
 }
 
 export type CorrectionAction = 'POST_MISSING' | 'REVERSE_DUPLICATE' | 'REPAIR_REFERENCE' | 'RECLASS_GL' | 'CORRECT_AMOUNT' | 'CORRECT_DATE';
@@ -103,7 +106,7 @@ function amountCause(src: number, tgt: number): RootCause {
 }
 
 function refCause(src: string, tgt: string): RootCause {
-  if (tgt.includes('�')) return { code: 'REF_ENCODING', label: 'Character-encoding corruption', evidence: ['Target reference contains the Unicode replacement character (U+FFFD) — a byte sequence was not valid in the target encoding.'] };
+  if (tgt.includes('\uFFFD')) return { code: 'REF_ENCODING', label: 'Character-encoding corruption', evidence: ['Target reference contains the Unicode replacement character (U+FFFD) — a byte sequence was not valid in the target encoding.'] };
   if (normalizeRef(tgt) === normalizeRef(src)) return { code: 'REF_FORMAT', label: 'Formatting difference', evidence: ['References are equal after trimming, case-folding and removing separators.'] };
   if (normalizeRef(src).startsWith(normalizeRef(tgt))) return { code: 'REF_TRUNCATED', label: 'Truncated reference', evidence: [`Target keeps only the first ${tgt.length} characters — consistent with a shorter field length in the target schema.`] };
   const sorted = (s: string) => normalizeRef(s).split('').sort().join('');
