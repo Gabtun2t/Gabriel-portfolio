@@ -1,0 +1,56 @@
+[
+ {
+  "month": "2026-04",
+  "channel": "AR receipt",
+  "amountCad": 329246.32,
+  "count": 31
+ },
+ {
+  "month": "2026-04",
+  "channel": "Card",
+  "amountCad": 11216.97,
+  "count": 36
+ },
+ {
+  "month": "2026-04",
+  "channel": "EFT",
+  "amountCad": 1036855.43,
+  "count": 38
+ },
+ {
+  "month": "2026-05",
+  "channel": "AR receipt",
+  "amountCad": 290726.71,
+  "count": 23
+ },
+ {
+  "month": "2026-05",
+  "channel": "Card",
+  "amountCad": 16577.19,
+  "count": 49
+ },
+ {
+  "month": "2026-05",
+  "channel": "EFT",
+  "amountCad": 591918.77,
+  "count": 25
+ },
+ {
+  "month": "2026-06",
+  "channel": "AR receipt",
+  "amountCad": 233795.61,
+  "count": 26
+ },
+ {
+  "month": "2026-06",
+  "channel": "Card",
+  "amountCad": 13209.31,
+  "count": 35
+ },
+ {
+  "month": "2026-06",
+  "channel": "EFT",
+  "amountCad": 654436.58,
+  "count": 27
+ }
+]

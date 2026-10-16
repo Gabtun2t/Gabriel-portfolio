@@ -1,0 +1,912 @@
+[
+ {
+  "src_id": "LEG-000001",
+  "je_id": "JE-26-00001",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000002",
+  "je_id": "JE-26-00002",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000003",
+  "je_id": "JE-26-00003",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000004",
+  "je_id": "JE-26-00004",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000005",
+  "je_id": "JE-26-00005",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000006",
+  "je_id": "JE-26-00006",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000007",
+  "je_id": "JE-26-00007",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000008",
+  "je_id": null,
+  "status": "MISSING_IN_TARGET"
+ },
+ {
+  "src_id": "LEG-000009",
+  "je_id": "JE-26-00008",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000010",
+  "je_id": "JE-26-00009",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000011",
+  "je_id": "JE-26-00010",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000012",
+  "je_id": "JE-26-00011",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000013",
+  "je_id": "JE-26-00012",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000014",
+  "je_id": "JE-26-00013",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000015",
+  "je_id": "JE-26-00014",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000016",
+  "je_id": "JE-26-00015",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000017",
+  "je_id": "JE-26-00016",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000018",
+  "je_id": "JE-26-00017",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000019",
+  "je_id": "JE-26-00018",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000020",
+  "je_id": "JE-26-00019",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000021",
+  "je_id": "JE-26-00020",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000022",
+  "je_id": "JE-26-00021",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000023",
+  "je_id": "JE-26-00022",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000024",
+  "je_id": "JE-26-00023",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000025",
+  "je_id": "JE-26-00024",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000026",
+  "je_id": "JE-26-00025",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000027",
+  "je_id": null,
+  "status": "MISSING_IN_TARGET"
+ },
+ {
+  "src_id": "LEG-000028",
+  "je_id": "JE-26-00026",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000029",
+  "je_id": "JE-26-00027",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000030",
+  "je_id": "JE-26-00028",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000031",
+  "je_id": "JE-26-00029",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000032",
+  "je_id": "JE-26-00030",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000033",
+  "je_id": "JE-26-00031",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000034",
+  "je_id": "JE-26-00032",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000035",
+  "je_id": "JE-26-00033",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000036",
+  "je_id": "JE-26-00034",
+  "status": "WRONG_MAPPING"
+ },
+ {
+  "src_id": "LEG-000037",
+  "je_id": "JE-26-00035",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000038",
+  "je_id": "JE-26-00036",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000039",
+  "je_id": "JE-26-00037",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000040",
+  "je_id": "JE-26-00038",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000041",
+  "je_id": "JE-26-00039",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000042",
+  "je_id": "JE-26-00040",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000043",
+  "je_id": "JE-26-00041",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000044",
+  "je_id": "JE-26-00042",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000045",
+  "je_id": "JE-26-00043",
+  "status": "WRONG_MAPPING"
+ },
+ {
+  "src_id": "LEG-000046",
+  "je_id": null,
+  "status": "MISSING_IN_TARGET"
+ },
+ {
+  "src_id": "LEG-000047",
+  "je_id": "JE-26-00044",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000048",
+  "je_id": "JE-26-00045",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000049",
+  "je_id": "JE-26-00046",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000050",
+  "je_id": "JE-26-00047",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000051",
+  "je_id": "JE-26-00048",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000052",
+  "je_id": "JE-26-00049",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000053",
+  "je_id": "JE-26-00050",
+  "status": "AMOUNT_MISMATCH"
+ },
+ {
+  "src_id": "LEG-000054",
+  "je_id": "JE-26-00051",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000055",
+  "je_id": "JE-26-00052",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000056",
+  "je_id": "JE-26-00053",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000057",
+  "je_id": null,
+  "status": "MISSING_IN_TARGET"
+ },
+ {
+  "src_id": "LEG-000058",
+  "je_id": "JE-26-00054",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000059",
+  "je_id": "JE-26-00055",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000060",
+  "je_id": "JE-26-00056",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000061",
+  "je_id": "JE-26-00057",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000062",
+  "je_id": "JE-26-00058",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000063",
+  "je_id": "JE-26-00059",
+  "status": "REFERENCE_CORRUPTED"
+ },
+ {
+  "src_id": "LEG-000064",
+  "je_id": "JE-26-00060",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000065",
+  "je_id": "JE-26-00061",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000066",
+  "je_id": "JE-26-00062",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000067",
+  "je_id": "JE-26-00063",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000068",
+  "je_id": "JE-26-00064",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000069",
+  "je_id": "JE-26-00065",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000070",
+  "je_id": "JE-26-00066",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000071",
+  "je_id": "JE-26-00067",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000072",
+  "je_id": "JE-26-00068",
+  "status": "DATE_MISMATCH"
+ },
+ {
+  "src_id": "LEG-000073",
+  "je_id": "JE-26-00069",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000074",
+  "je_id": "JE-26-00070",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000075",
+  "je_id": null,
+  "status": "MISSING_IN_TARGET"
+ },
+ {
+  "src_id": "LEG-000076",
+  "je_id": "JE-26-00071",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000077",
+  "je_id": "JE-26-00072",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000078",
+  "je_id": "JE-26-00073",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000079",
+  "je_id": "JE-26-00074",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000080",
+  "je_id": "JE-26-00075",
+  "status": "REFERENCE_CORRUPTED"
+ },
+ {
+  "src_id": "LEG-000081",
+  "je_id": "JE-26-00076",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000082",
+  "je_id": "JE-26-00077",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000083",
+  "je_id": "JE-26-00078",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000084",
+  "je_id": "JE-26-00079",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000085",
+  "je_id": "JE-26-00080",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000086",
+  "je_id": "JE-26-00081",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000087",
+  "je_id": "JE-26-00082",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000088",
+  "je_id": "JE-26-00083",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000089",
+  "je_id": "JE-26-00084",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000090",
+  "je_id": "JE-26-00085",
+  "status": "REFERENCE_CORRUPTED"
+ },
+ {
+  "src_id": "LEG-000091",
+  "je_id": "JE-26-00086",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000092",
+  "je_id": "JE-26-00087",
+  "status": "REFERENCE_CORRUPTED"
+ },
+ {
+  "src_id": "LEG-000093",
+  "je_id": "JE-26-00088",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000094",
+  "je_id": "JE-26-00089",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000095",
+  "je_id": "JE-26-00090",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000096",
+  "je_id": "JE-26-00091",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000097",
+  "je_id": "JE-26-00092",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000098",
+  "je_id": "JE-26-00093",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000099",
+  "je_id": "JE-26-00094",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000100",
+  "je_id": "JE-26-00095",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000101",
+  "je_id": "JE-26-00096",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000102",
+  "je_id": "JE-26-00097",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000103",
+  "je_id": "JE-26-00098",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000104",
+  "je_id": "JE-26-00099",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000105",
+  "je_id": "JE-26-00100",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000106",
+  "je_id": "JE-26-00101",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000107",
+  "je_id": "JE-26-00102",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000108",
+  "je_id": "JE-26-00103",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000109",
+  "je_id": "JE-26-00104",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000110",
+  "je_id": "JE-26-00105",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000111",
+  "je_id": "JE-26-00106",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000112",
+  "je_id": "JE-26-00107",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000113",
+  "je_id": "JE-26-00108",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000114",
+  "je_id": "JE-26-00109",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000115",
+  "je_id": "JE-26-00110",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000116",
+  "je_id": "JE-26-00111",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000117",
+  "je_id": "JE-26-00112",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000118",
+  "je_id": "JE-26-00113",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000119",
+  "je_id": "JE-26-00114",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000120",
+  "je_id": "JE-26-00115",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000121",
+  "je_id": "JE-26-00116",
+  "status": "WRONG_MAPPING"
+ },
+ {
+  "src_id": "LEG-000122",
+  "je_id": "JE-26-00117",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000123",
+  "je_id": "JE-26-00118",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000123",
+  "je_id": "JE-26-00119",
+  "status": "DUPLICATE_IN_TARGET"
+ },
+ {
+  "src_id": "LEG-000124",
+  "je_id": "JE-26-00120",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000125",
+  "je_id": "JE-26-00121",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000126",
+  "je_id": "JE-26-00122",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000127",
+  "je_id": "JE-26-00123",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000128",
+  "je_id": "JE-26-00124",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000129",
+  "je_id": "JE-26-00125",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000130",
+  "je_id": "JE-26-00126",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000131",
+  "je_id": "JE-26-00127",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000132",
+  "je_id": "JE-26-00128",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000133",
+  "je_id": "JE-26-00129",
+  "status": "AMOUNT_MISMATCH"
+ },
+ {
+  "src_id": "LEG-000134",
+  "je_id": "JE-26-00130",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000135",
+  "je_id": "JE-26-00131",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000136",
+  "je_id": "JE-26-00132",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000137",
+  "je_id": "JE-26-00133",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000138",
+  "je_id": "JE-26-00134",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000139",
+  "je_id": "JE-26-00135",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000140",
+  "je_id": "JE-26-00136",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000141",
+  "je_id": "JE-26-00137",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000142",
+  "je_id": "JE-26-00138",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000143",
+  "je_id": "JE-26-00139",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000144",
+  "je_id": "JE-26-00140",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000145",
+  "je_id": "JE-26-00141",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000146",
+  "je_id": "JE-26-00142",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000147",
+  "je_id": "JE-26-00143",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000148",
+  "je_id": "JE-26-00144",
+  "status": "DATE_MISMATCH"
+ },
+ {
+  "src_id": "LEG-000149",
+  "je_id": "JE-26-00145",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000150",
+  "je_id": "JE-26-00146",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000151",
+  "je_id": "JE-26-00147",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000152",
+  "je_id": "JE-26-00148",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000153",
+  "je_id": "JE-26-00149",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000154",
+  "je_id": "JE-26-00150",
+  "status": "DATE_MISMATCH"
+ },
+ {
+  "src_id": "LEG-000155",
+  "je_id": "JE-26-00151",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000156",
+  "je_id": "JE-26-00152",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000157",
+  "je_id": "JE-26-00153",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000158",
+  "je_id": "JE-26-00154",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000159",
+  "je_id": "JE-26-00155",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000160",
+  "je_id": "JE-26-00156",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000161",
+  "je_id": "JE-26-00157",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000162",
+  "je_id": "JE-26-00158",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000163",
+  "je_id": "JE-26-00159",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000164",
+  "je_id": "JE-26-00160",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000165",
+  "je_id": "JE-26-00161",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000166",
+  "je_id": "JE-26-00162",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000167",
+  "je_id": "JE-26-00163",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000168",
+  "je_id": "JE-26-00164",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000169",
+  "je_id": "JE-26-00165",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000170",
+  "je_id": "JE-26-00166",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000171",
+  "je_id": "JE-26-00167",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000172",
+  "je_id": "JE-26-00168",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000173",
+  "je_id": "JE-26-00169",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000173",
+  "je_id": "JE-26-00170",
+  "status": "DUPLICATE_IN_TARGET"
+ },
+ {
+  "src_id": "LEG-000174",
+  "je_id": "JE-26-00171",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000174",
+  "je_id": "JE-26-00172",
+  "status": "DUPLICATE_IN_TARGET"
+ },
+ {
+  "src_id": "LEG-000175",
+  "je_id": "JE-26-00173",
+  "status": "MATCHED"
+ },
+ {
+  "src_id": "LEG-000175",
+  "je_id": "JE-26-00174",
+  "status": "DUPLICATE_IN_TARGET"
+ },
+ {
+  "src_id": "LEG-000176",
+  "je_id": "JE-26-00175",
+  "status": "AMOUNT_MISMATCH"
+ },
+ {
+  "src_id": null,
+  "je_id": "MJ-0007",
+  "status": "UNMATCHED_IN_TARGET"
+ },
+ {
+  "src_id": null,
+  "je_id": "MJ-0009",
+  "status": "UNMATCHED_IN_TARGET"
+ }
+]

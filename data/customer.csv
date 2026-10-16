@@ -1,0 +1,41 @@
+customer_id,name,customer_type,segment,activity,account_purpose,declared_monthly_turnover,expected_monthly_tx_count,international_expected,account_id,account_opened,kyc_status,kyc_last_review,risk_rating
+CUS-1001,Avery Ashdown,individual,retail,Self-employed consultant,Personal chequing – payroll and bill payments,5100,20,0,ACC-1001-P,2022-10-02,verified,2026-06-03,low
+CUS-1002,Jordan Holloway,individual,retail,Hourly employee,Personal chequing – payroll and bill payments,4600,21,0,ACC-1002-P,2021-10-23,refresh_due,2025-02-20,low
+CUS-1003,Pinecrest Seasonal Landscaping Ltd.,business,small_business,Landscaping and grounds maintenance,Business operating account – customer receipts and supplier payments,30000,20,0,ACC-1003-B,2019-03-14,verified,2025-11-04,low
+CUS-1004,Harbour Dental Clinic Co.,business,small_business,Dental Clinic,Business operating account – customer receipts and supplier payments,14000,19,0,ACC-1004-B,2012-05-13,verified,2026-06-12,low
+CUS-1005,Casey Fairbank,individual,retail,Public-sector employee,Personal chequing – payroll and bill payments,2500,14,0,ACC-1005-P,2015-12-14,refresh_due,2025-01-03,low
+CUS-1006,Morgan Northcott,individual,retail,Self-employed consultant,Personal chequing – payroll and bill payments,3400,32,0,ACC-1006-P,2018-06-11,verified,2026-04-12,low
+CUS-1007,Kestrel Print & Signage Ltd.,business,small_business,Commercial printing and signage,Business operating account – customer receipts and supplier payments,24000,12,0,ACC-1007-B,2021-08-02,refresh_due,2025-03-02,low
+CUS-1008,Copperleaf Catering Co.,business,small_business,Catering,Business operating account – customer receipts and supplier payments,19000,14,0,ACC-1008-B,2013-04-17,verified,2026-06-16,medium
+CUS-1009,Fieldstone Logistics Ltd.,business,commercial,Logistics,Business operating account – customer receipts and supplier payments,188000,45,1,ACC-1009-B,2013-05-22,verified,2026-04-18,high
+CUS-1010,Rowan Brightwater,individual,retail,Salaried employee,Personal chequing – payroll and bill payments,4800,14,0,ACC-1010-P,2019-11-15,verified,2026-06-03,low
+CUS-1011,Lantern Plumbing Co.,business,commercial,Plumbing,Business operating account – customer receipts and supplier payments,191000,43,1,ACC-1011-B,2014-05-15,verified,2026-06-06,high
+CUS-1012,Dana Whitlock,individual,retail,Salaried employee – healthcare administration,Personal chequing – payroll and bill payments,6500,25,0,ACC-1012-P,2016-05-20,verified,2026-02-10,low
+CUS-1013,Tidewater Bookkeeping Co.,business,small_business,Bookkeeping,Business operating account – customer receipts and supplier payments,49000,17,0,ACC-1013-B,2014-06-01,verified,2026-03-26,low
+CUS-1014,Parker Greystone,individual,retail,Retired – pension income,Personal chequing – payroll and bill payments,3800,15,0,ACC-1014-P,2019-06-15,verified,2026-06-16,low
+CUS-1015,Marcus Lindqvist,individual,retail,Self-employed – renovation contractor (sole proprietor),Personal chequing,7000,20,0,ACC-1015-P,2022-01-11,verified,2025-12-01,low
+CUS-1016,Reese Oakridge,individual,retail,Self-employed consultant,Personal chequing – payroll and bill payments,6100,23,0,ACC-1016-P,2018-05-28,verified,2026-06-04,low
+CUS-1017,Sasha Ellery,individual,retail,Public-sector employee,Personal chequing – payroll and bill payments,7500,22,0,ACC-1017-P,2015-01-04,verified,2026-02-14,low
+CUS-1018,Logan Merriman,individual,retail,Salaried employee,Personal chequing – payroll and bill payments,3900,22,0,ACC-1018-P,2013-12-05,verified,2026-04-07,low
+CUS-1019,Jordan Pelletier,individual,retail,Student – part-time retail employment,Personal chequing – payroll deposits,2400,18,0,ACC-1019-P,2025-09-03,verified,2025-09-03,medium
+CUS-1020,Blake Calloway,individual,retail,Public-sector employee,Personal chequing – payroll and bill payments,2800,26,0,ACC-1020-P,2016-10-19,verified,2026-04-17,low
+CUS-1021,Willow Consulting Co.,business,small_business,Consulting,Business operating account – customer receipts and supplier payments,35000,13,0,ACC-1021-B,2020-10-08,verified,2026-06-07,low
+CUS-1022,Summit Hardware Ltd.,business,small_business,Hardware,Business operating account – customer receipts and supplier payments,47000,11,0,ACC-1022-B,2021-05-11,verified,2026-01-15,low
+CUS-1023,Copperleaf Catering Ltd.,business,commercial,Catering,Business operating account – customer receipts and supplier payments,203000,43,1,ACC-1023-B,2015-12-10,verified,2026-06-11,high
+CUS-1024,Maple Ridge Distribution Ltd.,business,commercial,Wholesale distribution – building materials,Business operating account – receivables and payables,210000,40,0,ACC-1024-B,2014-10-07,verified,2026-01-15,medium
+CUS-1025,Riley Penhallow,individual,retail,Salaried employee,Personal chequing – payroll and bill payments,11000,22,0,ACC-1025-P,2023-04-27,verified,2026-06-06,low
+CUS-1026,Casey Fairbank,individual,retail,Retired – pension income,Personal chequing – payroll and bill payments,8100,15,0,ACC-1026-P,2016-04-24,verified,2026-06-28,low
+CUS-1027,Bluewater Trading Co.,business,commercial,Wholesale import/export – consumer goods,Business operating account – including international supplier payments,140000,30,1,ACC-1027-B,2018-06-25,verified,2025-10-20,high
+CUS-1028,Lantern Plumbing Co.,business,small_business,Plumbing,Business operating account – customer receipts and supplier payments,16000,14,0,ACC-1028-B,2019-05-13,verified,2026-02-15,low
+CUS-1029,Quinn Dunmore,individual,retail,Public-sector employee,Personal chequing – payroll and bill payments,7600,28,0,ACC-1029-P,2013-05-27,refresh_due,2025-06-23,low
+CUS-1030,Taylor Larkfield,individual,retail,Salaried employee,Personal chequing – payroll and bill payments,7900,14,0,ACC-1030-P,2015-04-02,verified,2026-06-25,low
+CUS-1031,Northgate Agri Supplies Inc.,business,commercial,Agricultural supplies – retail and wholesale,Business operating account – receivables and payables,180000,30,0,ACC-1031-B,2012-04-18,verified,2025-12-09,medium
+CUS-1032,Ironwood Printing Ltd.,business,small_business,Printing,Business operating account – customer receipts and supplier payments,31000,12,0,ACC-1032-B,2017-11-25,verified,2026-06-19,low
+CUS-1033,Emerson Ingram,individual,retail,Hourly employee,Personal chequing – payroll and bill payments,3300,23,0,ACC-1033-P,2016-06-21,refresh_due,2025-03-27,low
+CUS-1034,Silverline Auto Repair Ltd.,business,small_business,Auto Repair,Business operating account – customer receipts and supplier payments,24000,16,0,ACC-1034-B,2017-01-03,verified,2026-06-07,medium
+CUS-1035,Parker Greystone,individual,retail,Retired – pension income,Personal chequing – payroll and bill payments,4500,30,0,ACC-1035-P,2022-01-06,verified,2026-06-23,low
+CUS-1036,Reese Oakridge,individual,retail,Salaried employee,Personal chequing – payroll and bill payments,4500,21,0,ACC-1036-P,2016-01-09,verified,2026-06-09,low
+CUS-1037,Summit Hardware Co.,business,small_business,Hardware,Business operating account – customer receipts and supplier payments,13000,12,0,ACC-1037-B,2016-06-13,refresh_due,2025-06-07,low
+CUS-1038,Copperleaf Catering Ltd.,business,commercial,Catering,Business operating account – customer receipts and supplier payments,185000,34,1,ACC-1038-B,2019-01-15,verified,2026-06-08,high
+CUS-1039,Fieldstone Logistics Ltd.,business,small_business,Logistics,Business operating account – customer receipts and supplier payments,56000,19,0,ACC-1039-B,2020-02-04,verified,2026-06-18,low
+CUS-1040,Riverbend Florist Ltd.,business,small_business,Florist,Business operating account – customer receipts and supplier payments,59000,13,0,ACC-1040-B,2015-12-28,verified,2026-01-05,medium

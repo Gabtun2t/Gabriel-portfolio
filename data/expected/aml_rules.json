@@ -1,0 +1,89 @@
+{
+ "r1_high_velocity": [
+  "CUS-1007"
+ ],
+ "r2_large_vs_profile": [
+  "CUS-1012",
+  "CUS-1015",
+  "CUS-1019",
+  "CUS-1031"
+ ],
+ "r3_cash_below_threshold": [
+  "CUS-1015"
+ ],
+ "r4_monthly_inflow": [
+  "CUS-1003",
+  "CUS-1012",
+  "CUS-1015",
+  "CUS-1019",
+  "CUS-1031"
+ ],
+ "r5_duplicates": [
+  "CUS-1024"
+ ],
+ "alerts": [
+  {
+   "caseId": "CASE-260101",
+   "customerId": "CUS-1007",
+   "rules": [
+    "R1_HIGH_VELOCITY"
+   ]
+  },
+  {
+   "caseId": "CASE-260102",
+   "customerId": "CUS-1024",
+   "rules": [
+    "R5_DUPLICATE_POSTING"
+   ]
+  },
+  {
+   "caseId": "CASE-260103",
+   "customerId": "CUS-1031",
+   "rules": [
+    "R2_LARGE_VS_PROFILE",
+    "R4_INFLOW_EXCEEDS_PROFILE"
+   ]
+  },
+  {
+   "caseId": "CASE-260104",
+   "customerId": "CUS-1003",
+   "rules": [
+    "R4_INFLOW_EXCEEDS_PROFILE"
+   ]
+  },
+  {
+   "caseId": "CASE-260105",
+   "customerId": "CUS-1012",
+   "rules": [
+    "R2_LARGE_VS_PROFILE",
+    "R4_INFLOW_EXCEEDS_PROFILE"
+   ]
+  },
+  {
+   "caseId": "CASE-260106",
+   "customerId": "CUS-1027",
+   "rules": [
+    "R6_RAPID_PASS_THROUGH"
+   ]
+  },
+  {
+   "caseId": "CASE-260107",
+   "customerId": "CUS-1015",
+   "rules": [
+    "R2_LARGE_VS_PROFILE",
+    "R3_CASH_JUST_BELOW_THRESHOLD",
+    "R4_INFLOW_EXCEEDS_PROFILE"
+   ]
+  },
+  {
+   "caseId": "CASE-260108",
+   "customerId": "CUS-1019",
+   "rules": [
+    "R2_LARGE_VS_PROFILE",
+    "R4_INFLOW_EXCEEDS_PROFILE",
+    "R6_RAPID_PASS_THROUGH",
+    "R7_PROFILE_INCONSISTENCY"
+   ]
+  }
+ ]
+}

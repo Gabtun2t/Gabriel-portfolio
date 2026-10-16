@@ -1,0 +1,655 @@
+{
+ "sqlite_version": "3.45.1",
+ "files": {
+  "reconciliation.sql": {
+   "summary_by_status": {
+    "title": "Result count per reconciliation status",
+    "sql": "SELECT status, COUNT(*) AS results\nFROM recon_result\nGROUP BY status\nORDER BY results DESC, status;",
+    "columns": [
+     "status",
+     "results"
+    ],
+    "rows": [
+     [
+      "MATCHED",
+      158
+     ],
+     [
+      "MISSING_IN_TARGET",
+      5
+     ],
+     [
+      "DUPLICATE_IN_TARGET",
+      4
+     ],
+     [
+      "REFERENCE_CORRUPTED",
+      4
+     ],
+     [
+      "AMOUNT_MISMATCH",
+      3
+     ],
+     [
+      "DATE_MISMATCH",
+      3
+     ],
+     [
+      "WRONG_MAPPING",
+      3
+     ],
+     [
+      "UNMATCHED_IN_TARGET",
+      2
+     ]
+    ]
+   },
+   "amount_mismatch_patterns": {
+    "title": "Amount differences with a pattern hint",
+    "sql": "SELECT s.reference, s.amount AS source_amount, t.amount AS erp_amount,\n       ROUND(t.amount - s.amount, 2) AS difference,\n       CASE\n         WHEN ROUND(t.amount / s.amount, 6) IN (100.0, 0.01)          THEN 'decimal shift'\n         WHEN ABS(ROUND((t.amount - s.amount) * 100)) % 900 = 0       THEN 'divisible by 9 - check transposition'\n         WHEN ABS(t.amount - s.amount) <= 0.05                        THEN 'rounding'\n         ELSE 'unexplained'\n       END AS pattern_hint\nFROM recon_result r\nJOIN legacy_extract s ON s.src_id = r.src_id\nJOIN erp_gl_entry t   ON t.je_id = r.je_id\nWHERE r.status = 'AMOUNT_MISMATCH'\nORDER BY s.reference;",
+    "columns": [
+     "reference",
+     "source_amount",
+     "erp_amount",
+     "difference",
+     "pattern_hint"
+    ],
+    "rows": [
+     [
+      "RCPT-45152",
+      4518.0,
+      4158.0,
+      -360.0,
+      "divisible by 9 - check transposition"
+     ],
+     [
+      "RCPT-45232",
+      2310.47,
+      2310.5,
+      0.03,
+      "rounding"
+     ],
+     [
+      "RCPT-55821",
+      12450.0,
+      1245000.0,
+      1232550.0,
+      "decimal shift"
+     ]
+    ]
+   },
+   "duplicates_by_load_run": {
+    "title": "Duplicate imports and the load runs they came from",
+    "sql": "SELECT s.reference, s.amount, k.je_id AS kept_entry, k.load_run AS kept_run, d.je_id AS duplicate_entry, d.load_run AS duplicate_run, d.migration_batch\nFROM recon_result r\nJOIN legacy_extract s ON s.src_id = r.src_id\nJOIN erp_gl_entry d   ON d.je_id = r.je_id\nJOIN recon_result rk  ON rk.src_id = r.src_id AND rk.status <> 'DUPLICATE_IN_TARGET'\nJOIN erp_gl_entry k   ON k.je_id = rk.je_id\nWHERE r.status = 'DUPLICATE_IN_TARGET'\nORDER BY s.reference;",
+    "columns": [
+     "reference",
+     "amount",
+     "kept_entry",
+     "kept_run",
+     "duplicate_entry",
+     "duplicate_run",
+     "migration_batch"
+    ],
+    "rows": [
+     [
+      "RCPT-45222",
+      6117.1,
+      "JE-26-00118",
+      1,
+      "JE-26-00119",
+      2,
+      "MIG-0612"
+     ],
+     [
+      "RCPT-48807",
+      18420.0,
+      "JE-26-00169",
+      1,
+      "JE-26-00170",
+      2,
+      "MIG-0612"
+     ],
+     [
+      "RCPT-48812",
+      7965.5,
+      "JE-26-00171",
+      1,
+      "JE-26-00172",
+      2,
+      "MIG-0612"
+     ],
+     [
+      "RCPT-48830",
+      23110.75,
+      "JE-26-00173",
+      1,
+      "JE-26-00174",
+      2,
+      "MIG-0612"
+     ]
+    ]
+   },
+   "missing_with_staging_reason": {
+    "title": "Source rows missing in the ERP, with the staging-log reason",
+    "sql": "SELECT s.src_id, s.reference, s.amount, g.load_status, g.reject_reason\nFROM recon_result r\nJOIN legacy_extract s ON s.src_id = r.src_id\nLEFT JOIN staging_log g ON g.src_id = s.src_id\nWHERE r.status = 'MISSING_IN_TARGET'\nORDER BY s.src_id;",
+    "columns": [
+     "src_id",
+     "reference",
+     "amount",
+     "load_status",
+     "reject_reason"
+    ],
+    "rows": [
+     [
+      "LEG-000008",
+      "RCPT-45107",
+      1067.67,
+      "REJECTED",
+      "posting_period lookup returned NULL (period not opened in ERP at load time)"
+     ],
+     [
+      "LEG-000027",
+      "RCPT-45126",
+      1568.76,
+      "REJECTED",
+      "customer_id not found in ERP customer master at load time"
+     ],
+     [
+      "LEG-000046",
+      "RCPT-45145",
+      16572.5,
+      "REJECTED",
+      "customer_id not found in ERP customer master at load time"
+     ],
+     [
+      "LEG-000057",
+      "RCPT-45156",
+      1137.66,
+      "REJECTED",
+      "posting_period lookup returned NULL (period not opened in ERP at load time)"
+     ],
+     [
+      "LEG-000075",
+      "RCPT-45174",
+      6448.5,
+      "REJECTED",
+      "customer_id not found in ERP customer master at load time"
+     ]
+    ]
+   },
+   "date_swaps": {
+    "title": "Date differences explained by a day/month swap",
+    "sql": "SELECT s.reference, s.posting_date AS source_date, t.posting_date AS erp_date,\n       CASE WHEN SUBSTR(s.posting_date, 6, 2) = SUBSTR(t.posting_date, 9, 2)\n             AND SUBSTR(s.posting_date, 9, 2) = SUBSTR(t.posting_date, 6, 2)\n            THEN 'day/month swapped' ELSE 'other shift' END AS diagnosis\nFROM recon_result r\nJOIN legacy_extract s ON s.src_id = r.src_id\nJOIN erp_gl_entry t   ON t.je_id = r.je_id\nWHERE r.status = 'DATE_MISMATCH'\nORDER BY s.reference;",
+    "columns": [
+     "reference",
+     "source_date",
+     "erp_date",
+     "diagnosis"
+    ],
+    "rows": [
+     [
+      "RCPT-45171",
+      "2026-05-07",
+      "2026-07-05",
+      "day/month swapped"
+     ],
+     [
+      "RCPT-45247",
+      "2026-05-03",
+      "2026-03-05",
+      "day/month swapped"
+     ],
+     [
+      "RCPT-45253",
+      "2026-05-01",
+      "2026-01-05",
+      "day/month swapped"
+     ]
+    ]
+   },
+   "control_totals": {
+    "title": "Control totals — source vs. posted ERP",
+    "sql": "SELECT (SELECT ROUND(SUM(amount), 2) FROM legacy_extract)                      AS source_total,\n       (SELECT ROUND(SUM(amount), 2) FROM erp_gl_entry WHERE status = 'POSTED') AS erp_total,\n       (SELECT ROUND(SUM(amount), 2) FROM erp_gl_entry WHERE status = 'POSTED')\n     - (SELECT ROUND(SUM(amount), 2) FROM legacy_extract)                      AS net_difference;",
+    "columns": [
+     "source_total",
+     "erp_total",
+     "net_difference"
+    ],
+    "rows": [
+     [
+      1657660.94,
+      2937619.23,
+      1279958.29
+     ]
+    ]
+   }
+  },
+  "aml_rules.sql": {
+   "r1_high_velocity": {
+    "title": "R1 — busiest rolling 7-day window vs. max(10, 3 × expected weekly count)",
+    "sql": "WITH windows AS (\n  SELECT a.customer_id, a.tx_date AS window_start, COUNT(*) AS tx_in_window\n  FROM txn a\n  JOIN txn b ON b.customer_id = a.customer_id\n            AND b.tx_date BETWEEN a.tx_date AND date(a.tx_date, '+6 days')\n  GROUP BY a.customer_id, a.tx_id\n)\nSELECT w.customer_id, MAX(w.tx_in_window) AS max_7d_count,\n       ROUND(MAX(10.0, 3.0 * c.expected_monthly_tx_count / 4.33), 2) AS threshold\nFROM windows w JOIN customer c USING (customer_id)\nGROUP BY w.customer_id\nHAVING MAX(w.tx_in_window) >= MAX(10.0, 3.0 * c.expected_monthly_tx_count / 4.33)\nORDER BY w.customer_id;",
+    "columns": [
+     "customer_id",
+     "max_7d_count",
+     "threshold"
+    ],
+    "rows": [
+     [
+      "CUS-1007",
+      20,
+      10.0
+     ]
+    ]
+   },
+   "r2_large_vs_profile": {
+    "title": "R2 — single transaction ≥ max($10,000, 3 × declared monthly turnover)",
+    "sql": "SELECT t.customer_id, t.tx_id, t.tx_date, t.amount, t.reference,\n       MAX(10000.0, 3.0 * c.declared_monthly_turnover) AS threshold\nFROM txn t JOIN customer c USING (customer_id)\nWHERE t.amount >= MAX(10000.0, 3.0 * c.declared_monthly_turnover)\nORDER BY t.customer_id, t.tx_date;",
+    "columns": [
+     "customer_id",
+     "tx_id",
+     "tx_date",
+     "amount",
+     "reference",
+     "threshold"
+    ],
+    "rows": [
+     [
+      "CUS-1012",
+      "TX-01336",
+      "2026-05-21",
+      48500.0,
+      "WIR-61204",
+      19500.0
+     ],
+     [
+      "CUS-1012",
+      "TX-01472",
+      "2026-05-26",
+      45000.0,
+      "INT-61377",
+      19500.0
+     ],
+     [
+      "CUS-1015",
+      "TX-01968",
+      "2026-06-13",
+      37000.0,
+      "WIR-42416",
+      21000.0
+     ],
+     [
+      "CUS-1019",
+      "TX-01692",
+      "2026-06-03",
+      11200.0,
+      "WIX-42404",
+      10000.0
+     ],
+     [
+      "CUS-1019",
+      "TX-01716",
+      "2026-06-04",
+      10640.0,
+      "WIR-42405",
+      10000.0
+     ],
+     [
+      "CUS-1019",
+      "TX-02044",
+      "2026-06-16",
+      12100.0,
+      "WIX-42408",
+      10000.0
+     ],
+     [
+      "CUS-1019",
+      "TX-02071",
+      "2026-06-17",
+      11495.0,
+      "WIR-42409",
+      10000.0
+     ],
+     [
+      "CUS-1031",
+      "TX-01506",
+      "2026-05-27",
+      1245000.0,
+      "RCPT-55821",
+      540000.0
+     ]
+    ]
+   },
+   "r3_cash_below_threshold": {
+    "title": "R3 — ≥ 3 cash deposits of $9,000–$9,999.99 within 7 days",
+    "sql": "WITH band AS (\n  SELECT * FROM txn\n  WHERE channel = 'cash' AND direction = 'credit' AND amount BETWEEN 9000 AND 9999.99\n)\nSELECT a.customer_id, a.tx_date AS window_start, COUNT(*) AS deposits, ROUND(SUM(b.amount), 2) AS total,\n       COUNT(DISTINCT b.branch) AS branches\nFROM band a\nJOIN band b ON b.customer_id = a.customer_id\n           AND julianday(b.tx_date) - julianday(a.tx_date) BETWEEN 0 AND 6\nGROUP BY a.customer_id, a.tx_id\nHAVING COUNT(*) >= 3\nORDER BY a.customer_id, window_start;",
+    "columns": [
+     "customer_id",
+     "window_start",
+     "deposits",
+     "total",
+     "branches"
+    ],
+    "rows": [
+     [
+      "CUS-1015",
+      "2026-06-08",
+      4,
+      38750.0,
+      3
+     ],
+     [
+      "CUS-1015",
+      "2026-06-09",
+      3,
+      29350.0,
+      3
+     ]
+    ]
+   },
+   "r4_monthly_inflow": {
+    "title": "R4 — calendar-month credits ≥ 3 × declared monthly turnover",
+    "sql": "SELECT t.customer_id, substr(t.tx_date, 1, 7) AS month, ROUND(SUM(t.amount), 2) AS credits,\n       c.declared_monthly_turnover, ROUND(SUM(t.amount) / c.declared_monthly_turnover, 1) AS multiple\nFROM txn t JOIN customer c USING (customer_id)\nWHERE t.direction = 'credit'\nGROUP BY t.customer_id, month\nHAVING SUM(t.amount) >= 3 * c.declared_monthly_turnover\nORDER BY t.customer_id, month;",
+    "columns": [
+     "customer_id",
+     "month",
+     "credits",
+     "declared_monthly_turnover",
+     "multiple"
+    ],
+    "rows": [
+     [
+      "CUS-1003",
+      "2026-05",
+      96826.54,
+      30000.0,
+      3.2
+     ],
+     [
+      "CUS-1012",
+      "2026-05",
+      54782.21,
+      6500.0,
+      8.4
+     ],
+     [
+      "CUS-1015",
+      "2026-06",
+      45439.96,
+      7000.0,
+      6.5
+     ],
+     [
+      "CUS-1019",
+      "2026-06",
+      43988.14,
+      2400.0,
+      18.3
+     ],
+     [
+      "CUS-1031",
+      "2026-05",
+      1438363.45,
+      180000.0,
+      8.0
+     ]
+    ]
+   },
+   "r5_duplicates": {
+    "title": "R5 — identical postings (reference, amount, direction, counterparty) within 1 day",
+    "sql": "SELECT account_id, customer_id, reference, amount, COUNT(*) AS copies,\n       GROUP_CONCAT(COALESCE(migration_batch, source_system) || '/run ' || COALESCE(load_run, '-'), ', ') AS lineage\nFROM txn\nGROUP BY account_id, customer_id, reference, amount, direction, counterparty\nHAVING COUNT(*) > 1 AND julianday(MAX(tx_date)) - julianday(MIN(tx_date)) <= 1\nORDER BY customer_id, reference;",
+    "columns": [
+     "account_id",
+     "customer_id",
+     "reference",
+     "amount",
+     "copies",
+     "lineage"
+    ],
+    "rows": [
+     [
+      "ACC-1024-B",
+      "CUS-1024",
+      "RCPT-48807",
+      18420.0,
+      2,
+      "MIG-0612/run 1, MIG-0612/run 2"
+     ],
+     [
+      "ACC-1024-B",
+      "CUS-1024",
+      "RCPT-48812",
+      7965.5,
+      2,
+      "MIG-0612/run 1, MIG-0612/run 2"
+     ],
+     [
+      "ACC-1024-B",
+      "CUS-1024",
+      "RCPT-48830",
+      23110.75,
+      2,
+      "MIG-0612/run 1, MIG-0612/run 2"
+     ]
+    ]
+   },
+   "erp_cross_check": {
+    "title": "Ledger vs. source ERP document amounts (where they differ)",
+    "sql": "SELECT t.tx_id, t.customer_id, t.reference, t.amount AS ledger_amount, d.erp_amount, d.erp_doc_id,\n       ROUND(t.amount / d.erp_amount, 4) AS ratio, t.migration_batch\nFROM txn t\nJOIN erp_document d ON d.reference = t.reference AND d.customer_id = t.customer_id\nWHERE ABS(t.amount - d.erp_amount) > 0.005;",
+    "columns": [
+     "tx_id",
+     "customer_id",
+     "reference",
+     "ledger_amount",
+     "erp_amount",
+     "erp_doc_id",
+     "ratio",
+     "migration_batch"
+    ],
+    "rows": [
+     [
+      "TX-01506",
+      "CUS-1031",
+      "RCPT-55821",
+      1245000.0,
+      12450.0,
+      "AR-PMT-55821",
+      100.0,
+      "MIG-0612"
+     ]
+    ]
+   }
+  },
+  "pipeline_model.sql": {
+   "monthly_volume_by_channel": {
+    "title": "Monthly CAD volume by channel",
+    "sql": "SELECT month, channel, ROUND(SUM(amount_cad), 2) AS amount_cad, COUNT(*) AS payments\nFROM fact_payment\nWHERE amount_cad IS NOT NULL\nGROUP BY month, channel\nORDER BY month, channel;",
+    "columns": [
+     "month",
+     "channel",
+     "amount_cad",
+     "payments"
+    ],
+    "rows": [
+     [
+      "2026-04",
+      "AR receipt",
+      329246.32,
+      31
+     ],
+     [
+      "2026-04",
+      "Card",
+      11216.97,
+      36
+     ],
+     [
+      "2026-04",
+      "EFT",
+      1036855.43,
+      38
+     ],
+     [
+      "2026-05",
+      "AR receipt",
+      290726.71,
+      23
+     ],
+     [
+      "2026-05",
+      "Card",
+      16577.19,
+      49
+     ],
+     [
+      "2026-05",
+      "EFT",
+      591918.77,
+      25
+     ],
+     [
+      "2026-06",
+      "AR receipt",
+      233795.61,
+      26
+     ],
+     [
+      "2026-06",
+      "Card",
+      13209.31,
+      35
+     ],
+     [
+      "2026-06",
+      "EFT",
+      654436.58,
+      27
+     ]
+    ]
+   },
+   "volume_by_segment": {
+    "title": "Volume by customer segment",
+    "sql": "SELECT COALESCE(d.segment, 'Unknown') AS segment, ROUND(SUM(f.amount_cad), 2) AS amount_cad, COUNT(*) AS payments\nFROM fact_payment f\nLEFT JOIN dim_customer d ON d.customer_key = f.customer_key\nGROUP BY segment\nORDER BY amount_cad DESC;",
+    "columns": [
+     "segment",
+     "amount_cad",
+     "payments"
+    ],
+    "rows": [
+     [
+      "Commercial",
+      1933889.31,
+      100
+     ],
+     [
+      "Retail",
+      847543.58,
+      37
+     ],
+     [
+      "Small business",
+      396550.0,
+      153
+     ]
+    ]
+   },
+   "top_customers": {
+    "title": "Top five customers by CAD volume",
+    "sql": "SELECT d.name, d.segment, ROUND(SUM(f.amount_cad), 2) AS amount_cad, COUNT(*) AS payments\nFROM fact_payment f\nJOIN dim_customer d ON d.customer_key = f.customer_key\nGROUP BY d.customer_key\nORDER BY amount_cad DESC\nLIMIT 5;",
+    "columns": [
+     "name",
+     "segment",
+     "amount_cad",
+     "payments"
+    ],
+    "rows": [
+     [
+      "Fieldstone Property Mgmt",
+      "Commercial",
+      692264.19,
+      33
+     ],
+     [
+      "Summit Consulting Group",
+      "Commercial",
+      681681.24,
+      36
+     ],
+     [
+      "Silverline Logistics Inc.",
+      "Commercial",
+      559943.88,
+      31
+     ],
+     [
+      "A. Brightwater",
+      "Retail",
+      453496.96,
+      20
+     ],
+     [
+      "R. Holloway",
+      "Retail",
+      394046.62,
+      17
+     ]
+    ]
+   },
+   "merged_lineage": {
+    "title": "Facts built from more than one raw delivery (deduplicated)",
+    "sql": "SELECT payment_key, natural_key, lineage_raw_ids\nFROM fact_payment\nWHERE lineage_raw_ids LIKE '%,%'\nORDER BY payment_key;",
+    "columns": [
+     "payment_key",
+     "natural_key",
+     "lineage_raw_ids"
+    ],
+    "rows": [
+     [
+      "F-00022",
+      "card_settlement:CS-70045",
+      "RAW-00046,RAW-00310"
+     ],
+     [
+      "F-00036",
+      "card_settlement:CS-70003",
+      "RAW-00004,RAW-00308"
+     ],
+     [
+      "F-00039",
+      "erp_ar_receipts:AR-30130",
+      "RAW-00315,RAW-00241"
+     ],
+     [
+      "F-00048",
+      "erp_ar_receipts:AR-30105",
+      "RAW-00314,RAW-00216"
+     ],
+     [
+      "F-00050",
+      "card_settlement:CS-70017",
+      "RAW-00018,RAW-00309"
+     ],
+     [
+      "F-00238",
+      "erp_ar_receipts:AR-30110",
+      "RAW-00221,RAW-00313"
+     ],
+     [
+      "F-00255",
+      "erp_ar_receipts:AR-30152",
+      "RAW-00316,RAW-00263"
+     ],
+     [
+      "F-00278",
+      "eft_receipts:EFT-510030",
+      "RAW-00151,RAW-00312"
+     ],
+     [
+      "F-00284",
+      "eft_receipts:EFT-510010",
+      "RAW-00131,RAW-00311"
+     ]
+    ]
+   }
+  }
+ }
+}

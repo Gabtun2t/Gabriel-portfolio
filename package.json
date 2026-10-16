@@ -1,0 +1,35 @@
+{
+  "name": "gabriel-olatundun-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive professional portfolio for Gabriel Olatundun: AML investigation, ERP reconciliation, payment API integration and financial data engineering labs on synthetic data.",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "node scripts/build.mjs --serve",
+    "build": "node scripts/build.mjs",
+    "build:single": "node scripts/build.mjs --single",
+    "preview": "python3 -m http.server 4173 --directory dist",
+    "seed": "tsx scripts/export-seed-data.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:sql": "python3 -I scripts/check_sql.py",
+    "test:e2e": "node tests/e2e/smoke.mjs",
+    "typecheck": "tsc -p tsconfig.engine.json",
+    "typecheck:all": "tsc -p tsconfig.json",
+    "verify": "npm run typecheck && npm test && npm run seed && npm run test:sql && npm run build"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "esbuild": "^0.28.0",
+    "playwright": "^1.56.0",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.0"
+  }
+}

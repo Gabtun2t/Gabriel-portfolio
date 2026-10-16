@@ -1,0 +1,3923 @@
+[
+ {
+  "rawId": "RAW-00001",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:01.000Z",
+  "payload": {
+   "settlement_id": "CS-70000",
+   "txn_ts": "2026-06-21T21:03:00Z",
+   "merchant_id": "M-88005",
+   "amount": "585.59",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00002",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:02.000Z",
+  "payload": {
+   "settlement_id": "CS-70001",
+   "txn_ts": "2026-05-01T18:37:00Z",
+   "merchant_id": "M-88001",
+   "amount": "214.17",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00003",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:03.000Z",
+  "payload": {
+   "settlement_id": "CS-70002",
+   "txn_ts": "2026-04-14T16:06:00Z",
+   "merchant_id": "M-88002",
+   "amount": "369.65",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00004",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:04.000Z",
+  "payload": {
+   "settlement_id": "CS-70003",
+   "txn_ts": "2026-04-13T09:06:00Z",
+   "merchant_id": "M-88004",
+   "amount": "317.16",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00005",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:05.000Z",
+  "payload": {
+   "settlement_id": "CS-70004",
+   "txn_ts": "2026-06-17T14:44:00Z",
+   "merchant_id": "M-88002",
+   "amount": "625.74",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00006",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:06.000Z",
+  "payload": {
+   "settlement_id": "CS-70005",
+   "txn_ts": "2026-06-23T21:26:00Z",
+   "merchant_id": "M-88002",
+   "amount": "47.96",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00007",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:07.000Z",
+  "payload": {
+   "settlement_id": "CS-70006",
+   "txn_ts": "2026-06-18T16:50:00Z",
+   "merchant_id": "M-88003",
+   "amount": "665.31",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00008",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:08.000Z",
+  "payload": {
+   "settlement_id": "CS-70007",
+   "txn_ts": "2026-06-19T16:57:00Z",
+   "merchant_id": "M-88005",
+   "amount": "264.52",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00009",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:09.000Z",
+  "payload": {
+   "settlement_id": "CS-70008",
+   "txn_ts": "2026-05-31T09:05:00Z",
+   "merchant_id": "M-88003",
+   "amount": "256.95",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00010",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:10.000Z",
+  "payload": {
+   "settlement_id": "CS-70009",
+   "txn_ts": "2026-05-17T17:33:00Z",
+   "merchant_id": "M-88002",
+   "amount": "376.92",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00011",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:11.000Z",
+  "payload": {
+   "settlement_id": "CS-70010",
+   "txn_ts": "2026-05-21T19:19:00Z",
+   "merchant_id": "M-88003",
+   "amount": "103.67",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00012",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:12.000Z",
+  "payload": {
+   "settlement_id": "CS-70011",
+   "txn_ts": "2026-05-14T11:33:00Z",
+   "merchant_id": "M-88001",
+   "amount": "73.04",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00013",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:13.000Z",
+  "payload": {
+   "settlement_id": "CS-70012",
+   "txn_ts": "2026-04-21T11:18:00Z",
+   "merchant_id": "M-88001",
+   "amount": "35.86",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00014",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:14.000Z",
+  "payload": {
+   "settlement_id": "CS-70013",
+   "txn_ts": "2026-06-23T21:43:00Z",
+   "merchant_id": "M-88003",
+   "amount": "86.91",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00015",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:15.000Z",
+  "payload": {
+   "settlement_id": "CS-70014",
+   "txn_ts": "2026-06-05T19:11:00Z",
+   "merchant_id": "M-88002",
+   "amount": "407.57",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00016",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:16.000Z",
+  "payload": {
+   "settlement_id": "CS-70015",
+   "txn_ts": "2026-06-26T17:45:00Z",
+   "merchant_id": "M-88003",
+   "amount": "497.31",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00017",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:17.000Z",
+  "payload": {
+   "settlement_id": "CS-70016",
+   "txn_ts": "2026-04-05T13:58:00Z",
+   "merchant_id": "M-88004",
+   "amount": "601.33",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00018",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:18.000Z",
+  "payload": {
+   "settlement_id": "CS-70017",
+   "txn_ts": "2026-04-16T10:53:00Z",
+   "merchant_id": "M-88005",
+   "amount": "616.77",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00019",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:19.000Z",
+  "payload": {
+   "settlement_id": "CS-70018",
+   "txn_ts": "2026-05-01T18:43:00Z",
+   "merchant_id": "M-88004",
+   "amount": "228.58",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00020",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:20.000Z",
+  "payload": {
+   "settlement_id": "CS-70019",
+   "txn_ts": "2026-06-17T17:18:00Z",
+   "merchant_id": "M-88005",
+   "amount": "672.13",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00021",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:21.000Z",
+  "payload": {
+   "settlement_id": "CS-70020",
+   "txn_ts": "2026-05-08T13:53:00Z",
+   "merchant_id": "M-88002",
+   "amount": "163.15",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00022",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:22.000Z",
+  "payload": {
+   "settlement_id": "CS-70021",
+   "txn_ts": "2026-04-05T14:55:00Z",
+   "merchant_id": "M-88005",
+   "amount": "22.67",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00023",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:23.000Z",
+  "payload": {
+   "settlement_id": "CS-70022",
+   "txn_ts": "2026-04-17T14:15:00Z",
+   "merchant_id": "M-88003",
+   "amount": "175.44",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00024",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:24.000Z",
+  "payload": {
+   "settlement_id": "CS-70023",
+   "txn_ts": "2026-05-12T12:17:00Z",
+   "merchant_id": "M-88004",
+   "amount": "210.06",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00025",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:25.000Z",
+  "payload": {
+   "settlement_id": "CS-70024",
+   "txn_ts": "2026-04-28T11:34:00Z",
+   "merchant_id": "M-88005",
+   "amount": "244.11",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00026",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:26.000Z",
+  "payload": {
+   "settlement_id": "CS-70025",
+   "txn_ts": "2026-06-16T11:17:00Z",
+   "merchant_id": "M-88004",
+   "amount": "130.44",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00027",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:27.000Z",
+  "payload": {
+   "settlement_id": "CS-70026",
+   "txn_ts": "2026-06-20T20:09:00Z",
+   "merchant_id": "M-88001",
+   "amount": "236.97",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00028",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:28.000Z",
+  "payload": {
+   "settlement_id": "CS-70027",
+   "txn_ts": "2026-06-08T14:20:00Z",
+   "merchant_id": "M-88002",
+   "amount": "353.90",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00029",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:29.000Z",
+  "payload": {
+   "settlement_id": "CS-70028",
+   "txn_ts": "2026-04-18T17:13:00Z",
+   "merchant_id": "M-88001",
+   "amount": "197.64",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00030",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:30.000Z",
+  "payload": {
+   "settlement_id": "CS-70029",
+   "txn_ts": "2026-04-12T11:07:00Z",
+   "merchant_id": "M-88003",
+   "amount": "24.03",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00031",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:31.000Z",
+  "payload": {
+   "settlement_id": "CS-70030",
+   "txn_ts": "2026-05-30T15:53:00Z",
+   "merchant_id": "M-88003",
+   "amount": "357.29",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00032",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:32.000Z",
+  "payload": {
+   "settlement_id": "CS-70031",
+   "txn_ts": "2026-05-17T12:42:00Z",
+   "merchant_id": "M-88001",
+   "amount": "610.59",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00033",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:33.000Z",
+  "payload": {
+   "settlement_id": "CS-70032",
+   "txn_ts": "2026-06-03T17:52:00Z",
+   "merchant_id": "M-88001",
+   "amount": "443.85",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00034",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:34.000Z",
+  "payload": {
+   "settlement_id": "CS-70033",
+   "txn_ts": "2026-06-15T10:36:00Z",
+   "merchant_id": "M-88004",
+   "amount": "460.05",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00035",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:35.000Z",
+  "payload": {
+   "settlement_id": "CS-70034",
+   "txn_ts": "2026-04-16T13:56:00Z",
+   "merchant_id": "M-88003",
+   "amount": "519.95",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00036",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:36.000Z",
+  "payload": {
+   "settlement_id": "CS-70035",
+   "txn_ts": "2026-05-16T12:17:00Z",
+   "merchant_id": "M-88005",
+   "amount": "509.02",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00037",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:37.000Z",
+  "payload": {
+   "settlement_id": "CS-70036",
+   "txn_ts": "2026-05-05T14:50:00Z",
+   "merchant_id": "M-88002",
+   "amount": "505.10",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00038",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:38.000Z",
+  "payload": {
+   "settlement_id": "CS-70037",
+   "txn_ts": "2026-04-18T10:27:00Z",
+   "merchant_id": "M-88004",
+   "amount": "204.94",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00039",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:39.000Z",
+  "payload": {
+   "settlement_id": "CS-70038",
+   "txn_ts": "2026-06-04T12:46:00Z",
+   "merchant_id": "M-88004",
+   "amount": "568.38",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00040",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:40.000Z",
+  "payload": {
+   "settlement_id": "CS-70039",
+   "txn_ts": "2026-04-23T11:00:00Z",
+   "merchant_id": "M-88004",
+   "amount": "362.47",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00041",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:41.000Z",
+  "payload": {
+   "settlement_id": "CS-70040",
+   "txn_ts": "2026-05-24T14:30:00Z",
+   "merchant_id": "M-88004",
+   "amount": "188.13",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00042",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:42.000Z",
+  "payload": {
+   "settlement_id": "CS-70041",
+   "txn_ts": "2026-06-20T15:41:00Z",
+   "merchant_id": "M-88005",
+   "amount": "606.87",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00043",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:43.000Z",
+  "payload": {
+   "settlement_id": "CS-70042",
+   "txn_ts": "2026-04-21T15:38:00Z",
+   "merchant_id": "M-88004",
+   "amount": "403.81",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00044",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:44.000Z",
+  "payload": {
+   "settlement_id": "CS-70043",
+   "txn_ts": "2026-05-05T21:40:00Z",
+   "merchant_id": "M-88001",
+   "amount": "166.50",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00045",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:45.000Z",
+  "payload": {
+   "settlement_id": "CS-70044",
+   "txn_ts": "2026-04-11T21:53:00Z",
+   "merchant_id": "M-88005",
+   "amount": "38.67",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00046",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:46.000Z",
+  "payload": {
+   "settlement_id": "CS-70045",
+   "txn_ts": "2026-04-08T11:52:00Z",
+   "merchant_id": "M-88004",
+   "amount": "543.62",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00047",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:47.000Z",
+  "payload": {
+   "settlement_id": "CS-70046",
+   "txn_ts": "2026-04-23T13:04:00Z",
+   "merchant_id": "M-88001",
+   "amount": "335.99",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00048",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:48.000Z",
+  "payload": {
+   "settlement_id": "CS-70047",
+   "txn_ts": "2026-04-27T18:44:00Z",
+   "merchant_id": "M-88002",
+   "amount": "78.54",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00049",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:49.000Z",
+  "payload": {
+   "settlement_id": "CS-70048",
+   "txn_ts": "2026-04-16T10:33:00Z",
+   "merchant_id": "M-88001",
+   "amount": "272.48",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00050",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:50.000Z",
+  "payload": {
+   "settlement_id": "CS-70049",
+   "txn_ts": "2026-05-08T21:20:00Z",
+   "merchant_id": "M-88005",
+   "amount": "280.68",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00051",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:51.000Z",
+  "payload": {
+   "settlement_id": "CS-70050",
+   "txn_ts": "2026-05-19T18:55:00Z",
+   "merchant_id": "M-88001",
+   "amount": "454.55",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00052",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:52.000Z",
+  "payload": {
+   "settlement_id": "CS-70051",
+   "txn_ts": "2026-06-16T16:27:00Z",
+   "merchant_id": "M-88003",
+   "amount": "599.10",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00053",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:53.000Z",
+  "payload": {
+   "settlement_id": "CS-70052",
+   "txn_ts": "2026-05-12T09:17:00Z",
+   "merchant_id": "M-88003",
+   "amount": "564.75",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00054",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:54.000Z",
+  "payload": {
+   "settlement_id": "CS-70053",
+   "txn_ts": "2026-05-15T10:40:00Z",
+   "merchant_id": "M-88001",
+   "amount": "471.23",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00055",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:55.000Z",
+  "payload": {
+   "settlement_id": "CS-70054",
+   "txn_ts": "2026-05-17T08:51:00Z",
+   "merchant_id": "M-88004",
+   "amount": "134.13",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00056",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:56.000Z",
+  "payload": {
+   "settlement_id": "CS-70055",
+   "txn_ts": "2026-06-07T11:32:00Z",
+   "merchant_id": "M-88003",
+   "amount": "19.49",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00057",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:57.000Z",
+  "payload": {
+   "settlement_id": "CS-70056",
+   "txn_ts": "2026-05-02T16:00:00Z",
+   "merchant_id": "M-88005",
+   "amount": "130.21",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00058",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:58.000Z",
+  "payload": {
+   "settlement_id": "CS-70057",
+   "txn_ts": "2026-06-14T11:49:00Z",
+   "merchant_id": "M-88004",
+   "amount": "147.58",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00059",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:00:59.000Z",
+  "payload": {
+   "settlement_id": "CS-70058",
+   "txn_ts": "2026-05-15T10:18:00Z",
+   "merchant_id": "M-88003",
+   "amount": "148.38",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00060",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:00.000Z",
+  "payload": {
+   "settlement_id": "CS-70059",
+   "txn_ts": "2026-05-20T10:09:00Z",
+   "merchant_id": "M-88002",
+   "amount": "656.41",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00061",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:01.000Z",
+  "payload": {
+   "settlement_id": "CS-70060",
+   "txn_ts": "2026-05-30T14:56:00Z",
+   "merchant_id": "M-88005",
+   "amount": "452.54",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00062",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:02.000Z",
+  "payload": {
+   "settlement_id": "CS-70061",
+   "txn_ts": "2026-04-29T20:20:00Z",
+   "merchant_id": "M-88005",
+   "amount": "212.05",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00063",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:03.000Z",
+  "payload": {
+   "settlement_id": "CS-70062",
+   "txn_ts": "2026-06-30T20:17:00Z",
+   "merchant_id": "M-88002",
+   "amount": "287.26",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00064",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:04.000Z",
+  "payload": {
+   "settlement_id": "CS-70063",
+   "txn_ts": "2026-05-14T14:43:00Z",
+   "merchant_id": "M-88001",
+   "amount": "219.22",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00065",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:05.000Z",
+  "payload": {
+   "settlement_id": "CS-70064",
+   "txn_ts": "2026-04-13T13:16:00Z",
+   "merchant_id": "M-88001",
+   "amount": "25.67",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00066",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:06.000Z",
+  "payload": {
+   "settlement_id": "CS-70065",
+   "txn_ts": "2026-06-02T09:11:00Z",
+   "merchant_id": "M-88005",
+   "amount": "225.55",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00067",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:07.000Z",
+  "payload": {
+   "settlement_id": "CS-70066",
+   "txn_ts": "2026-06-15T18:44:00Z",
+   "merchant_id": "M-88003",
+   "amount": "221.57",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00068",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:08.000Z",
+  "payload": {
+   "settlement_id": "CS-70067",
+   "txn_ts": "2026-05-01T08:54:00Z",
+   "merchant_id": "M-88005",
+   "amount": "165.10",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00069",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:09.000Z",
+  "payload": {
+   "settlement_id": "CS-70068",
+   "txn_ts": "2026-06-17T21:34:00Z",
+   "merchant_id": "M-88001",
+   "amount": "311.24",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00070",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:10.000Z",
+  "payload": {
+   "settlement_id": "CS-70069",
+   "txn_ts": "2026-05-16T10:52:00Z",
+   "merchant_id": "M-88005",
+   "amount": "284.36",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00071",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:11.000Z",
+  "payload": {
+   "settlement_id": "CS-70070",
+   "txn_ts": "2026-05-22T08:33:00Z",
+   "merchant_id": "M-88003",
+   "amount": "514.56",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00072",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:12.000Z",
+  "payload": {
+   "settlement_id": "CS-70071",
+   "txn_ts": "2026-05-30T20:52:00Z",
+   "merchant_id": "M-88005",
+   "amount": "437.05",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00073",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:13.000Z",
+  "payload": {
+   "settlement_id": "CS-70072",
+   "txn_ts": "2026-05-05T21:49:00Z",
+   "merchant_id": "M-88001",
+   "amount": "225.66",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00074",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:14.000Z",
+  "payload": {
+   "settlement_id": "CS-70073",
+   "txn_ts": "2026-05-03T19:00:00Z",
+   "merchant_id": "M-88003",
+   "amount": "38.21",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00075",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:15.000Z",
+  "payload": {
+   "settlement_id": "CS-70074",
+   "txn_ts": "2026-06-08T13:00:00Z",
+   "merchant_id": "M-88005",
+   "amount": "200.08",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00076",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:16.000Z",
+  "payload": {
+   "settlement_id": "CS-70075",
+   "txn_ts": "2026-06-21T12:07:00Z",
+   "merchant_id": "M-88001",
+   "amount": "180.55",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00077",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:17.000Z",
+  "payload": {
+   "settlement_id": "CS-70076",
+   "txn_ts": "2026-04-24T16:50:00Z",
+   "merchant_id": "M-88004",
+   "amount": "395.64",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00078",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:18.000Z",
+  "payload": {
+   "settlement_id": "CS-70077",
+   "txn_ts": "2026-05-28T18:03:00Z",
+   "merchant_id": "M-88005",
+   "amount": "376.14",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00079",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:19.000Z",
+  "payload": {
+   "settlement_id": "CS-70078",
+   "txn_ts": "2026-05-15T19:51:00Z",
+   "merchant_id": "M-88003",
+   "amount": "457.20",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00080",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:20.000Z",
+  "payload": {
+   "settlement_id": "CS-70079",
+   "txn_ts": "2026-05-15T15:14:00Z",
+   "merchant_id": "M-88003",
+   "amount": "466.56",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00081",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:21.000Z",
+  "payload": {
+   "settlement_id": "CS-70080",
+   "txn_ts": "2026-04-02T08:18:00Z",
+   "merchant_id": "M-88003",
+   "amount": "387.59",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00082",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:22.000Z",
+  "payload": {
+   "settlement_id": "CS-70081",
+   "txn_ts": "2026-06-06T14:45:00Z",
+   "merchant_id": "M-88002",
+   "amount": "51.17",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00083",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:23.000Z",
+  "payload": {
+   "settlement_id": "CS-70082",
+   "txn_ts": "2026-05-29T19:50:00Z",
+   "merchant_id": "M-88001",
+   "amount": "468.50",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00084",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:24.000Z",
+  "payload": {
+   "settlement_id": "CS-70083",
+   "txn_ts": "2026-05-27T09:48:00Z",
+   "merchant_id": "M-88003",
+   "amount": "315.13",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00085",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:25.000Z",
+  "payload": {
+   "settlement_id": "CS-70084",
+   "txn_ts": "2026-05-18T20:56:00Z",
+   "merchant_id": "M-88002",
+   "amount": "18.37",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00086",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:26.000Z",
+  "payload": {
+   "settlement_id": "CS-70085",
+   "txn_ts": "2026-04-20T17:50:00Z",
+   "merchant_id": "M-88005",
+   "amount": "664.57",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00087",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:27.000Z",
+  "payload": {
+   "settlement_id": "CS-70086",
+   "txn_ts": "2026-04-30T18:09:00Z",
+   "merchant_id": "M-88001",
+   "amount": "101.29",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00088",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:28.000Z",
+  "payload": {
+   "settlement_id": "CS-70087",
+   "txn_ts": "2026-06-11T09:35:00Z",
+   "merchant_id": "M-88001",
+   "amount": "615.54",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00089",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:29.000Z",
+  "payload": {
+   "settlement_id": "CS-70088",
+   "txn_ts": "2026-04-07T14:50:00Z",
+   "merchant_id": "M-88001",
+   "amount": "607.26",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00090",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:30.000Z",
+  "payload": {
+   "settlement_id": "CS-70089",
+   "txn_ts": "2026-05-19T13:37:00Z",
+   "merchant_id": "M-88003",
+   "amount": "624.27",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00091",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:31.000Z",
+  "payload": {
+   "settlement_id": "CS-70090",
+   "txn_ts": "2026-06-06T15:10:00Z",
+   "merchant_id": "M-88005",
+   "amount": "610.69",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00092",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:32.000Z",
+  "payload": {
+   "settlement_id": "CS-70091",
+   "txn_ts": "2026-05-18T17:02:00Z",
+   "merchant_id": "M-88003",
+   "amount": "549.31",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00093",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:33.000Z",
+  "payload": {
+   "settlement_id": "CS-70092",
+   "txn_ts": "2026-05-24T08:39:00Z",
+   "merchant_id": "M-88002",
+   "amount": "18.48",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00094",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:34.000Z",
+  "payload": {
+   "settlement_id": "CS-70093",
+   "txn_ts": "2026-06-22T21:16:00Z",
+   "merchant_id": "M-88005",
+   "amount": "489.74",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00095",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:35.000Z",
+  "payload": {
+   "settlement_id": "CS-70094",
+   "txn_ts": "2026-06-28T14:28:00Z",
+   "merchant_id": "M-88004",
+   "amount": "469.63",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00096",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:36.000Z",
+  "payload": {
+   "settlement_id": "CS-70095",
+   "txn_ts": "2026-06-19T15:54:00Z",
+   "merchant_id": "M-88002",
+   "amount": "519.25",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00097",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:37.000Z",
+  "payload": {
+   "settlement_id": "CS-70096",
+   "txn_ts": "2026-06-06T18:25:00Z",
+   "merchant_id": "M-88003",
+   "amount": "150.75",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00098",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:38.000Z",
+  "payload": {
+   "settlement_id": "CS-70097",
+   "txn_ts": "2026-05-05T17:22:00Z",
+   "merchant_id": "M-88004",
+   "amount": "591.36",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00099",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:39.000Z",
+  "payload": {
+   "settlement_id": "CS-70098",
+   "txn_ts": "2026-04-17T11:28:00Z",
+   "merchant_id": "M-88002",
+   "amount": "180.36",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00100",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:40.000Z",
+  "payload": {
+   "settlement_id": "CS-70099",
+   "txn_ts": "2026-05-03T08:53:00Z",
+   "merchant_id": "M-88005",
+   "amount": "254.78",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00101",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:41.000Z",
+  "payload": {
+   "settlement_id": "CS-70100",
+   "txn_ts": "2026-04-21T17:30:00Z",
+   "merchant_id": "M-88001",
+   "amount": "226.32",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00102",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:42.000Z",
+  "payload": {
+   "settlement_id": "CS-70101",
+   "txn_ts": "2026-04-04T15:25:00Z",
+   "merchant_id": "M-88003",
+   "amount": "428.09",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00103",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:43.000Z",
+  "payload": {
+   "settlement_id": "CS-70102",
+   "txn_ts": "2026-06-18T11:01:00Z",
+   "merchant_id": "M-88005",
+   "amount": "671.12",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00104",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:44.000Z",
+  "payload": {
+   "settlement_id": "CS-70103",
+   "txn_ts": "2026-04-27T19:16:00Z",
+   "merchant_id": "M-88002",
+   "amount": "242.09",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00105",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:45.000Z",
+  "payload": {
+   "settlement_id": "CS-70104",
+   "txn_ts": "2026-06-14T15:21:00Z",
+   "merchant_id": "M-88003",
+   "amount": "386.78",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00106",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:46.000Z",
+  "payload": {
+   "settlement_id": "CS-70105",
+   "txn_ts": "2026-05-23T14:29:00Z",
+   "merchant_id": "M-88002",
+   "amount": "589.27",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00107",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:47.000Z",
+  "payload": {
+   "settlement_id": "CS-70106",
+   "txn_ts": "2026-04-20T10:36:00Z",
+   "merchant_id": "M-88004",
+   "amount": "309.16",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00108",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:48.000Z",
+  "payload": {
+   "settlement_id": "CS-70107",
+   "txn_ts": "2026-06-25T12:34:00Z",
+   "merchant_id": "M-88004",
+   "amount": "398.72",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00109",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:49.000Z",
+  "payload": {
+   "settlement_id": "CS-70108",
+   "txn_ts": "2026-05-19T12:34:00Z",
+   "merchant_id": "M-88004",
+   "amount": "185.65",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00110",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:50.000Z",
+  "payload": {
+   "settlement_id": "CS-70109",
+   "txn_ts": "2026-05-24T17:30:00Z",
+   "merchant_id": "M-88005",
+   "amount": "488.64",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00111",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:51.000Z",
+  "payload": {
+   "settlement_id": "CS-70110",
+   "txn_ts": "2026-05-08T17:11:00Z",
+   "merchant_id": "M-88003",
+   "amount": "516.05",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00112",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:52.000Z",
+  "payload": {
+   "settlement_id": "CS-70111",
+   "txn_ts": "2026-04-14T10:44:00Z",
+   "merchant_id": "M-88003",
+   "amount": "106.98",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00113",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:53.000Z",
+  "payload": {
+   "settlement_id": "CS-70112",
+   "txn_ts": "2026-04-23T21:18:00Z",
+   "merchant_id": "M-88003",
+   "amount": "290.29",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00114",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:54.000Z",
+  "payload": {
+   "settlement_id": "CS-70113",
+   "txn_ts": "2026-05-15T14:06:00Z",
+   "merchant_id": "M-88004",
+   "amount": "261.50",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00115",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:55.000Z",
+  "payload": {
+   "settlement_id": "CS-70114",
+   "txn_ts": "2026-05-07T19:38:00Z",
+   "merchant_id": "M-88001",
+   "amount": "288.74",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00116",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:56.000Z",
+  "payload": {
+   "settlement_id": "CS-70115",
+   "txn_ts": "2026-05-28T09:50:00Z",
+   "merchant_id": "M-88002",
+   "amount": "363.32",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00117",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:57.000Z",
+  "payload": {
+   "settlement_id": "CS-70116",
+   "txn_ts": "2026-04-13T14:07:00Z",
+   "merchant_id": "M-88002",
+   "amount": "618.83",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00118",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:58.000Z",
+  "payload": {
+   "settlement_id": "CS-70117",
+   "txn_ts": "2026-04-28T21:54:00Z",
+   "merchant_id": "M-88005",
+   "amount": "550.66",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00119",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:01:59.000Z",
+  "payload": {
+   "settlement_id": "CS-70118",
+   "txn_ts": "2026-05-18T08:35:00Z",
+   "merchant_id": "M-88004",
+   "amount": "603.71",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00120",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:02:00.000Z",
+  "payload": {
+   "settlement_id": "CS-70119",
+   "txn_ts": "2026-04-07T18:04:00Z",
+   "merchant_id": "M-88002",
+   "amount": "504.99",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00121",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:01.000Z",
+  "payload": {
+   "trace_no": "EFT-510000",
+   "value_date": "2026-05-04",
+   "payer_account": "6100877",
+   "amount_cents": "3544931",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00122",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:02.000Z",
+  "payload": {
+   "trace_no": "EFT-510001",
+   "value_date": "2026-05-24",
+   "payer_account": "6102555",
+   "amount_cents": "558829",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00123",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:03.000Z",
+  "payload": {
+   "trace_no": "EFT-510002",
+   "value_date": "2026-05-06",
+   "payer_account": "6100877",
+   "amount_cents": "731289",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00124",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:04.000Z",
+  "payload": {
+   "trace_no": "EFT-510003",
+   "value_date": "2026-06-24",
+   "payer_account": "6100234",
+   "amount_cents": "1984137",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00125",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:05.000Z",
+  "payload": {
+   "trace_no": "EFT-510004",
+   "value_date": "2026-05-08",
+   "payer_account": "6102291",
+   "amount_cents": "790616",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00126",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:06.000Z",
+  "payload": {
+   "trace_no": "EFT-510005",
+   "value_date": "2026-06-20",
+   "payer_account": "6102291",
+   "amount_cents": "2597126",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00127",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:07.000Z",
+  "payload": {
+   "trace_no": "EFT-510006",
+   "value_date": "2026-05-01",
+   "payer_account": "6101450",
+   "amount_cents": "821807",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00128",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:08.000Z",
+  "payload": {
+   "trace_no": "EFT-510007",
+   "value_date": "2026-04-20",
+   "payer_account": "6102291",
+   "amount_cents": "3329611",
+   "currency": "USD"
+  }
+ },
+ {
+  "rawId": "RAW-00129",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:09.000Z",
+  "payload": {
+   "trace_no": "EFT-510008",
+   "value_date": "2026-04-19",
+   "payer_account": "6100234",
+   "amount_cents": "3788044",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00130",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:10.000Z",
+  "payload": {
+   "trace_no": "EFT-510009",
+   "value_date": "2026-04-01",
+   "payer_account": "6101450",
+   "amount_cents": "3495364",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00131",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:11.000Z",
+  "payload": {
+   "trace_no": "EFT-510010",
+   "value_date": "2026-06-26",
+   "payer_account": "6102291",
+   "amount_cents": "2584239",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00132",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:12.000Z",
+  "payload": {
+   "trace_no": "EFT-510011",
+   "value_date": "2026-04-29",
+   "payer_account": "6101450",
+   "amount_cents": "972228",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00133",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:13.000Z",
+  "payload": {
+   "trace_no": "EFT-510012",
+   "value_date": "2026-06-29",
+   "payer_account": "6100877",
+   "amount_cents": "1159620",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00134",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:14.000Z",
+  "payload": {
+   "trace_no": "EFT-510013",
+   "value_date": "2026-06-20",
+   "payer_account": "6100234",
+   "amount_cents": "2349813",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00135",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:15.000Z",
+  "payload": {
+   "trace_no": "EFT-510014",
+   "value_date": "2026-06-07",
+   "payer_account": "6100877",
+   "amount_cents": "193356",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00136",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:16.000Z",
+  "payload": {
+   "trace_no": "EFT-510015",
+   "value_date": "2026-04-11",
+   "payer_account": "6100877",
+   "amount_cents": "3971218",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00137",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:17.000Z",
+  "payload": {
+   "trace_no": "EFT-510016",
+   "value_date": "2026-05-23",
+   "payer_account": "6102291",
+   "amount_cents": "2283602",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00138",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:18.000Z",
+  "payload": {
+   "trace_no": "EFT-510017",
+   "value_date": "2026-05-26",
+   "payer_account": "6100877",
+   "amount_cents": "1624358",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00139",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:19.000Z",
+  "payload": {
+   "trace_no": "EFT-510018",
+   "value_date": "2026-04-26",
+   "payer_account": "6102555",
+   "amount_cents": "4080758",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00140",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:20.000Z",
+  "payload": {
+   "trace_no": "EFT-510019",
+   "value_date": "2026-04-02",
+   "payer_account": "6102291",
+   "amount_cents": "3260330",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00141",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:21.000Z",
+  "payload": {
+   "trace_no": "EFT-510020",
+   "value_date": "2026-04-08",
+   "payer_account": "6101450",
+   "amount_cents": "2311159",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00142",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:22.000Z",
+  "payload": {
+   "trace_no": "EFT-510021",
+   "value_date": "2026-04-30",
+   "payer_account": "6100877",
+   "amount_cents": "255693",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00143",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:23.000Z",
+  "payload": {
+   "trace_no": "EFT-510022",
+   "value_date": "2026-05-28",
+   "payer_account": "6102291",
+   "amount_cents": "2396582",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00144",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:24.000Z",
+  "payload": {
+   "trace_no": "EFT-510023",
+   "value_date": "2026-04-25",
+   "payer_account": "6100234",
+   "amount_cents": "3258025",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00145",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:25.000Z",
+  "payload": {
+   "trace_no": "EFT-510024",
+   "value_date": "2026-04-09",
+   "payer_account": "6100234",
+   "amount_cents": "3330945",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00146",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:26.000Z",
+  "payload": {
+   "trace_no": "EFT-510025",
+   "value_date": "2026-06-08",
+   "payer_account": "6102291",
+   "amount_cents": "239939",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00147",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:27.000Z",
+  "payload": {
+   "trace_no": "EFT-510026",
+   "value_date": "2026-04-26",
+   "payer_account": "6100234",
+   "amount_cents": "1784408",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00148",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:28.000Z",
+  "payload": {
+   "trace_no": "EFT-510027",
+   "value_date": "2026-06-21",
+   "payer_account": "6100877",
+   "amount_cents": "3432192",
+   "currency": "USD"
+  }
+ },
+ {
+  "rawId": "RAW-00149",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:29.000Z",
+  "payload": {
+   "trace_no": "EFT-510028",
+   "value_date": "2026-04-29",
+   "payer_account": "6102291",
+   "amount_cents": "4340067",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00150",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:30.000Z",
+  "payload": {
+   "trace_no": "EFT-510029",
+   "value_date": "2026-04-28",
+   "payer_account": "6101450",
+   "amount_cents": "4174802",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00151",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:31.000Z",
+  "payload": {
+   "trace_no": "EFT-510030",
+   "value_date": "2026-06-24",
+   "payer_account": "6102291",
+   "amount_cents": "4313421",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00152",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:32.000Z",
+  "payload": {
+   "trace_no": "EFT-510031",
+   "value_date": "2026-06-19",
+   "payer_account": "6102291",
+   "amount_cents": "1031478",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00153",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:33.000Z",
+  "payload": {
+   "trace_no": "EFT-510032",
+   "value_date": "2026-04-10",
+   "payer_account": "6102555",
+   "amount_cents": "1910726",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00154",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:34.000Z",
+  "payload": {
+   "trace_no": "EFT-510033",
+   "value_date": "2026-05-25",
+   "payer_account": "6102555",
+   "amount_cents": "2593881",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00155",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:35.000Z",
+  "payload": {
+   "trace_no": "EFT-510034",
+   "value_date": "2026-05-28",
+   "payer_account": "6102555",
+   "amount_cents": "3676213",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00156",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:36.000Z",
+  "payload": {
+   "trace_no": "EFT-510035",
+   "value_date": "2026-04-15",
+   "payer_account": "6100877",
+   "amount_cents": "2582217",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00157",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:37.000Z",
+  "payload": {
+   "trace_no": "EFT-510036",
+   "value_date": "2026-06-16",
+   "payer_account": "6102555",
+   "amount_cents": "1530386",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00158",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:38.000Z",
+  "payload": {
+   "trace_no": "EFT-510037",
+   "value_date": "2026-04-04",
+   "payer_account": "6102555",
+   "amount_cents": "369017",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00159",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:39.000Z",
+  "payload": {
+   "trace_no": "EFT-510038",
+   "value_date": "2026-04-14",
+   "payer_account": "6101450",
+   "amount_cents": "3861586",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00160",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:40.000Z",
+  "payload": {
+   "trace_no": "EFT-510039",
+   "value_date": "2026-06-03",
+   "payer_account": "6100877",
+   "amount_cents": "3064195",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00161",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:41.000Z",
+  "payload": {
+   "trace_no": "EFT-510040",
+   "value_date": "2026-06-22",
+   "payer_account": "6100877",
+   "amount_cents": "2626701",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00162",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:42.000Z",
+  "payload": {
+   "trace_no": "EFT-510041",
+   "value_date": "2026-04-30",
+   "payer_account": "6100877",
+   "amount_cents": "3799673",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00163",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:43.000Z",
+  "payload": {
+   "trace_no": "EFT-510042",
+   "value_date": "2026-05-05",
+   "payer_account": "6100877",
+   "amount_cents": "3723398",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00164",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:44.000Z",
+  "payload": {
+   "trace_no": "EFT-510043",
+   "value_date": "2026-04-04",
+   "payer_account": "6102555",
+   "amount_cents": "1623780",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00165",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:45.000Z",
+  "payload": {
+   "trace_no": "EFT-510044",
+   "value_date": "2026-06-23",
+   "payer_account": "6100234",
+   "amount_cents": "3839665",
+   "currency": "USD"
+  }
+ },
+ {
+  "rawId": "RAW-00166",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:46.000Z",
+  "payload": {
+   "trace_no": "EFT-510045",
+   "value_date": "2026-04-24",
+   "payer_account": "6101450",
+   "amount_cents": "236558",
+   "currency": "USD"
+  }
+ },
+ {
+  "rawId": "RAW-00167",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:47.000Z",
+  "payload": {
+   "trace_no": "EFT-510046",
+   "value_date": "2026-04-12",
+   "payer_account": "6102291",
+   "amount_cents": "1051353",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00168",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:48.000Z",
+  "payload": {
+   "trace_no": "EFT-510047",
+   "value_date": "2026-04-14",
+   "payer_account": "6102555",
+   "amount_cents": "3237736",
+   "currency": "USD"
+  }
+ },
+ {
+  "rawId": "RAW-00169",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:49.000Z",
+  "payload": {
+   "trace_no": "EFT-510048",
+   "value_date": "2026-04-14",
+   "payer_account": "6102555",
+   "amount_cents": "2995956",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00170",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:50.000Z",
+  "payload": {
+   "trace_no": "EFT-510049",
+   "value_date": "2026-06-18",
+   "payer_account": "6101450",
+   "amount_cents": "3607370",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00171",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:51.000Z",
+  "payload": {
+   "trace_no": "EFT-510050",
+   "value_date": "2026-05-11",
+   "payer_account": "6102291",
+   "amount_cents": "1934272",
+   "currency": "USD"
+  }
+ },
+ {
+  "rawId": "RAW-00172",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:52.000Z",
+  "payload": {
+   "trace_no": "EFT-510051",
+   "value_date": "2026-05-24",
+   "payer_account": "6100877",
+   "amount_cents": "4475624",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00173",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:53.000Z",
+  "payload": {
+   "trace_no": "EFT-510052",
+   "value_date": "2026-05-19",
+   "payer_account": "6100234",
+   "amount_cents": "2981307",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00174",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:54.000Z",
+  "payload": {
+   "trace_no": "EFT-510053",
+   "value_date": "2026-05-01",
+   "payer_account": "6100234",
+   "amount_cents": "1217015",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00175",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:55.000Z",
+  "payload": {
+   "trace_no": "EFT-510054",
+   "value_date": "2026-05-31",
+   "payer_account": "6101450",
+   "amount_cents": "3460632",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00176",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:56.000Z",
+  "payload": {
+   "trace_no": "EFT-510055",
+   "value_date": "2026-04-05",
+   "payer_account": "6102555",
+   "amount_cents": "789233",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00177",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:57.000Z",
+  "payload": {
+   "trace_no": "EFT-510056",
+   "value_date": "2026-05-09",
+   "payer_account": "6102291",
+   "amount_cents": "834028",
+   "currency": "USD"
+  }
+ },
+ {
+  "rawId": "RAW-00178",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:58.000Z",
+  "payload": {
+   "trace_no": "EFT-510057",
+   "value_date": "2026-05-10",
+   "payer_account": "6102555",
+   "amount_cents": "738351",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00179",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:02:59.000Z",
+  "payload": {
+   "trace_no": "EFT-510058",
+   "value_date": "2026-05-27",
+   "payer_account": "6100877",
+   "amount_cents": "4157568",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00180",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:00.000Z",
+  "payload": {
+   "trace_no": "EFT-510059",
+   "value_date": "2026-06-06",
+   "payer_account": "6101450",
+   "amount_cents": "3262083",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00181",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:01.000Z",
+  "payload": {
+   "trace_no": "EFT-510060",
+   "value_date": "2026-06-27",
+   "payer_account": "6102291",
+   "amount_cents": "1569759",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00182",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:02.000Z",
+  "payload": {
+   "trace_no": "EFT-510061",
+   "value_date": "2026-04-05",
+   "payer_account": "6101450",
+   "amount_cents": "2982602",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00183",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:03.000Z",
+  "payload": {
+   "trace_no": "EFT-510062",
+   "value_date": "2026-04-16",
+   "payer_account": "6101450",
+   "amount_cents": "3840598",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00184",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:04.000Z",
+  "payload": {
+   "trace_no": "EFT-510063",
+   "value_date": "2026-06-21",
+   "payer_account": "6100877",
+   "amount_cents": "530407",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00185",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:05.000Z",
+  "payload": {
+   "trace_no": "EFT-510064",
+   "value_date": "2026-05-04",
+   "payer_account": "6102291",
+   "amount_cents": "3540236",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00186",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:06.000Z",
+  "payload": {
+   "trace_no": "EFT-510065",
+   "value_date": "2026-04-29",
+   "payer_account": "6100877",
+   "amount_cents": "4110308",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00187",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:07.000Z",
+  "payload": {
+   "trace_no": "EFT-510066",
+   "value_date": "2026-06-12",
+   "payer_account": "6102555",
+   "amount_cents": "4367929",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00188",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:08.000Z",
+  "payload": {
+   "trace_no": "EFT-510067",
+   "value_date": "2026-06-14",
+   "payer_account": "6100234",
+   "amount_cents": "3685065",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00189",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:09.000Z",
+  "payload": {
+   "trace_no": "EFT-510068",
+   "value_date": "2026-04-21",
+   "payer_account": "6102291",
+   "amount_cents": "689139",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00190",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:10.000Z",
+  "payload": {
+   "trace_no": "EFT-510069",
+   "value_date": "2026-06-09",
+   "payer_account": "6102291",
+   "amount_cents": "425632",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00191",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:11.000Z",
+  "payload": {
+   "trace_no": "EFT-510070",
+   "value_date": "2026-06-21",
+   "payer_account": "6100234",
+   "amount_cents": "864564",
+   "currency": "USD"
+  }
+ },
+ {
+  "rawId": "RAW-00192",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:12.000Z",
+  "payload": {
+   "trace_no": "EFT-510071",
+   "value_date": "2026-05-29",
+   "payer_account": "6100234",
+   "amount_cents": "2087664",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00193",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:13.000Z",
+  "payload": {
+   "trace_no": "EFT-510072",
+   "value_date": "2026-05-14",
+   "payer_account": "6102555",
+   "amount_cents": "3226662",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00194",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:14.000Z",
+  "payload": {
+   "trace_no": "EFT-510073",
+   "value_date": "2026-04-02",
+   "payer_account": "6100234",
+   "amount_cents": "3322791",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00195",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:15.000Z",
+  "payload": {
+   "trace_no": "EFT-510074",
+   "value_date": "2026-06-13",
+   "payer_account": "6101450",
+   "amount_cents": "757506",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00196",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:16.000Z",
+  "payload": {
+   "trace_no": "EFT-510075",
+   "value_date": "2026-05-19",
+   "payer_account": "6101450",
+   "amount_cents": "2972214",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00197",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:17.000Z",
+  "payload": {
+   "trace_no": "EFT-510076",
+   "value_date": "2026-04-10",
+   "payer_account": "6100877",
+   "amount_cents": "1952717",
+   "currency": "USD"
+  }
+ },
+ {
+  "rawId": "RAW-00198",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:18.000Z",
+  "payload": {
+   "trace_no": "EFT-510077",
+   "value_date": "2026-06-05",
+   "payer_account": "6101450",
+   "amount_cents": "1936501",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00199",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:19.000Z",
+  "payload": {
+   "trace_no": "EFT-510078",
+   "value_date": "2026-04-14",
+   "payer_account": "6102555",
+   "amount_cents": "2487059",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00200",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:20.000Z",
+  "payload": {
+   "trace_no": "EFT-510079",
+   "value_date": "2026-04-06",
+   "payer_account": "6101450",
+   "amount_cents": "2681686",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00201",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:21.000Z",
+  "payload": {
+   "trace_no": "EFT-510080",
+   "value_date": "2026-04-02",
+   "payer_account": "6102555",
+   "amount_cents": "2563367",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00202",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:22.000Z",
+  "payload": {
+   "trace_no": "EFT-510081",
+   "value_date": "2026-04-01",
+   "payer_account": "6102291",
+   "amount_cents": "3245035",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00203",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:23.000Z",
+  "payload": {
+   "trace_no": "EFT-510082",
+   "value_date": "2026-06-26",
+   "payer_account": "6101450",
+   "amount_cents": "3862138",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00204",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:24.000Z",
+  "payload": {
+   "trace_no": "EFT-510083",
+   "value_date": "2026-04-08",
+   "payer_account": "6102291",
+   "amount_cents": "2664687",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00205",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:25.000Z",
+  "payload": {
+   "trace_no": "EFT-510084",
+   "value_date": "2026-05-11",
+   "payer_account": "6100877",
+   "amount_cents": "2367393",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00206",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:26.000Z",
+  "payload": {
+   "trace_no": "EFT-510085",
+   "value_date": "2026-06-06",
+   "payer_account": "6100234",
+   "amount_cents": "2856241",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00207",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:27.000Z",
+  "payload": {
+   "trace_no": "EFT-510086",
+   "value_date": "2026-04-22",
+   "payer_account": "6100877",
+   "amount_cents": "2181933",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00208",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:28.000Z",
+  "payload": {
+   "trace_no": "EFT-510087",
+   "value_date": "2026-05-26",
+   "payer_account": "6102555",
+   "amount_cents": "1456817",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00209",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:29.000Z",
+  "payload": {
+   "trace_no": "EFT-510088",
+   "value_date": "2026-06-23",
+   "payer_account": "6101450",
+   "amount_cents": "3680355",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00210",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:03:30.000Z",
+  "payload": {
+   "trace_no": "EFT-510089",
+   "value_date": "2026-04-16",
+   "payer_account": "6101450",
+   "amount_cents": "2913185",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00211",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:31.000Z",
+  "payload": {
+   "doc_no": "AR-30100",
+   "receipt_date": "21/05/2026",
+   "customer_code": "CUST-A01",
+   "amount": "18347.36",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00212",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:32.000Z",
+  "payload": {
+   "doc_no": "AR-30101",
+   "receipt_date": "22/06/2026",
+   "customer_code": "CUST-A04",
+   "amount": "16230.96",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00213",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:33.000Z",
+  "payload": {
+   "doc_no": "AR-30102",
+   "receipt_date": "24/06/2026",
+   "customer_code": "CUST-A04",
+   "amount": "6527.95",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00214",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:34.000Z",
+  "payload": {
+   "doc_no": "AR-30103",
+   "receipt_date": "24/04/2026",
+   "customer_code": "CUST-A04",
+   "amount": "3773.32",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00215",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:35.000Z",
+  "payload": {
+   "doc_no": "AR-30104",
+   "receipt_date": "18/04/2026",
+   "customer_code": "CUST-A01",
+   "amount": "11658.86",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00216",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:36.000Z",
+  "payload": {
+   "doc_no": "AR-30105",
+   "receipt_date": "14/04/2026",
+   "customer_code": "CUST-A02",
+   "amount": "3380.04",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00217",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:37.000Z",
+  "payload": {
+   "doc_no": "AR-30106",
+   "receipt_date": "18/06/2026",
+   "customer_code": "CUST-A02",
+   "amount": "833.99",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00218",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:38.000Z",
+  "payload": {
+   "doc_no": "AR-30107",
+   "receipt_date": "12/06/2026",
+   "customer_code": "CUST-A04",
+   "amount": "18758.26",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00219",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:39.000Z",
+  "payload": {
+   "doc_no": "AR-30108",
+   "receipt_date": "10/04/2026",
+   "customer_code": "CUST-A02",
+   "amount": "6681.69",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00220",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:40.000Z",
+  "payload": {
+   "doc_no": "AR-30109",
+   "receipt_date": "06/06/2026",
+   "customer_code": "CUST-A01",
+   "amount": "6742.20",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00221",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:41.000Z",
+  "payload": {
+   "doc_no": "AR-30110",
+   "receipt_date": "15/06/2026",
+   "customer_code": "CUST-A04",
+   "amount": "4090.06",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00222",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:42.000Z",
+  "payload": {
+   "doc_no": "AR-30111",
+   "receipt_date": "19/04/2026",
+   "customer_code": "CUST-A01",
+   "amount": "21482.24",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00223",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:43.000Z",
+  "payload": {
+   "doc_no": "AR-30112",
+   "receipt_date": "23/06/2026",
+   "customer_code": "CUST-A07",
+   "amount": "5553.23",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00224",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:44.000Z",
+  "payload": {
+   "doc_no": "AR-30113",
+   "receipt_date": "18/06/2026",
+   "customer_code": "CUST-A02",
+   "amount": "9154.57",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00225",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:45.000Z",
+  "payload": {
+   "doc_no": "AR-30114",
+   "receipt_date": "24/06/2026",
+   "customer_code": "CUST-A02",
+   "amount": "8707.63",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00226",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:46.000Z",
+  "payload": {
+   "doc_no": "AR-30115",
+   "receipt_date": "31/05/2026",
+   "customer_code": "CUST-A01",
+   "amount": "15578.21",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00227",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:47.000Z",
+  "payload": {
+   "doc_no": "AR-30116",
+   "receipt_date": "22/04/2026",
+   "customer_code": "CUST-A01",
+   "amount": "988.93",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00228",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:48.000Z",
+  "payload": {
+   "doc_no": "AR-30117",
+   "receipt_date": "26/04/2026",
+   "customer_code": "CUST-A02",
+   "amount": "9483.25",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00229",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:49.000Z",
+  "payload": {
+   "doc_no": "AR-30118",
+   "receipt_date": "15/05/2026",
+   "customer_code": "CUST-A04",
+   "amount": "12811.96",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00230",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:50.000Z",
+  "payload": {
+   "doc_no": "AR-30119",
+   "receipt_date": "01/05/2026",
+   "customer_code": "CUST-A05",
+   "amount": "19532.14",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00231",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:51.000Z",
+  "payload": {
+   "doc_no": "AR-30120",
+   "receipt_date": "13/06/2026",
+   "customer_code": "CUST-A07",
+   "amount": "6787.03",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00232",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:52.000Z",
+  "payload": {
+   "doc_no": "AR-30121",
+   "receipt_date": "19/04/2026",
+   "customer_code": "CUST-A07",
+   "amount": "18660.82",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00233",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:53.000Z",
+  "payload": {
+   "doc_no": "AR-30122",
+   "receipt_date": "18/06/2026",
+   "customer_code": "CUST-A04",
+   "amount": "13077.86",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00234",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:54.000Z",
+  "payload": {
+   "doc_no": "AR-30123",
+   "receipt_date": "18/04/2026",
+   "customer_code": "CUST-A01",
+   "amount": "5889.40",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00235",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:55.000Z",
+  "payload": {
+   "doc_no": "AR-30124",
+   "receipt_date": "13/05/2026",
+   "customer_code": "CUST-A02",
+   "amount": "10190.63",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00236",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:56.000Z",
+  "payload": {
+   "doc_no": "AR-30125",
+   "receipt_date": "18/04/2026",
+   "customer_code": "CUST-A01",
+   "amount": "5901.23",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00237",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:57.000Z",
+  "payload": {
+   "doc_no": "AR-30126",
+   "receipt_date": "15/05/2026",
+   "customer_code": "CUST-A02",
+   "amount": "3339.46",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00238",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:58.000Z",
+  "payload": {
+   "doc_no": "AR-30127",
+   "receipt_date": "11/06/2026",
+   "customer_code": "CUST-A04",
+   "amount": "19697.54",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00239",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:03:59.000Z",
+  "payload": {
+   "doc_no": "AR-30128",
+   "receipt_date": "10/04/2026",
+   "customer_code": "CUST-A05",
+   "amount": "11330.53",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00240",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:00.000Z",
+  "payload": {
+   "doc_no": "AR-30129",
+   "receipt_date": "03/05/2026",
+   "customer_code": "CUST-A07",
+   "amount": "522.42",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00241",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:01.000Z",
+  "payload": {
+   "doc_no": "AR-30130",
+   "receipt_date": "13/04/2026",
+   "customer_code": "CUST-A07",
+   "amount": "18432.79",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00242",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:02.000Z",
+  "payload": {
+   "doc_no": "AR-30131",
+   "receipt_date": "23/04/2026",
+   "customer_code": "CUST-A01",
+   "amount": "4855.75",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00243",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:03.000Z",
+  "payload": {
+   "doc_no": "AR-30132",
+   "receipt_date": "23/04/2026",
+   "customer_code": "CUST-A07",
+   "amount": "11681.52",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00244",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:04.000Z",
+  "payload": {
+   "doc_no": "AR-30133",
+   "receipt_date": "10/06/2026",
+   "customer_code": "CUST-A02",
+   "amount": "5373.04",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00245",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:05.000Z",
+  "payload": {
+   "doc_no": "AR-30134",
+   "receipt_date": "18/06/2026",
+   "customer_code": "CUST-A02",
+   "amount": "19401.95",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00246",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:06.000Z",
+  "payload": {
+   "doc_no": "AR-30135",
+   "receipt_date": "16/06/2026",
+   "customer_code": "CUST-A05",
+   "amount": "3845.00",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00247",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:07.000Z",
+  "payload": {
+   "doc_no": "AR-30136",
+   "receipt_date": "24/05/2026",
+   "customer_code": "CUST-A05",
+   "amount": "17633.93",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00248",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:08.000Z",
+  "payload": {
+   "doc_no": "AR-30137",
+   "receipt_date": "10/04/2026",
+   "customer_code": "CUST-A07",
+   "amount": "7841.64",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00249",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:09.000Z",
+  "payload": {
+   "doc_no": "AR-30138",
+   "receipt_date": "22/05/2026",
+   "customer_code": "CUST-A05",
+   "amount": "1043.70",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00250",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:10.000Z",
+  "payload": {
+   "doc_no": "AR-30139",
+   "receipt_date": "08/06/2026",
+   "customer_code": "CUST-A02",
+   "amount": "13221.26",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00251",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:11.000Z",
+  "payload": {
+   "doc_no": "AR-30140",
+   "receipt_date": "21/05/2026",
+   "customer_code": "CUST-A01",
+   "amount": "20360.10",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00252",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:12.000Z",
+  "payload": {
+   "doc_no": "AR-30141",
+   "receipt_date": "10/06/2026",
+   "customer_code": "CUST-A05",
+   "amount": "2419.44",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00253",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:13.000Z",
+  "payload": {
+   "doc_no": "AR-30142",
+   "receipt_date": "14/06/2026",
+   "customer_code": "CUST-A07",
+   "amount": "18271.68",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00254",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:14.000Z",
+  "payload": {
+   "doc_no": "AR-30143",
+   "receipt_date": "07/04/2026",
+   "customer_code": "CUST-A01",
+   "amount": "18121.49",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00255",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:15.000Z",
+  "payload": {
+   "doc_no": "AR-30144",
+   "receipt_date": "20/04/2026",
+   "customer_code": "CUST-A04",
+   "amount": "8454.07",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00256",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:16.000Z",
+  "payload": {
+   "doc_no": "AR-30145",
+   "receipt_date": "29/05/2026",
+   "customer_code": "CUST-A05",
+   "amount": "13123.17",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00257",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:17.000Z",
+  "payload": {
+   "doc_no": "AR-30146",
+   "receipt_date": "17/04/2026",
+   "customer_code": "CUST-A07",
+   "amount": "14342.56",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00258",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:18.000Z",
+  "payload": {
+   "doc_no": "AR-30147",
+   "receipt_date": "12/05/2026",
+   "customer_code": "CUST-A02",
+   "amount": "17704.92",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00259",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:19.000Z",
+  "payload": {
+   "doc_no": "AR-30148",
+   "receipt_date": "11/05/2026",
+   "customer_code": "CUST-A02",
+   "amount": "15124.57",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00260",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:20.000Z",
+  "payload": {
+   "doc_no": "AR-30149",
+   "receipt_date": "13/04/2026",
+   "customer_code": "CUST-A02",
+   "amount": "3016.90",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00261",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:21.000Z",
+  "payload": {
+   "doc_no": "AR-30150",
+   "receipt_date": "22/05/2026",
+   "customer_code": "CUST-A07",
+   "amount": "7659.80",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00262",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:22.000Z",
+  "payload": {
+   "doc_no": "AR-30151",
+   "receipt_date": "18/05/2026",
+   "customer_code": "CUST-A01",
+   "amount": "7001.72",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00263",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:23.000Z",
+  "payload": {
+   "doc_no": "AR-30152",
+   "receipt_date": "18/06/2026",
+   "customer_code": "CUST-A05",
+   "amount": "10652.18",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00264",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:24.000Z",
+  "payload": {
+   "doc_no": "AR-30153",
+   "receipt_date": "07/04/2026",
+   "customer_code": "CUST-A04",
+   "amount": "11957.66",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00265",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:25.000Z",
+  "payload": {
+   "doc_no": "AR-30154",
+   "receipt_date": "02/04/2026",
+   "customer_code": "CUST-A04",
+   "amount": "10593.41",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00266",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:26.000Z",
+  "payload": {
+   "doc_no": "AR-30155",
+   "receipt_date": "18/04/2026",
+   "customer_code": "CUST-A01",
+   "amount": "14731.37",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00267",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:27.000Z",
+  "payload": {
+   "doc_no": "AR-30156",
+   "receipt_date": "26/06/2026",
+   "customer_code": "CUST-A05",
+   "amount": "8095.33",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00268",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:28.000Z",
+  "payload": {
+   "doc_no": "AR-30157",
+   "receipt_date": "05/04/2026",
+   "customer_code": "CUST-A02",
+   "amount": "20263.68",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00269",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:29.000Z",
+  "payload": {
+   "doc_no": "AR-30158",
+   "receipt_date": "05/05/2026",
+   "customer_code": "CUST-A07",
+   "amount": "18772.70",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00270",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:30.000Z",
+  "payload": {
+   "doc_no": "AR-30159",
+   "receipt_date": "13/04/2026",
+   "customer_code": "CUST-A04",
+   "amount": "17856.90",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00271",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:31.000Z",
+  "payload": {
+   "doc_no": "AR-30160",
+   "receipt_date": "01/06/2026",
+   "customer_code": "CUST-A05",
+   "amount": "5218.76",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00272",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:32.000Z",
+  "payload": {
+   "doc_no": "AR-30161",
+   "receipt_date": "30/04/2026",
+   "customer_code": "CUST-A04",
+   "amount": "1357.00",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00273",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:33.000Z",
+  "payload": {
+   "doc_no": "AR-30162",
+   "receipt_date": "18/05/2026",
+   "customer_code": "CUST-A02",
+   "amount": "21021.98",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00274",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:34.000Z",
+  "payload": {
+   "doc_no": "AR-30163",
+   "receipt_date": "18/04/2026",
+   "customer_code": "CUST-A07",
+   "amount": "17203.83",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00275",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:35.000Z",
+  "payload": {
+   "doc_no": "AR-30164",
+   "receipt_date": "27/05/2026",
+   "customer_code": "CUST-A05",
+   "amount": "5409.51",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00276",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:36.000Z",
+  "payload": {
+   "doc_no": "AR-30165",
+   "receipt_date": "14/06/2026",
+   "customer_code": "CUST-A07",
+   "amount": "17455.95",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00277",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:37.000Z",
+  "payload": {
+   "doc_no": "AR-30166",
+   "receipt_date": "16/05/2026",
+   "customer_code": "CUST-A04",
+   "amount": "21747.02",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00278",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:38.000Z",
+  "payload": {
+   "doc_no": "AR-30167",
+   "receipt_date": "18/06/2026",
+   "customer_code": "CUST-A04",
+   "amount": "10244.71",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00279",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:39.000Z",
+  "payload": {
+   "doc_no": "AR-30168",
+   "receipt_date": "08/04/2026",
+   "customer_code": "CUST-A04",
+   "amount": "10535.11",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00280",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:40.000Z",
+  "payload": {
+   "doc_no": "AR-30169",
+   "receipt_date": "17/06/2026",
+   "customer_code": "CUST-A04",
+   "amount": "913.83",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00281",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:41.000Z",
+  "payload": {
+   "doc_no": "AR-30170",
+   "receipt_date": "16/04/2026",
+   "customer_code": "CUST-A05",
+   "amount": "12627.13",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00282",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:42.000Z",
+  "payload": {
+   "doc_no": "AR-30171",
+   "receipt_date": "15/06/2026",
+   "customer_code": "CUST-A02",
+   "amount": "1571.41",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00283",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:43.000Z",
+  "payload": {
+   "doc_no": "AR-30172",
+   "receipt_date": "25/06/2026",
+   "customer_code": "CUST-A05",
+   "amount": "849.79",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00284",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:44.000Z",
+  "payload": {
+   "doc_no": "AR-30173",
+   "receipt_date": "25/04/2026",
+   "customer_code": "CUST-A04",
+   "amount": "1897.82",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00285",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:45.000Z",
+  "payload": {
+   "doc_no": "AR-30174",
+   "receipt_date": "06/05/2026",
+   "customer_code": "CUST-A05",
+   "amount": "19681.17",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00286",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:46.000Z",
+  "payload": {
+   "doc_no": "AR-30175",
+   "receipt_date": "27/05/2026",
+   "customer_code": "CUST-A07",
+   "amount": "9799.22",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00287",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:47.000Z",
+  "payload": {
+   "doc_no": "AR-30176",
+   "receipt_date": "27/05/2026",
+   "customer_code": "CUST-A01",
+   "amount": "2267.40",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00288",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:48.000Z",
+  "payload": {
+   "doc_no": "AR-30177",
+   "receipt_date": "23/04/2026",
+   "customer_code": "CUST-A05",
+   "amount": "12950.55",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00289",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:49.000Z",
+  "payload": {
+   "doc_no": "AR-30178",
+   "receipt_date": "05/04/2026",
+   "customer_code": "CUST-A01",
+   "amount": "11094.83",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00290",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:50.000Z",
+  "payload": {
+   "doc_no": "AR-30179",
+   "receipt_date": "06/05/2026",
+   "customer_code": "CUST-A05",
+   "amount": "12053.62",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00291",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:04:51.000Z",
+  "payload": {
+   "settlement_id": "CS-70500",
+   "txn_ts": "2026-05-11T10:15:00Z",
+   "merchant_id": "",
+   "amount": "84.20",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00292",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:04:52.000Z",
+  "payload": {
+   "settlement_id": "CS-70501",
+   "txn_ts": "2026-06-02T12:00:00Z",
+   "merchant_id": "",
+   "amount": "19.99",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00293",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:04:53.000Z",
+  "payload": {
+   "trace_no": "EFT-519001",
+   "value_date": "2026-05-20",
+   "payer_account": "",
+   "amount_cents": "1250000",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00294",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:54.000Z",
+  "payload": {
+   "doc_no": "AR-30900",
+   "receipt_date": "",
+   "customer_code": "CUST-A02",
+   "amount": "5400.00",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00295",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:55.000Z",
+  "payload": {
+   "doc_no": "AR-30901",
+   "receipt_date": "31/04/2026",
+   "customer_code": "CUST-A04",
+   "amount": "1200.00",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00296",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:04:56.000Z",
+  "payload": {
+   "doc_no": "AR-30902",
+   "receipt_date": "2026-05-14",
+   "customer_code": "CUST-A01",
+   "amount": "880.00",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00297",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:04:57.000Z",
+  "payload": {
+   "settlement_id": "CS-70502",
+   "txn_ts": "not-a-date",
+   "merchant_id": "M-88002",
+   "amount": "45.00",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00298",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:04:58.000Z",
+  "payload": {
+   "trace_no": "EFT-519002",
+   "value_date": "2025-12-30",
+   "payer_account": "6100877",
+   "amount_cents": "990000",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00299",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:04:59.000Z",
+  "payload": {
+   "settlement_id": "CS-70503",
+   "txn_ts": "2026-04-19T09:30:00Z",
+   "merchant_id": "M-88003",
+   "amount": "-32.50",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00300",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:05:00.000Z",
+  "payload": {
+   "doc_no": "AR-30903",
+   "receipt_date": "12/06/2026",
+   "customer_code": "CUST-A05",
+   "amount": "0.00",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00301",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:05:01.000Z",
+  "payload": {
+   "trace_no": "EFT-519003",
+   "value_date": "2026-06-09",
+   "payer_account": "6101450",
+   "amount_cents": "-450000",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00302",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:05:02.000Z",
+  "payload": {
+   "trace_no": "EFT-519004",
+   "value_date": "2026-05-05",
+   "payer_account": "6100234",
+   "amount_cents": "2250000",
+   "currency": "EUR"
+  }
+ },
+ {
+  "rawId": "RAW-00303",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:05:03.000Z",
+  "payload": {
+   "settlement_id": "CS-70504",
+   "txn_ts": "2026-06-21T15:45:00Z",
+   "merchant_id": "M-88001",
+   "amount": "61.00",
+   "currency": "XXX",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00304",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:05:04.000Z",
+  "payload": {
+   "doc_no": "AR-30904",
+   "receipt_date": "03/05/2026",
+   "customer_code": "CUST-A07",
+   "amount": "7300.00",
+   "currency_code": "GBP"
+  }
+ },
+ {
+  "rawId": "RAW-00305",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:05:05.000Z",
+  "payload": {
+   "settlement_id": "CS-70505",
+   "txn_ts": "2026-05-30T11:00:00Z",
+   "merchant_id": "M-88999",
+   "amount": "120.00",
+   "currency": "CAD",
+   "card_brand": "AMEX"
+  }
+ },
+ {
+  "rawId": "RAW-00306",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:05:06.000Z",
+  "payload": {
+   "trace_no": "EFT-519005",
+   "value_date": "2026-04-28",
+   "payer_account": "6109999",
+   "amount_cents": "310000",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00307",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:05:07.000Z",
+  "payload": {
+   "doc_no": "AR-30905",
+   "receipt_date": "15/06/2026",
+   "customer_code": "CUST-Z99",
+   "amount": "2100.00",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00308",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:05:08.000Z",
+  "payload": {
+   "settlement_id": "CS-70003",
+   "txn_ts": "2026-04-13T09:06:00Z",
+   "merchant_id": "M-88004",
+   "amount": "317.16",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00309",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:05:09.000Z",
+  "payload": {
+   "settlement_id": "CS-70017",
+   "txn_ts": "2026-04-16T10:53:00Z",
+   "merchant_id": "M-88005",
+   "amount": "616.77",
+   "currency": "CAD",
+   "card_brand": "MC"
+  }
+ },
+ {
+  "rawId": "RAW-00310",
+  "source": "card_settlement",
+  "ingestedAt": "2026-07-01T02:05:10.000Z",
+  "payload": {
+   "settlement_id": "CS-70045",
+   "txn_ts": "2026-04-08T11:52:00Z",
+   "merchant_id": "M-88004",
+   "amount": "543.62",
+   "currency": "CAD",
+   "card_brand": "VISA"
+  }
+ },
+ {
+  "rawId": "RAW-00311",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:05:11.000Z",
+  "payload": {
+   "trace_no": "EFT-510010",
+   "value_date": "2026-06-26",
+   "payer_account": "6102291",
+   "amount_cents": "2584239",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00312",
+  "source": "eft_receipts",
+  "ingestedAt": "2026-07-01T02:05:12.000Z",
+  "payload": {
+   "trace_no": "EFT-510030",
+   "value_date": "2026-06-24",
+   "payer_account": "6102291",
+   "amount_cents": "4313421",
+   "currency": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00313",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:05:13.000Z",
+  "payload": {
+   "doc_no": "AR-30110",
+   "receipt_date": "15/06/2026",
+   "customer_code": "CUST-A04",
+   "amount": "4090.06",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00314",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:05:14.000Z",
+  "payload": {
+   "doc_no": "AR-30105",
+   "receipt_date": "14/04/2026",
+   "customer_code": "CUST-A02",
+   "amount": "3480.04",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00315",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:05:15.000Z",
+  "payload": {
+   "doc_no": "AR-30130",
+   "receipt_date": "13/04/2026",
+   "customer_code": "CUST-A07",
+   "amount": "18532.79",
+   "currency_code": "CAD"
+  }
+ },
+ {
+  "rawId": "RAW-00316",
+  "source": "erp_ar_receipts",
+  "ingestedAt": "2026-07-01T02:05:16.000Z",
+  "payload": {
+   "doc_no": "AR-30152",
+   "receipt_date": "18/06/2026",
+   "customer_code": "CUST-A05",
+   "amount": "10752.18",
+   "currency_code": "CAD"
+  }
+ }
+]
