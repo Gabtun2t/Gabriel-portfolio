@@ -68,7 +68,7 @@ await check(2, 'Recruiter pathways open the right demo and resume', async () => 
   assert(exp.includes('Participated as a consultant in a Sage X3 V11 to V12 upgrade'), 'upgrade role wording');
   await go(p, '/');
   const home = await p.textContent('main');
-  for (const t of ['Featured project · led implementation', 'Implementation Lead', 'ERP Implementation & Integration resume (PDF)', 'AML & Financial Crime Systems resume (PDF)']) assert(home.includes(t), `home missing ${t}`);
+  for (const t of ['Featured project · led implementation', 'Implementation Lead', 'ERP Implementation & Integration resume (PDF)', 'AML Technology & Financial Crime Systems resume (PDF)']) assert(home.includes(t), `home missing ${t}`);
   const heroDl = await p.$$eval('.hero-home a[download]', (as) => as.map((a) => a.getAttribute('href')));
   assert(new Set(heroDl).size === 2, 'hero must offer two different resumes');
   const sizes = [];

@@ -22,8 +22,8 @@ export function Home() {
       to: '/experience', query: { section: 'erp-implementation' }, cta: 'See ERP implementation experience', second: { to: '/labs/reconciliation', label: 'Reconciliation lab' }, resume: erpResume,
     },
     {
-      tone: 'teal', track: 'AML / Financial crime', title: 'Investigate an alert',
-      text: 'Open a case with repeated cash deposits just under $10,000. Review the KYC-related profile, the rules that fired, the evidence checklist and the escalation decision, then export the case narrative.',
+      tone: 'teal', track: 'AML technology / Financial crime systems', title: 'Investigate an alert',
+      text: 'Real experience: AML-related transaction reviews, KYC-related checks and compliance escalation on client workstreams. The lab is a simulation: open a case with repeated cash deposits just under $10,000. Review the KYC-related profile, the rules that fired, the evidence checklist and the escalation decision, then export the case narrative.',
       to: '/labs/aml', query: { tab: 'case', case: s6.caseId }, cta: 'Open the AML case', resume: amlResume,
     },
     {

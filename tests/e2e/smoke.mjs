@@ -63,7 +63,7 @@ for (const [label, viewport] of [['desktop', { width: 1280, height: 900 }], ['mo
     });
 
     await step('resume PDF and data downloads are served', async () => {
-      for (const p of ['resume/Gabriel_Olatundun_Resume.pdf', 'data/seed_sqlite.sql', 'data/txn.csv', 'data/customer.csv', 'data/legacy_extract.csv']) {
+      for (const p of ['resume/Gabriel_Olatundun_ERP_Implementation_Resume.pdf', 'resume/Gabriel_Olatundun_AML_Technology_Resume.pdf', 'data/seed_sqlite.sql', 'data/txn.csv', 'data/customer.csv', 'data/legacy_extract.csv']) {
         const res = await page.request.get(BASE + p);
         if (res.status() !== 200) throw new Error(`${p} → ${res.status()}`);
       }
