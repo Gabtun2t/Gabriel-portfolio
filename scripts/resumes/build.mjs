@@ -46,6 +46,7 @@ function build(r) {
       out.push(para([run(role.title, { bold: true }), run(` | ${role.org} | ${role.place}`), run('\t' + role.dates, { bold: true })], { tabs: rightTab, keepNext: true, before: 50, after: 15 }));
       role.bullets.forEach((b) => out.push(bullet(b)));
     }
+    (s.afterBullets ?? []).forEach((b) => out.push(bullet(b)));
     for (const e of s.earlier ?? []) out.push(para([run(e.title, { bold: true }), run(` | ${e.org} | ${e.place} | ${e.dates}: ${e.text}`)], { after: 30 }));
   }
   return new Document({

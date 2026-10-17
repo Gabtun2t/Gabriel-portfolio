@@ -46,8 +46,9 @@ export const ERP = {
     { h: 'TECHNICAL SKILLS', kv: [
       ['ERP & financial systems', 'Sage 300; Sage X3 (V11/V12); Acumatica; General Ledger, Accounts Payable, Accounts Receivable, Fixed Assets, financial reporting; distribution, inventory and commerce workflows'],
       ['Data & analysis', 'SQL Server; SQL troubleshooting; data validation; source-to-target mapping; reconciliation; migration testing; Microsoft Excel; Crystal Reports; Sage Enterprise Intelligence'],
-      // [confirm] connectors, REST/GraphQL and Kibana come from Gabriel's earlier statements about his Acumatica work.
-      ['Integration', 'ERP interfaces; bank payment API to Sage 300 integration; Sage X3 investment and payroll integrations; Acumatica commerce connectors (Shopify, Amazon, BigCommerce); REST and GraphQL APIs; Kibana log analysis'],
+      // [confirm] connectors and REST/GraphQL from Gabriel's earlier statements. Kibana confirmed 17 Oct 2026.
+      ['Integration', 'ERP interfaces; bank payment API to Sage 300 integration; Sage X3 investment and payroll integrations; Acumatica commerce connectors (Shopify, Amazon, BigCommerce); REST and GraphQL APIs'],
+      ['Diagnostics', 'Kibana log analysis (since 2025); SQL-based root-cause analysis; diagnostic logs; reproducible test scenarios'],
       ['Delivery', 'Jira; Smartsheet; functional specifications; UAT; user training; case and defect documentation; knowledge-base content'],
     ] },
     { h: 'PROFESSIONAL EXPERIENCE', roles: [
@@ -55,12 +56,12 @@ export const ERP = {
         'Investigate complex ERP production issues across financial transactions, commerce, configuration and external integrations, using SQL, diagnostic logs and repeatable testing to separate data, process and system defects.',
         'Analyze expected versus actual transaction behaviour and trace interdependent workflows to isolate anomalies, document evidence and recommend supported corrective actions or engineering escalations.',
         'Coordinate with Product, Engineering, Professional Services and Consulting on high-impact cases; communicate risk, business impact, technical constraints and resolution progress to customers and partners.',
-        // [confirm] connector, API and Kibana detail from Gabriel's earlier statements.
-        'Diagnose commerce connector (Shopify, Amazon, BigCommerce) and REST/GraphQL API integration issues using Kibana logs and SQL.',
+        'Diagnose commerce connector (Shopify, Amazon, BigCommerce) and REST/GraphQL API integration issues by correlating Kibana application and integration logs with SQL queries and transaction data.',
         'Create reusable troubleshooting guidance and mentor support colleagues on complex problem analysis and stakeholder communication.',
       ] },
       { title: 'Product Support Specialist', org: 'Acumatica Canada Inc.', place: 'Canada', dates: 'Jul 2023 – Mar 2026', bullets: [
         'Supported enterprise finance, inventory, distribution and related transactional workflows, reproducing complex behaviour and assessing process and data impact.',
+        'Since 2025, used Kibana log analysis with SQL and reproducible tests to trace errors, integration failures and transaction behaviour to root cause.',
         'Reviewed configuration, test results and case evidence with engineering and consulting teams to resolve issues, improve supportability and document findings for accurate hand-offs.',
       ] },
       { title: 'Finance Analyst (Sage X3)', org: 'Panni Management & Technology', place: 'Remote, Canada', dates: 'Jun 2022 – Jul 2023', bullets: [
@@ -76,6 +77,13 @@ export const ERP = {
         'Supported Sage X3 integrations with investment and payroll applications, resolving data mapping, interface and process issues through cross-functional investigation.',
         'Led or supported data migration, validation, reconciliation, functional testing, UAT and post-implementation troubleshooting; participated as a consultant in a Sage X3 V11 to V12 upgrade.',
       ] },
+    ] },
+    // Confirmed by Gabriel (17 Oct 2026).
+    { h: 'TEACHING EXPERIENCE', roles: [
+      { title: 'Contract Instructor', org: 'Cambrooks College', place: 'Canada', dates: 'Feb 2024 – Present', bullets: [] },
+      { title: 'Contract Instructor', org: 'SAIT', place: 'Canada', dates: 'Jan 2025 – Aug 2026', bullets: [] },
+    ], afterBullets: [
+      'Explain technical concepts to adult learners and turn complex material into clear, structured lessons; the same skills drive ERP user training, knowledge transfer and stakeholder communication.',
     ] },
     { h: 'PORTFOLIO PROJECTS (SIMULATED, SYNTHETIC DATA)', note: 'Independent portfolio simulations built with AI-assisted development; not client engagements. gabtun2t.github.io/Gabriel-portfolio', p: [
       'ERP migration reconciliation lab with root-cause tracing and a corrections journal; mock bank payment API to ERP integration with idempotency keys, retries and an audit trail; SQL checked against SQLite.',
@@ -104,20 +112,22 @@ export const AML = {
     { h: 'TECHNICAL SKILLS', kv: [
       ['Investigation & data', 'SQL Server; SQL-based investigation; data validation; source-to-target mapping; reconciliation; migration testing; Microsoft Excel; Crystal Reports'],
       ['Financial systems', 'Sage X3 (V11/V12), Sage 300, Acumatica; General Ledger, Accounts Payable, Accounts Receivable, Fixed Assets; commerce and distribution transaction flows'],
-      // [confirm] REST/GraphQL and Kibana come from Gabriel's earlier statements about his Acumatica work.
-      ['Payments & integration', 'Bank payment API to Sage 300 integration; ERP interfaces; data-flow troubleshooting; REST and GraphQL APIs; Kibana log analysis; transactional test scenarios'],
+      ['Investigation tools', 'Kibana log analysis (since 2025); SQL; diagnostic logs; reproducible test scenarios'],
+      // [confirm] REST/GraphQL from Gabriel's earlier statements.
+      ['Payments & integration', 'Bank payment API to Sage 300 integration; ERP interfaces; data-flow troubleshooting; REST and GraphQL APIs; transactional test scenarios'],
       ['Documentation', 'Case and defect documentation; functional specifications; UAT; Jira; Smartsheet'],
       ['Portfolio (simulated)', 'Rule-based transaction monitoring logic, alert scoring, disposition workflow, data lineage and data-quality metrics'],
     ] },
     { h: 'PROFESSIONAL EXPERIENCE', roles: [
       { title: 'Senior Support Engineer', org: 'Acumatica Canada Inc.', place: 'Canada', dates: 'Apr 2026 – Present', bullets: [
-        'Investigate complex ERP production issues involving financial transactions, commerce and external integrations, using SQL, diagnostic logs and repeatable testing to distinguish data, process and system defects.',
+        'Investigate complex ERP production issues involving financial transactions, commerce and external integrations, using SQL, Kibana log analysis and repeatable testing to distinguish data, process and system defects.',
         'Analyze expected versus actual transaction behaviour and trace interdependent workflows to isolate anomalies, document evidence and recommend supported corrective actions or engineering escalations.',
         'Coordinate with Product, Engineering, Professional Services and Consulting on high-impact cases; communicate risk, business impact and resolution progress to customers and partners.',
         'Prepare clear, evidence-based case documentation and reusable troubleshooting guidance; mentor colleagues on complex problem analysis.',
       ] },
       { title: 'Product Support Specialist', org: 'Acumatica Canada Inc.', place: 'Canada', dates: 'Jul 2023 – Mar 2026', bullets: [
         'Supported enterprise finance, inventory, distribution and related transactional workflows, reproducing complex behaviour and assessing process and data impact.',
+        'Since 2025, used Kibana log analysis with SQL and reproducible tests to trace errors, integration failures and transaction behaviour to root cause.',
         'Reviewed configuration, test results and case evidence with engineering and consulting teams; documented findings for accurate hand-offs and future investigation.',
       ] },
       { title: 'Finance Analyst (Sage X3)', org: 'Panni Management & Technology', place: 'Remote, Canada', dates: 'Jun 2022 – Jul 2023', bullets: [
@@ -137,6 +147,9 @@ export const AML = {
       'Supporting labs: ERP migration reconciliation with root-cause tracing; mock bank payment API with idempotency, retries and audit trail; financial data pipeline with validation, lineage and data-quality metrics; SQL checked against SQLite.',
     ] },
     { h: 'EARLIER EXPERIENCE', earlier: EARLIER },
+    { h: 'TEACHING EXPERIENCE', p: [
+      'Contract Instructor | Cambrooks College | Feb 2024 – Present. Contract Instructor | SAIT | Jan 2025 – Aug 2026. Explaining technical concepts clearly to adult learners.',
+    ] },
     { h: 'EDUCATION', p: EDUCATION },
     { h: 'TRAINING, CERTIFICATIONS & PRODUCT BADGES', p: [
       'Anti-Money Laundering (AML) Training | LinkedIn Learning | Completed',

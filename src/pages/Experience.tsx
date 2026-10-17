@@ -3,7 +3,7 @@ import { Link, useRoute } from '../router';
 import { CREDENTIALS, EDUCATION, ERP_CAPABILITIES, ERP_FUNCTIONS, ENGAGEMENT_TYPES, ERP_PLATFORMS, INDUSTRIES, LED_ENGAGEMENTS, PROFILE, PUBLIC_CLIENTS, RESUMES, ROLES, SKILLS, SKILL_EVIDENCE } from '../content/profile';
 import { Badge } from '../components/ui';
 
-const TRACK_TONE: Record<string, string> = { 'ERP implementation': 'blue', 'ERP support': 'neutral', AML: 'teal', Data: 'violet', Architecture: 'amber' };
+const TRACK_TONE: Record<string, string> = { 'ERP implementation': 'blue', 'ERP support': 'neutral', AML: 'teal', Data: 'violet', Architecture: 'amber', Teaching: 'green' };
 const KIND_TONE: Record<string, string> = { 'Led implementation': 'blue', 'Implementation or advisory': 'blue', Integration: 'violet', 'Client engagement': 'teal', 'Implementation & consulting': 'blue', 'Implementation & advisory': 'blue', 'Implementation support': 'blue', 'Client projects (consulting)': 'teal', 'Client engagements': 'teal', 'Integration project': 'violet', 'Enterprise support': 'neutral', 'In-house IT': 'neutral', Training: 'neutral' };
 
 export function Experience() {
