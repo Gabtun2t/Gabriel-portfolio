@@ -409,3 +409,5 @@ details.disclosure > .body { padding: 0 16px 16px; }
 .hero-chips li { border: 1px solid rgba(255,255,255,0.22); border-radius: 999px; padding: 3px 10px; font-size: 12.5px; color: var(--navy-ink); }
 .hero-chips li:first-child { border-color: #6fd6ca; color: #fff; }
 .featured-engagement { border-left: 4px solid var(--blue, #1f5fbf); }
+@media (max-width: 640px) { .btn { white-space: normal; text-align: center; max-width: 100%; } }
+@media (max-width: 640px) { .badge { white-space: normal; } }

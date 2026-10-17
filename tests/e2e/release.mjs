@@ -23,7 +23,7 @@ async function page(viewport = { width: 1280, height: 900 }) {
 }
 async function check(n, name, fn) {
   try { const detail = await fn(); results.push({ n, name, ok: true, detail: detail ?? '' }); console.log(`PASS ${n}. ${name}${detail ? ` — ${detail}` : ''}`); }
-  catch (e) { results.push({ n, name, ok: false, detail: e.message.split('\n')[0] }); console.log(`FAIL ${n}. ${name}: ${e.message.split('\n')[0]}`); }
+  catch (e) { results.push({ n, name, ok: false, detail: e.message.split('\n')[0] }); console.log(`FAIL ${n}. ${name}: ${e.message.split('\n')[0]}`); if (process.env.GITHUB_ACTIONS) console.log(`::error title=Release QA ${n}::${name}: ${e.message.split('\n')[0].replace(/[\r\n%]/g, ' ')}`); }
 }
 const assert = (c, m) => { if (!c) throw new Error(m); };
 const go = async (p, route) => { await p.goto(`${BASE}#${route}`); await p.waitForSelector('main h1'); };
