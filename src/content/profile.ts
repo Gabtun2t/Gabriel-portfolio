@@ -81,10 +81,10 @@ export const ROLES: Role[] = [
   {
     title: 'Finance Analyst (Sage X3)', org: 'Panni Management & Technology', place: 'Remote, Canada', start: 'Jun 2022', end: 'Jul 2023', tracks: ['ERP implementation', 'AML', 'Data'],
     bullets: [
-      // Confirmed by Gabriel (Oct 2026): Sage X3 financial reporting and financial data issues.
-      'Analyzed GL, AP, AR and Fixed Assets requirements and supported Sage X3 configuration and test scenarios during ERP implementations; supported financial reporting, validated configuration and resolved financial data issues.',
-      'Mapped, validated and reconciled migrated financial and operational records; investigated mismatches and supported correction of data-quality exceptions.',
-      'Performed functional testing and UAT for financial transaction flows, documented issues, and supported post-go-live user troubleshooting.',
+      // Confirmed by Gabriel (17 Oct 2026): led the Sage X3 finance workstream on every Panni project.
+      'Led the Sage X3 finance workstream on each client implementation, for food services, marine and cannabis clients: GL, AP, AR and Fixed Assets requirements, configuration and test scenarios, and financial reporting; validated configuration and resolved financial data issues.',
+      'Led mapping, validation and reconciliation of migrated financial and operational records, investigating mismatches and correcting data-quality exceptions.',
+      'Led functional testing and UAT of financial transaction flows and post-go-live user troubleshooting for the finance workstream.',
       'Reviewed financial transactions and performed KYC-related checks on AML-related workstreams; flagged suspicious or inconsistent activity to compliance teams and reconciled transactions against Sage X3 finance records.',
     ],
   },
@@ -138,13 +138,13 @@ export const SKILLS = {
 
 /** Skill → where it was used professionally (resume) → where it is demonstrated on this site (simulation). */
 export const SKILL_EVIDENCE: { skill: string; professional: string; demo: string; demoLink: string }[] = [
-  { skill: 'ERP implementation leadership (Sage 300, Sage X3)', professional: 'Led an approximately 18-month, phased, estate-wide Sage 300 implementation as Implementation Lead; delivered other Sage X3 and Sage 300 implementations and advisory support (Softcodes); supported Sage X3 configuration during implementations (Panni).', demo: 'ERP implementation experience (professional, not a simulation)', demoLink: '/experience' },
+  { skill: 'ERP implementation leadership (Sage 300, Sage X3)', professional: 'Led an approximately 18-month, phased, estate-wide Sage 300 implementation as Implementation Lead; delivered other Sage X3 and Sage 300 implementations and advisory support (Softcodes); led the Sage X3 finance workstream on each client implementation (Panni).', demo: 'ERP implementation experience (professional, not a simulation)', demoLink: '/experience' },
   { skill: 'Requirements, configuration, UAT, training & go-live', professional: 'Requirements analysis, GL/AP/AR/FA configuration, functional testing and UAT, user training, post-go-live troubleshooting (Panni; Softcodes).', demo: 'ERP implementation case study (professional)', demoLink: '/case-studies' },
   { skill: 'ERP upgrades & integrations', professional: 'Participated as a consultant in a Sage X3 V11 to V12 upgrade; coordinated delivery of a team-developed Sage 300 ↔ estate management software integration; supported Sage X3 integrations with investment and payroll apps; partnered with an internal developer on a Sage 300 bank payment API integration (Softcodes).', demo: 'Payment API lab (synthetic)', demoLink: '/labs/payments' },
   { skill: 'AML transaction review & exception analysis', professional: 'Transaction reviews and KYC-related checks on AML-related workstreams (Panni; Softcodes client projects).', demo: 'AML investigation lab — alert queue, evidence, dispositions', demoLink: '/labs/aml' },
   { skill: 'Suspicious-activity identification & compliance escalation', professional: 'Flagged suspicious or inconsistent activity and escalated findings to compliance teams (Panni; Softcodes).', demo: 'Escalation workflow and case narrative (scenarios S3, S6)', demoLink: '/labs/aml' },
   { skill: 'Distinguishing risk indicators from data defects', professional: 'Traced some exceptions to ERP migration-related data corruption rather than fraud (Softcodes).', demo: 'Migration-defect vs. unresolved-activity comparison (S5 vs. S6)', demoLink: '/case-studies' },
-  { skill: 'Financial data reconciliation & migration integrity', professional: 'Mapped, validated and reconciled migrated financial records (Panni); led or supported data migration and reconciliation (Softcodes).', demo: 'ERP reconciliation & migration integrity lab', demoLink: '/labs/reconciliation' },
+  { skill: 'Financial data reconciliation & migration integrity', professional: 'Led migration validation and reconciliation of financial records (Panni); led or supported data migration and reconciliation (Softcodes).', demo: 'ERP reconciliation & migration integrity lab', demoLink: '/labs/reconciliation' },
   { skill: 'SQL-based investigation', professional: 'SQL, diagnostic logs and repeatable testing to separate data, process and system defects (Acumatica).', demo: 'Reconciliation, AML-rule and model SQL verified against SQLite', demoLink: '/labs/reconciliation' },
   { skill: 'Payment API integration support', professional: 'Partnered with an internal developer on a bank payment API ↔ Sage 300 integration (Softcodes).', demo: 'Mock bank payment API ↔ ERP lab (idempotency, retries, audit)', demoLink: '/labs/payments' },
   { skill: 'Data quality & financial data pipelines', professional: 'Data validation, source-to-target mapping and migration testing (resume skills).', demo: 'Financial data engineering lab', demoLink: '/labs/data' },
@@ -168,10 +168,10 @@ export const ERP_PLATFORMS: { platform: string; work: string; where: string; kin
  * activity for that client AND that the name may be disclosed publicly.
  */
 export const ERP_CAPABILITIES: { area: string; what: string; evidence: string; clients: string[] }[] = [
-  { area: 'ERP implementation & deployment', what: 'Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation for an estate management organisation. Delivered other Sage X3 and Sage 300 implementations and advisory support. Supported Sage X3 configuration during implementations.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'ERP implementation & deployment', what: 'Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation for an estate management organisation. Delivered other Sage X3 and Sage 300 implementations and advisory support. Led the Sage X3 finance workstream on each Panni client implementation.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'ERP upgrades & migration', what: 'Participated as a consultant in a Sage X3 V11 to V12 upgrade (not the overall project lead). Led or supported data migration, mapping, validation and reconciliation; oversaw data migration on the estate-wide implementation.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'Business requirements & process analysis', what: 'Led requirements gathering and process analysis on the estate-wide implementation. Analysed financial business requirements and translated client requirements into workable system processes.', evidence: 'Softcodes · Panni', clients: [] },
-  { area: 'Financial module configuration & workflows', what: 'Directed Sage 300 configuration for estate dues, billing, collections and property-related transactions. Supported Sage X3 configuration for GL, AP, AR and Fixed Assets; validated configuration and resolved financial data issues.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'Financial module configuration & workflows', what: 'Directed Sage 300 configuration for estate dues, billing, collections and property-related transactions. Led Sage X3 finance configuration for GL, AP, AR and Fixed Assets on Panni implementations; validated configuration and resolved financial data issues.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'Testing, UAT & validation', what: 'Oversaw testing and validation on the estate-wide implementation. Functional testing and UAT of financial transaction flows; migrated data validated against source.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'Integration delivery', what: 'Coordinated delivery of a custom Sage 300 integration with a client\u2019s estate management software, developed by the Softcodes team. Partnered with an internal developer on a bank payment API ↔ Sage 300 integration. Supported Sage X3 integrations with investment and payroll applications.', evidence: 'Softcodes', clients: [] },
   { area: 'Training, go-live & post-go-live support', what: 'Coordinated user training, phased deployment and go-live on the estate-wide implementation. Post-implementation and post-go-live troubleshooting for users.', evidence: 'Softcodes · Panni', clients: [] },
@@ -182,7 +182,7 @@ export const ERP_CAPABILITIES: { area: string; what: string; evidence: string; c
 export const ENGAGEMENT_TYPES: { type: string; examples: string; role: string; where: string }[] = [
   { type: 'Led implementation', examples: 'Estate-wide Sage 300 implementation for an estate management organisation (approximately 18 months, phased)', role: 'Implementation Lead', where: 'Softcodes' },
   { type: 'Implementation or advisory support', examples: 'Other Sage X3 and Sage 300 engagements across finance, manufacturing, distribution and other environments', role: 'Senior Technical Consultant; role varied by engagement', where: 'Softcodes' },
-  { type: 'Implementation support', examples: 'Sage X3 configuration for GL, AP, AR and Fixed Assets during ERP implementations', role: 'Finance Analyst (Sage X3)', where: 'Panni' },
+  { type: 'Finance workstream lead', examples: 'Sage X3 finance workstream (GL, AP, AR, Fixed Assets, migration, UAT) on each client implementation', role: 'Finance Analyst (Sage X3); led the finance workstream', where: 'Panni' },
   { type: 'Integration', examples: 'Custom Sage 300 ↔ estate management software integration (team-developed; Gabriel coordinated delivery). Bank payment API ↔ Sage 300 (with an internal developer). Sage X3 ↔ investment and payroll applications (supported)', role: 'Delivery coordination and integration support', where: 'Softcodes' },
   { type: 'Upgrade', examples: 'Sage X3 V11 to V12', role: 'Consultant (not the overall project lead)', where: 'Softcodes' },
   { type: 'Other client project', examples: 'Sage 300 project for a public-sector water utility (government project)', role: 'Senior Technical Consultant', where: 'Softcodes' },
@@ -208,9 +208,9 @@ export const INDUSTRIES: { industry: string; context: string; where: string }[] 
   { industry: 'Oil & gas (incl. downstream)', context: 'Clients including a downstream oil and gas company', where: 'Softcodes' },
   { industry: 'Investment holding', context: 'An investment holding company', where: 'Softcodes' },
   { industry: 'Construction', context: 'Client organisation', where: 'Softcodes' },
-  { industry: 'Food services', context: 'Client organisation', where: 'Panni' },
-  { industry: 'Marine', context: 'Client organisation', where: 'Panni' },
-  { industry: 'Cannabis', context: 'Client organisation', where: 'Panni' },
+  { industry: 'Food services', context: 'Sage X3 client; Gabriel led the finance workstream', where: 'Panni' },
+  { industry: 'Marine', context: 'Sage X3 client; Gabriel led the finance workstream', where: 'Panni' },
+  { industry: 'Cannabis', context: 'Sage X3 client; Gabriel led the finance workstream', where: 'Panni' },
   { industry: 'Retail & e-commerce', context: 'Commerce workflows in enterprise ERP support', where: 'Acumatica' },
   { industry: 'Logistics', context: 'Logistics enterprise applications (in-house IT)', where: 'MDS Logistics' },
 ];

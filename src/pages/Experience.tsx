@@ -26,7 +26,7 @@ export function Experience() {
             <div>
               <div className="eyebrow">Professional experience</div>
               <h2 id="erp-h">ERP implementation & consulting experience</h2>
-              <p className="lead" style={{ maxWidth: 820 }}>Five years of ERP implementation and consulting at Softcodes International, including an approximately 18-month, phased Sage 300 implementation Gabriel led as Implementation Lead. Then a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica.</p>
+              <p className="lead" style={{ maxWidth: 820 }}>Five years of ERP implementation and consulting at Softcodes International, including an approximately 18-month, phased Sage 300 implementation Gabriel led as Implementation Lead. Then a year at Panni Management & Technology leading the Sage X3 finance workstream on each client implementation, and three years resolving complex enterprise ERP issues at Acumatica.</p>
               <p className="small muted" style={{ maxWidth: 820 }}>Project examples are anonymised: clients are described by sector and location rather than by name.</p>
             </div>
             {LED_ENGAGEMENTS.filter((e) => e.featured).map((e) => (

@@ -27,10 +27,10 @@ export const ERP = {
   headline: 'ERP IMPLEMENTATION LEAD | FINANCIAL SYSTEMS INTEGRATION | SAGE 300 | SAGE X3 | ACUMATICA',
   sections: [
     { h: 'PROFESSIONAL SUMMARY', p: [
-      'ERP and financial systems professional with 9+ years delivering, integrating and supporting Sage 300, Sage X3 and Acumatica for finance and operations teams. Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation, coordinating the client, the development team and a multidisciplinary implementation team from requirements through go-live. Sage X3 Certified Technical, Financial and Distribution Consultant with hands-on depth in business process analysis, GL, AP, AR and Fixed Assets configuration, data migration and reconciliation, UAT and custom integration coordination, including consultant participation in a Sage X3 V11 to V12 upgrade. Now a Senior Support Engineer at Acumatica, resolving complex finance, commerce and integration issues with SQL, diagnostic logs and repeatable testing.',
+      'ERP and financial systems professional with 9+ years delivering, integrating and supporting Sage 300, Sage X3 and Acumatica for finance and operations teams. Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation, coordinating the client, the development team and a multidisciplinary implementation team from requirements through go-live. Led the Sage X3 finance workstream on each Panni client implementation. Sage X3 Certified Technical, Financial and Distribution Consultant with hands-on depth in business process analysis, GL, AP, AR and Fixed Assets configuration, data migration and reconciliation, UAT and custom integration coordination, including consultant participation in a Sage X3 V11 to V12 upgrade. Now a Senior Support Engineer at Acumatica, resolving complex finance, commerce and integration issues with SQL, diagnostic logs and repeatable testing.',
     ] },
     { h: 'CORE COMPETENCIES', p: [
-      'ERP Implementation Leadership | Full-Lifecycle ERP Delivery | Client-Facing Consulting | Business Process & Requirements Analysis | Financial Module Configuration (GL, AP, AR, Fixed Assets) | Financial Systems Integration | Data Migration & Conversion, Validation & Reconciliation | Functional Testing & UAT | Training & Phased Go-Live | Post-Go-Live Support | ERP Upgrades | SQL Troubleshooting & Root-Cause Analysis | Stakeholder Coordination | Functional Specifications',
+      'ERP Implementation Leadership | Full-Lifecycle ERP Delivery | Client-Facing Consulting | Business Process & Requirements Analysis | Financial Module Configuration (GL, AP, AR, Fixed Assets) | Financial Systems Integration | Data Migration & Conversion, Validation & Reconciliation | Functional Testing & UAT | Training & Phased Go-Live | Post-Go-Live Support | ERP Upgrade Support | SQL Troubleshooting & Root-Cause Analysis | Stakeholder Coordination | Functional Specifications',
     ] },
     { h: 'SELECTED PROJECT LEADERSHIP', project: {
       title: 'Sage 300 ERP Implementation Lead | Estate management organisation, Lagos, Nigeria', right: 'Softcodes International',
@@ -64,9 +64,10 @@ export const ERP = {
         'Reviewed configuration, test results and case evidence with engineering and consulting teams to resolve issues, improve supportability and document findings for accurate hand-offs.',
       ] },
       { title: 'Finance Analyst (Sage X3)', org: 'Panni Management & Technology', place: 'Remote, Canada', dates: 'Jun 2022 – Jul 2023', bullets: [
-        'Analyzed GL, AP, AR and Fixed Assets requirements and supported Sage X3 configuration and test scenarios during ERP implementations; supported financial reporting, validated configuration and resolved financial data issues.',
-        'Mapped, validated and reconciled migrated financial and operational records, investigating mismatches and correcting data-quality exceptions.',
-        'Performed functional testing and UAT of financial transaction flows and supported post-go-live user troubleshooting.',
+        // Confirmed by Gabriel (17 Oct 2026): led the Sage X3 finance workstream on every Panni project.
+        'Led the Sage X3 finance workstream on each client implementation, for food services, marine and cannabis clients: GL, AP, AR and Fixed Assets requirements, configuration and test scenarios, and financial reporting; validated configuration and resolved financial data issues.',
+        'Led mapping, validation and reconciliation of migrated financial and operational records, investigating mismatches and correcting data-quality exceptions.',
+        'Led functional testing and UAT of financial transaction flows and post-go-live user troubleshooting for the finance workstream.',
       ] },
       { title: 'Senior Technical Consultant', org: 'Softcodes International Ltd.', place: 'Lagos, Nigeria', dates: 'Oct 2016 – Dec 2021', bullets: [
         'Implementation Lead for the estate-wide Sage 300 implementation (see Selected Project Leadership).',
@@ -121,8 +122,8 @@ export const AML = {
       ] },
       { title: 'Finance Analyst (Sage X3)', org: 'Panni Management & Technology', place: 'Remote, Canada', dates: 'Jun 2022 – Jul 2023', bullets: [
         'Reviewed financial transactions and performed KYC-related checks on AML-related workstreams; flagged suspicious or inconsistent activity to compliance teams.',
-        'Reconciled reviewed transactions against Sage X3 finance records; mapped, validated and reconciled migrated financial and operational records and corrected data-quality exceptions.',
-        'Analyzed financial business requirements and supported Sage X3 configuration for GL, AP, AR and Fixed Assets during ERP implementations; performed functional testing and UAT of financial transaction flows.',
+        'Reconciled reviewed transactions against Sage X3 finance records; led validation and reconciliation of migrated financial and operational records and correction of data-quality exceptions.',
+        'Led the Sage X3 finance workstream on each client implementation (GL, AP, AR, Fixed Assets, migration and UAT) for food services, marine and cannabis clients.',
       ] },
       { title: 'Senior Technical Consultant', org: 'Softcodes International Ltd.', place: 'Lagos, Nigeria', dates: 'Oct 2016 – Dec 2021', bullets: [
         'Reviewed transactions and performed KYC-related checks for financial-institution, microfinance banking, and oil and gas client projects; traced some exceptions to ERP migration-related data corruption rather than fraud before escalating suspicious findings to compliance teams.',
@@ -132,7 +133,7 @@ export const AML = {
       ] },
     ] },
     { h: 'PORTFOLIO PROJECTS (SIMULATED, SYNTHETIC DATA)', note: 'Independent portfolio simulations built with AI-assisted development. These are demonstrations, not client engagements or production AML platform experience. gabtun2t.github.io/Gabriel-portfolio', p: [
-      'AML transaction monitoring and investigation lab: seven explainable monitoring rules, alert scoring, KYC-related profile review, evidence checklist, disposition workflow with rationale, and exportable case narrative; five of the rules, plus a ledger-to-ERP cross-check that isolates a decimal-shift posting error, also written in SQL and parity-checked against the application logic.',
+      'AML transaction monitoring and investigation lab: seven explainable monitoring rules, alert scoring, KYC-related profile review, evidence checklist, disposition workflow with rationale, and exportable case narrative; five of the rules written in SQL and parity-checked against the application logic, plus a SQL ledger-to-ERP cross-check verified to isolate a seeded decimal-shift posting error.',
       'Supporting labs: ERP migration reconciliation with root-cause tracing; mock bank payment API with idempotency, retries and audit trail; financial data pipeline with validation, lineage and data-quality metrics; SQL checked against SQLite.',
     ] },
     { h: 'EARLIER EXPERIENCE', earlier: EARLIER },

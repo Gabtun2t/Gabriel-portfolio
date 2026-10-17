@@ -115,7 +115,7 @@ export function Home() {
               <p className="small" style={{ margin: 0 }}>{e.summary} Requirements and process analysis, Sage 300 configuration, data migration, testing, delivery of a custom integration with the client’s estate management software (developed by the team), user training and phased go-live.</p>
             </div>
           ))}
-          <p className="small" style={{ margin: '0 0 16px' }}>Other work: a Sage 300 project for a public-sector water utility, Sage X3 and Sage 300 implementations and advisory support at Softcodes International, Sage X3 implementation support at Panni, and enterprise ERP support at Acumatica.</p>
+          <p className="small" style={{ margin: '0 0 16px' }}>Other work: a Sage 300 project for a public-sector water utility, Sage X3 and Sage 300 implementations and advisory support at Softcodes International, the Sage X3 finance workstream he led on each Panni client implementation, and enterprise ERP support at Acumatica.</p>
           <ol className="lifecycle">
             {ERP_LIFECYCLE.map((l) => <li key={l.stage}><strong>{l.stage}</strong><span>{l.what}</span></li>)}
           </ol>
