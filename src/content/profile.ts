@@ -156,17 +156,24 @@ export const ERP_PLATFORMS: { platform: string; work: string; where: string; kin
   { platform: 'Sage accounting & business-management software', work: 'Structured training in configuration and support', where: 'Sage Software West Africa (internship)', kind: 'Training' },
 ];
 
-/** Implementation lifecycle — what Gabriel did at each stage, with the role that evidences it. */
-export const ERP_LIFECYCLE: { stage: string; what: string; evidence: string }[] = [
-  { stage: 'Requirements & process analysis', what: 'Analysed financial business requirements and translated client requirements into workable system processes.', evidence: 'Panni · Softcodes' },
-  { stage: 'Configuration', what: 'Supported Sage X3 configuration for GL, AP, AR and Fixed Assets; validated configuration against expected financial behaviour.', evidence: 'Panni · Softcodes' },
-  { stage: 'Data migration', what: 'Led or supported migration, mapping, validation and reconciliation of financial and operational records; investigated mismatches and supported correction.', evidence: 'Softcodes · Panni' },
-  { stage: 'Testing & UAT', what: 'Functional testing and user acceptance testing of financial transaction flows; documented issues.', evidence: 'Softcodes · Panni' },
-  { stage: 'Training', what: 'User training as part of implementation delivery.', evidence: 'Resume skills (delivery & documentation)' },
-  { stage: 'Go-live & post-go-live', what: 'Post-implementation and post-go-live troubleshooting for users.', evidence: 'Softcodes · Panni' },
-  { stage: 'Upgrades', what: 'Sage X3 V11 to V12 upgrade delivery.', evidence: 'Softcodes' },
-  { stage: 'Integrations', what: 'Sage X3 integrations with investment and payroll applications; Sage 300 bank payment API integration with an internal developer.', evidence: 'Softcodes' },
+/**
+ * ERP implementation & consulting capability areas. Each line is backed by the resume or by
+ * Gabriel's written statements (Oct 2026). `clients` stays empty until Gabriel confirms both the
+ * activity for that client AND that the name may be disclosed publicly.
+ */
+export const ERP_CAPABILITIES: { area: string; what: string; evidence: string; clients: string[] }[] = [
+  { area: 'ERP implementation & deployment', what: 'Sage X3 and Sage 300 implementations and advisory support for client organisations; Sage X3 implementation support on finance workstreams.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'ERP upgrades & migration', what: 'Sage X3 V11 to V12 upgrade delivery; migration, mapping, validation and reconciliation of financial and operational records.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'Business requirements & process analysis', what: 'Analysed financial business requirements and translated client requirements into workable system processes.', evidence: 'Panni · Softcodes', clients: [] },
+  { area: 'Financial module configuration & workflows', what: 'Sage X3 configuration for GL, AP, AR and Fixed Assets; financial workflows and reporting; configuration validation and financial data issues.', evidence: 'Panni · Softcodes', clients: [] },
+  { area: 'Testing, UAT & validation', what: 'Functional testing and user acceptance testing of financial transaction flows; issues documented; migrated data validated against source.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'System integration', what: 'Sage X3 integrations with investment and payroll applications; Sage 300 bank payment API integration with an internal developer.', evidence: 'Softcodes', clients: [] },
+  { area: 'Training & post-go-live support', what: 'User training; post-implementation and post-go-live troubleshooting for users.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'Production troubleshooting', what: 'Complex production issues across finance, distribution, commerce, configuration and external integrations, using SQL, logs and repeatable testing. This is enterprise support, not implementation ownership.', evidence: 'Acumatica', clients: [] },
 ];
+
+/** Kept for the homepage and case study: the same areas in short form. */
+export const ERP_LIFECYCLE = ERP_CAPABILITIES.map((c) => ({ stage: c.area, what: c.what, evidence: c.evidence }));
 
 export const ERP_FUNCTIONS = ['General Ledger', 'Accounts Payable', 'Accounts Receivable', 'Fixed Assets', 'Financial reporting', 'Inventory & distribution', 'Manufacturing (implementation environments)', 'Commerce & e-commerce integrations (support)', 'Payroll & investment application integrations', 'Bank payment integration'];
 
@@ -174,12 +181,24 @@ export const ERP_FUNCTIONS = ['General Ledger', 'Accounts Payable', 'Accounts Re
  * Industry exposure, labelled by the KIND of involvement the resume supports.
  * Implementation is claimed only where the resume says so.
  */
-export const INDUSTRIES: { industry: string; involvement: string; where: string; kind: 'Implementation & advisory' | 'Client projects (consulting)' | 'Integration project' | 'Enterprise support' | 'In-house IT' }[] = [
+export const INDUSTRIES: { industry: string; involvement: string; where: string; kind: 'Implementation & advisory' | 'Client engagements' | 'Enterprise support' | 'In-house IT' }[] = [
   { industry: 'Manufacturing', involvement: 'Sage X3 / Sage 300 implementations and advisory support', where: 'Softcodes', kind: 'Implementation & advisory' },
-  { industry: 'Distribution', involvement: 'Sage X3 / Sage 300 implementations and advisory support; later, Acumatica distribution workflows in support', where: 'Softcodes · Acumatica', kind: 'Implementation & advisory' },
-  { industry: 'Banking & financial services', involvement: 'Financial-institution client projects, incl. transaction reviews and KYC-related checks; bank payment API ↔ Sage 300 integration for a financial-services client', where: 'Softcodes', kind: 'Client projects (consulting)' },
-  { industry: 'Microfinance', involvement: 'Microfinance banking client projects, incl. transaction reviews and KYC-related checks', where: 'Softcodes', kind: 'Client projects (consulting)' },
-  { industry: 'Oil & gas', involvement: 'Client projects, incl. transaction reviews and KYC-related checks', where: 'Softcodes', kind: 'Client projects (consulting)' },
+  { industry: 'Distribution', involvement: 'Sage X3 / Sage 300 implementations and advisory support; later, distribution workflows in Acumatica support', where: 'Softcodes · Acumatica', kind: 'Implementation & advisory' },
+  { industry: 'Banking & financial services', involvement: 'Financial-institution and financial-services client engagements, incl. transaction reviews, KYC-related checks and a bank payment API ↔ Sage 300 integration', where: 'Softcodes', kind: 'Client engagements' },
+  { industry: 'Microfinance', involvement: 'Microfinance banking client engagements, incl. transaction reviews and KYC-related checks', where: 'Softcodes', kind: 'Client engagements' },
+  { industry: 'Oil & gas', involvement: 'Client engagements, incl. transaction reviews and KYC-related checks', where: 'Softcodes', kind: 'Client engagements' },
+  { industry: 'Construction', involvement: 'Client engagement (specific activities not listed)', where: 'Softcodes', kind: 'Client engagements' },
+  { industry: 'Water utilities (public sector)', involvement: 'Client engagement (specific activities not listed)', where: 'Softcodes', kind: 'Client engagements' },
+  { industry: 'Food services', involvement: 'Client engagement (specific activities not listed)', where: 'Panni', kind: 'Client engagements' },
+  { industry: 'Marine', involvement: 'Client engagement (specific activities not listed)', where: 'Panni', kind: 'Client engagements' },
+  { industry: 'Cannabis', involvement: 'Client engagement (specific activities not listed)', where: 'Panni', kind: 'Client engagements' },
   { industry: 'Retail & e-commerce', involvement: 'Commerce workflows and external integrations in enterprise ERP support', where: 'Acumatica', kind: 'Enterprise support' },
   { industry: 'Logistics', involvement: 'Supported logistics enterprise applications, inventory and order-processing workflows', where: 'MDS Logistics', kind: 'In-house IT' },
 ];
+
+/**
+ * Client organisations approved by Gabriel for public display. Names are added here ONLY after
+ * written approval, because everything in this repository and bundle is public. Until then: empty.
+ */
+export const PUBLIC_CLIENTS: { name: string; employer: 'Softcodes' | 'Panni'; industry: string }[] = [];
+

@@ -7,7 +7,7 @@ export function Guide() {
   const paths = [
     {
       who: 'Hiring for ERP / financial systems', time: '5 minutes', steps: [
-        <>Read the <Link to="/experience" query={{ section: 'erp-implementation' }}>ERP implementation experience</Link>: platforms, the implementation lifecycle and industries.</>,
+        <>Read the <Link to="/experience" query={{ section: 'erp-implementation' }}>ERP implementation experience</Link>: platforms, eight capability areas and industries.</>,
         <>Read the <Link to="/case-studies" query={{ study: 'erp' }}>ERP implementation case study</Link> (real experience, anonymised).</>,
         <>Open the <Link to="/labs/reconciliation">reconciliation lab</Link>, run it, and inspect the ×100 decimal shift and a “Missing in ERP” row.</>,
         <>Apply all corrections and re-run; note the two manual journals left for finance review.</>,

@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { Link, useRoute } from '../router';
-import { CREDENTIALS, EDUCATION, ERP_FUNCTIONS, ERP_LIFECYCLE, ERP_PLATFORMS, INDUSTRIES, PROFILE, ROLES, SKILLS, SKILL_EVIDENCE } from '../content/profile';
+import { CREDENTIALS, EDUCATION, ERP_CAPABILITIES, ERP_FUNCTIONS, ERP_PLATFORMS, INDUSTRIES, PROFILE, PUBLIC_CLIENTS, ROLES, SKILLS, SKILL_EVIDENCE } from '../content/profile';
 import { Badge } from '../components/ui';
 
 const TRACK_TONE: Record<string, string> = { 'ERP implementation': 'blue', 'ERP support': 'neutral', AML: 'teal', Data: 'violet', Architecture: 'amber' };
-const KIND_TONE: Record<string, string> = { 'Implementation & consulting': 'blue', 'Implementation & advisory': 'blue', 'Implementation support': 'blue', 'Client projects (consulting)': 'teal', 'Integration project': 'violet', 'Enterprise support': 'neutral', 'In-house IT': 'neutral', Training: 'neutral' };
+const KIND_TONE: Record<string, string> = { 'Implementation & consulting': 'blue', 'Implementation & advisory': 'blue', 'Implementation support': 'blue', 'Client projects (consulting)': 'teal', 'Client engagements': 'teal', 'Integration project': 'violet', 'Enterprise support': 'neutral', 'In-house IT': 'neutral', Training: 'neutral' };
 
 export function Experience() {
   const section = useRoute().query.get('section');
@@ -25,7 +25,7 @@ export function Experience() {
           <section id="erp-implementation" className="stack" style={{ marginBottom: 28, scrollMarginTop: 80 }} aria-labelledby="erp-h">
             <div>
               <div className="eyebrow">Professional experience</div>
-              <h2 id="erp-h">ERP implementation experience</h2>
+              <h2 id="erp-h">ERP implementation & consulting experience</h2>
               <p className="lead" style={{ maxWidth: 820 }}>Five years of Sage X3 and Sage 300 implementation and consulting at Softcodes International, a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica. Client names are confidential and are not shown.</p>
             </div>
             <div className="card">
@@ -38,11 +38,11 @@ export function Experience() {
               </div>
             </div>
             <div className="card">
-              <h3>Implementation lifecycle</h3>
-              <p className="small muted">The stages Gabriel has worked across on Sage X3 and Sage 300 projects, and the role that evidences each one.</p>
+              <h3>Capability areas</h3>
+              <p className="small muted">Eight areas of ERP work across Sage X3, Sage 300 and Acumatica, each with the role that evidences it. Gabriel’s responsibility varied by engagement; the site does not attach clients or outcomes to these areas.</p>
               <ol className="lifecycle">
-                {ERP_LIFECYCLE.map((l) => (
-                  <li key={l.stage}><strong>{l.stage}</strong><span>{l.what}</span><small className="muted">{l.evidence}</small></li>
+                {ERP_CAPABILITIES.map((c) => (
+                  <li key={c.area}><strong>{c.area}</strong><span>{c.what}</span><small className="muted">{c.evidence}</small>{c.clients.length > 0 && <small>Clients: {c.clients.join(', ')}</small>}</li>
                 ))}
               </ol>
             </div>
@@ -54,7 +54,7 @@ export function Experience() {
 
           <section id="industries" className="card" style={{ marginBottom: 28, scrollMarginTop: 80 }} aria-labelledby="ind-h">
             <h2 id="ind-h" style={{ fontSize: 22 }}>Industry experience</h2>
-            <p className="small muted">Each industry is labelled with the kind of involvement the resume supports. Implementation is claimed only where the resume states it; not every industry listed was an implementation project.</p>
+            <p className="small muted">{INDUSTRIES.length} industries across client engagements, enterprise support and in-house roles. Each is labelled with the kind of involvement Gabriel’s resume and statements support. Implementation is claimed only where the resume states it; not every industry listed was an implementation project.</p>
             <div className="table-wrap">
               <table className="data">
                 <thead><tr><th>Industry</th><th>Type of involvement</th><th>What it involved</th><th>Where</th></tr></thead>
@@ -62,6 +62,14 @@ export function Experience() {
               </table>
             </div>
           </section>
+
+          {PUBLIC_CLIENTS.length > 0 && (
+            <section className="card" style={{ marginBottom: 28 }} aria-labelledby="clients-h">
+              <h2 id="clients-h" style={{ fontSize: 20 }}>Selected client organisations</h2>
+              <p className="small muted">Organisations Gabriel worked with, shown with permission. Listing a name does not mean Gabriel led a full implementation for it.</p>
+              <ul className="small">{PUBLIC_CLIENTS.map((c) => <li key={c.name}><strong>{c.name}</strong> · {c.industry} · via {c.employer}</li>)}</ul>
+            </section>
+          )}
 
           <div className="card" style={{ marginBottom: 28 }}>
             <h2 style={{ fontSize: 20 }}>How to read this portfolio</h2>

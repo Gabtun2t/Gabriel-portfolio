@@ -57,10 +57,11 @@ await check(2, 'Recruiter pathways open the right demo and resume', async () => 
   for (const h of new Set(hrefs)) assert((await p.request.get(BASE + h)).status() === 200, `${h} not 200`);
   await go(p, '/experience?section=erp-implementation');
   const exp = await p.textContent('main');
-  for (const t of ['ERP implementation experience', 'Implementation lifecycle', 'Sage X3 (V11 / V12)', 'Industry experience', 'Manufacturing', 'Microfinance', 'Logistics']) assert(exp.includes(t), `experience missing ${t}`);
+  for (const t of ['ERP implementation & consulting experience', 'Capability areas', 'Production troubleshooting', 'Sage X3 (V11 / V12)', 'Industry experience', 'Manufacturing', 'Water utilities', 'Food services', 'Logistics']) assert(exp.includes(t), `experience missing ${t}`);
   await go(p, '/case-studies?study=erp');
   assert((await p.textContent('#cs-erp')).includes('Professional experience · anonymised'), 'ERP case study label');
-  return '3 pathways (ERP first), resume links resolve, ERP sections present';
+  assert(!exp.includes('Selected client organisations'), 'client list shown although no names are approved');
+  return '3 pathways (ERP first), resume links resolve, ERP sections present, no client list until approved';
 });
 
 await check(3, 'AML alert queue: search, filter, sort', async () => {

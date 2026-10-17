@@ -82,7 +82,7 @@ export function Home() {
             </div>
             <div>
               <div className="eyebrow">Industry exposure</div>
-              <p style={{ margin: 0 }}>Implementations in <strong>manufacturing and distribution</strong>; client projects in <strong>banking, microfinance and oil &amp; gas</strong>; support for retail/e-commerce and logistics systems. <Link to="/experience" query={{ section: 'industries' }}>Industry detail</Link>.</p>
+              <p style={{ margin: 0 }}>Implementations in <strong>manufacturing and distribution</strong>; client engagements in <strong>banking, microfinance, oil &amp; gas, construction, water utilities, food services, marine and cannabis</strong>; support for retail/e-commerce and logistics systems. <Link to="/experience" query={{ section: 'industries' }}>Industry detail</Link>.</p>
             </div>
             <div>
               <div className="eyebrow">What is different</div>
