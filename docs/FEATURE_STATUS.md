@@ -4,28 +4,28 @@
 
 | Area | Feature | Status | Verified by | Notes |
 |---|---|---|---|---|
-| Site | Home, experience, project lab, case studies, architecture, resume & contact, recruiter guide, data dictionary | **Implemented** | Browser smoke test |  |
-| Site | Resume PDF download (web copy with client names withheld) | **Implemented** | Browser smoke test |  |
-| Site | Contact: email, phone and verified LinkedIn link | **Implemented** | Browser smoke test |  |
-| Site | Responsive layout, keyboard navigation, focus styles, labelled controls, light/dark themes | **Implemented** | Manual + automated checks at 390 px and 1280 px | No formal WCAG audit performed. |
+| Site | Public deployment on GitHub Pages with automated test-and-build pipeline | **Implemented** | GitHub Actions run + live check | See the deployment panel for the build shown here. |
+| Site | Home, experience, project lab, case studies, architecture, resume & contact, recruiter guide, data dictionary, build status | **Implemented** | Browser test (desktop + mobile) |  |
+| Site | Three recruiter pathways with one-click demos and matching resume download | **Implemented** | Browser test |  |
+| Site | Resume PDF download (AML / financial crime systems track; client names withheld) | **Implemented** | Browser test (served under the /Gabriel-portfolio/ base path) |  |
+| Site | Separate ERP / integration resume track | **Partial** | — | Pathway links to the current resume until a second verified resume is supplied. |
+| Site | Contact: email, phone (toggle in profile.ts) and LinkedIn | **Implemented** | Browser test (link targets) |  |
+| Site | Page titles, meta descriptions, Open Graph image, favicon, robots.txt and sitemap | **Implemented** | Browser test (title + meta) |  |
+| Site | Responsive layout, keyboard navigation, focus management, labelled controls, light/dark themes | **Implemented** | Browser test at 390 px and 1280 px | No formal WCAG audit performed. |
 | AML lab | Seeded dataset (40 customers, ~2,400 transactions), 8 documented scenarios | **Implemented** | Unit tests |  |
-| AML lab | 7 deterministic rules, explainable scoring, bands | **Implemented** | Unit tests + SQL parity |  |
-| AML lab | Overview metrics computed from data | **Implemented** | Browser smoke test |  |
-| AML lab | Queue search / filter / sort | **Implemented** | Browser smoke test |  |
-| AML lab | Case view: profile, rules, transactions, 8 evidence checks, notes | **Implemented** | Unit tests (evidence) + browser |  |
-| AML lab | Dispositions with validation; close gated on documentary support | **Implemented** | Unit tests |  |
-| AML lab | Case narrative view / .md export / print | **Implemented** | Unit test (content) + browser |  |
-| AML lab | Decisions persisted across visits | **Partial** | Manual | Browser localStorage only; not shared between visitors or devices. |
-| Reconciliation lab | Source and target datasets with seeded defects | **Implemented** | Unit tests |  |
-| Reconciliation lab | On-demand run, status filters, source/target comparison, lineage, root cause | **Implemented** | Unit tests + browser |  |
-| Reconciliation lab | Simulated corrections, journal, re-run | **Implemented** | Unit tests |  |
+| AML lab | 7 deterministic rules with purpose, condition, observed vs threshold, transactions, legitimate causes and false-positive notes | **Implemented** | Unit tests + SQL parity |  |
+| AML lab | Monitoring dashboard, searchable/filterable/sortable alert queue | **Implemented** | Browser test |  |
+| AML lab | Case view: KYC-related profile, transactions, 8 evidence checks with review checklist, notes | **Implemented** | Unit tests (evidence) + browser test |  |
+| AML lab | Dispositions with validation; closing gated on documentary support | **Implemented** | Unit tests + browser test |  |
+| AML lab | Decisions, notes and checklist persist across reloads; reset clears them | **Implemented** | Browser test (reload + reset) | Stored in the visitor’s browser only; not shared. |
+| AML lab | Case narrative view and .md export (marked SIMULATION) | **Implemented** | Unit test (content) + browser test (download) |  |
+| AML lab | AML methodology reference with Canadian and international context | **Implemented** | Browser test (renders) | Educational summary of public guidance; not legal advice. |
+| Reconciliation lab | Source and target datasets with seeded defects; on-demand run; filters; comparison; lineage; root cause | **Implemented** | Unit tests + browser test |  |
+| Reconciliation lab | Simulated corrections with journal, re-run, and simulation KPIs | **Implemented** | Unit tests + browser test |  |
 | Reconciliation lab | SQL implementation identical to TypeScript | **Implemented** | scripts/check_sql.py |  |
-| Reconciliation lab | Interactive in-browser SQL console | **Planned** | — | Results are real SQLite output captured by the parity script; a live console needs sql.js (WebAssembly). |
-| Payment lab | Schema validation, idempotency, replay, 409 conflict | **Implemented** | Unit tests |  |
-| Payment lab | Fault injection (503, 429, timeout after commit, 422), retries with back-off | **Implemented** | Unit tests |  |
-| Payment lab | Audit trail with masking; ERP ↔ bank reconciliation | **Implemented** | Unit tests |  |
-| Payment lab | mTLS / OAuth / request signing | **Planned** | — | Described in security notes; not meaningful in a client-side mock. |
-| Data lab | Ingest 3 formats, standardize, validate + quarantine, deduplicate, star schema, metrics | **Implemented** | Unit tests + SQL parity |  |
-| Data lab | Lineage tracer, toggleable rules, DQ dimensions | **Implemented** | Unit tests + browser |  |
-| Data lab | Incremental loads, SCD, orchestration | **Planned** | — |  |
-| Delivery | Public deployment | **Planned** | — | Needs Gabriel’s GitHub/Netlify/Vercel account — see README “Deploy”. |
+| Reconciliation lab | Interactive SQL console in the browser | **Planned** | — | Results shown are real SQLite output captured by the parity script. |
+| Payment lab | Validation, idempotency, replay, 409 conflict, retries, timeouts, 422, partial batch failure | **Implemented** | Unit tests + browser test |  |
+| Payment lab | Correct vs. incorrect behaviour comparison; audit trail; ERP ↔ bank reconciliation | **Implemented** | Unit tests + browser test |  |
+| Payment lab | mTLS / OAuth / request signing | **Planned** | — | Described in the security notes; not meaningful in a client-side mock. |
+| Data lab | Ingest, standardize, validate + quarantine, deduplicate, star schema, metrics, lineage, row-count controls | **Implemented** | Unit tests + SQL parity + browser test |  |
+| Data lab | Incremental loads, SCDs, orchestration, cloud storage | **Planned** | — |  |

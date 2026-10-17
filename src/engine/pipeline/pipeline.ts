@@ -209,3 +209,25 @@ export function traceFact(run: PipelineRun, raw: RawRecord[], paymentKey: string
   if (!f) return null;
   return { fact: f, raw: f.lineageRawIds.map((id) => raw.find((r) => r.rawId === id)!), staged: run.staged.filter((s) => f.lineageRawIds.includes(s.rawId)) };
 }
+
+export interface SourceControl { source: SourceName; raw: number; quarantined: number; duplicatesRemoved: number; facts: number; balanced: boolean; factAmountCad: number }
+
+/**
+ * Row-count control per source: every raw delivery must end up in exactly one place —
+ * quarantine, removed as a duplicate, or a fact row. raw = quarantined + duplicates + facts.
+ */
+export function sourceControls(run: PipelineRun, raw: RawRecord[]): SourceControl[] {
+  const sources = [...new Set(raw.map((r) => r.source))];
+  const srcOf = new Map(raw.map((r) => [r.rawId, r.source] as const));
+  return sources.map((source) => {
+    const rawN = raw.filter((r) => r.source === source).length;
+    const quarantined = run.quarantined.filter((q) => q.record.source === source).length;
+    const duplicatesRemoved = [...run.dedup.exactDuplicates, ...run.dedup.keyDuplicates].filter((d) => srcOf.get(d.dropped) === source).length;
+    const facts = run.facts.filter((f) => srcOf.get(f.lineageRawIds[0]) === source);
+    return {
+      source, raw: rawN, quarantined, duplicatesRemoved, facts: facts.length,
+      balanced: rawN === quarantined + duplicatesRemoved + facts.length,
+      factAmountCad: Math.round(facts.reduce((t, f) => t + (f.amountCad ?? 0), 0) * 100) / 100,
+    };
+  });
+}

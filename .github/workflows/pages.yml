@@ -31,6 +31,17 @@ jobs:
       - run: npm run seed
       - run: npm run test:sql
       - run: npm run build
+      - name: Release QA in a real browser (served under /Gabriel-portfolio/)
+        run: |
+          npx playwright install --with-deps chromium
+          node scripts/serve-pages.mjs &
+          sleep 2
+          npm run test:release
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-qa
+          path: test-results/release-qa.json
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

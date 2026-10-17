@@ -1,6 +1,8 @@
 # Gabriel Olatundun — Interactive Professional Portfolio
 
-**Financial Systems, AML Investigations & Integration Architecture** · Ottawa, Ontario, Canada
+**Senior Financial Systems & Integration Specialist** · Ottawa, Ontario, Canada
+
+**Live site:** https://gabtun2t.github.io/Gabriel-portfolio/ (GitHub Pages, deployed by GitHub Actions on every push to `main`)
 
 A static, deployable portfolio website with four working labs on reproducible synthetic data:
 
@@ -37,10 +39,13 @@ npm run dev          # http://localhost:5173 (rebuilds on change)
 | `npm run dev` | Dev server with rebuild on change (esbuild) |
 | `npm run build` | Production build → `dist/` (static files) |
 | `npm run preview` | Serve `dist/` on http://localhost:4173 |
-| `npm test` | Engine unit tests (Node’s built-in test runner) — 73 tests |
+| `npm test` | Engine unit tests (Node’s built-in test runner) — 78 tests |
 | `npm run seed` | Regenerate CSVs, `data/seed_sqlite.sql`, expected results and generated docs |
 | `npm run test:sql` | Run the SQL files on SQLite and assert parity with the TypeScript engines; refresh `src/generated/sql_snapshot.json` |
 | `npm run test:e2e` | Browser smoke test of every route and core lab flow (needs `npm run preview` running; `npx playwright install chromium` once) |
+| `npm run preview:pages` | Serve `dist/` at http://localhost:4174/Gabriel-portfolio/ — the same base path as GitHub Pages |
+| `npm run test:release` | The 20-point release QA (pathways, AML workflow incl. persistence and export, reconciliation, payments, data lab, downloads, links, mobile, keyboard, assets) against `preview:pages`; writes `test-results/release-qa.json` |
+| `npm run images` | Regenerate `public/og-image.png` and `public/apple-touch-icon.png` |
 | `npm run typecheck` | Strict TypeScript check of engines, data generators, scripts and tests |
 | `npm run typecheck:all` | Also checks the React UI (needs `@types/react`, installed by `npm install`) |
 | `npm run verify` | typecheck → test → seed → test:sql → build |
@@ -78,36 +83,39 @@ docs/                      data dictionary, AML scenarios, feature status, walkt
 data/                      generated CSV + seed_sqlite.sql + expected results
 ```
 
-## Deploy (free static hosting)
+## Deployment
 
-The build output `dist/` is plain static files. **Deployment has not been performed** — it needs Gabriel’s account. Pick one:
+**Current:** GitHub Pages, published by [`.github/workflows/pages.yml`](.github/workflows/pages.yml) from `main` of https://github.com/gabtun2t/Gabriel-portfolio.
 
-### Option A — GitHub Pages (workflow included)
-1. Create a repository (e.g. `gabriel-portfolio`) and push this project to `main`.
-2. In the repository: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. The workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) installs, tests, builds and publishes on every push to `main`.
-4. The URL appears in the workflow run and under Settings → Pages (`https://<user>.github.io/gabriel-portfolio/`). Open it and click through the recruiter guide before sharing.
+- Every push runs `typecheck → test → seed → test:sql → build`; the site is published only if all steps pass.
+- The site uses hash routing and relative asset paths, so it works under the `/Gabriel-portfolio/` base path with no rewrite rules. Deep links (e.g. `#/labs/aml?tab=case&case=CASE-260103`) survive refresh.
+- Each build stamps its commit and time into `<meta name="build-commit">` / `<meta name="build-time">` and the build-status page.
+- Repository **Settings → Pages → Source** must stay on **GitHub Actions**.
 
-### Option B — Netlify
-1. Log in to Netlify → **Add new site → Import an existing project** → choose the repository.
-2. Netlify reads [`netlify.toml`](netlify.toml) (build `npm run build`, publish `dist`).
-3. Or drag-and-drop the `dist/` folder onto **Sites → Deploy manually** after running `npm run build` locally.
+To deploy a change: commit to `main` and push. Check the run under the repository’s **Actions** tab, then open the live site and confirm the build-status page shows the new commit.
 
-### Option C — Vercel
-1. **Add New → Project** → import the repository. [`vercel.json`](vercel.json) sets the build command and output directory.
+Alternatives (not in use): Netlify ([`netlify.toml`](netlify.toml)) or Vercel ([`vercel.json`](vercel.json)) can build the same repository unchanged.
 
-### Custom domain
-Add the domain in the host’s settings and create the DNS record it shows (CNAME for a subdomain such as `portfolio.example.com`). HTTPS is issued automatically by all three hosts.
-
-## Configuration before publishing
+## Configuration
 
 | Item | Where | Current state |
 |---|---|---|
 | LinkedIn URL | `src/content/profile.ts` → `linkedinUrl` | `https://www.linkedin.com/in/tunde-o-tech` (verified by Gabriel) |
 | Email | `src/content/profile.ts` → `email` | `gabriel.olatundun@gmail.com` (from the resume) |
-| Phone | `src/content/profile.ts` → `phone` | `902-880-9877` — approved for publication; shown on the contact page, footer and resume PDF |
+| Phone | `src/content/profile.ts` → `phone`, `showPhone` | `902-880-9877`, shown (approved by Gabriel). Set `showPhone: false` to hide it from the footer and contact page; the resume PDF is a separate file. |
 | Client names | `src/content/profile.ts`, `public/resume/` | Withheld by decision: “a bank payment API ↔ Sage 300 integration for a financial-services client”. |
 | Resume PDF | `public/resume/Gabriel_Olatundun_Resume.pdf` | Web copy generated from the supplied Word resume with the two client names removed (phone kept). Replace if the resume changes. |
+
+## Owner checklist (not published on the site)
+
+- [ ] **ERP / Integration / Financial Systems resume** — not supplied yet. When a verified PDF exists, add it to `public/resume/` and set its `file` in `RESUMES` (`src/content/profile.ts`). Until then the ERP and architecture pathways link to the current resume.
+- [ ] Decide whether the phone number stays public (`showPhone`).
+- [ ] After each release, open the live build-status page and confirm the commit, then record it in `DEPLOYMENT.lastVerified` (`src/content/status.ts`) if you want it shown.
+- [ ] Do not add training completions, assessments or certifications to the site until they are actually completed.
+
+## AI-assisted development
+
+The code for this site and its labs was written with substantial help from AI coding tools (Anthropic’s Claude), working to requirements Gabriel set and reviewed. Gabriel decided what the labs demonstrate and approved all professional content. His employment history comes from his resume and is separate from the simulations. The same disclosure appears in the site footer and on the case-studies page.
 
 ## Known limitations
 

@@ -18,6 +18,12 @@ const args = new Set(process.argv.slice(2));
 const serve = args.has('--serve');
 const outdir = join(root, 'dist');
 
+// Build metadata: commit and time of THIS build (shown on the build-status page; nothing is invented).
+import { execSync } from 'node:child_process';
+const sha = (process.env.GITHUB_SHA || (() => { try { return execSync('git rev-parse HEAD', { cwd: root }).toString().trim(); } catch { return 'unknown'; } })()).slice(0, 7);
+const builtAt = new Date().toISOString();
+const buildSource = process.env.GITHUB_ACTIONS ? 'GitHub Actions' : 'local build';
+
 const rawPlugin = {
   name: 'raw',
   setup(build) {
@@ -38,7 +44,12 @@ const options = {
   sourcemap: serve ? 'inline' : false,
   metafile: true,
   plugins: [rawPlugin],
-  define: { 'process.env.NODE_ENV': JSON.stringify(serve ? 'development' : 'production') },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(serve ? 'development' : 'production'),
+    __BUILD_SHA__: JSON.stringify(sha),
+    __BUILT_AT__: JSON.stringify(builtAt),
+    __BUILD_SOURCE__: JSON.stringify(buildSource),
+  },
   logLevel: 'info',
 };
 
@@ -48,6 +59,7 @@ function writeHtml(metafile) {
   const cssOut = outputs.find((p) => p.endsWith('.css'));
   const css = cssOut ? (cssOut.split('/dist/')[1] ?? cssOut.replace(/^dist\//, '')) : null;
   let html = readFileSync(join(root, 'index.html'), 'utf8');
+  html = html.replace('<!--BUILD-->', `<meta name="build-commit" content="${sha}" />\n    <meta name="build-time" content="${builtAt}" />`);
   html = html.replace('<!--CSS-->', css ? `<link rel="stylesheet" href="./${css}">` : '').replace('<!--JS-->', `<script type="module" src="./${js}"></script>`);
   writeFileSync(join(outdir, 'index.html'), html);
   return { js, css };
@@ -76,7 +88,7 @@ if (serve) {
     const single = join(root, 'dist-single');
     rmSync(single, { recursive: true, force: true });
     mkdirSync(single, { recursive: true });
-    let html = readFileSync(join(root, 'index.html'), 'utf8');
+    let html = readFileSync(join(root, 'index.html'), 'utf8').replace('<!--BUILD-->', '');
     const jsText = readFileSync(join(outdir, js), 'utf8').replace(/<\/script/gi, '<\\/script');
     const cssText = css ? readFileSync(join(outdir, css), 'utf8') : '';
     html = html.replace('<!--CSS-->', `<style>${cssText}</style>`).replace('<!--JS-->', `<script type="module">${jsText}</script>`);

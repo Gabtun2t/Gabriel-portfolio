@@ -5,7 +5,9 @@
   "type": "module",
   "description": "Interactive professional portfolio for Gabriel Olatundun: AML investigation, ERP reconciliation, payment API integration and financial data engineering labs on synthetic data.",
   "license": "UNLICENSED",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "node scripts/build.mjs --serve",
     "build": "node scripts/build.mjs",
@@ -17,7 +19,10 @@
     "test:e2e": "node tests/e2e/smoke.mjs",
     "typecheck": "tsc -p tsconfig.engine.json",
     "typecheck:all": "tsc -p tsconfig.json",
-    "verify": "npm run typecheck && npm test && npm run seed && npm run test:sql && npm run build"
+    "verify": "npm run typecheck && npm test && npm run seed && npm run test:sql && npm run build",
+    "preview:pages": "node scripts/serve-pages.mjs",
+    "test:release": "node tests/e2e/release.mjs",
+    "images": "node scripts/make-images.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

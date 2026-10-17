@@ -1,5 +1,7 @@
-import { useMemo, useState } from 'react';
-import { Link } from '../router';
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useRoute } from '../router';
+import { LabBrief } from '../components/LabBrief';
+import { HBarChart } from '../components/charts';
 import { aml, recon } from '../data/instances';
 import { EXTRACT_FILE, GL_NAMES, RECON_SEED, type TargetEntry } from '../data/recon/generate';
 import { MATCHING_RULES, STATUS_INFO, reconcile, type ReconResult, type ReconStatus } from '../engine/recon/match';
@@ -24,6 +26,8 @@ export function ReconLab() {
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState('');
   const [appliedInRun, setAppliedInRun] = useState<Set<string>>(new Set());
+  const route = useRoute();
+  const refParam = route.query.get('ref');
 
   const doRun = (t = target) => {
     const r = reconcile(ds.source, t, ds.staging);
@@ -31,6 +35,21 @@ export function ReconLab() {
     setMessage(`Reconciliation run ${runCount + 1} complete: ${r.summary.byStatus.MATCHED} matched, ${r.summary.total - r.summary.byStatus.MATCHED} exception(s).`);
     if (selected && !r.results.some((x) => x.resultId === selected)) setSelected(null);
   };
+  // Deep link from the AML lab: ?ref=RCPT-55821 runs the reconciliation and opens that reference.
+  useEffect(() => {
+    if (!refParam) return;
+    const r = reconcile(ds.source, target, ds.staging);
+    setRun(r); setRunCount((n) => n || 1); setFilter('ALL'); setQ(refParam);
+    const hit = r.results.find((x) => x.status !== 'MATCHED' && [x.sourceId, ...x.targetIds].some((id) => {
+      const src = ds.source.find((s) => s.srcId === id);
+      const tgt = ds.target.find((t) => t.jeId === id);
+      return src?.reference === refParam || tgt?.reference === refParam;
+    }));
+    if (hit) setSelected(hit.resultId);
+    setMessage(`Opened from the AML lab: reconciliation run for ${refParam}.`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refParam]);
+
   const apply = (res: ReconResult) => {
     const next = applyCorrection(res, ds.source, target, journal);
     setTarget(next.target); setJournal(next.journal); setStale(true);
@@ -72,6 +91,7 @@ export function ReconLab() {
       <section className="section" style={{ paddingTop: 24 }}>
         <div className="container stack">
           <SimBanner>Fictional ledger data generated from seed {RECON_SEED}: {ds.source.length} legacy rows ({EXTRACT_FILE}) and {ds.target.length} ERP entries with seeded defects.</SimBanner>
+          <ReconBrief />
 
           <div className="card">
             <div className="row between">
@@ -248,5 +268,50 @@ function ResultDetail({ r, target, applied, onApply }: { r: ReconResult; target:
         <p className="small"><strong>No automatic correction.</strong> Route to finance for review: confirm supporting documentation or reverse the entry.</p>
       ) : null}
     </div>
+  );
+}
+
+function ReconBrief() {
+  const ds = recon();
+  const sim = useMemo(() => {
+    const base = reconcile(ds.source, ds.target, ds.staging);
+    const fixed = applyAll(base.results, ds.source, ds.target);
+    const after = reconcile(ds.source, fixed.target, ds.staging);
+    return { base, fixed, after };
+  }, [ds]);
+  const exceptions = sim.base.summary.total - sim.base.summary.byStatus.MATCHED;
+  const remaining = sim.after.summary.total - sim.after.summary.byStatus.MATCHED;
+  const cats = (Object.keys(STATUS_INFO) as ReconStatus[]).filter((k) => k !== 'MATCHED' && sim.base.summary.byStatus[k] > 0);
+  return (
+    <>
+      <LabBrief
+        problem="After a migration, the new ERP ledger must contain exactly what the legacy system held. Rows go missing, get loaded twice, lose characters, land in the wrong GL account or change amount and date."
+        why="Finance cannot sign off a ledger that doesn’t tie out. The same defects flow into reporting and monitoring, where a decimal-scale error or a duplicated load can look exactly like suspicious activity."
+        proves="Source-to-target reconciliation with transparent rules, root-cause analysis from value patterns and lineage, and controlled, auditable corrections that never touch the source."
+        capabilities={['Business-key matching with normalization and fuzzy fallback', 'Root-cause classification (decimal shift, transposition, encoding, date swap, re-run)', 'Lineage: extract row → staging → load run → journal entry', 'Correction journal and re-run', 'Same logic in SQL, verified row-for-row on SQLite']}
+        findings={[
+          <>Initial match rate {pct(sim.base.summary.matchRate)} with {exceptions} exceptions across {cats.length} categories.</>,
+          <>{sim.fixed.journal.length} proposed corrections applied; final match rate {pct(sim.after.summary.matchRate)}.</>,
+          <>{remaining} items remain unresolved: manual journals with no source document, left for finance review on purpose.</>,
+        ]}
+        limitations={['One-to-one and duplicate matching only; no many-to-one aggregation', 'Corrections are simulated, not ERP reversing entries under approval', 'Single month, single batch, synthetic data']}
+        technical={<p>The matcher (<span className="mono">src/engine/recon/match.ts</span>) ranks key-matched candidates by amount gap, date gap and load run, then classifies each pair with a first-failing-check rule. It deliberately ignores lineage keys when pairing; a test proves results are identical with them stripped. Corrections produce a new ledger version plus a journal, and <span className="mono">sql/reconciliation.sql</span> reproduces every result row in SQLite (<span className="mono">scripts/check_sql.py</span>).</p>}
+      />
+      <div className="card">
+        <div className="row between"><h3 style={{ margin: 0 }}>Simulation results: original ledger vs. all proposed corrections</h3><span className="badge badge-sim">Simulation</span></div>
+        <div className="kpis" style={{ marginTop: 12 }}>
+          <Kpi label="Initial match rate" value={pct(sim.base.summary.matchRate)} sub={`${sim.base.summary.byStatus.MATCHED} of ${ds.source.length} source rows`} />
+          <Kpi label="Exceptions" value={exceptions} sub={`${cats.length} categories`} />
+          <Kpi label="Corrected" value={exceptions - remaining} sub={`${sim.fixed.journal.length} journal entries`} />
+          <Kpi label="Remaining unresolved" value={remaining} sub="need human review" />
+          <Kpi label="Final match rate" value={pct(sim.after.summary.matchRate)} sub={`net difference ${money(sim.after.summary.netDifference)}`} />
+        </div>
+        <div style={{ marginTop: 14 }}>
+          <div className="small" style={{ fontWeight: 600 }}>Exceptions by category (original ledger)</div>
+          <HBarChart label="Exceptions by category" color="var(--amber)" data={cats.map((k) => ({ label: STATUS_INFO[k].label, value: sim.base.summary.byStatus[k] }))} />
+        </div>
+        <p className="small muted" style={{ margin: '8px 0 0' }}>Computed in your browser from the seeded data. The interactive controls below let you reproduce these numbers step by step.</p>
+      </div>
+    </>
   );
 }

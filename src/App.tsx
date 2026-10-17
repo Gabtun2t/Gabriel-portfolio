@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link, useRoute } from './router';
-import { PROFILE } from './content/profile';
+import { AI_DISCLOSURE, PROFILE } from './content/profile';
 import { Home } from './pages/Home';
 import { Experience } from './pages/Experience';
 import { Labs } from './pages/Labs';
@@ -24,20 +24,20 @@ const NAV = [
   { to: '/contact', label: 'Resume & contact' },
 ];
 
-const ROUTES: Record<string, { title: string; el: () => ReactNode }> = {
-  '/': { title: 'Financial Systems, AML & Integration', el: () => <Home /> },
-  '/experience': { title: 'Experience', el: () => <Experience /> },
-  '/labs': { title: 'Project lab', el: () => <Labs /> },
-  '/labs/aml': { title: 'AML investigation lab', el: () => <AmlLab /> },
-  '/labs/reconciliation': { title: 'ERP reconciliation lab', el: () => <ReconLab /> },
-  '/labs/payments': { title: 'Payment API integration lab', el: () => <PaymentsLab /> },
-  '/labs/data': { title: 'Financial data engineering lab', el: () => <DataLab /> },
-  '/case-studies': { title: 'Case studies', el: () => <CaseStudies /> },
-  '/architecture': { title: 'Architecture', el: () => <Architecture /> },
-  '/contact': { title: 'Resume & contact', el: () => <Contact /> },
-  '/guide': { title: 'Recruiter guide', el: () => <Guide /> },
-  '/data-dictionary': { title: 'Data dictionary', el: () => <DataDictionary /> },
-  '/status': { title: 'Build status', el: () => <Status /> },
+const ROUTES: Record<string, { title: string; desc: string; el: () => ReactNode }> = {
+  '/': { title: 'Senior Financial Systems & Integration Specialist', desc: 'Gabriel Olatundun (Ottawa): financial systems, AML investigations, ERP reconciliation and payment integration, with four working labs on synthetic data.', el: () => <Home /> },
+  '/experience': { title: 'Experience', desc: 'Career timeline, education, credentials and skill evidence for Gabriel Olatundun, from his resume.', el: () => <Experience /> },
+  '/labs': { title: 'Project lab', desc: 'Four working technical demonstrations on synthetic data: AML investigation, ERP reconciliation, payment API integration and financial data engineering.', el: () => <Labs /> },
+  '/labs/aml': { title: 'AML investigation lab', desc: 'Rule-based transaction monitoring and case investigation on synthetic data: alert queue, KYC-related evidence, dispositions and case narratives.', el: () => <AmlLab /> },
+  '/labs/reconciliation': { title: 'ERP reconciliation lab', desc: 'Legacy-to-ERP migration reconciliation with transparent matching rules, root-cause tracing, audited corrections and SQL verified on SQLite.', el: () => <ReconLab /> },
+  '/labs/payments': { title: 'Payment API integration lab', desc: 'Mock bank payment API and ERP integration: validation, idempotency, retries, timeouts, audit trail and reconciliation.', el: () => <PaymentsLab /> },
+  '/labs/data': { title: 'Financial data engineering lab', desc: 'Financial data pipeline on synthetic feeds: validation, quarantine, deduplication, star schema, lineage and control totals.', el: () => <DataLab /> },
+  '/case-studies': { title: 'Case studies', desc: 'Technical case studies for each lab: business context, approach, architecture, design decisions, testing, results and limitations.', el: () => <CaseStudies /> },
+  '/architecture': { title: 'Architecture', desc: 'Integration, reconciliation and data-flow architecture diagrams for the portfolio labs.', el: () => <Architecture /> },
+  '/contact': { title: 'Resume & contact', desc: 'Download Gabriel Olatundun’s resume and contact him by email or LinkedIn.', el: () => <Contact /> },
+  '/guide': { title: 'Recruiter guide', desc: 'What to explore in five minutes if you are hiring for AML, ERP or architecture and data roles.', el: () => <Guide /> },
+  '/data-dictionary': { title: 'Data dictionary', desc: 'Tables, columns and seeds for every synthetic dataset used in the labs.', el: () => <DataDictionary /> },
+  '/status': { title: 'Build status', desc: 'Deployment details, implemented and planned features, and known limitations of this portfolio.', el: () => <Status /> },
 };
 
 export function App() {
@@ -49,6 +49,7 @@ export function App() {
 
   useEffect(() => {
     document.title = `${match ? match.title : 'Not found'} — ${PROFILE.name}`;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', match?.desc ?? ROUTES['/'].desc);
     if (lastPath.current !== route.path) {
       window.scrollTo(0, 0);
       mainRef.current?.focus({ preventScroll: true });
@@ -78,7 +79,7 @@ export function App() {
         <div className="container cols">
           <div>
             <h4>{PROFILE.name}</h4>
-            <p>{PROFILE.location}<br /><a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a><br /><a href={`tel:+1${PROFILE.phone.replace(/\D/g, '')}`}>{PROFILE.phone}</a>{PROFILE.linkedinUrl && <><br /><a href={PROFILE.linkedinUrl} rel="noopener noreferrer" target="_blank">LinkedIn</a></>}</p>
+            <p>{PROFILE.location}<br /><a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>{PROFILE.showPhone && <><br /><a href={`tel:+1${PROFILE.phone.replace(/\D/g, '')}`}>{PROFILE.phone}</a></>}{PROFILE.linkedinUrl && <><br /><a href={PROFILE.linkedinUrl} rel="noopener noreferrer" target="_blank">LinkedIn</a></>}</p>
           </div>
           <div>
             <h4>Labs</h4>
@@ -99,7 +100,7 @@ export function App() {
           </div>
         </div>
         <div className="container" style={{ marginTop: 20 }}>
-          <small>All demo data is synthetic. Professional history is taken from Gabriel’s resume; the labs are independent portfolio simulations, not client work or production systems.</small>
+          <small>All demo data is synthetic. Professional history is taken from Gabriel’s resume; the labs are independent portfolio simulations, not client work or production systems, and have not been approved for regulatory use. {AI_DISCLOSURE}</small>
         </div>
       </footer>
     </>

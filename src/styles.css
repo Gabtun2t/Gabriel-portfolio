@@ -273,7 +273,8 @@ details.disclosure > .body { padding: 0 16px 16px; }
 .timeline-item ul { margin: 0; padding-left: 18px; }
 .timeline-item li { margin-bottom: 4px; }
 
-.split { display: grid; gap: 20px; grid-template-columns: 1fr; }
+.split { display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); }
+.split > *, .grid > *, .stack > * { min-width: 0; }
 @media (min-width: 1000px) { .split { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); } .split.wide-left { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); } }
 
 .evidence { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: var(--surface); }
@@ -379,3 +380,24 @@ details.disclosure > .body { padding: 0 16px 16px; }
 .two-col { columns: 2; column-gap: 28px; }
 .two-col li { break-inside: avoid; }
 @media (max-width: 640px) { .two-col { columns: 1; } }
+
+/* Lab brief */
+.brief-grid { display: grid; gap: 18px 28px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.brief-grid h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal-ink); margin-bottom: 6px; }
+.brief-grid p, .brief-grid ul { font-size: 14px; color: var(--ink-2); margin: 0; }
+.brief-grid ul { padding-left: 18px; }
+.brief-grid li + li { margin-top: 3px; }
+.rule-facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-size: 13px; margin: 8px 0 0; }
+.rule-facts dt { color: var(--muted); font-weight: 600; }
+.rule-facts dd { margin: 0; color: var(--ink-2); min-width: 0; }
+@media (max-width: 560px) { .rule-facts { grid-template-columns: 1fr; } .rule-facts dd { margin-bottom: 4px; } }
+.progress { height: 6px; background: var(--surface-3); border-radius: 3px; overflow: hidden; }
+.progress > i { display: block; height: 100%; background: var(--teal); }
+.method h3 { margin-top: 18px; }
+.method p, .method li { font-size: 14.5px; max-width: 78ch; }
+.case-study h3 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal-ink); margin-bottom: 6px; }
+.cs-body { font-size: 14.5px; line-height: 1.65; color: var(--ink-2); max-width: 90ch; }
+.cs-body ul { padding-left: 20px; margin: 0 0 10px; }
+.cs-body li + li { margin-top: 4px; }
+.cs-body p { margin-bottom: 10px; }
+.cs-body > * + .card, .cs-body > div + div { margin-top: 10px; }

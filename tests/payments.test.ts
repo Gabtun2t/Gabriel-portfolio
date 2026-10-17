@@ -107,3 +107,21 @@ describe('retries and error paths', () => {
     assert.ok(!text.includes(env.bank.MOCK_TOKEN));
   });
 });
+
+describe('batches and duplicate submissions', () => {
+  test('a batch with one rejected payment confirms the others and reconciles item by item', () => {
+    const env = new IntegrationEnvironment();
+    const finals = ([['AP-PMT-000501', 180000], ['AP-PMT-000502', 240000], ['AP-PMT-000503', 150000]] as const)
+      .map(([ref, amount]) => env.submit({ ...SAMPLE_REQUEST, erpPaymentRef: ref, amount }, opts).final);
+    assert.deepEqual(finals, ['CONFIRMED', 'CONFIRMED', 'REJECTED']);
+    assert.deepEqual(env.reconcile().map((r) => r.result), ['MATCHED', 'MATCHED', 'NOT_EXPECTED_AT_BANK']);
+    assert.equal(env.bank.statement.length, 2);
+  });
+  test('double submission without idempotency pays twice and is flagged by reconciliation', () => {
+    const env = new IntegrationEnvironment();
+    env.submit(SAMPLE_REQUEST, { ...opts, idempotencyEnabled: false });
+    env.submit(SAMPLE_REQUEST, { ...opts, idempotencyEnabled: false });
+    assert.equal(env.bank.statement.length, 2);
+    assert.equal(env.reconcile()[0].result, 'DUPLICATE_PAYMENT');
+  });
+});

@@ -8,7 +8,7 @@ export function Contact() {
         <div className="container">
           <div className="eyebrow">Resume & contact</div>
           <h1>Get in touch</h1>
-          <p className="lead">For roles in AML and financial-crime technology, ERP and financial systems, financial data engineering, or solution and integration architecture, reach Gabriel by email, phone or LinkedIn.</p>
+          <p className="lead">For roles in AML and financial-crime technology, ERP and financial systems, financial data engineering, or solution and integration architecture, reach Gabriel by email{PROFILE.showPhone ? ', phone' : ''} or LinkedIn.</p>
         </div>
       </section>
       <section className="section">
@@ -25,7 +25,7 @@ export function Contact() {
             <h2 style={{ fontSize: 22 }}>Contact</h2>
             <dl className="dl">
               <dt>Email</dt><dd><a href={`mailto:${PROFILE.email}?subject=${encodeURIComponent('Opportunity — via your portfolio')}`}>{PROFILE.email}</a></dd>
-              <dt>Phone</dt><dd><a href={`tel:+1${PROFILE.phone.replace(/\D/g, '')}`}>{PROFILE.phone}</a></dd>
+              {PROFILE.showPhone && <><dt>Phone</dt><dd><a href={`tel:+1${PROFILE.phone.replace(/\D/g, '')}`}>{PROFILE.phone}</a></dd></>}
               <dt>Location</dt><dd>{PROFILE.location}</dd>
               {PROFILE.linkedinUrl && <><dt>LinkedIn</dt><dd><a href={PROFILE.linkedinUrl} target="_blank" rel="noopener noreferrer">{PROFILE.linkedinUrl.replace(/^https?:\/\/(www\.)?/, '')}</a></dd></>}
             </dl>

@@ -48,6 +48,8 @@ export interface RuleDefinition {
   weight: number;
   logic: string;
   why: string;
+  /** Common legitimate explanations an investigator should rule in or out. */
+  legitimate: string;
   limitations: string;
 }
 
@@ -56,42 +58,49 @@ export const RULE_CATALOG: RuleDefinition[] = [
     id: 'R1_HIGH_VELOCITY', name: 'Transaction frequency anomaly', category: 'Velocity', weight: 25,
     logic: `Count of transactions in any rolling ${PARAMS.R1.windowDays}-day window ≥ max(${PARAMS.R1.minCount}, ${PARAMS.R1.multiplier} × expected weekly count). Expected weekly = declared monthly count ÷ 4.33.`,
     why: 'A sudden burst far above the declared pattern can indicate account use the customer did not describe.',
+    legitimate: 'A promotion, a one-off job with many small payers, seasonal trade, or a change in how customers pay.',
     limitations: 'Legitimate events (promotions, one-off jobs) cause bursts too. Thresholds are not calibrated on real data.',
   },
   {
     id: 'R2_LARGE_VS_PROFILE', name: 'Unusual amount vs. profile', category: 'Amount', weight: 30,
     logic: `Single transaction ≥ ${PARAMS.R2.profileMultiplier} × declared monthly turnover AND ≥ $${PARAMS.R2.minAmount.toLocaleString('en-CA')}.`,
     why: 'One transaction larger than several months of expected activity is inconsistent with the profile.',
+    legitimate: 'Sale of a property or vehicle, inheritance, insurance settlement, loan proceeds, or a business contract paid in one instalment.',
     limitations: 'Property sales, inheritances and loan proceeds are common legitimate causes; data errors (e.g. decimal shifts) also trigger it.',
   },
   {
     id: 'R3_CASH_JUST_BELOW_THRESHOLD', name: 'Repeated cash just below $10,000', category: 'Cash', weight: 45,
     logic: `≥ ${PARAMS.R3.minCount} cash deposits each between $${PARAMS.R3.low.toLocaleString('en-CA')} and $${PARAMS.R3.high.toLocaleString('en-CA')} within ${PARAMS.R3.windowDays} days.`,
     why: 'Repeated deposits just under a reporting threshold is a commonly cited indicator worth reviewing (Canada’s large cash transaction reporting threshold is $10,000).',
+    legitimate: 'Cash-based businesses depositing daily takings, or a customer who habitually deposits in round amounts. The pattern across branches and days is what makes it notable.',
     limitations: 'Educational illustration only; it does not apply any regulator’s rules, aggregation logic or reporting obligations.',
   },
   {
     id: 'R4_INFLOW_EXCEEDS_PROFILE', name: 'Monthly inflow exceeds profile', category: 'Profile', weight: 20,
     logic: `Total credits in a calendar month ≥ ${PARAMS.R4.multiplier} × declared monthly turnover.`,
     why: 'Sustained volume well above what the customer declared means the profile no longer describes the account.',
+    legitimate: 'Seasonal business, growth since the last KYC review, or an outdated declared turnover.',
     limitations: 'Seasonal businesses and outdated profiles trigger it; it carries the lowest weight for that reason.',
   },
   {
     id: 'R5_DUPLICATE_POSTING', name: 'Possible duplicate posting', category: 'Data quality', weight: 15,
     logic: `Two or more transactions on the same account with identical reference, amount, direction and counterparty within ${PARAMS.R5.maxDayGap} day.`,
     why: 'Duplicates inflate activity and can create false alerts; they can also hide in plain sight when payments are deliberately repeated.',
+    legitimate: 'A data load or interface defect, a payment genuinely sent twice by a counterparty, or a reversed and re-posted entry.',
     limitations: 'Cannot tell a load defect from a genuinely repeated payment without lineage (batch/load run) evidence.',
   },
   {
     id: 'R6_RAPID_PASS_THROUGH', name: 'Rapid pass-through of funds', category: 'Movement', weight: 35,
     logic: `Credit ≥ $${PARAMS.R6.minCredit.toLocaleString('en-CA')} followed within ${PARAMS.R6.windowDays} days by outgoing wires to other counterparties totalling ≥ ${PARAMS.R6.outflowShare * 100}% of the credit.`,
     why: 'Funds that arrive and leave almost immediately suggest the account may be used as a conduit.',
+    legitimate: 'Trading or brokerage businesses that pay suppliers as soon as customers pay them, payroll funding, or moving funds between own accounts.',
     limitations: 'Trading businesses routinely pay suppliers soon after receiving funds; context decides.',
   },
   {
     id: 'R7_PROFILE_INCONSISTENCY', name: 'Activity inconsistent with declared purpose', category: 'Profile', weight: 30,
     logic: `Declared purpose excludes international payments AND incoming international wires from ≥ ${PARAMS.R7.minDistinctCounterparties} distinct counterparties within ${PARAMS.R7.windowDays} days.`,
     why: 'The account is being used for something the customer did not declare at onboarding.',
+    legitimate: 'New freelance or remote work for foreign clients, family support from abroad, or a KYC profile that has not been refreshed.',
     limitations: 'Profiles go stale; the customer may have started legitimate freelance work abroad.',
   },
 ];

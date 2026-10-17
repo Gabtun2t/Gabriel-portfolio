@@ -2,12 +2,14 @@ import { useMemo, useState } from 'react';
 import { Link, navigate, useRoute } from '../router';
 import { aml, scenarioFor } from '../data/instances';
 import { SCENARIOS, AML_SEED } from '../data/aml/generate';
-import { buildEvidence, BAND_THRESHOLDS, type Alert } from '../engine/aml/alerts';
-import { RULE_CATALOG, ruleById, type RuleId } from '../engine/aml/rules';
+import { buildEvidence, correctedTransactions, BAND_THRESHOLDS, type Alert } from '../engine/aml/alerts';
+import { RULE_CATALOG, evaluateCustomer, ruleById, type RuleId } from '../engine/aml/rules';
 import { DISPOSITIONS, MIN_RATIONALE_CHARS, buildNarrative, closeEligibility, validateDisposition, type DispositionCode, type DispositionRecord } from '../engine/aml/disposition';
 import { Badge, CodeBlock, Kpi, Modal, SimBanner, Tabs, downloadText, extractBlock, store, useSort } from '../components/ui';
 import { DailyChart, HBarChart } from '../components/charts';
 import { SqlPanel } from '../components/SqlPanel';
+import { LabBrief } from '../components/LabBrief';
+import { AmlMethodology } from './AmlMethodology';
 import { count, money, money0, pct } from '../lib/format';
 import { dateRange } from '../lib/dates';
 import rulesSrc from '../engine/aml/rules.ts?raw';
@@ -15,17 +17,19 @@ import alertsSrc from '../engine/aml/alerts.ts?raw';
 import dispositionSrc from '../engine/aml/disposition.ts?raw';
 import amlTestsSrc from '../../tests/aml.test.ts?raw';
 
-type Tab = 'overview' | 'queue' | 'case' | 'rules' | 'data';
+type Tab = 'overview' | 'queue' | 'case' | 'rules' | 'method' | 'data';
 const TABS: { id: Tab; label: string }[] = [
   { id: 'overview', label: 'Overview' },
   { id: 'queue', label: 'Alert queue' },
   { id: 'case', label: 'Case investigation' },
   { id: 'rules', label: 'Rules, code & tests' },
+  { id: 'method', label: 'AML methodology' },
   { id: 'data', label: 'Data & scenarios' },
 ];
 
 const DECISIONS_KEY = 'aml-lab-decisions-v1';
 const NOTES_KEY = 'aml-lab-notes-v1';
+const DRAFTS_KEY = 'aml-lab-review-drafts-v1';
 type Notes = Record<string, { at: string; text: string }[]>;
 
 const fmtMeasure = (v: number) => (v > 0 && v < 1 ? pct(v) : v.toLocaleString('en-CA', { maximumFractionDigits: 2 }));
@@ -60,7 +64,7 @@ export function AmlLab() {
       return next;
     });
   };
-  const resetAll = () => { store.remove(DECISIONS_KEY); store.remove(NOTES_KEY); setDecisions({}); setNotes({}); };
+  const resetAll = () => { store.remove(DECISIONS_KEY); store.remove(NOTES_KEY); store.remove(DRAFTS_KEY); setDecisions({}); setNotes({}); };
   const go = (t: Tab, c?: string | null) => navigate('/labs/aml', { tab: t, case: c ?? (t === 'case' ? caseId : null) }, { replace: true });
 
   return (
@@ -72,7 +76,8 @@ export function AmlLab() {
           <p className="lead">A rule-based monitoring and case-investigation environment for a fictional lender, <em>Harbourline Community Finance</em>. Detection, scoring, evidence checks and narrative generation run in your browser from a fixed seed.</p>
           <div className="row">
             <button className="btn btn-primary" onClick={() => go('queue')}>Go to the alert queue</button>
-            <Link to="/case-studies" className="btn btn-secondary">Methodology & case study</Link>
+            <button className="btn btn-secondary" onClick={() => go('method')}>AML methodology</button>
+            <Link to="/case-studies" className="btn btn-secondary">Case study</Link>
           </div>
         </div>
       </section>
@@ -81,10 +86,11 @@ export function AmlLab() {
           <SimBanner>Fictional customers, accounts and transactions (seed {AML_SEED}). Alerts and risk indicators require professional review; they do not establish fraud, money laundering or any regulatory conclusion, and this tool makes no reporting decisions.</SimBanner>
           <Tabs tabs={TABS} value={tab} onChange={(t) => go(t)} label="AML lab sections" />
           <div role="tabpanel" id={`panel-${tab}`} aria-labelledby={`tab-${tab}`}>
-            {tab === 'overview' && <Overview decisions={decisions} onOpen={(c) => go('case', c)} onReset={resetAll} />}
+            {tab === 'overview' && <><AmlBrief /><div style={{ height: 16 }} /><Overview decisions={decisions} onOpen={(c) => go('case', c)} onReset={resetAll} /></>}
             {tab === 'queue' && <Queue decisions={decisions} onOpen={(c) => go('case', c)} />}
             {tab === 'case' && <CaseView caseId={caseId} decisions={decisions} notes={notes} onSave={saveDecision} onNote={addNote} onOpen={(c) => go('case', c)} />}
             {tab === 'rules' && <RulesView />}
+            {tab === 'method' && <AmlMethodology />}
             {tab === 'data' && <DataView />}
           </div>
         </div>
@@ -249,7 +255,15 @@ function CaseDetail({ alert, decision, notes, onSave, onNote, prev, next, onOpen
   const alertedIds = useMemo(() => new Set(alert.hits.flatMap((h) => h.txIds)), [alert]);
   const txs = ds.transactions.filter((t) => t.customerId === c.customerId);
   const [onlyAlerted, setOnlyAlerted] = useState(true);
-  const [reviewed, setReviewed] = useState<string[]>(decision?.reviewedEvidenceIds ?? []);
+  const [reviewed, setReviewedState] = useState<string[]>(decision?.reviewedEvidenceIds ?? store.get<Record<string, string[]>>(DRAFTS_KEY, {})[alert.caseId] ?? []);
+  const setReviewed = (fn: (r: string[]) => string[]) => setReviewedState((prev) => {
+    const next = fn(prev);
+    store.set(DRAFTS_KEY, { ...store.get<Record<string, string[]>>(DRAFTS_KEY, {}), [alert.caseId]: next });
+    return next;
+  });
+  const scenarioLabel = c.customerId === 'CUS-1031' ? { text: 'Scenario A · data migration false positive', tone: 'violet' } : c.customerId === 'CUS-1015' ? { text: 'Scenario B · unresolved suspicious activity', tone: 'red' } : null;
+  const reconRef = ds.transactions.find((t) => alertedIds.has(t.txId) && t.sourceSystem === 'MIGRATED_LEDGER' && ds.erpDocuments.some((d) => d.reference === t.reference && Math.abs(d.erpAmount - t.amount) > 0.005))?.reference
+    ?? (evidence.find((e) => e.id === 'duplicates')?.status === 'data_issue' ? ds.transactions.find((t) => alertedIds.has(t.txId) && t.loadRun === 2)?.reference : undefined);
   const [code, setCode] = useState<DispositionCode | ''>(decision?.code ?? '');
   const [rationale, setRationale] = useState(decision?.rationale ?? '');
   const [analyst, setAnalyst] = useState(decision?.analyst ?? 'Portfolio visitor');
@@ -278,6 +292,7 @@ function CaseDetail({ alert, decision, notes, onSave, onNote, prev, next, onOpen
               <h2 style={{ margin: 0 }} className="mono">{alert.caseId}</h2>
               <Badge tone={bandTone(alert.band)}>{alert.band} · {alert.score}/100</Badge>
               <Badge tone={statusTone(decision)}>{statusLabel(decision)}</Badge>
+              {scenarioLabel && <Badge tone={scenarioLabel.tone}>{scenarioLabel.text}</Badge>}
             </div>
             <p style={{ margin: '6px 0 0' }}><strong>{dsName}</strong> <span className="muted mono small">{c.customerId} · {c.accountId}</span> · alert {alert.alertId} created {alert.createdOn}</p>
           </div>
@@ -299,10 +314,18 @@ function CaseDetail({ alert, decision, notes, onSave, onNote, prev, next, onOpen
                 <div key={h.ruleId} className="evidence attention">
                   <header><h4>{r.name}</h4><span className="row" style={{ gap: 6 }}><Badge>{r.category}</Badge><Badge tone="blue">+{r.weight}</Badge></span></header>
                   <p>{h.explanation}</p>
-                  <ul><li>Rule {h.ruleId}: {r.logic}</li><li>Window {h.windowStart} → {h.windowEnd} · observed {fmtMeasure(h.observed)} vs threshold {fmtMeasure(h.threshold)}</li></ul>
+                  <dl className="rule-facts">
+                    <dt>Purpose</dt><dd>{r.why}</dd>
+                    <dt>Condition</dt><dd><span className="mono small">{h.ruleId}</span> · {r.logic}</dd>
+                    <dt>Observed</dt><dd><strong>{fmtMeasure(h.observed)}</strong> vs threshold <strong>{fmtMeasure(h.threshold)}</strong> · window {h.windowStart} → {h.windowEnd}</dd>
+                    <dt>Transactions</dt><dd>{h.txIds.length} referenced ({h.txIds.slice(0, 6).join(', ')}{h.txIds.length > 6 ? ', …' : ''}) — highlighted in the history below</dd>
+                    <dt>Legitimate causes</dt><dd>{r.legitimate}</dd>
+                    <dt>False positives</dt><dd>{r.limitations}</dd>
+                  </dl>
                 </div>
               );
             })}
+            <p className="small muted" style={{ margin: '10px 0 0' }}>Thresholds are illustrative values chosen for this simulation. They are not regulatory standards and are not calibrated on real data.</p>
             <details className="disclosure" style={{ marginTop: 12 }}>
               <summary>Score breakdown ({alert.score}/100)</summary>
               <div className="body">
@@ -356,8 +379,9 @@ function CaseDetail({ alert, decision, notes, onSave, onNote, prev, next, onOpen
 
         <div className="stack">
           <div className="card">
-            <h3>Evidence panel</h3>
-            <p className="small muted">Computed checks. Mark each item you reviewed — at least one is required to record a disposition.</p>
+            <div className="row between"><h3 style={{ margin: 0 }}>Evidence review checklist</h3><span className="small mono" aria-live="polite">{reviewed.length} of {evidence.length} reviewed</span></div>
+            <div className="progress" style={{ margin: '8px 0 6px' }} aria-hidden="true"><i style={{ width: `${(reviewed.length / evidence.length) * 100}%` }} /></div>
+            <p className="small muted">Computed checks. Tick each item once you have reviewed it; at least one is required to record a disposition. Ticks are saved in this browser.</p>
             {evidence.map((e) => (
               <div key={e.id} className={`evidence ${e.status}`}>
                 <header>
@@ -366,6 +390,9 @@ function CaseDetail({ alert, decision, notes, onSave, onNote, prev, next, onOpen
                 </header>
                 <p>{e.summary}</p>
                 {e.details.length > 0 && <ul>{e.details.map((d) => <li key={d}>{d}</li>)}</ul>}
+                {reconRef && (e.id === 'erp' || e.id === 'duplicates') && e.status === 'data_issue' && (
+                  <p className="small"><Link to="/labs/reconciliation" query={{ ref: reconRef }}>Trace {reconRef} to its source records in the reconciliation lab →</Link></p>
+                )}
                 <label className="check small" style={{ marginTop: 8 }}>
                   <input type="checkbox" checked={reviewed.includes(e.id)} disabled={!!decision}
                     onChange={(ev) => setReviewed((r) => (ev.target.checked ? [...r, e.id] : r.filter((x) => x !== e.id)))} />
@@ -435,7 +462,7 @@ function CaseDetail({ alert, decision, notes, onSave, onNote, prev, next, onOpen
                   <div className="callout bad" role="alert"><h4>Can’t record this yet</h4><ul className="small" style={{ margin: 0, paddingLeft: 18 }}>{errors.map((e) => <li key={e}>{e}</li>)}</ul></div>
                 )}
                 <button type="submit" className="btn btn-primary">Record disposition</button>
-                <p className="small muted" style={{ margin: 0 }}>Saved only in this browser. The simulation validates that a decision is reasoned and supported; it does not decide the outcome.</p>
+                <p className="small muted" style={{ margin: 0 }}>Your decision, notes and checklist are saved only in this browser (local storage). Nobody else can see them, and “Reset my decisions” on the Overview tab clears them. The simulation checks that a decision is reasoned and supported; it does not decide the outcome.</p>
               </form>
             )}
           </div>
@@ -536,5 +563,33 @@ function DataView() {
         </div>
       </div>
     </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+function AmlBrief() {
+  const { ds, alerts } = aml();
+  const baseline = ds.customers.filter((c) => !c.scenarioId);
+  const alerted = new Set(alerts.map((a) => a.customerId));
+  const a = alerts.find((x) => x.customerId === 'CUS-1031')!;
+  const b = alerts.find((x) => x.customerId === 'CUS-1015')!;
+  const ca = ds.customers.find((c) => c.customerId === 'CUS-1031')!;
+  const fixedA = correctedTransactions(ds, ds.transactions.filter((t) => t.customerId === ca.customerId));
+  const rulesAfter = evaluateCustomer(ca, fixedA.txs).length;
+  const closeB = closeEligibility(ds, b);
+  return (
+    <LabBrief
+      problem="A transaction-monitoring system raises alerts on customer activity. An investigator has to decide, alert by alert, whether the activity is explained, needs more information, or must go to compliance. Some alerts are caused by bad data, not by the customer."
+      why="Too many false positives waste investigation time and bury real risk. Closing a genuine alert as a “data issue” without proof is a control failure. Both mistakes are expensive."
+      proves="That Gabriel can structure an alert investigation end to end: explainable rules, KYC-related context, evidence gathering, a reasoned and documented decision, and the judgement to separate a migration defect from activity that still needs escalation."
+      capabilities={['Deterministic, explainable monitoring rules', 'Risk scoring with a visible breakdown', 'Evidence checks incl. lineage, duplicates and ERP cross-check', 'Disposition controls with validation', 'Case narrative generation', 'Automated tests and SQL parity checks']}
+      findings={[
+        <>{alerts.length} alerts from {ds.transactions.length.toLocaleString('en-CA')} transactions; {baseline.filter((c) => alerted.has(c.customerId)).length} of {baseline.length} baseline customers alerted (the baseline stays clean by design).</>,
+        <>Scenario A ({a.caseId}): after {fixedA.changes.length} evidence-supported correction, {rulesAfter} rules fire, so the alert is attributable to the migration defect.</>,
+        <>Scenario B ({b.caseId}): no data correction applies and closure is blocked ({closeB.unexplained.length} triggered rules have no documented explanation). Escalation is supported.</>,
+      ]}
+      limitations={['Thresholds are illustrative, not calibrated or regulatory', 'Single-customer rules: no network, sanctions or adverse-media screening', 'Decisions are stored only in your browser', 'Not a production or regulator-approved system']}
+      technical={<p>Rules are pure TypeScript functions over one customer’s profile and transactions (<span className="mono">src/engine/aml/rules.ts</span>); hits are grouped into one alert per customer and scored by summed weights plus KYC and risk-rating modifiers. The evidence builder re-runs the rules on a corrected copy of the data, which only changes migrated rows backed by a logged defect or a source document, so live activity can never be “explained away”. The same rules exist in SQL and are checked against SQLite.</p>}
+    />
   );
 }

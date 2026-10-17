@@ -1,7 +1,8 @@
 import { Link } from '../router';
-import { PROFILE } from '../content/profile';
+import { PROFILE, resumeFor } from '../content/profile';
 import { aml } from '../data/instances';
 import { Badge, StatusPill } from '../components/ui';
+import { Diagram } from '../components/Diagram';
 import { money0 } from '../lib/format';
 import { LAB_STATUS } from './Labs';
 
@@ -11,27 +12,46 @@ export function Home() {
   const s5 = alerts.find((a) => a.customerId === 'CUS-1031')!;
   const s6 = alerts.find((a) => a.customerId === 'CUS-1015')!;
   const name = (id: string) => ds.customers.find((c) => c.customerId === id)!.name;
+  const amlResume = resumeFor('aml');
+  const erpResume = resumeFor('erp');
+
+  const pathways = [
+    {
+      tone: 'teal', track: 'AML / Financial crime', title: 'Investigate an alert',
+      text: 'Open a case with repeated cash deposits just under $10,000. Review the KYC-related profile, the rules that fired, the evidence checklist and the escalation decision, then export the case narrative.',
+      to: '/labs/aml', query: { tab: 'case', case: s6.caseId }, cta: 'Open the AML case', resume: amlResume,
+    },
+    {
+      tone: 'blue', track: 'ERP / Financial systems', title: 'Reconcile a migrated ledger',
+      text: 'Run a legacy-to-ERP reconciliation. Inspect missing, duplicate and corrupted records, trace each one to its root cause, apply audited corrections and re-run the match.',
+      to: '/labs/reconciliation', query: undefined, cta: 'Open the reconciliation lab', resume: erpResume,
+    },
+    {
+      tone: 'violet', track: 'Architecture / Data', title: 'Break a payment integration',
+      text: 'Make the bank accept a payment and lose the response. Compare the result with and without idempotency keys, then trace a data-pipeline record back to its raw source.',
+      to: '/labs/payments', query: undefined, cta: 'Open the payment lab', resume: erpResume,
+    },
+  ];
 
   return (
     <>
       <section className="page-hero hero-home">
         <div className="container hero-grid">
           <div>
-            <div className="eyebrow">{PROFILE.location}</div>
-            <h1>{PROFILE.headline}</h1>
-            <p className="lead">{PROFILE.proposition}</p>
-            <p style={{ color: 'var(--navy-muted)', maxWidth: 700 }}>
-              9+ years in ERP and financial systems (Sage X3, Sage 300, Acumatica), including AML-related transaction reviews and KYC-related checks on client projects — and telling genuine risk indicators apart from data-migration errors.
-            </p>
+            <div className="eyebrow">{PROFILE.name} · {PROFILE.location}</div>
+            <h1 style={{ fontSize: 'clamp(30px, 4.2vw, 46px)' }}>{PROFILE.headline}</h1>
+            <p style={{ color: '#fff', fontSize: 19, fontWeight: 600, margin: '0 0 10px' }}>{PROFILE.title}</p>
+            <p className="lead">{PROFILE.intro}</p>
             <div className="row" style={{ marginTop: 24 }}>
               <Link to="/labs/aml" className="btn btn-primary">Open the AML investigation lab</Link>
               <a href={PROFILE.resumePdf} className="btn btn-secondary" download>Download resume (PDF)</a>
-              <Link to="/guide" className="btn btn-secondary">Recruiter guide</Link>
+              {PROFILE.linkedinUrl && <a href={PROFILE.linkedinUrl} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>}
+              <a href={`mailto:${PROFILE.email}`} className="btn btn-secondary">Email</a>
             </div>
           </div>
           <aside className="hero-panel" aria-label="Live demo: highest-scoring synthetic alerts">
             <div className="row between">
-              <h3 style={{ margin: 0 }}>Live from the AML lab</h3>
+              <h2 style={{ margin: 0, fontSize: 14, color: '#fff' }}>Live from the AML lab</h2>
               <span className="badge badge-sim">Synthetic</span>
             </div>
             <p className="small" style={{ color: 'var(--navy-muted)', margin: '6px 0 4px' }}>
@@ -51,31 +71,26 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" aria-labelledby="glance">
         <div className="container">
-          <div className="section-head">
+          <h2 id="glance" className="sr-only">At a glance</h2>
+          <div className="tracks">
             <div>
-              <div className="eyebrow">Start here</div>
-              <h2>Three ways to evaluate this portfolio</h2>
+              <div className="eyebrow">Experience</div>
+              <p style={{ margin: 0 }}><strong>9+ years</strong> in ERP and financial systems: Sage X3, Sage 300 and Acumatica, across GL, AP, AR, migration, reconciliation and integration support. Currently Senior Support Engineer at Acumatica.</p>
             </div>
-            <p>Each path takes 2–5 minutes and ends at working software, not screenshots.</p>
-          </div>
-          <div className="grid cols-3">
-            <Link to="/labs/aml" query={{ tab: 'case', case: s6.caseId }} className="card card-link">
-              <Badge tone="teal">AML / financial crime</Badge>
-              <h3 style={{ marginTop: 10 }}>Investigate an alert</h3>
-              <p className="muted">Open a cash-structuring case: review the customer’s KYC profile, the triggered rules, evidence checks, then record a reasoned disposition and export the case narrative.</p>
-            </Link>
-            <Link to="/labs/reconciliation" className="card card-link">
-              <Badge tone="blue">ERP / financial systems</Badge>
-              <h3 style={{ marginTop: 10 }}>Run a migration reconciliation</h3>
-              <p className="muted">Reconcile a legacy extract against a migrated ERP ledger, trace each exception to its root cause, apply corrections and re-run validation.</p>
-            </Link>
-            <Link to="/labs/payments" className="card card-link">
-              <Badge tone="violet">Architecture / data</Badge>
-              <h3 style={{ marginTop: 10 }}>Break a payment integration</h3>
-              <p className="muted">Send a payment through a mock bank API, inject a timeout after commit, and see how idempotency keys prevent a duplicate debit — then inspect the data pipeline lineage.</p>
-            </Link>
+            <div>
+              <div className="eyebrow">Industry exposure</div>
+              <p style={{ margin: 0 }}>Client projects for a <strong>financial institution, microfinance banking and oil and gas</strong> organizations, plus enterprise ERP software support across finance, distribution and commerce.</p>
+            </div>
+            <div>
+              <div className="eyebrow">What is different</div>
+              <p style={{ margin: 0 }}>AML-related transaction reviews <strong>combined with ERP data expertise</strong>: escalating suspicious findings to compliance, and tracing some exceptions to migration-related data corruption rather than fraud.</p>
+            </div>
+            <div>
+              <div className="eyebrow">Proof of work</div>
+              <p style={{ margin: 0 }}><strong>Four working labs</strong> on synthetic data, with automated tests and SQL checked against SQLite. <Link to="/labs">See the project lab</Link>.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -84,26 +99,45 @@ export function Home() {
         <div className="container">
           <div className="section-head">
             <div>
-              <div className="eyebrow">Practice areas</div>
-              <h2>Four connected tracks</h2>
+              <div className="eyebrow">Start here</div>
+              <h2>Choose the path that matches your role</h2>
             </div>
-            <p>Each track pairs professional experience (from the resume) with a portfolio demonstration (synthetic).</p>
+            <p>Each path opens a working demonstration in one click and takes 2–5 minutes.</p>
           </div>
-          <div className="tracks">
-            {[
-              { n: '01', t: 'AML & financial-crime investigation', d: 'Transaction review, KYC-related checks, alert triage and escalation — with the judgement to separate risk indicators from data defects.', pro: 'AML-related transaction reviews and KYC-related checks on financial-institution, microfinance and oil-and-gas client projects; escalation to compliance.', demo: 'AML lab', to: '/labs/aml' },
-              { n: '02', t: 'ERP & financial systems', d: 'GL/AP/AR configuration, data migration, reconciliation and UAT across Sage X3, Sage 300 and Acumatica.', pro: 'Sage X3 implementations, V11→V12 upgrade, migrated-record reconciliation; ERP production investigations at Acumatica.', demo: 'Reconciliation lab', to: '/labs/reconciliation' },
-              { n: '03', t: 'Data analytics & engineering', d: 'SQL-based investigation, validation rules, deduplication, lineage and reproducible financial metrics.', pro: 'SQL Server, source-to-target mapping, data validation and migration testing.', demo: 'Data engineering lab', to: '/labs/data' },
-              { n: '04', t: 'Solution & integration architecture', d: 'Payment API ↔ ERP flows, idempotency, retries, audit trails and reconciliation controls.', pro: 'Supported a bank payment API ↔ Sage 300 integration with an internal developer; ERP interface troubleshooting.', demo: 'Payment API lab', to: '/labs/payments' },
-            ].map((t) => (
-              <div key={t.n}>
-                <div className="num">{t.n}</div>
-                <h3 style={{ marginTop: 4 }}>{t.t}</h3>
-                <p className="muted small">{t.d}</p>
-                <div className="evidence-line"><Badge tone="green">Experience</Badge><span>{t.pro}</span></div>
-                <div className="evidence-line"><Badge tone="amber">Demo</Badge><span><Link to={t.to}>{t.demo}</Link> (synthetic data)</span></div>
+          <div className="grid cols-3">
+            {pathways.map((p) => (
+              <div key={p.track} className="card stack">
+                <Badge tone={p.tone}>{p.track}</Badge>
+                <h3 style={{ margin: 0 }}>{p.title}</h3>
+                <p className="muted small" style={{ margin: 0 }}>{p.text}</p>
+                <div className="row" style={{ marginTop: 'auto' }}>
+                  <Link to={p.to} query={p.query} className="btn btn-primary btn-sm">{p.cta}</Link>
+                  <a href={p.resume.file} className="btn btn-secondary btn-sm" download title={p.resume.label}>Resume (PDF)</a>
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <div className="eyebrow">One thread</div>
+              <h2>A transaction is only as trustworthy as the systems it passes through</h2>
+            </div>
+            <p>The four labs follow the same money: a payment leaves an ERP, lands in a ledger, flows through a data pipeline and is screened by monitoring. Each lab tests one place where that can go wrong.</p>
+          </div>
+          <div className="card">
+            <Diagram label="The thread across the labs: payment integration, ledger reconciliation, data pipeline, transaction monitoring" width={1000} height={130}
+              nodes={[
+                { id: 'p', x: 10, y: 30, w: 220, h: 64, title: 'Payment API ↔ ERP', sub: 'Was it sent exactly once?', tone: 'accent' },
+                { id: 'r', x: 265, y: 30, w: 220, h: 64, title: 'Ledger reconciliation', sub: 'Did it arrive intact?', tone: 'accent' },
+                { id: 'd', x: 520, y: 30, w: 220, h: 64, title: 'Data pipeline', sub: 'Is the reporting data clean?', tone: 'accent' },
+                { id: 'm', x: 775, y: 30, w: 215, h: 64, title: 'AML monitoring', sub: 'Is it suspicious, or the data?', tone: 'warn' },
+              ]}
+              edges={[{ from: 'p', to: 'r' }, { from: 'r', to: 'd' }, { from: 'd', to: 'm' }]} />
           </div>
         </div>
       </section>
@@ -113,19 +147,19 @@ export function Home() {
           <div className="grid cols-2" style={{ alignItems: 'center' }}>
             <div>
               <div className="eyebrow">Signature story</div>
-              <h2>Is it suspicious — or is it the data?</h2>
+              <h2>Is it suspicious, or is it the data?</h2>
               <p className="lead">Unusual activity can require escalation. But some anomalies come from duplicated or corrupted financial data. The lab teaches the difference through evidence, not assumptions.</p>
-              <p className="muted">Both cases below are from the same synthetic dataset. One alert disappears when an evidence-supported data correction is applied; the other does not change at all.</p>
+              <p className="muted">Both cases come from the same synthetic dataset and trigger the same two rules. One alert disappears when an evidence-supported data correction is applied. The other does not change at all.</p>
               <Link to="/case-studies" className="btn btn-secondary">Read the case study</Link>
             </div>
             <div className="grid" style={{ gap: 12 }}>
               <Link to="/labs/aml" query={{ tab: 'case', case: s5.caseId }} className="card card-link tight">
-                <div className="row between"><strong className="mono">{s5.caseId}</strong><Badge tone="violet">Data defect</Badge></div>
-                <p className="small" style={{ margin: '6px 0 0' }}>{money0(1245000)} receipt for a farm-supply business. The source ERP says {money0(12450)}. Migrated amount is exactly ×100; batch MIG-0612 has a logged scale defect. <strong>Re-evaluated with the source amount: no rule fires.</strong></p>
+                <div className="row between"><strong className="mono">Scenario A · {s5.caseId}</strong><Badge tone="violet">Migration false positive</Badge></div>
+                <p className="small" style={{ margin: '6px 0 0' }}>A {money0(1245000)} receipt for a farm-supply business. The source ERP says {money0(12450)}: the migrated amount is exactly ×100, and batch MIG-0612 has a logged scale defect. <strong>Re-evaluated with the source amount, no rule fires.</strong></p>
               </Link>
               <Link to="/labs/aml" query={{ tab: 'case', case: s6.caseId }} className="card card-link tight">
-                <div className="row between"><strong className="mono">{s6.caseId}</strong><Badge tone="red">Unresolved</Badge></div>
-                <p className="small" style={{ margin: '6px 0 0' }}>Four cash deposits of $9,400–$9,900 across three branches in five days, then a $37,000 wire out. Live core data, no data issue, no response to the request for information. <strong>Escalation is supported; closure is blocked.</strong></p>
+                <div className="row between"><strong className="mono">Scenario B · {s6.caseId}</strong><Badge tone="red">Unresolved</Badge></div>
+                <p className="small" style={{ margin: '6px 0 0' }}>Four cash deposits of $9,400–$9,900 at three branches in five days, then a $37,000 wire out. Live core data, no data issue, and no reply to the request for information. <strong>Escalation is supported; closure is blocked.</strong></p>
               </Link>
             </div>
           </div>
@@ -139,7 +173,7 @@ export function Home() {
               <div className="eyebrow">Project lab</div>
               <h2>Working demonstrations</h2>
             </div>
-            <Link to="/status">Full feature status →</Link>
+            <Link to="/status">Build status and limitations →</Link>
           </div>
           <div className="grid cols-4">
             {LAB_STATUS.map((l) => (
@@ -156,8 +190,8 @@ export function Home() {
       <section className="section">
         <div className="container">
           <div className="callout info">
-            <h4>What is real and what is simulated</h4>
-            <p className="small">Employment history, skills, education and credentials come from Gabriel’s resume. The four labs are independent portfolio simulations built on synthetic, seeded data. They are not client engagements, production systems or reproductions of any employer’s or client’s software. No certification beyond those listed on the <Link to="/experience">Experience</Link> page is claimed.</p>
+            <h3 style={{ fontSize: 15, marginBottom: 4 }}>What is real and what is simulated</h3>
+            <p className="small">Employment history, skills, education and credentials come from Gabriel’s resume. The four labs are independent portfolio simulations on synthetic, seeded data. They are not client engagements, production banking or compliance systems, or reproductions of any employer’s or client’s software. See <Link to="/experience">Experience</Link> for the full breakdown.</p>
           </div>
         </div>
       </section>

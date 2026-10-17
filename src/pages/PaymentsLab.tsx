@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
+import { LabBrief } from '../components/LabBrief';
 import { IntegrationEnvironment, PAYMENT_SCHEMA, SAMPLE_REQUEST, type FaultMode, type RunResult } from '../engine/payments/payments';
 import { Badge, CodeBlock, SimBanner, extractBlock } from '../components/ui';
 import { Diagram } from '../components/Diagram';
@@ -19,6 +20,11 @@ const PRESETS: Preset[] = [
   { id: '429', name: 'Rate limited (429), then success', teaches: '429 is retryable; the client backs off instead of hammering the API.', steps: [{ label: 'Send', request: base, fault: 'rate_limit_429', budget: 1, idempotency: true }] },
   { id: 'timeout', name: 'Timeout after bank commit', teaches: 'The bank debited the account but the response was lost. The retry carries the same key, so the bank returns the original result.', steps: [{ label: 'Send', request: base, fault: 'timeout_after_commit', budget: 1, idempotency: true }] },
   { id: 'timeout-unsafe', name: 'Timeout after commit — idempotency OFF', teaches: 'Unsafe on purpose: without a key the retry creates a second debit. Reconciliation catches the duplicate payment.', steps: [{ label: 'Send', request: base, fault: 'timeout_after_commit', budget: 1, idempotency: false }] },
+  { id: 'partial', name: 'Batch with a partial failure', teaches: 'A three-payment AP batch: the first two clear, the third exceeds the remaining balance and is rejected. Each payment is tracked on its own; the batch is not “all or nothing”, and reconciliation shows exactly which one did not move.', steps: [
+    { label: 'Batch item 1 of 3', request: { ...base, erpPaymentRef: 'AP-PMT-000501', vendorId: 'V-2044', creditorName: 'Larchview Steel Fabricators (fictional)', creditorAccount: '5550099001', amount: 180000, remittanceInfo: 'INV-80110' }, fault: 'none', budget: 0, idempotency: true },
+    { label: 'Batch item 2 of 3', request: { ...base, erpPaymentRef: 'AP-PMT-000502', vendorId: 'V-2051', creditorName: 'Pellmore Industrial Gases (fictional)', creditorAccount: '5550099002', amount: 240000, remittanceInfo: 'INV-80117' }, fault: 'none', budget: 0, idempotency: true },
+    { label: 'Batch item 3 of 3', request: { ...base, erpPaymentRef: 'AP-PMT-000503', vendorId: 'V-2063', creditorName: 'Quarrow Freight Lines (fictional)', creditorAccount: '5550099003', amount: 150000, remittanceInfo: 'INV-80125' }, fault: 'none', budget: 0, idempotency: true },
+  ] },
   { id: '422', name: 'Insufficient funds (422)', teaches: 'Business rejections are not retried; the ERP record is marked rejected and nothing moves.', steps: [{ label: 'Send', request: base, fault: 'insufficient_funds', budget: 0, idempotency: true }] },
   { id: '409', name: 'Edited after sending (409 conflict)', teaches: 'Reusing a key with a changed payload is refused: a changed payment must be a new ERP document.', steps: [{ label: 'Send original', request: base, fault: 'none', budget: 0, idempotency: true }, { label: 'Send edited amount, same document', request: { ...base, amount: 18350.4 }, fault: 'none', budget: 0, idempotency: true }] },
 ];
@@ -78,6 +84,7 @@ export function PaymentsLab() {
       <section className="section" style={{ paddingTop: 24 }}>
         <div className="container stack">
           <SimBanner>No real bank, API endpoint, account or credential is used. The “bank” is an in-memory object in your browser with a simulated clock; account numbers and the token are fictional.</SimBanner>
+          <PaymentsBrief />
 
           <div className="card">
             <h3>Scenarios</h3>
@@ -229,6 +236,59 @@ export function PaymentsLab() {
           </details>
         </div>
       </section>
+    </>
+  );
+}
+
+function runScenario(fault: FaultMode, idempotencyEnabled: boolean, sends: number) {
+  const env = new IntegrationEnvironment();
+  for (let i = 0; i < sends; i++) {
+    env.bank.setFault(i === 0 ? fault : 'none', i === 0 ? 1 : 0);
+    env.submit(SAMPLE_REQUEST, { idempotencyEnabled, maxAttempts: 4, baseDelayMs: 500 });
+  }
+  const r = env.reconcile()[0];
+  return { debits: env.bank.statement.length, result: r.result, erp: r.erpStatus, paid: env.bank.statement.reduce((t, l) => t + l.amount, 0) };
+}
+
+function PaymentsBrief() {
+  const rows = useMemo(() => [
+    { scenario: 'Bank commits, response lost (timeout after commit)', fault: 'timeout_after_commit' as FaultMode, sends: 1 },
+    { scenario: 'Same payment submitted twice (double-click or batch re-run)', fault: 'none' as FaultMode, sends: 2 },
+  ].map((r) => ({ ...r, safe: runScenario(r.fault, true, r.sends), unsafe: runScenario(r.fault, false, r.sends) })), []);
+  const t = rows[0];
+  return (
+    <>
+      <LabBrief
+        problem="An ERP sends supplier payments to a bank API. Networks fail, banks return errors, and sometimes the bank processes a payment but the response never arrives."
+        why="A naive retry pays the supplier twice; a naive “failed” status invites someone to resend it by hand. Either way money leaves the company that should not, and the ERP no longer matches the bank."
+        proves="That Gabriel can design a payment integration that is safe to retry: schema validation before any call, idempotency keys tied to the ERP document, retry only on transient errors, visible unknown outcomes, an audit trail, and reconciliation that catches what the client cannot see."
+        capabilities={['Request schema validation', 'Idempotency keys and replay detection', 'Payload-conflict handling (409)', 'Retries with exponential back-off and jitter', 'Partial-failure handling across a batch', 'Masked audit trail and ERP ↔ bank reconciliation']}
+        findings={[
+          <>Timeout after commit with idempotency: {t.safe.debits} debit, reconciliation {t.safe.result.replace(/_/g, ' ')}.</>,
+          <>The same failure without idempotency: {t.unsafe.debits} debits ({money(t.unsafe.paid)} paid for a {money(SAMPLE_REQUEST.amount)} invoice), reconciliation {t.unsafe.result.replace(/_/g, ' ')}.</>,
+          <>Business rejections (422) are never retried, and exhausted retries leave the ERP record in NEEDS_REVIEW rather than back to APPROVED.</>,
+        ]}
+        limitations={['In-memory mock bank with a simulated clock', 'No real network, persistence or concurrency', 'No status-inquiry endpoint or webhooks', 'Security controls described, not implemented']}
+        technical={<p>The client (<span className="mono">IntegrationEnvironment.submit</span>) derives the key as a SHA-256 hash of the ERP payment reference, so restarts and batch re-runs reuse it. The mock bank stores the original response with a canonical-JSON payload fingerprint: same key and same payload replays, same key and different payload returns 409. Retries apply only to 429, 503 and timeouts. All behaviour is covered by <span className="mono">tests/payments.test.ts</span>.</p>}
+      />
+      <div className="card">
+        <div className="row between"><h3 style={{ margin: 0 }}>Correct vs. incorrect integration behaviour</h3><span className="badge badge-sim">Simulation</span></div>
+        <p className="small muted">Computed by running each scenario twice against a fresh mock bank: once with idempotency keys, once without.</p>
+        <div className="table-wrap">
+          <table className="data">
+            <thead><tr><th>Scenario</th><th>With idempotency keys</th><th>Without (unsafe)</th></tr></thead>
+            <tbody>
+              {rows.map((r) => (
+                <tr key={r.scenario}>
+                  <td>{r.scenario}</td>
+                  <td><Badge tone="green">{r.safe.debits} debit</Badge> <span className="small">ERP {r.safe.erp} · {r.safe.result.replace(/_/g, ' ')}</span></td>
+                  <td><Badge tone="red">{r.unsafe.debits} debits</Badge> <span className="small">ERP {r.unsafe.erp} · {r.unsafe.result.replace(/_/g, ' ')}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </>
   );
 }

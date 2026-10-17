@@ -5,19 +5,48 @@
  */
 export const PROFILE = {
   name: 'Gabriel Olatundun',
-  headline: 'Financial Systems, AML Investigations & Integration Architecture',
+  /** Primary professional identity. */
+  title: 'Senior Financial Systems & Integration Specialist',
+  headline: 'Financial Systems. Financial Crime. Data Integrity. Enterprise Integration.',
+  specializations: [
+    'AML and financial crime investigations',
+    'ERP financial reconciliation',
+    'SQL and financial data analytics',
+    'Banking and payment API integration',
+    'Solution and integration architecture',
+  ],
   location: 'Ottawa, Ontario, Canada',
   email: 'gabriel.olatundun@gmail.com',
-  /** Approved for publication by Gabriel (Oct 2026). */
+  /** Approved for publication by Gabriel (Oct 2026). Set showPhone to false to hide it everywhere on the site. */
   phone: '902-880-9877',
+  showPhone: true,
   /** Verified by Gabriel (Oct 2026). */
   linkedinUrl: 'https://www.linkedin.com/in/tunde-o-tech' as string | null,
   resumePdf: 'resume/Gabriel_Olatundun_Resume.pdf',
+  intro:
+    'I investigate complex financial transactions, resolve ERP data discrepancies, and support reliable integrations between financial systems. My experience spans enterprise applications, banking-related projects, payment workflows, financial reconciliation, and AML-related transaction investigations.',
   proposition:
     'I investigate financial and transactional problems across business processes, ERP systems, payments and data; I identify root causes and design reliable integrations and controls.',
   summary:
     'Senior ERP and financial systems professional with 9+ years across financial transaction workflows, enterprise applications, data quality, implementations and systems integration. Performed AML-related transaction reviews and KYC-related checks in client projects, escalated relevant findings to compliance teams, and distinguished potential risk indicators from ERP data-quality and migration errors.',
 };
+
+/**
+ * Resume tracks. Only documents supplied or confirmed by Gabriel are published.
+ * The ERP / integration resume has not been supplied yet (see README "Owner checklist"),
+ * so its pathway uses the current resume until a verified file is added.
+ */
+export const RESUMES: { id: 'aml' | 'erp'; label: string; file: string | null }[] = [
+  { id: 'aml', label: 'AML / Financial Crime Systems resume', file: 'resume/Gabriel_Olatundun_Resume.pdf' },
+  { id: 'erp', label: 'ERP / Integration / Financial Systems resume', file: null },
+];
+export const resumeFor = (id: 'aml' | 'erp') => {
+  const r = RESUMES.find((x) => x.id === id)!;
+  return r.file ? { label: r.label, file: r.file } : { label: 'Current resume (PDF)', file: PROFILE.resumePdf };
+};
+
+export const AI_DISCLOSURE =
+  'The code for this website and its four labs was written with substantial help from AI coding tools (Anthropic’s Claude), working to requirements Gabriel set and reviewed. Gabriel decided what the labs demonstrate and approved all professional content. His employment history comes from his resume and is separate from these simulations; the labs are not presented as software he wrote unaided.';
 
 export interface Role {
   title: string;

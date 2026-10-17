@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react';
 import { pipeline } from '../data/instances';
 import { PIPELINE_SEED, type SourceName } from '../data/pipeline/generate';
-import { VALIDATION_RULES, runPipeline, standardize, traceFact, type ValidationRuleId } from '../engine/pipeline/pipeline';
+import { VALIDATION_RULES, runPipeline, sourceControls, standardize, traceFact, type ValidationRuleId } from '../engine/pipeline/pipeline';
+import { LabBrief } from '../components/LabBrief';
 import { Badge, CodeBlock, Kpi, SimBanner, extractBlock } from '../components/ui';
 import { ColumnChart, HBarChart } from '../components/charts';
 import { Diagram } from '../components/Diagram';
@@ -29,6 +30,7 @@ export function DataLab() {
   const channels = [...new Set(run.metrics.monthlyByChannel.map((m) => m.channel))];
   const dqAvg = (run.metrics.dq.completeness + run.metrics.dq.validity + run.metrics.dq.uniqueness + run.metrics.dq.integrity) / 4;
   const maxRows = run.counts[0].rows;
+  const controls = sourceControls(run, raw);
 
   return (
     <>
@@ -42,6 +44,19 @@ export function DataLab() {
       <section className="section" style={{ paddingTop: 24 }}>
         <div className="container stack">
           <SimBanner>Synthetic raw deliveries generated from seed {PIPELINE_SEED}, including 26 seeded quality problems. The pipeline runs in your browser; toggling a rule re-runs it.</SimBanner>
+          <LabBrief
+            problem="Payment data arrives from three systems that disagree on date formats, units and identifiers, and sometimes the same file arrives twice. Reports built straight on that data are wrong in ways nobody notices."
+            why="Finance, treasury and monitoring all depend on these numbers. A silently dropped currency or a double-counted file changes totals without any visible error."
+            proves="That Gabriel can build a small, honest pipeline: standardize, validate with reasons, quarantine rather than drop, deduplicate, model, measure quality, prove every row is accounted for, and trace any number back to its source."
+            capabilities={['Ingestion of three source formats', 'Required-field and validity checks with quarantine', 'Exact and natural-key deduplication', 'Currency conversion and star-schema model', 'Data-quality dimensions and row-count controls', 'Lineage from fact row to raw delivery; SQL over the model']}
+            findings={[
+              <>{raw.length} raw deliveries → {run.quarantined.length} quarantined, {run.dedup.exactDuplicates.length + run.dedup.keyDuplicates.length} duplicates removed, {run.facts.length} fact rows.</>,
+              <>Row-count controls balance for {controls.filter((c) => c.balanced).length} of {controls.length} sources.</>,
+              <>Turning off the currency rule lets {runPipeline(raw, new Set(VALIDATION_RULES.map((v) => v.id).filter((id) => id !== 'V4_CURRENCY'))).metrics.unconverted} rows through with no CAD amount, and the dashboard total does not change. That is why quality needs its own measure.</>,
+            ]}
+            limitations={['Batch, in-memory, single run', 'No orchestration, incremental loads or cloud infrastructure', 'Fixed monthly FX rates']}
+            technical={<p>Each stage is a pure function in <span className="mono">src/engine/pipeline/pipeline.ts</span>, so a run is reproducible and every stage is unit-tested. Data-quality dimensions are measured over all staged rows with every rule, independent of the toggles. Fact rows carry <span className="mono">lineage_raw_ids</span>, and the monthly SQL over the star schema is checked against the TypeScript metrics.</p>}
+          />
           <div className="kpis">
             <Kpi label="Raw deliveries" value={raw.length} sub="3 sources" />
             <Kpi label="Quarantined" value={run.quarantined.length} sub="failed ≥1 enabled rule" />
@@ -174,6 +189,20 @@ export function DataLab() {
               </div>
             </div>
             <p className="small muted" style={{ marginTop: 8, marginBottom: 0 }}>Quality dimensions are measured over all {run.staged.length} staged rows with every rule, so switching rules off changes what flows through — not the measured quality of the data.</p>
+          </div>
+
+          <div className="card">
+            <h3>Reconciliation controls: is every raw row accounted for?</h3>
+            <p className="small muted">Each delivery must end in exactly one place: quarantine, removed as a duplicate, or a fact row.</p>
+            <div className="table-wrap">
+              <table className="data compact">
+                <thead><tr><th>Source</th><th className="num">Raw</th><th className="num">Quarantined</th><th className="num">Duplicates</th><th className="num">Facts</th><th className="num">Fact total (CAD)</th><th>Control</th></tr></thead>
+                <tbody>{controls.map((c) => (
+                  <tr key={c.source}><td className="mono small">{c.source}</td><td className="num">{c.raw}</td><td className="num">{c.quarantined}</td><td className="num">{c.duplicatesRemoved}</td><td className="num">{c.facts}</td><td className="num">{money(c.factAmountCad)}</td>
+                    <td><Badge tone={c.balanced ? 'green' : 'red'}>{c.balanced ? 'Balanced' : 'Out of balance'}</Badge></td></tr>
+                ))}</tbody>
+              </table>
+            </div>
           </div>
 
           <div className="card">

@@ -1,7 +1,7 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { generatePipelineDataset } from '../src/data/pipeline/generate';
-import { runPipeline, traceFact, standardize, VALIDATION_RULES, type ValidationRuleId } from '../src/engine/pipeline/pipeline';
+import { runPipeline, traceFact, standardize, sourceControls, VALIDATION_RULES, type ValidationRuleId } from '../src/engine/pipeline/pipeline';
 import { fingerprint } from '../src/lib/prng';
 
 const ds = generatePipelineDataset();
@@ -71,5 +71,22 @@ describe('metrics and lineage', () => {
     const r = runPipeline(ds.raw, enabled);
     assert.equal(r.metrics.unconverted, 3);
     assert.equal(r.metrics.totalCad, run.metrics.totalCad);
+  });
+});
+
+describe('reconciliation controls', () => {
+  test('every raw delivery is accounted for: raw = quarantined + duplicates + facts, per source', () => {
+    const c = sourceControls(run, ds.raw);
+    assert.equal(c.length, 3);
+    assert.ok(c.every((x) => x.balanced), JSON.stringify(c));
+    assert.equal(c.reduce((t, x) => t + x.raw, 0), ds.raw.length);
+  });
+  test('per-source fact totals add up to the dashboard total', () => {
+    const c = sourceControls(run, ds.raw);
+    assert.ok(Math.abs(c.reduce((t, x) => t + x.factAmountCad, 0) - run.metrics.totalCad) < 0.01);
+  });
+  test('controls still balance when a validation rule is disabled', () => {
+    const r = runPipeline(ds.raw, new Set(VALIDATION_RULES.map((v) => v.id).filter((id) => id !== 'V5_CUSTOMER')));
+    assert.ok(sourceControls(r, ds.raw).every((x) => x.balanced));
   });
 });

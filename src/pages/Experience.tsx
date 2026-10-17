@@ -18,9 +18,21 @@ export function Experience() {
 
       <section className="section">
         <div className="container">
-          <div className="callout info" style={{ marginBottom: 28 }}>
-            <h4>Professional work vs. portfolio demonstrations</h4>
-            <p className="small">Everything on this page is professional history taken from the resume. The labs elsewhere on this site are synthetic demonstrations; they are mapped to this experience in the “skill evidence” table below but are not client work. Client names are withheld.</p>
+          <div className="card" style={{ marginBottom: 28 }}>
+            <h2 style={{ fontSize: 20 }}>How to read this portfolio</h2>
+            <p className="small muted">Five levels of evidence, kept separate on purpose.</p>
+            <div className="table-wrap">
+              <table className="data">
+                <thead><tr><th>Level</th><th>What it covers</th><th>Where to see it</th></tr></thead>
+                <tbody>
+                  <tr><td><Badge tone="green">Employment</Badge></td><td>Employers, job titles and dates, exactly as on the resume.</td><td>Timeline below</td></tr>
+                  <tr><td><Badge tone="green">Responsibilities</Badge></td><td>What the resume says Gabriel did in each role, including AML-related transaction reviews and KYC-related checks. Client names are withheld.</td><td>Timeline below</td></tr>
+                  <tr><td><Badge tone="amber">Portfolio projects</Badge></td><td>Four independent labs on synthetic data. They are not client work, production systems, or software approved for regulatory use.</td><td><Link to="/labs">Project lab</Link></td></tr>
+                  <tr><td><Badge tone="blue">Demonstrated skills</Badge></td><td>Rule design, alert investigation workflow, source-to-target reconciliation, SQL, idempotent API design, data-quality pipelines. Behaviour is checked by automated tests.</td><td><Link to="/status">Build status</Link></td></tr>
+                  <tr><td><Badge tone="neutral">Not claimed</Badge></td><td>Filing regulatory reports (e.g. FINTRAC STRs or LCTRs), hands-on use of vendor AML platforms or sanctions screening tools, AML certifications such as CAMS, production cloud architecture. These would need further study or professional validation.</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           <div className="split wide-left">
             <div className="timeline" aria-label="Employment history">
