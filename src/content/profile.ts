@@ -92,7 +92,7 @@ export const ROLES: Role[] = [
     title: 'Senior Technical Consultant', org: 'Softcodes International Ltd.', place: 'Lagos, Nigeria', start: 'Oct 2016', end: 'Dec 2021', tracks: ['ERP implementation', 'Architecture', 'AML', 'Data'],
     bullets: [
       'Led an approximately 18-month, phased, estate-wide Sage 300 implementation for an estate management organisation in Lagos: requirements and process analysis, configuration, data migration, testing and validation, integration with the client\u2019s existing estate management software, training and go-live, coordinating a multidisciplinary implementation team.',
-      'Led the ERP implementation for a public-sector water utility (government project).',
+      'Led the Sage 300 implementation for a public-sector water utility (government project).',
       'Delivered Sage X3 and Sage 300 implementations and advisory support across finance, manufacturing, distribution and other enterprise environments, translating client requirements into workable system processes.',
       'Partnered with an internal developer and client stakeholders to integrate a bank payment API with Sage 300 for a financial-services client; helped align payment processing with ERP and finance workflows.',
       'Supported Sage X3 integrations with investment and payroll applications, resolving data mapping, interface and process issues through cross-functional investigation.',
@@ -153,7 +153,7 @@ export const SKILL_EVIDENCE: { skill: string; professional: string; demo: string
 // ---------------------------------------------------------------------------
 export const ERP_PLATFORMS: { platform: string; work: string; where: string; kind: 'Implementation & consulting' | 'Implementation support' | 'Enterprise support' | 'Training' }[] = [
   { platform: 'Sage X3 (V11 / V12)', work: 'Implementations and advisory support; GL, AP, AR and Fixed Assets configuration; data migration; UAT; V11 → V12 upgrade; integrations with investment and payroll applications', where: 'Softcodes International · Panni Management & Technology', kind: 'Implementation & consulting' },
-  { platform: 'Sage 300', work: 'Led an approximately 18-month, phased, estate-wide implementation (estate dues, billing, collections; integration with existing estate management software); other implementations and advisory support; bank payment API integration with an internal developer', where: 'Softcodes International', kind: 'Implementation & consulting' },
+  { platform: 'Sage 300', work: 'Led an approximately 18-month, phased, estate-wide implementation (estate dues, billing, collections; integration with existing estate management software); led an implementation for a public-sector water utility; other implementations and advisory support; bank payment API integration with an internal developer', where: 'Softcodes International', kind: 'Implementation & consulting' },
   { platform: 'Acumatica', work: 'Complex production issues across finance, inventory, distribution, commerce and external integrations (support, not implementation ownership)', where: 'Acumatica Canada', kind: 'Enterprise support' },
   { platform: 'Sage accounting & business-management software', work: 'Structured training in configuration and support', where: 'Sage Software West Africa (internship)', kind: 'Training' },
 ];
@@ -164,7 +164,7 @@ export const ERP_PLATFORMS: { platform: string; work: string; where: string; kin
  * activity for that client AND that the name may be disclosed publicly.
  */
 export const ERP_CAPABILITIES: { area: string; what: string; evidence: string; clients: string[] }[] = [
-  { area: 'ERP implementation & deployment', what: 'Led a phased, estate-wide Sage 300 implementation over about 18 months and an ERP implementation for a public-sector water utility; Sage X3 and Sage 300 implementations and advisory support for client organisations; Sage X3 implementation support on finance workstreams.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'ERP implementation & deployment', what: 'Led a phased, estate-wide Sage 300 implementation over about 18 months and a Sage 300 implementation for a public-sector water utility; Sage X3 and Sage 300 implementations and advisory support for client organisations; Sage X3 implementation support on finance workstreams.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'ERP upgrades & migration', what: 'Sage X3 V11 to V12 upgrade delivery; migration, mapping, validation and reconciliation of financial and operational records.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'Business requirements & process analysis', what: 'Analysed financial business requirements and translated client requirements into workable system processes.', evidence: 'Panni · Softcodes', clients: [] },
   { area: 'Financial module configuration & workflows', what: 'Sage X3 configuration for GL, AP, AR and Fixed Assets; financial workflows and reporting; configuration validation and financial data issues.', evidence: 'Panni · Softcodes', clients: [] },
@@ -192,7 +192,7 @@ export const INDUSTRIES: { industry: string; involvement: string; where: string;
   { industry: 'Oil & gas (incl. downstream)', involvement: 'Client engagements, incl. a downstream oil and gas client; transaction reviews and KYC-related checks', where: 'Softcodes', kind: 'Client engagements' },
   { industry: 'Investment holding', involvement: 'Client engagement with an investment holding company (specific activities not listed)', where: 'Softcodes', kind: 'Client engagements' },
   { industry: 'Construction', involvement: 'Client engagement (specific activities not listed)', where: 'Softcodes', kind: 'Client engagements' },
-  { industry: 'Water utilities (public sector)', involvement: 'Led the ERP implementation for a public-sector water utility (government project)', where: 'Softcodes', kind: 'Led implementation' },
+  { industry: 'Water utilities (public sector)', involvement: 'Led the Sage 300 implementation for a public-sector water utility (government project)', where: 'Softcodes', kind: 'Led implementation' },
   { industry: 'Food services', involvement: 'Client engagement (specific activities not listed)', where: 'Panni', kind: 'Client engagements' },
   { industry: 'Marine', involvement: 'Client engagement (specific activities not listed)', where: 'Panni', kind: 'Client engagements' },
   { industry: 'Cannabis', involvement: 'Client engagement (specific activities not listed)', where: 'Panni', kind: 'Client engagements' },
