@@ -66,7 +66,7 @@ export const ROLES: Role[] = [
       'Analyze expected versus actual transaction behaviour and trace interdependent workflows to isolate anomalies, document evidence, and recommend supported corrective actions or engineering escalations.',
       'Coordinate with Product, Engineering, Professional Services and Consulting on high-impact cases; communicate risks, business impact, technical constraints and resolution progress to customers and partners.',
       // Kibana confirmed by Gabriel (17 Oct 2026): hands-on since 2025; analysis, not administration.
-      'Diagnose commerce connector (Shopify, Amazon, BigCommerce) and REST/GraphQL API integration issues by correlating Kibana application and integration logs with SQL queries and transaction data.',
+      'Troubleshoot Shopify, Amazon and BigCommerce commerce connector issues and REST/GraphQL API-related integration failures, correlating Kibana diagnostic logs with SQL queries and transaction data to isolate root cause.',
       'Prepare clear case documentation and reusable troubleshooting guidance; mentor support colleagues on complex problem analysis and stakeholder communication.',
     ],
   },
@@ -82,11 +82,11 @@ export const ROLES: Role[] = [
   // Confirmed by Gabriel (17 Oct 2026).
   {
     title: 'Contract Instructor', org: 'SAIT', place: 'Canada', start: 'Jan 2025', end: 'Aug 2026', tracks: ['Teaching'],
-    bullets: ['Teach as a contract instructor, explaining technical concepts to adult learners and turning complex material into clear, structured lessons, skills applied directly to ERP user training, knowledge transfer and stakeholder communication.'],
+    bullets: ['Technical instruction and knowledge transfer for adult learners: complex material turned into clear, structured lessons, skills applied directly to ERP user training and stakeholder communication.'],
   },
   {
     title: 'Contract Instructor', org: 'Cambrooks College', place: 'Canada', start: 'Feb 2024', end: 'Present', tracks: ['Teaching'],
-    bullets: ['Teach as a contract instructor, explaining technical concepts to adult learners and turning complex material into clear, structured lessons, skills applied directly to ERP user training, knowledge transfer and stakeholder communication.'],
+    bullets: ['Technical instruction and knowledge transfer for adult learners: complex material turned into clear, structured lessons, skills applied directly to ERP user training and stakeholder communication.'],
   },
   {
     title: 'Finance Analyst (Sage X3)', org: 'Panni Management & Technology', place: 'Remote, Canada', start: 'Jun 2022', end: 'Jul 2023', tracks: ['ERP implementation', 'AML', 'Data'],
@@ -94,7 +94,7 @@ export const ROLES: Role[] = [
       // Confirmed by Gabriel (17 Oct 2026): led the Sage X3 finance workstream on every Panni project.
       'Led the Sage X3 finance workstream on each client implementation, for food services, marine and cannabis clients: GL, AP, AR and Fixed Assets requirements, configuration and test scenarios, and financial reporting; validated configuration and resolved financial data issues.',
       'Led mapping, validation and reconciliation of migrated financial and operational records, investigating mismatches and correcting data-quality exceptions.',
-      'Led functional testing and UAT of financial transaction flows and post-go-live user troubleshooting for the finance workstream.',
+      'Led functional testing and UAT of financial transaction flows for the finance workstream; supported post-go-live user troubleshooting.',
       'Reviewed financial transactions and performed KYC-related checks on AML-related workstreams; flagged suspicious or inconsistent activity to compliance teams and reconciled transactions against Sage X3 finance records.',
     ],
   },
@@ -142,7 +142,7 @@ export const CREDENTIALS = [
 export const SKILLS = {
   'Financial / ERP systems': ['Sage X3 (V11/V12)', 'Sage 300', 'Acumatica', 'General Ledger', 'Accounts Payable', 'Accounts Receivable', 'Fixed Assets', 'Distribution & commerce processes'],
   'Data & analysis': ['SQL Server', 'Kibana log analysis (since 2025)', 'Microsoft Excel', 'Data validation', 'Source-to-target mapping', 'Reconciliation', 'Migration testing', 'Crystal Reports', 'Sage Enterprise Intelligence'],
-  'Payments & integrations': ['Bank payment API / Sage 300 integration', 'ERP interfaces', 'Acumatica commerce connectors (Shopify, Amazon, BigCommerce)', 'REST and GraphQL APIs', 'Data-flow troubleshooting', 'Configuration validation', 'Transactional test scenarios'],
+  'Payments & integrations': ['Bank payment API / Sage 300 integration', 'ERP interfaces', 'Commerce connector troubleshooting (Shopify, Amazon, BigCommerce)', 'REST/GraphQL API-related integration troubleshooting', 'Data-flow troubleshooting', 'Configuration validation', 'Transactional test scenarios'],
   'Delivery & documentation': ['Jira', 'Smartsheet', 'Case and defect documentation', 'Functional specifications', 'UAT', 'User training', 'Knowledge-base content'],
 };
 

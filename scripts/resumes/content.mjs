@@ -1,5 +1,5 @@
 // Resume content for both tracks. SOURCE OF TRUTH: Gabriel's resume (2026) plus facts he confirmed
-// in writing (Oct 2026). Lines marked [confirm] come from his earlier statements and are flagged
+// in writing (Oct 2026). All lines are verified; course subjects for the teaching roles are pending
 // in the private tracker for re-confirmation. No client names, metrics, budgets or team sizes.
 
 const CONTACT = {
@@ -27,7 +27,7 @@ export const ERP = {
   headline: 'ERP IMPLEMENTATION LEAD | FINANCIAL SYSTEMS INTEGRATION | SAGE 300 | SAGE X3 | ACUMATICA',
   sections: [
     { h: 'PROFESSIONAL SUMMARY', p: [
-      'ERP and financial systems professional with 9+ years delivering, integrating and supporting Sage 300, Sage X3 and Acumatica for finance and operations teams. Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation, coordinating the client, the development team and a multidisciplinary implementation team from requirements through go-live. Led the Sage X3 finance workstream on each Panni client implementation. Sage X3 Certified Technical, Financial and Distribution Consultant with hands-on depth in business process analysis, GL, AP, AR and Fixed Assets configuration, data migration and reconciliation, UAT and custom integration coordination, including consultant participation in a Sage X3 V11 to V12 upgrade. Now a Senior Support Engineer at Acumatica, resolving complex finance, commerce and integration issues with SQL, diagnostic logs and repeatable testing.',
+      'ERP and financial systems professional with 9+ years delivering, integrating and supporting Sage 300, Sage X3 and Acumatica for finance and operations teams. Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation, coordinating the client, the development team and a multidisciplinary implementation team from requirements through go-live. Led the Sage X3 finance workstream on each Panni client implementation. Sage X3 Certified Technical, Financial and Distribution Consultant with hands-on depth in business process analysis, GL, AP, AR and Fixed Assets configuration, data migration and reconciliation, UAT and custom integration coordination, including consultant participation in a Sage X3 V11 to V12 upgrade. Now a Senior Support Engineer at Acumatica, resolving complex finance, commerce and integration issues with SQL, Kibana diagnostic logs and repeatable testing, and a contract instructor delivering technical instruction since 2024.',
     ] },
     { h: 'CORE COMPETENCIES', p: [
       'ERP Implementation Leadership | Full-Lifecycle ERP Delivery | Client-Facing Consulting | Business Process & Requirements Analysis | Financial Module Configuration (GL, AP, AR, Fixed Assets) | Financial Systems Integration | Data Migration & Conversion, Validation & Reconciliation | Functional Testing & UAT | Training & Phased Go-Live | Post-Go-Live Support | ERP Upgrade Support | SQL Troubleshooting & Root-Cause Analysis | Stakeholder Coordination | Functional Specifications',
@@ -46,8 +46,7 @@ export const ERP = {
     { h: 'TECHNICAL SKILLS', kv: [
       ['ERP & financial systems', 'Sage 300; Sage X3 (V11/V12); Acumatica; General Ledger, Accounts Payable, Accounts Receivable, Fixed Assets, financial reporting; distribution, inventory and commerce workflows'],
       ['Data & analysis', 'SQL Server; SQL troubleshooting; data validation; source-to-target mapping; reconciliation; migration testing; Microsoft Excel; Crystal Reports; Sage Enterprise Intelligence'],
-      // [confirm] connectors and REST/GraphQL from Gabriel's earlier statements. Kibana confirmed 17 Oct 2026.
-      ['Integration', 'ERP interfaces; bank payment API to Sage 300 integration; Sage X3 investment and payroll integrations; Acumatica commerce connectors (Shopify, Amazon, BigCommerce); REST and GraphQL APIs'],
+      ['Integration', 'ERP interfaces; bank payment API to Sage 300 integration; Sage X3 investment and payroll integrations; commerce connector troubleshooting (Shopify, Amazon, BigCommerce); REST/GraphQL API-related integration troubleshooting'],
       ['Diagnostics', 'Kibana log analysis (since 2025); SQL-based root-cause analysis; diagnostic logs; reproducible test scenarios'],
       ['Delivery', 'Jira; Smartsheet; functional specifications; UAT; user training; case and defect documentation; knowledge-base content'],
     ] },
@@ -56,7 +55,7 @@ export const ERP = {
         'Investigate complex ERP production issues across financial transactions, commerce, configuration and external integrations, using SQL, diagnostic logs and repeatable testing to separate data, process and system defects.',
         'Analyze expected versus actual transaction behaviour and trace interdependent workflows to isolate anomalies, document evidence and recommend supported corrective actions or engineering escalations.',
         'Coordinate with Product, Engineering, Professional Services and Consulting on high-impact cases; communicate risk, business impact, technical constraints and resolution progress to customers and partners.',
-        'Diagnose commerce connector (Shopify, Amazon, BigCommerce) and REST/GraphQL API integration issues by correlating Kibana application and integration logs with SQL queries and transaction data.',
+        'Troubleshoot Shopify, Amazon and BigCommerce commerce connector issues and REST/GraphQL API-related integration failures, correlating Kibana diagnostic logs with SQL queries and transaction data to isolate root cause.',
         'Create reusable troubleshooting guidance and mentor support colleagues on complex problem analysis and stakeholder communication.',
       ] },
       { title: 'Product Support Specialist', org: 'Acumatica Canada Inc.', place: 'Canada', dates: 'Jul 2023 – Mar 2026', bullets: [
@@ -68,7 +67,7 @@ export const ERP = {
         // Confirmed by Gabriel (17 Oct 2026): led the Sage X3 finance workstream on every Panni project.
         'Led the Sage X3 finance workstream on each client implementation, for food services, marine and cannabis clients: GL, AP, AR and Fixed Assets requirements, configuration and test scenarios, and financial reporting; validated configuration and resolved financial data issues.',
         'Led mapping, validation and reconciliation of migrated financial and operational records, investigating mismatches and correcting data-quality exceptions.',
-        'Led functional testing and UAT of financial transaction flows and post-go-live user troubleshooting for the finance workstream.',
+        'Led functional testing and UAT of financial transaction flows for the finance workstream; supported post-go-live user troubleshooting.',
       ] },
       { title: 'Senior Technical Consultant', org: 'Softcodes International Ltd.', place: 'Lagos, Nigeria', dates: 'Oct 2016 – Dec 2021', bullets: [
         'Implementation Lead for the estate-wide Sage 300 implementation (see Selected Project Leadership).',
@@ -83,7 +82,7 @@ export const ERP = {
       { title: 'Contract Instructor', org: 'Cambrooks College', place: 'Canada', dates: 'Feb 2024 – Present', bullets: [] },
       { title: 'Contract Instructor', org: 'SAIT', place: 'Canada', dates: 'Jan 2025 – Aug 2026', bullets: [] },
     ], afterBullets: [
-      'Explain technical concepts to adult learners and turn complex material into clear, structured lessons; the same skills drive ERP user training, knowledge transfer and stakeholder communication.',
+      'Technical instruction and knowledge transfer for adult learners: complex material turned into clear, structured lessons, the same skills behind ERP user training and stakeholder communication.',
     ] },
     { h: 'PORTFOLIO PROJECTS (SIMULATED, SYNTHETIC DATA)', note: 'Independent portfolio simulations built with AI-assisted development; not client engagements. gabtun2t.github.io/Gabriel-portfolio', p: [
       'ERP migration reconciliation lab with root-cause tracing and a corrections journal; mock bank payment API to ERP integration with idempotency keys, retries and an audit trail; SQL checked against SQLite.',
@@ -91,8 +90,7 @@ export const ERP = {
     { h: 'EARLIER EXPERIENCE', earlier: EARLIER },
     { h: 'EDUCATION', p: EDUCATION },
     { h: 'CERTIFICATIONS, TRAINING & PRODUCT BADGES', p: [
-      SAGE_CERTS,
-      'Training: Sage X3 Project Management Training',
+      SAGE_CERTS + ' | Sage X3 Project Management Training',
       BADGES,
     ] },
   ],
@@ -113,8 +111,7 @@ export const AML = {
       ['Investigation & data', 'SQL Server; SQL-based investigation; data validation; source-to-target mapping; reconciliation; migration testing; Microsoft Excel; Crystal Reports'],
       ['Financial systems', 'Sage X3 (V11/V12), Sage 300, Acumatica; General Ledger, Accounts Payable, Accounts Receivable, Fixed Assets; commerce and distribution transaction flows'],
       ['Investigation tools', 'Kibana log analysis (since 2025); SQL; diagnostic logs; reproducible test scenarios'],
-      // [confirm] REST/GraphQL from Gabriel's earlier statements.
-      ['Payments & integration', 'Bank payment API to Sage 300 integration; ERP interfaces; data-flow troubleshooting; REST and GraphQL APIs; transactional test scenarios'],
+      ['Payments & integration', 'Bank payment API to Sage 300 integration; ERP interfaces; REST/GraphQL API-related integration troubleshooting; commerce connector troubleshooting (Shopify, Amazon, BigCommerce); transactional test scenarios'],
       ['Documentation', 'Case and defect documentation; functional specifications; UAT; Jira; Smartsheet'],
       ['Portfolio (simulated)', 'Rule-based transaction monitoring logic, alert scoring, disposition workflow, data lineage and data-quality metrics'],
     ] },
@@ -148,7 +145,7 @@ export const AML = {
     ] },
     { h: 'EARLIER EXPERIENCE', earlier: EARLIER },
     { h: 'TEACHING EXPERIENCE', p: [
-      'Contract Instructor | Cambrooks College | Feb 2024 – Present. Contract Instructor | SAIT | Jan 2025 – Aug 2026. Explaining technical concepts clearly to adult learners.',
+      'Contract Instructor | Cambrooks College | Feb 2024 – Present. Contract Instructor | SAIT | Jan 2025 – Aug 2026. Technical instruction and knowledge transfer for adult learners.',
     ] },
     { h: 'EDUCATION', p: EDUCATION },
     { h: 'TRAINING, CERTIFICATIONS & PRODUCT BADGES', p: [
