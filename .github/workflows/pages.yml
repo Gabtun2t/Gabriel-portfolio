@@ -27,6 +27,9 @@ jobs:
           python-version: '3.12'
       - run: npm install
       - run: npm run typecheck
+      - name: Type-check the React UI too (informational)
+        run: npm run typecheck:all
+        continue-on-error: true
       - run: npm test
       - run: npm run seed
       - run: npm run test:sql
