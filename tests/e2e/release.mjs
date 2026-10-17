@@ -62,7 +62,17 @@ await check(2, 'Recruiter pathways open the right demo and resume', async () => 
   await go(p, '/case-studies?study=erp');
   assert((await p.textContent('#cs-erp')).includes('Professional experience · anonymised'), 'ERP case study label');
   assert(!exp.includes('Selected client organisations'), 'client list shown although no names are approved');
-  return '3 pathways (ERP first), resume links resolve, ERP sections present, no client list until approved';
+  for (const t of ['Featured project · led implementation', 'Types of ERP work', 'Project examples are anonymised', 'developed by the Softcodes team']) assert(exp.includes(t), `experience missing ${t}`);
+  assert(!/confidential/i.test(exp), 'blanket confidentiality wording should be replaced');
+  await go(p, '/');
+  const home = await p.textContent('main');
+  for (const t of ['Featured project · led implementation', 'Implementation Lead', 'ERP resume (PDF)', 'AML resume (PDF)']) assert(home.includes(t), `home missing ${t}`);
+  const heroDl = await p.$$eval('.hero-home a[download]', (as) => as.map((a) => a.getAttribute('href')));
+  assert(new Set(heroDl).size === 2, 'hero must offer two different resumes');
+  const sizes = [];
+  for (const h of heroDl) { const r = await p.request.get(BASE + h); assert(r.status() === 200 && (await r.body()).subarray(0, 4).toString() === '%PDF', `${h} not a PDF`); sizes.push((await r.body()).length); }
+  assert(sizes[0] !== sizes[1], 'ERP resume must be a separate document');
+  return '3 pathways (ERP first), two separate resumes, featured led implementation, engagement types, anonymised wording, no client list';
 });
 
 await check(3, 'AML alert queue: search, filter, sort', async () => {

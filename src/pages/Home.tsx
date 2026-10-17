@@ -1,5 +1,5 @@
 import { Link } from '../router';
-import { ERP_LIFECYCLE, PROFILE, resumeFor } from '../content/profile';
+import { ERP_LIFECYCLE, LED_ENGAGEMENTS, PROFILE, resumeFor } from '../content/profile';
 import { aml } from '../data/instances';
 import { Badge, StatusPill } from '../components/ui';
 import { Diagram } from '../components/Diagram';
@@ -18,7 +18,7 @@ export function Home() {
   const pathways: { tone: string; track: string; title: string; text: string; to: string; query?: Record<string, string>; cta: string; second?: { to: string; label: string }; resume: { label: string; file: string } }[] = [
     {
       tone: 'blue', track: 'ERP / Financial systems', title: 'ERP implementation & financial systems',
-      text: 'Five years implementing and consulting on Sage X3 and Sage 300: requirements, configuration, data migration, UAT, training, go-live, a V11 → V12 upgrade and integrations. Then run the migration reconciliation lab that mirrors that validation work.',
+      text: 'Implementation Lead on Sage 300 projects, including an approximately 18-month, phased, estate-wide implementation. Five years of Sage X3 and Sage 300 work in total: requirements, configuration, data migration, UAT, go-live, integrations and an upgrade. Then run the migration reconciliation lab, which mirrors that validation work.',
       to: '/experience', query: { section: 'erp-implementation' }, cta: 'See ERP implementation experience', second: { to: '/labs/reconciliation', label: 'Reconciliation lab' }, resume: erpResume,
     },
     {
@@ -44,8 +44,10 @@ export function Home() {
             <ul className="hero-chips" aria-label="Specializations">{PROFILE.specializations.map((x) => <li key={x}>{x}</li>)}</ul>
             <p className="lead">{PROFILE.intro}</p>
             <div className="row" style={{ marginTop: 24 }}>
-              <Link to="/labs/aml" className="btn btn-primary">Open the AML investigation lab</Link>
-              <a href={PROFILE.resumePdf} className="btn btn-secondary" download>Download resume (PDF)</a>
+              <Link to="/experience" query={{ section: 'erp-implementation' }} className="btn btn-primary">ERP implementation experience</Link>
+              <Link to="/labs/aml" className="btn btn-secondary">AML investigation lab</Link>
+              <a href={erpResume.file} className="btn btn-secondary" download>ERP resume (PDF)</a>
+              <a href={amlResume.file} className="btn btn-secondary" download>AML resume (PDF)</a>
               {PROFILE.linkedinUrl && <a href={PROFILE.linkedinUrl} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>}
               <a href={`mailto:${PROFILE.email}`} className="btn btn-secondary">Email</a>
             </div>
@@ -78,11 +80,11 @@ export function Home() {
           <div className="tracks">
             <div>
               <div className="eyebrow">Experience</div>
-              <p style={{ margin: 0 }}><strong>9+ years</strong> in ERP and financial systems, including <strong>five years implementing and consulting on Sage X3 and Sage 300</strong>. Now Senior Support Engineer at Acumatica, resolving complex enterprise ERP issues.</p>
+              <p style={{ margin: 0 }}><strong>9+ years</strong> in ERP and financial systems. <strong>Implementation Lead on Sage 300 projects</strong> during five years of Sage X3 and Sage 300 consulting. Now Senior Support Engineer at Acumatica, resolving complex enterprise ERP issues.</p>
             </div>
             <div>
               <div className="eyebrow">Industry exposure</div>
-              <p style={{ margin: 0 }}>Implementations in <strong>manufacturing and distribution</strong>; client engagements in <strong>banking, microfinance, oil &amp; gas, construction, water utilities, food services, marine and cannabis</strong>; support for retail/e-commerce and logistics systems. <Link to="/experience" query={{ section: 'industries' }}>Industry detail</Link>.</p>
+              <p style={{ margin: 0 }}>Led implementations in <strong>estate management and public-sector water utilities</strong>. Implementation or advisory work in manufacturing and distribution, a bank payment integration, and client engagements in microfinance, oil &amp; gas, investment holding, construction, food services, marine and cannabis. <Link to="/experience" query={{ section: 'industries' }}>Industry detail</Link>.</p>
             </div>
             <div>
               <div className="eyebrow">What is different</div>
@@ -103,8 +105,17 @@ export function Home() {
               <div className="eyebrow">Core capability · professional experience</div>
               <h2 id="erp-home">ERP implementation & enterprise systems consulting</h2>
             </div>
-            <p>Real client work, not a simulation. Sage X3 and Sage 300 implementations and advisory support at Softcodes International, Sage X3 implementation support at Panni, and enterprise ERP support at Acumatica. Client names are confidential.</p>
+            <p>Real client work, not a simulation. Project examples are anonymised: clients are described by sector and location rather than by name.</p>
           </div>
+          {LED_ENGAGEMENTS.filter((e) => e.featured).map((e) => (
+            <div key={e.role} className="card featured-engagement" style={{ marginBottom: 16 }}>
+              <div className="row" style={{ gap: 6, marginBottom: 6 }}><Badge tone="blue">Featured project · led implementation</Badge><Badge tone="green">Professional experience</Badge></div>
+              <h3 style={{ margin: '0 0 6px' }}>{e.role} · {e.client}</h3>
+              <p className="small" style={{ margin: '0 0 6px' }}><strong>{e.duration}</strong> · {e.delivery} · {e.employer}</p>
+              <p className="small" style={{ margin: 0 }}>{e.summary} Requirements and process analysis, Sage 300 configuration, data migration, testing, delivery of a custom integration with the client’s estate management software (developed by the team), user training and phased go-live.</p>
+            </div>
+          ))}
+          <p className="small" style={{ margin: '0 0 16px' }}>Also Implementation Lead for a Sage 300 implementation for a public-sector water utility. Other work: Sage X3 and Sage 300 implementations and advisory support at Softcodes International, Sage X3 implementation support at Panni, and enterprise ERP support at Acumatica.</p>
           <ol className="lifecycle">
             {ERP_LIFECYCLE.map((l) => <li key={l.stage}><strong>{l.stage}</strong><span>{l.what}</span></li>)}
           </ol>

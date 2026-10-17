@@ -15,7 +15,7 @@ export const FEATURE_STATUS: { area: string; feature: string; status: 'Implement
   { area: 'Site', feature: 'Home, experience, project lab, case studies, architecture, resume & contact, recruiter guide, data dictionary, build status', status: 'Implemented', tested: 'Browser test (desktop + mobile)' },
   { area: 'Site', feature: 'Three recruiter pathways with one-click demos and matching resume download', status: 'Implemented', tested: 'Browser test' },
   { area: 'Site', feature: 'Resume PDF download (AML / financial crime systems track; client names withheld)', status: 'Implemented', tested: 'Browser test (served under the /Gabriel-portfolio/ base path)' },
-  { area: 'Site', feature: 'Separate ERP / integration resume track', status: 'Partial', tested: '—', note: 'Pathway links to the current resume until a second verified resume is supplied.' },
+  { area: 'Site', feature: 'Separate ERP Implementation & Integration resume and AML-focused resume', status: 'Implemented', tested: 'Browser test (both PDFs download and differ)' },
   { area: 'Site', feature: 'Contact: email, phone (toggle in profile.ts) and LinkedIn', status: 'Implemented', tested: 'Browser test (link targets)' },
   { area: 'Site', feature: 'Page titles, meta descriptions, Open Graph image, favicon, robots.txt and sitemap', status: 'Implemented', tested: 'Browser test (title + meta)' },
   { area: 'Site', feature: 'Responsive layout, keyboard navigation, focus management, labelled controls, light/dark themes', status: 'Implemented', tested: 'Browser test at 390 px and 1280 px', note: 'No formal WCAG audit performed.' },

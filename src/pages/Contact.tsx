@@ -1,5 +1,5 @@
 import { Link } from '../router';
-import { PROFILE } from '../content/profile';
+import { PROFILE, RESUMES } from '../content/profile';
 
 export function Contact() {
   return (
@@ -14,12 +14,15 @@ export function Contact() {
       <section className="section">
         <div className="container grid cols-2">
           <div className="card stack">
-            <h2 style={{ fontSize: 22 }}>Resume</h2>
-            <p className="muted">Two-page PDF with full contact details.</p>
-            <div className="row">
-              <a className="btn btn-primary" href={PROFILE.resumePdf} download>Download PDF</a>
-              <a className="btn btn-secondary" href={PROFILE.resumePdf} target="_blank" rel="noopener">Open in a new tab</a>
-            </div>
+            <h2 style={{ fontSize: 22 }}>Resumes</h2>
+            <p className="muted">Two separate resumes, each a PDF with full contact details.</p>
+            {RESUMES.filter((r) => r.file).map((r, i) => (
+              <div key={r.id} className="row">
+                <strong style={{ minWidth: 0, flex: '1 1 220px' }}>{r.label}</strong>
+                <a className={`btn btn-sm ${i === 0 ? 'btn-primary' : 'btn-secondary'}`} href={r.file!} download>Download PDF</a>
+                <a className="btn btn-secondary btn-sm" href={r.file!} target="_blank" rel="noopener">Open</a>
+              </div>
+            ))}
           </div>
           <div className="card stack">
             <h2 style={{ fontSize: 22 }}>Contact</h2>

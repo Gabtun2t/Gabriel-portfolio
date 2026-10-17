@@ -7,11 +7,11 @@ export function Guide() {
   const paths = [
     {
       who: 'Hiring for ERP / financial systems', time: '5 minutes', steps: [
-        <>Read the <Link to="/experience" query={{ section: 'erp-implementation' }}>ERP implementation experience</Link>: platforms, eight capability areas and industries.</>,
+        <>Read the <Link to="/experience" query={{ section: 'erp-implementation' }}>ERP implementation experience</Link>: the featured led implementation, types of ERP work, capability areas and industries.</>,
         <>Read the <Link to="/case-studies" query={{ study: 'erp' }}>ERP implementation case study</Link> (real experience, anonymised).</>,
         <>Open the <Link to="/labs/reconciliation">reconciliation lab</Link>, run it, and inspect the ×100 decimal shift and a “Missing in ERP” row.</>,
         <>Apply all corrections and re-run; note the two manual journals left for finance review.</>,
-      ], look: 'Real Sage X3 and Sage 300 implementation and consulting experience, plus source-to-target thinking, root-cause tracing and controlled corrections.',
+      ], look: 'Real Sage 300 implementation leadership and Sage X3 / Sage 300 consulting experience, plus source-to-target thinking, root-cause tracing and controlled corrections.',
     },
     {
       who: 'Hiring for AML / financial crime', time: '5 minutes', steps: [
@@ -56,7 +56,7 @@ export function Guide() {
               <h3>Real (from the resume)</h3>
               <ul className="small" style={{ paddingLeft: 18 }}>
                 <li>Employment, dates, education, skills, certifications and training.</li>
-                <li>Sage X3 and Sage 300 implementation and consulting (Softcodes), Sage X3 implementation support (Panni), and enterprise ERP support (Acumatica).</li>
+                <li>Implementation Lead on Sage 300 projects, including an approximately 18-month, phased, estate-wide implementation; other Sage X3 and Sage 300 implementations and consulting (Softcodes); Sage X3 implementation support (Panni); and enterprise ERP support (Acumatica).</li>
                 <li>AML-related transaction reviews and KYC-related checks at Panni and on Softcodes client projects; escalation to compliance; tracing some exceptions to migration-related data corruption.</li>
                 <li>Support for a bank payment API ↔ Sage 300 integration with an internal developer.</li>
               </ul>

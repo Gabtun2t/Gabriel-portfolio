@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { Link, useRoute } from '../router';
-import { CREDENTIALS, EDUCATION, ERP_CAPABILITIES, ERP_FUNCTIONS, ERP_PLATFORMS, INDUSTRIES, LED_ENGAGEMENTS, PROFILE, PUBLIC_CLIENTS, ROLES, SKILLS, SKILL_EVIDENCE } from '../content/profile';
+import { CREDENTIALS, EDUCATION, ERP_CAPABILITIES, ERP_FUNCTIONS, ENGAGEMENT_TYPES, ERP_PLATFORMS, INDUSTRIES, LED_ENGAGEMENTS, PROFILE, PUBLIC_CLIENTS, RESUMES, ROLES, SKILLS, SKILL_EVIDENCE } from '../content/profile';
 import { Badge } from '../components/ui';
 
 const TRACK_TONE: Record<string, string> = { 'ERP implementation': 'blue', 'ERP support': 'neutral', AML: 'teal', Data: 'violet', Architecture: 'amber' };
-const KIND_TONE: Record<string, string> = { 'Led implementation': 'blue', 'Implementation & consulting': 'blue', 'Implementation & advisory': 'blue', 'Implementation support': 'blue', 'Client projects (consulting)': 'teal', 'Client engagements': 'teal', 'Integration project': 'violet', 'Enterprise support': 'neutral', 'In-house IT': 'neutral', Training: 'neutral' };
+const KIND_TONE: Record<string, string> = { 'Led implementation': 'blue', 'Implementation or advisory': 'blue', Integration: 'violet', 'Client engagement': 'teal', 'Implementation & consulting': 'blue', 'Implementation & advisory': 'blue', 'Implementation support': 'blue', 'Client projects (consulting)': 'teal', 'Client engagements': 'teal', 'Integration project': 'violet', 'Enterprise support': 'neutral', 'In-house IT': 'neutral', Training: 'neutral' };
 
 export function Experience() {
   const section = useRoute().query.get('section');
@@ -16,7 +16,7 @@ export function Experience() {
           <div className="eyebrow">Experience</div>
           <h1>Career timeline</h1>
           <p className="lead">{PROFILE.summary}</p>
-          <a href={PROFILE.resumePdf} className="btn btn-secondary" download>Download resume (PDF)</a>
+          <div className="row">{RESUMES.filter((r) => r.file).map((r) => <a key={r.id} href={r.file!} className="btn btn-secondary" download>{r.label} (PDF)</a>)}</div>
         </div>
       </section>
 
@@ -26,17 +26,35 @@ export function Experience() {
             <div>
               <div className="eyebrow">Professional experience</div>
               <h2 id="erp-h">ERP implementation & consulting experience</h2>
-              <p className="lead" style={{ maxWidth: 820 }}>Five years of Sage X3 and Sage 300 implementation and consulting at Softcodes International, a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica. Client names are confidential and are not shown anywhere on this site.</p>
+              <p className="lead" style={{ maxWidth: 820 }}>Five years of ERP implementation and consulting at Softcodes International, including Sage 300 implementations Gabriel led as Implementation Lead. Then a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica.</p>
+              <p className="small muted" style={{ maxWidth: 820 }}>Project examples are anonymised: clients are described by sector and location rather than by name.</p>
             </div>
-            {LED_ENGAGEMENTS.map((e) => (
-              <div key={e.role + e.client} className="card" aria-label="Led engagement">
-                <div className="row" style={{ gap: 6, marginBottom: 6 }}><Badge tone="blue">Led engagement</Badge><Badge tone="neutral">Professional experience</Badge></div>
+            {LED_ENGAGEMENTS.filter((e) => e.featured).map((e) => (
+              <div key={e.role + e.client} className="card featured-engagement" aria-label="Featured engagement">
+                <div className="row" style={{ gap: 6, marginBottom: 6 }}><Badge tone="blue">Featured project · led implementation</Badge><Badge tone="green">Professional experience · anonymised</Badge></div>
                 <h3>{e.role}</h3>
-                <p className="small"><strong>Client:</strong> {e.publicName ?? e.client} · <strong>Employer:</strong> {e.employer} · <strong>Duration:</strong> {e.duration} · <strong>Delivery:</strong> {e.delivery}</p>
-                <p className="small">Led a {e.platform} implementation, overseeing the full project lifecycle and coordinating a multidisciplinary implementation team. Scope: {e.scope}</p>
+                <p className="small"><strong>Client:</strong> {e.publicName ?? e.client} · <strong>Employer:</strong> {e.employer}{e.duration && <> · <strong>Duration:</strong> {e.duration}</>}{e.delivery && <> · <strong>Delivery:</strong> {e.delivery}</>}</p>
+                <p className="small">{e.summary}{e.scope && <> <strong>Scope:</strong> {e.scope}</>}</p>
                 <ul className="small" style={{ paddingLeft: 18 }}>{e.responsibilities.map((r) => <li key={r}>{r}</li>)}</ul>
               </div>
             ))}
+            {LED_ENGAGEMENTS.filter((e) => !e.featured).map((e) => (
+              <div key={e.role + e.client} className="card" aria-label="Led engagement">
+                <div className="row" style={{ gap: 6, marginBottom: 6 }}><Badge tone="blue">Led implementation</Badge><Badge tone="green">Professional experience · anonymised</Badge></div>
+                <h3 style={{ fontSize: 17 }}>{e.role}</h3>
+                <p className="small" style={{ margin: 0 }}><strong>Client:</strong> {e.publicName ?? e.client} · <strong>Employer:</strong> {e.employer}. {e.summary}</p>
+              </div>
+            ))}
+            <div className="card">
+              <h3>Types of ERP work</h3>
+              <p className="small muted">Implementations, integrations, upgrades and support are listed separately. Only the projects marked “Led implementation” are presented as implementations Gabriel led.</p>
+              <div className="table-wrap">
+                <table className="data">
+                  <thead><tr><th>Type</th><th>Examples</th><th>Gabriel’s role</th><th>Where</th></tr></thead>
+                  <tbody>{ENGAGEMENT_TYPES.map((t) => <tr key={t.type}><td><strong>{t.type}</strong></td><td className="small">{t.examples}</td><td className="small">{t.role}</td><td className="small">{t.where}</td></tr>)}</tbody>
+                </table>
+              </div>
+            </div>
             <div className="card">
               <h3>Platforms</h3>
               <div className="table-wrap">
@@ -48,7 +66,7 @@ export function Experience() {
             </div>
             <div className="card">
               <h3>Capability areas</h3>
-              <p className="small muted">Eight areas of ERP work across Sage X3, Sage 300 and Acumatica, each with the role that evidences it. Gabriel’s responsibility varied by engagement; the site does not attach clients or outcomes to these areas.</p>
+              <p className="small muted">Eight areas of ERP work across Sage 300, Sage X3 and Acumatica, each with the role that evidences it. Where Gabriel led the work, it says so; elsewhere his responsibility varied by engagement.</p>
               <ol className="lifecycle">
                 {ERP_CAPABILITIES.map((c) => (
                   <li key={c.area}><strong>{c.area}</strong><span>{c.what}</span><small className="muted">{c.evidence}</small>{c.clients.length > 0 && <small>Clients: {c.clients.join(', ')}</small>}</li>
@@ -63,7 +81,7 @@ export function Experience() {
 
           <section id="industries" className="card" style={{ marginBottom: 28, scrollMarginTop: 80 }} aria-labelledby="ind-h">
             <h2 id="ind-h" style={{ fontSize: 22 }}>Industry experience</h2>
-            <p className="small muted">{INDUSTRIES.length} industries across client engagements, enterprise support and in-house roles. Each is labelled with the kind of involvement Gabriel’s resume and statements support. Implementation is claimed only where the resume states it; not every industry listed was an implementation project.</p>
+            <p className="small muted">{INDUSTRIES.length} industries, each labelled with the type of involvement. “Led implementation” marks the projects Gabriel led. “Implementation or advisory” means Sage X3 / Sage 300 work whose type varied by engagement. “Client engagement” means client work whose type is not specified here; it is not presented as an implementation.</p>
             <div className="table-wrap">
               <table className="data">
                 <thead><tr><th>Industry</th><th>Type of involvement</th><th>What it involved</th><th>Where</th></tr></thead>
