@@ -46,5 +46,4 @@ export const KNOWN_LIMITATIONS = [
   'The payment lab is a single-process mock with a simulated clock; security controls are documented, not implemented.',
   'The data pipeline is batch and in-memory; there is no orchestration or cloud infrastructure.',
   'Accessibility basics are implemented and browser-tested; no formal WCAG audit has been performed.',
-  'The UI type check (npm run typecheck:all) needs @types/react and runs only where npm can install it.',
 ];

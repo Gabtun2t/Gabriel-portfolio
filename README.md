@@ -47,7 +47,7 @@ npm run dev          # http://localhost:5173 (rebuilds on change)
 | `npm run test:release` | The 20-point release QA (pathways, AML workflow incl. persistence and export, reconciliation, payments, data lab, downloads, links, mobile, keyboard, assets) against `preview:pages`; writes `test-results/release-qa.json` |
 | `npm run images` | Regenerate `public/og-image.png` and `public/apple-touch-icon.png` |
 | `npm run typecheck` | Strict TypeScript check of engines, data generators, scripts and tests |
-| `npm run typecheck:all` | Also checks the React UI (needs `@types/react`, installed by `npm install`) |
+| `npm run typecheck:all` | Also checks the React UI (needs `@types/react`, installed by `npm install`; runs in CI) |
 | `npm run verify` | typecheck → test → seed → test:sql → build |
 
 ## How it is built
@@ -126,7 +126,7 @@ The code for this site and its labs was written with substantial help from AI co
 - The payment lab is a single-process mock with a simulated clock; security controls (mTLS, OAuth, signing) are documented, not implemented.
 - The data pipeline is batch, in-memory, single-run (no incremental loads, SCDs or orchestration).
 - Accessibility basics are implemented and checked (labels, keyboard, focus, contrast tokens, responsive tables, skip link); no formal WCAG audit has been performed.
-- Built in an offline environment: `npm install` resolves current compatible versions; the UI typecheck (`typecheck:all`) needs `@types/react` and was not run in the build environment. Engine typecheck, unit tests, SQL parity, production build and the browser smoke test were run and pass.
+- CI (GitHub Actions) runs the full chain on every push: engine and UI type checks, 78 unit tests, SQL parity on SQLite, production build and the 20-point browser release QA under the Pages base path. The site deploys only if all of them pass.
 
 ## For the training assistant
 
