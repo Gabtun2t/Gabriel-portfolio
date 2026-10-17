@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { Link, useRoute } from '../router';
-import { CREDENTIALS, EDUCATION, ERP_CAPABILITIES, ERP_FUNCTIONS, ERP_PLATFORMS, INDUSTRIES, PROFILE, PUBLIC_CLIENTS, ROLES, SKILLS, SKILL_EVIDENCE } from '../content/profile';
+import { CREDENTIALS, EDUCATION, ERP_CAPABILITIES, ERP_FUNCTIONS, ERP_PLATFORMS, INDUSTRIES, LED_ENGAGEMENTS, PROFILE, PUBLIC_CLIENTS, ROLES, SKILLS, SKILL_EVIDENCE } from '../content/profile';
 import { Badge } from '../components/ui';
 
 const TRACK_TONE: Record<string, string> = { 'ERP implementation': 'blue', 'ERP support': 'neutral', AML: 'teal', Data: 'violet', Architecture: 'amber' };
-const KIND_TONE: Record<string, string> = { 'Implementation & consulting': 'blue', 'Implementation & advisory': 'blue', 'Implementation support': 'blue', 'Client projects (consulting)': 'teal', 'Client engagements': 'teal', 'Integration project': 'violet', 'Enterprise support': 'neutral', 'In-house IT': 'neutral', Training: 'neutral' };
+const KIND_TONE: Record<string, string> = { 'Led implementation': 'blue', 'Implementation & consulting': 'blue', 'Implementation & advisory': 'blue', 'Implementation support': 'blue', 'Client projects (consulting)': 'teal', 'Client engagements': 'teal', 'Integration project': 'violet', 'Enterprise support': 'neutral', 'In-house IT': 'neutral', Training: 'neutral' };
 
 export function Experience() {
   const section = useRoute().query.get('section');
@@ -28,6 +28,15 @@ export function Experience() {
               <h2 id="erp-h">ERP implementation & consulting experience</h2>
               <p className="lead" style={{ maxWidth: 820 }}>Five years of Sage X3 and Sage 300 implementation and consulting at Softcodes International, a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica. Client names are confidential and are not shown.</p>
             </div>
+            {LED_ENGAGEMENTS.map((e) => (
+              <div key={e.role + e.client} className="card" aria-label="Led engagement">
+                <div className="row" style={{ gap: 6, marginBottom: 6 }}><Badge tone="blue">Led engagement</Badge><Badge tone="neutral">Professional experience</Badge></div>
+                <h3>{e.role}</h3>
+                <p className="small"><strong>Client:</strong> {e.publicName ?? e.client} · <strong>Employer:</strong> {e.employer} · <strong>Duration:</strong> {e.duration} · <strong>Delivery:</strong> {e.delivery}</p>
+                <p className="small">Led a {e.platform} implementation, overseeing the full project lifecycle and coordinating a multidisciplinary implementation team. Scope: {e.scope}</p>
+                <ul className="small" style={{ paddingLeft: 18 }}>{e.responsibilities.map((r) => <li key={r}>{r}</li>)}</ul>
+              </div>
+            ))}
             <div className="card">
               <h3>Platforms</h3>
               <div className="table-wrap">

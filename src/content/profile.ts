@@ -91,6 +91,7 @@ export const ROLES: Role[] = [
   {
     title: 'Senior Technical Consultant', org: 'Softcodes International Ltd.', place: 'Lagos, Nigeria', start: 'Oct 2016', end: 'Dec 2021', tracks: ['ERP implementation', 'Architecture', 'AML', 'Data'],
     bullets: [
+      'Led an approximately 18-month, phased, estate-wide Sage 300 implementation for an estate management organisation in Lagos: requirements and process analysis, configuration, data migration, testing and validation, integration with the client\u2019s existing estate management software, training and go-live, coordinating a multidisciplinary implementation team.',
       'Delivered Sage X3 and Sage 300 implementations and advisory support across finance, manufacturing, distribution and other enterprise environments, translating client requirements into workable system processes.',
       'Partnered with an internal developer and client stakeholders to integrate a bank payment API with Sage 300 for a financial-services client; helped align payment processing with ERP and finance workflows.',
       'Supported Sage X3 integrations with investment and payroll applications, resolving data mapping, interface and process issues through cross-functional investigation.',
@@ -151,7 +152,7 @@ export const SKILL_EVIDENCE: { skill: string; professional: string; demo: string
 // ---------------------------------------------------------------------------
 export const ERP_PLATFORMS: { platform: string; work: string; where: string; kind: 'Implementation & consulting' | 'Implementation support' | 'Enterprise support' | 'Training' }[] = [
   { platform: 'Sage X3 (V11 / V12)', work: 'Implementations and advisory support; GL, AP, AR and Fixed Assets configuration; data migration; UAT; V11 → V12 upgrade; integrations with investment and payroll applications', where: 'Softcodes International · Panni Management & Technology', kind: 'Implementation & consulting' },
-  { platform: 'Sage 300', work: 'Implementations and advisory support; bank payment API integration with an internal developer', where: 'Softcodes International', kind: 'Implementation & consulting' },
+  { platform: 'Sage 300', work: 'Led an approximately 18-month, phased, estate-wide implementation (estate dues, billing, collections; integration with existing estate management software); other implementations and advisory support; bank payment API integration with an internal developer', where: 'Softcodes International', kind: 'Implementation & consulting' },
   { platform: 'Acumatica', work: 'Complex production issues across finance, inventory, distribution, commerce and external integrations (support, not implementation ownership)', where: 'Acumatica Canada', kind: 'Enterprise support' },
   { platform: 'Sage accounting & business-management software', work: 'Structured training in configuration and support', where: 'Sage Software West Africa (internship)', kind: 'Training' },
 ];
@@ -162,12 +163,12 @@ export const ERP_PLATFORMS: { platform: string; work: string; where: string; kin
  * activity for that client AND that the name may be disclosed publicly.
  */
 export const ERP_CAPABILITIES: { area: string; what: string; evidence: string; clients: string[] }[] = [
-  { area: 'ERP implementation & deployment', what: 'Sage X3 and Sage 300 implementations and advisory support for client organisations; Sage X3 implementation support on finance workstreams.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'ERP implementation & deployment', what: 'Led a phased, estate-wide Sage 300 implementation over about 18 months; Sage X3 and Sage 300 implementations and advisory support for client organisations; Sage X3 implementation support on finance workstreams.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'ERP upgrades & migration', what: 'Sage X3 V11 to V12 upgrade delivery; migration, mapping, validation and reconciliation of financial and operational records.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'Business requirements & process analysis', what: 'Analysed financial business requirements and translated client requirements into workable system processes.', evidence: 'Panni · Softcodes', clients: [] },
   { area: 'Financial module configuration & workflows', what: 'Sage X3 configuration for GL, AP, AR and Fixed Assets; financial workflows and reporting; configuration validation and financial data issues.', evidence: 'Panni · Softcodes', clients: [] },
   { area: 'Testing, UAT & validation', what: 'Functional testing and user acceptance testing of financial transaction flows; issues documented; migrated data validated against source.', evidence: 'Softcodes · Panni', clients: [] },
-  { area: 'System integration', what: 'Sage X3 integrations with investment and payroll applications; Sage 300 bank payment API integration with an internal developer.', evidence: 'Softcodes', clients: [] },
+  { area: 'System integration', what: 'Led Sage 300 integration with a client\u2019s existing estate management software; Sage X3 integrations with investment and payroll applications; Sage 300 bank payment API integration with an internal developer.', evidence: 'Softcodes', clients: [] },
   { area: 'Training & post-go-live support', what: 'User training; post-implementation and post-go-live troubleshooting for users.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'Production troubleshooting', what: 'Complex production issues across finance, distribution, commerce, configuration and external integrations, using SQL, logs and repeatable testing. This is enterprise support, not implementation ownership.', evidence: 'Acumatica', clients: [] },
 ];
@@ -181,7 +182,8 @@ export const ERP_FUNCTIONS = ['General Ledger', 'Accounts Payable', 'Accounts Re
  * Industry exposure, labelled by the KIND of involvement the resume supports.
  * Implementation is claimed only where the resume says so.
  */
-export const INDUSTRIES: { industry: string; involvement: string; where: string; kind: 'Implementation & advisory' | 'Client engagements' | 'Enterprise support' | 'In-house IT' }[] = [
+export const INDUSTRIES: { industry: string; involvement: string; where: string; kind: 'Led implementation' | 'Implementation & advisory' | 'Client engagements' | 'Enterprise support' | 'In-house IT' }[] = [
+  { industry: 'Real estate & estate management', involvement: 'Led a phased, estate-wide Sage 300 implementation covering estate dues, billing, collections and property-related financial transactions', where: 'Softcodes', kind: 'Led implementation' },
   { industry: 'Manufacturing', involvement: 'Sage X3 / Sage 300 implementations and advisory support', where: 'Softcodes', kind: 'Implementation & advisory' },
   { industry: 'Distribution', involvement: 'Sage X3 / Sage 300 implementations and advisory support; later, distribution workflows in Acumatica support', where: 'Softcodes · Acumatica', kind: 'Implementation & advisory' },
   { industry: 'Banking & financial services', involvement: 'Financial-institution and financial-services client engagements, incl. transaction reviews, KYC-related checks and a bank payment API ↔ Sage 300 integration', where: 'Softcodes', kind: 'Client engagements' },
@@ -194,6 +196,31 @@ export const INDUSTRIES: { industry: string; involvement: string; where: string;
   { industry: 'Cannabis', involvement: 'Client engagement (specific activities not listed)', where: 'Panni', kind: 'Client engagements' },
   { industry: 'Retail & e-commerce', involvement: 'Commerce workflows and external integrations in enterprise ERP support', where: 'Acumatica', kind: 'Enterprise support' },
   { industry: 'Logistics', involvement: 'Supported logistics enterprise applications, inventory and order-processing workflows', where: 'MDS Logistics', kind: 'In-house IT' },
+];
+
+/**
+ * Engagements Gabriel has described in detail. `publicName` stays null until he approves
+ * disclosure in writing; the anonymised `client` description is shown instead.
+ */
+export const LED_ENGAGEMENTS: { role: string; client: string; publicName: string | null; employer: string; platform: string; duration: string; delivery: string; scope: string; responsibilities: string[] }[] = [
+  {
+    role: 'Sage 300 ERP Implementation Lead',
+    client: 'Estate management organisation, Lagos, Nigeria',
+    publicName: null,
+    employer: 'Softcodes International',
+    platform: 'Sage 300',
+    duration: 'Approximately 18 months',
+    delivery: 'Phased, estate-wide implementation',
+    scope: 'Estate-wide financial operations, including estate dues, billing, collections and property-related financial transactions.',
+    responsibilities: [
+      'Led business requirements gathering and process analysis.',
+      'Directed Sage 300 configuration and implementation activities.',
+      'Oversaw data migration, testing and validation.',
+      'Led integration with the client\u2019s existing estate management software.',
+      'Coordinated user training, phased deployment and go-live activities.',
+      'Managed implementation activities across the project team.',
+    ],
+  },
 ];
 
 /**

@@ -57,7 +57,8 @@ await check(2, 'Recruiter pathways open the right demo and resume', async () => 
   for (const h of new Set(hrefs)) assert((await p.request.get(BASE + h)).status() === 200, `${h} not 200`);
   await go(p, '/experience?section=erp-implementation');
   const exp = await p.textContent('main');
-  for (const t of ['ERP implementation & consulting experience', 'Capability areas', 'Production troubleshooting', 'Sage X3 (V11 / V12)', 'Industry experience', 'Manufacturing', 'Water utilities', 'Food services', 'Logistics']) assert(exp.includes(t), `experience missing ${t}`);
+  for (const t of ['ERP implementation & consulting experience', 'Capability areas', 'Production troubleshooting', 'Sage X3 (V11 / V12)', 'Industry experience', 'Manufacturing', 'Water utilities', 'Food services', 'Logistics', 'Sage 300 ERP Implementation Lead', 'Approximately 18 months', 'Real estate & estate management']) assert(exp.includes(t), `experience missing ${t}`);
+  assert(exp.includes('Estate management organisation, Lagos'), 'led engagement must show the anonymised client description');
   await go(p, '/case-studies?study=erp');
   assert((await p.textContent('#cs-erp')).includes('Professional experience · anonymised'), 'ERP case study label');
   assert(!exp.includes('Selected client organisations'), 'client list shown although no names are approved');
