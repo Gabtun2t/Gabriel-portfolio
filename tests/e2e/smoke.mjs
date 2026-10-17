@@ -37,7 +37,7 @@ for (const [label, viewport] of [['desktop', { width: 1280, height: 900 }], ['mo
   const page = await newPage(viewport);
   const shot = async (n) => { if (SHOTS) await page.screenshot({ path: `${SHOTS}/${label}-${n}.png`, fullPage: false }); };
 
-  const routes = ['/', '/experience', '/labs', '/labs/aml', '/labs/reconciliation', '/labs/payments', '/labs/data', '/case-studies', '/architecture', '/contact', '/guide', '/data-dictionary', '/status'];
+  const routes = ['/', '/erp', '/aml', '/experience', '/labs', '/labs/aml', '/labs/reconciliation', '/labs/payments', '/labs/data', '/case-studies', '/architecture', '/contact', '/guide', '/data-dictionary', '/status'];
   for (const r of routes) {
     await step(`[${label}] route ${r} renders`, async () => {
       await page.goto(`${BASE}#${r}`);
@@ -132,11 +132,11 @@ for (const [label, viewport] of [['desktop', { width: 1280, height: 900 }], ['mo
     await step('Payments: timeout with and without idempotency', async () => {
       await page.goto(`${BASE}#/labs/payments`);
       await page.click('button:has-text("Timeout after bank commit")');
-      await page.waitForSelector('text=replayed');
+      await page.waitForSelector('text=replayed >> visible=true');
       let t = await page.textContent('main');
       if (!t.includes('MATCHED')) throw new Error('safe run should reconcile as MATCHED');
       await page.click('button:has-text("idempotency OFF")');
-      await page.waitForSelector('text=DUPLICATE PAYMENT');
+      await page.waitForSelector('text=DUPLICATE PAYMENT >> visible=true');
       await page.click('button:has-text("Invalid request")');
       await page.waitForSelector('text=VALIDATION FAILED');
       await shot('payments');
@@ -164,8 +164,8 @@ for (const [label, viewport] of [['desktop', { width: 1280, height: 900 }], ['mo
     await step('keyboard: route change moves focus to main content', async () => {
       await page.goto(`${BASE}#/`);
       await page.keyboard.press('Tab');
-      await page.click('nav a:has-text("Case studies")');
-      await page.waitForSelector('text=Technical case studies');
+      await page.click('nav a >> text="Experience"');
+      await page.waitForSelector('text=Career timeline');
       const id = await page.evaluate(() => document.activeElement?.id);
       if (id !== 'main') throw new Error(`focus on ${id}`);
     });
@@ -173,7 +173,7 @@ for (const [label, viewport] of [['desktop', { width: 1280, height: 900 }], ['mo
     await step('[mobile] menu toggle opens navigation', async () => {
       await page.goto(`${BASE}#/`);
       await page.click('.nav-toggle');
-      await page.click('nav a:has-text("Project lab")');
+      await page.click('nav a >> text="Projects"');
       await page.waitForSelector('text=Four working labs');
     });
   }

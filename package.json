@@ -22,7 +22,8 @@
     "verify": "npm run typecheck && npm test && npm run seed && npm run test:sql && npm run build",
     "preview:pages": "node scripts/serve-pages.mjs",
     "test:release": "node tests/e2e/release.mjs",
-    "images": "node scripts/make-images.mjs"
+    "images": "node scripts/make-images.mjs",
+    "test:ux": "node tests/e2e/ux.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

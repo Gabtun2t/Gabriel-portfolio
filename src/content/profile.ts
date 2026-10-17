@@ -6,7 +6,9 @@
 export const PROFILE = {
   name: 'Gabriel Olatundun',
   /** Primary professional identity. */
-  title: 'Senior Financial Systems & Integration Specialist',
+  title: 'Senior ERP Implementation & Financial Systems Specialist',
+  /** Homepage supporting line (Gabriel's wording, Oct 2026). */
+  tagline: '9+ years across ERP implementation, financial systems, integrations, data migration, and enterprise troubleshooting, with additional experience in financial transaction analysis and AML-related systems.',
   headline: 'Financial Systems. Financial Crime. Data Integrity. Enterprise Integration.',
   specializations: [
     'ERP implementation and enterprise systems consulting',
@@ -38,7 +40,7 @@ export const PROFILE = {
  */
 export const RESUMES: { id: 'aml' | 'erp'; label: string; file: string | null }[] = [
   { id: 'erp', label: 'ERP Implementation & Integration resume', file: 'resume/Gabriel_Olatundun_ERP_Implementation_Resume.pdf' },
-  { id: 'aml', label: 'AML Technology & Financial Crime Systems resume', file: 'resume/Gabriel_Olatundun_AML_Technology_Resume.pdf' },
+  { id: 'aml', label: 'AML Compliance & Financial Crime resume', file: 'resume/Gabriel_Olatundun_AML_Technology_Resume.pdf' },
 ];
 export const resumeFor = (id: 'aml' | 'erp') => {
   const r = RESUMES.find((x) => x.id === id)!;

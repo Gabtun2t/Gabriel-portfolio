@@ -14,27 +14,31 @@ import { Contact } from './pages/Contact';
 import { Guide } from './pages/Guide';
 import { DataDictionary } from './pages/DataDictionary';
 import { Status } from './pages/Status';
+import { Erp } from './pages/Erp';
+import { Aml } from './pages/Aml';
 
 const NAV = [
-  { to: '/labs', label: 'Project lab' },
-  { to: '/case-studies', label: 'Case studies' },
-  { to: '/architecture', label: 'Architecture' },
+  { to: '/', label: 'Home' },
   { to: '/experience', label: 'Experience' },
-  { to: '/guide', label: 'Recruiter guide' },
-  { to: '/contact', label: 'Resume & contact' },
+  { to: '/labs', label: 'Projects' },
+  { to: '/erp', label: 'ERP' },
+  { to: '/aml', label: 'AML Technology' },
+  { to: '/contact', label: 'Resumes & Contact' },
 ];
 
 const ROUTES: Record<string, { title: string; desc: string; el: () => ReactNode }> = {
-  '/': { title: 'Senior Financial Systems & Integration Specialist', desc: 'Gabriel Olatundun (Ottawa): Sage X3 and Sage 300 ERP implementation and financial systems, with AML investigations, reconciliation and payment integration. Four working labs on synthetic data.', el: () => <Home /> },
-  '/experience': { title: 'Experience', desc: 'ERP implementation experience (Sage X3, Sage 300), industry experience, career timeline, education and credentials for Gabriel Olatundun.', el: () => <Experience /> },
-  '/labs': { title: 'Project lab', desc: 'Four working technical demonstrations on synthetic data: AML investigation, ERP reconciliation, payment API integration and financial data engineering.', el: () => <Labs /> },
+  '/': { title: 'Senior ERP Implementation & Financial Systems Specialist', desc: 'Gabriel Olatundun (Ottawa): Senior ERP Implementation & Financial Systems Specialist. Sage 300, Sage X3 and Acumatica implementation, integration and troubleshooting, with AML-related transaction analysis experience.', el: () => <Home /> },
+  '/erp': { title: 'ERP implementation & financial systems', desc: 'ERP implementation leadership (Sage 300, Sage X3), integrations, data migration, capability areas and industries for Gabriel Olatundun.', el: () => <Erp /> },
+  '/aml': { title: 'AML compliance & financial crime', desc: 'AML-related transaction reviews, KYC checks, suspicious transaction identification and compliance escalation, with financial systems, SQL and payment integration expertise.', el: () => <Aml /> },
+  '/experience': { title: 'Experience', desc: 'Career timeline, skills, education and credentials for Gabriel Olatundun.', el: () => <Experience /> },
+  '/labs': { title: 'Projects', desc: 'Four working technical demonstrations on synthetic data: AML investigation, ERP reconciliation, payment API integration and financial data engineering.', el: () => <Labs /> },
   '/labs/aml': { title: 'AML investigation lab', desc: 'Rule-based transaction monitoring and case investigation on synthetic data: alert queue, KYC-related evidence, dispositions and case narratives.', el: () => <AmlLab /> },
   '/labs/reconciliation': { title: 'ERP reconciliation lab', desc: 'Legacy-to-ERP migration reconciliation with transparent matching rules, root-cause tracing, audited corrections and SQL verified on SQLite.', el: () => <ReconLab /> },
   '/labs/payments': { title: 'Payment API integration lab', desc: 'Mock bank payment API and ERP integration: validation, idempotency, retries, timeouts, audit trail and reconciliation.', el: () => <PaymentsLab /> },
   '/labs/data': { title: 'Financial data engineering lab', desc: 'Financial data pipeline on synthetic feeds: validation, quarantine, deduplication, star schema, lineage and control totals.', el: () => <DataLab /> },
   '/case-studies': { title: 'Case studies', desc: 'Technical case studies for each lab: business context, approach, architecture, design decisions, testing, results and limitations.', el: () => <CaseStudies /> },
   '/architecture': { title: 'Architecture', desc: 'Integration, reconciliation and data-flow architecture diagrams for the portfolio labs.', el: () => <Architecture /> },
-  '/contact': { title: 'Resume & contact', desc: 'Download Gabriel Olatundun’s resume and contact him by email or LinkedIn.', el: () => <Contact /> },
+  '/contact': { title: 'Resumes & contact', desc: 'Download Gabriel Olatundun’s ERP or AML Technology resume and contact him by email or LinkedIn.', el: () => <Contact /> },
   '/guide': { title: 'Recruiter guide', desc: 'What to explore in five minutes if you are hiring for AML, ERP or architecture and data roles.', el: () => <Guide /> },
   '/data-dictionary': { title: 'Data dictionary', desc: 'Tables, columns and seeds for every synthetic dataset used in the labs.', el: () => <DataDictionary /> },
   '/status': { title: 'Build status', desc: 'Deployment details, implemented and planned features, and known limitations of this portfolio.', el: () => <Status /> },
@@ -58,14 +62,14 @@ export function App() {
     setMenuOpen(false);
   }, [route.path, match]);
 
-  const active = (to: string) => (to === '/labs' ? route.path.startsWith('/labs') : route.path === to);
+  const active = (to: string) => (to === '/labs' ? route.path.startsWith('/labs') || ['/case-studies', '/architecture'].includes(route.path) : route.path === to);
 
   return (
     <>
       <a href="#main" className="skip-link" onClick={(e) => { e.preventDefault(); mainRef.current?.focus(); }}>Skip to content</a>
       <header className="site-header">
         <div className="container bar">
-          <Link to="/" className="brand">{PROFILE.name}<span>ERP · Financial systems · AML · Integration</span></Link>
+          <Link to="/" className="brand">{PROFILE.name}<span>ERP · Financial systems · AML technology</span></Link>
           <button className="nav-toggle" aria-expanded={menuOpen} aria-controls="site-nav" onClick={() => setMenuOpen((o) => !o)}>Menu</button>
           <nav id="site-nav" className={`nav ${menuOpen ? 'open' : ''}`} aria-label="Main">
             {NAV.map((n) => <Link key={n.to} to={n.to} aria-current={active(n.to) ? 'page' : undefined}>{n.label}</Link>)}
@@ -82,12 +86,12 @@ export function App() {
             <p>{PROFILE.location}<br /><a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>{PROFILE.showPhone && <><br /><a href={`tel:+1${PROFILE.phone.replace(/\D/g, '')}`}>{PROFILE.phone}</a></>}{PROFILE.linkedinUrl && <><br /><a href={PROFILE.linkedinUrl} rel="noopener noreferrer" target="_blank">LinkedIn</a></>}</p>
           </div>
           <div>
-            <h4>Labs</h4>
+            <h4>Explore</h4>
             <ul>
-              <li><Link to="/labs/aml">AML investigation</Link></li>
-              <li><Link to="/labs/reconciliation">ERP reconciliation</Link></li>
-              <li><Link to="/labs/payments">Payment API integration</Link></li>
-              <li><Link to="/labs/data">Data engineering</Link></li>
+              <li><Link to="/guide">Recruiter guide</Link></li>
+              <li><Link to="/case-studies">Case studies</Link></li>
+              <li><Link to="/architecture">Architecture</Link></li>
+              <li><Link to="/labs">All projects</Link></li>
             </ul>
           </div>
           <div>

@@ -33,9 +33,10 @@ const p = await page();
 await check(1, 'Homepage navigation', async () => {
   await go(p, '/');
   const h1 = await p.textContent('main h1');
-  assert(h1.includes('Financial Systems. Financial Crime.'), `h1: ${h1}`);
-  for (const [label, expect] of [['Project lab', 'Four working labs'], ['Case studies', 'Technical case studies'], ['Architecture', 'Integration, reconciliation'], ['Experience', 'Career timeline'], ['Recruiter guide', 'What to explore'], ['Resume & contact', 'Get in touch']]) {
-    await p.click(`nav a:has-text("${label}")`);
+  assert(h1.includes('Gabriel Olatundun'), `h1: ${h1}`);
+  assert((await p.textContent('.hero-title')).includes('Senior ERP Implementation & Financial Systems Specialist'), 'hero title');
+  for (const [label, expect] of [['Experience', 'Career timeline'], ['Projects', 'Four working labs'], ['ERP', 'ERP implementation & financial systems'], ['AML Technology', 'AML compliance & financial crime experience'], ['Resumes & Contact', 'Get in touch'], ['Home', 'Gabriel Olatundun']]) {
+    await p.click(`nav a >> text="${label}"`);
     await p.waitForFunction((t) => document.querySelector('main h1')?.textContent?.includes(t), expect);
   }
   const title = await p.title();
@@ -45,19 +46,20 @@ await check(1, 'Homepage navigation', async () => {
 });
 
 await check(2, 'Recruiter pathways open the right demo and resume', async () => {
-  const targets = [['See ERP implementation experience', 'Career timeline'], ['Open the AML case', 'AML transaction monitoring'], ['Reconciliation lab', 'ERP financial reconciliation'], ['Open the payment lab', 'Mock bank payment API']];
+  const targets = [['View ERP experience', 'ERP implementation & financial systems'], ['Explore AML technology', 'AML compliance & financial crime experience'], ['AML lab', 'AML transaction monitoring'], ['View project', 'AML transaction monitoring']];
   for (const [cta, h1] of targets) {
     await go(p, '/');
-    await p.click(`a:has-text("${cta}")`);
+    await p.click(`main a >> text="${cta}"`);
     await p.waitForFunction((t) => document.querySelector('main h1')?.textContent?.includes(t), h1);
   }
   await go(p, '/');
-  const hrefs = await p.$$eval('.card a[download]', (as) => as.map((a) => a.getAttribute('href')));
-  assert(hrefs.length === 3, `resume links ${hrefs.length}`);
+  const hrefs = await p.$$eval('.track-card a[download]', (as) => as.map((a) => a.getAttribute('href')));
+  assert(hrefs.length === 2 && new Set(hrefs).size === 2, `track resume links ${hrefs.length}`);
   for (const h of new Set(hrefs)) assert((await p.request.get(BASE + h)).status() === 200, `${h} not 200`);
   await go(p, '/experience?section=erp-implementation');
+  await p.waitForFunction(() => location.hash.startsWith('#/erp'));
   const exp = await p.textContent('main');
-  for (const t of ['ERP implementation & consulting experience', 'Capability areas', 'Production troubleshooting', 'Sage X3 (V11 / V12)', 'Industry experience', 'Manufacturing', 'Water utilities', 'Food services', 'Logistics', 'Sage 300 ERP Implementation Lead', 'Approximately 18 months', 'Real estate & estate management', 'Investment holding', 'downstream oil and gas', 'public-sector water utility']) assert(exp.includes(t), `experience missing ${t}`);
+  for (const t of ['ERP implementation & financial systems', 'Capability areas', 'Production troubleshooting', 'Sage X3 (V11 / V12)', 'Industry experience', 'Manufacturing', 'Water utilities', 'Food services', 'Logistics', 'Sage 300 ERP Implementation Lead', 'Approximately 18 months', 'Real estate & estate management', 'Investment holding', 'downstream oil and gas', 'public-sector water utility']) assert(exp.includes(t), `experience missing ${t}`);
   assert(exp.includes('Estate management organisation, Lagos'), 'led engagement must show the anonymised client description');
   await go(p, '/case-studies?study=erp');
   assert((await p.textContent('#cs-erp')).includes('Professional experience · anonymised'), 'ERP case study label');
@@ -68,7 +70,8 @@ await check(2, 'Recruiter pathways open the right demo and resume', async () => 
   assert(exp.includes('Participated as a consultant in a Sage X3 V11 to V12 upgrade'), 'upgrade role wording');
   await go(p, '/');
   const home = await p.textContent('main');
-  for (const t of ['Featured project · led implementation', 'Implementation Lead', 'ERP Implementation & Integration resume (PDF)', 'AML Technology & Financial Crime Systems resume (PDF)']) assert(home.includes(t), `home missing ${t}`);
+  for (const t of ['Three reasons to interview Gabriel', 'Choose your career track', 'Featured technical work', 'Implementation Lead', 'Kibana (since 2025)', 'ERP & Financial Systems (PDF)', 'AML & Financial Crime (PDF)', 'ERP Implementation & Integration resume (PDF)', 'AML Compliance & Financial Crime resume (PDF)']) assert(home.includes(t), `home missing ${t}`);
+  assert(!/Live from the AML lab|One thread|Signature story/.test(home), 'technical sections should not be on the homepage');
   const heroDl = await p.$$eval('.hero-home a[download]', (as) => as.map((a) => a.getAttribute('href')));
   assert(new Set(heroDl).size === 2, 'hero must offer two different resumes');
   const sizes = [];
@@ -78,7 +81,7 @@ await check(2, 'Recruiter pathways open the right demo and resume', async () => 
   const guideDl = await p.$$eval('[aria-label="Resumes"] a[download]', (as) => as.map((a) => a.textContent + '|' + a.getAttribute('href')));
   assert(guideDl.length === 2 && guideDl.some((x) => x.startsWith('ERP Implementation')) && guideDl.some((x) => x.startsWith('AML')), 'recruiter guide must offer both labelled resumes');
   for (const x of guideDl) assert((await p.request.get(BASE + x.split('|')[1])).status() === 200, `${x} not 200`);
-  return '3 pathways (ERP first), two separate resumes, featured led implementation, engagement types, anonymised wording, no client list';
+  return 'hero CTAs and track cards reach ERP, AML and labs; two separate resumes; ERP page complete; old deep link redirects';
 });
 
 await check(3, 'AML alert queue: search, filter, sort', async () => {
@@ -171,7 +174,7 @@ await check(9, 'Reconciliation execution', async () => {
 
 await check(10, 'Simulated corrections are journalled', async () => {
   await p.click('button:has-text("Apply all proposed corrections")');
-  await p.waitForSelector('text=Correction journal');
+  await p.waitForSelector('text=Correction journal >> visible=true');
   const rows = await p.$$eval('h3:has-text("Correction journal") ~ .table-wrap tbody tr', (r) => r.length);
   assert(rows === 22, `journal rows ${rows}`);
   return '22 journal entries';
@@ -199,11 +202,11 @@ await check(12, 'Payment failure scenarios', async () => {
 
 await check(13, 'Idempotency behaviour', async () => {
   await p.click('button:has-text("Timeout after bank commit")');
-  await p.waitForSelector('.badge:has-text("replayed")');
+  await p.waitForSelector('.badge:has-text("replayed") >> visible=true');
   await p.click('button:has-text("idempotency OFF")');
-  await p.waitForSelector('td >> text=DUPLICATE PAYMENT');
+  await p.waitForSelector('td >> text=DUPLICATE PAYMENT >> visible=true');
   await p.click('button:has-text("Edited after sending")');
-  await p.waitForSelector('text=CONFLICT');
+  await p.waitForSelector('text=CONFLICT >> visible=true');
   const t = await p.textContent('main');
   assert(t.includes('Correct vs. incorrect integration behaviour'), 'comparison');
   return 'replay, duplicate without key, 409 conflict';
@@ -248,14 +251,14 @@ await check(17, 'External links (targets only; not fetched)', async () => {
 
 await check(18, 'Mobile layout (390 px): no horizontal overflow on any route; menu works', async () => {
   const m = await page({ width: 390, height: 844 });
-  const routes = ['/', '/experience', '/labs', '/labs/aml', '/labs/aml?tab=case&case=CASE-260108', '/labs/aml?tab=method', '/labs/reconciliation', '/labs/payments', '/labs/data', '/case-studies', '/architecture', '/contact', '/guide', '/data-dictionary', '/status'];
+  const routes = ['/', '/erp', '/aml', '/experience', '/labs', '/labs/aml', '/labs/aml?tab=case&case=CASE-260108', '/labs/aml?tab=method', '/labs/reconciliation', '/labs/payments', '/labs/data', '/case-studies', '/architecture', '/contact', '/guide', '/data-dictionary', '/status'];
   for (const r of routes) {
     await go(m, r);
     const over = await m.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     assert(over <= 2, `${r} overflows ${over}px`);
   }
-  await go(m, '/'); await m.click('.nav-toggle'); await m.click('nav a:has-text("Case studies")');
-  await m.waitForSelector('text=Technical case studies');
+  await go(m, '/'); await m.click('.nav-toggle'); await m.click('nav a >> text="ERP"');
+  await m.waitForSelector('text=ERP implementation & financial systems');
   await m.context().close();
   return `${routes.length} routes`;
 });

@@ -29,9 +29,9 @@ export function Labs() {
     <>
       <section className="page-hero">
         <div className="container">
-          <div className="eyebrow">Project lab</div>
+          <div className="eyebrow">Projects</div>
           <h1>Four working labs on synthetic data</h1>
-          <p className="lead">Every number on these pages is computed in your browser from seeded data by code you can read on the page. Each lab links to its rules, tests and SQL.</p>
+          <p className="lead">Interactive technical demonstrations. Every number is computed in your browser from seeded, synthetic data. They are portfolio simulations, not client work.</p>
         </div>
       </section>
       <section className="section">
@@ -50,7 +50,16 @@ export function Labs() {
               </div>
             ))}
           </div>
-          <p className="small muted">Known limitations of each lab are listed on the <Link to="/status">build status</Link> page and in each case study.</p>
+          <section className="card" aria-labelledby="deeper">
+            <h2 id="deeper" style={{ fontSize: 20 }}>Go deeper</h2>
+            <p className="small muted">For hiring managers who want the technical detail behind the labs.</p>
+            <div className="grid cols-4">
+              <Link to="/case-studies" className="card card-link tight"><strong>Case studies</strong><p className="small muted" style={{ margin: '4px 0 0' }}>Context, approach, design decisions, testing and limitations.</p></Link>
+              <Link to="/architecture" className="card card-link tight"><strong>Architecture</strong><p className="small muted" style={{ margin: '4px 0 0' }}>Integration, reconciliation and data-flow diagrams.</p></Link>
+              <Link to="/guide" className="card card-link tight"><strong>Recruiter guide</strong><p className="small muted" style={{ margin: '4px 0 0' }}>Five-minute tours by role; what is real vs. simulated.</p></Link>
+              <Link to="/status" className="card card-link tight"><strong>Build status</strong><p className="small muted" style={{ margin: '4px 0 0' }}>Tests, deployment and known limitations.</p></Link>
+            </div>
+          </section>
         </div>
       </section>
     </>

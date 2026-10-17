@@ -42,7 +42,7 @@ export function CaseStudies() {
   useEffect(() => { if (study) document.getElementById(`cs-${study}`)?.scrollIntoView(); }, [study]);
   const studies: Study[] = [
     {
-      id: 'erp', short: 'ERP implementation', real: true, lab: '/experience', labLabel: 'See the ERP implementation experience',
+      id: 'erp', short: 'ERP implementation', real: true, lab: '/erp', labLabel: 'See the ERP experience page',
       title: 'Leading and delivering Sage 300 and Sage X3 implementations',
       sections: [
         { h: 'Business context', body: <p>Client organisations moving finance and operations onto Sage X3 or Sage 300 needed the system configured to their processes, their historical data migrated and reconciled, users trained, and the system kept working after go-live: through upgrades, integrations with other applications and day-to-day issues. Project examples are anonymised: clients are described by sector and location rather than by name.</p> },
@@ -136,7 +136,7 @@ export function CaseStudies() {
                   </section>
                 ))}
               </div>
-              <Link to={s.lab} query={s.real ? { section: 'erp-implementation' } : undefined} className="btn btn-primary btn-sm" style={{ marginTop: 14 }}>{s.labLabel ?? 'Open the lab'}</Link>
+              <Link to={s.lab} className="btn btn-primary btn-sm" style={{ marginTop: 14 }}>{s.labLabel ?? 'Open the lab'}</Link>
             </article>
           ))}
           <div className="callout info">

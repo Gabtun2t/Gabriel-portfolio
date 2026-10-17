@@ -47,6 +47,7 @@ function build(r) {
       role.bullets.forEach((b) => out.push(bullet(b)));
     }
     (s.afterBullets ?? []).forEach((b) => out.push(bullet(b)));
+    (s.bulletsOnly ?? []).forEach((b) => out.push(bullet(b)));
     for (const e of s.earlier ?? []) out.push(para([run(e.title, { bold: true }), run(` | ${e.org} | ${e.place} | ${e.dates}: ${e.text}`)], { after: 30 }));
   }
   return new Document({

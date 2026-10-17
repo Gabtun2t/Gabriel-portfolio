@@ -99,13 +99,19 @@ export const ERP = {
 export const AML = {
   file: 'Gabriel_Olatundun_AML_Technology_Resume',
   ...CONTACT,
-  headline: 'FINANCIAL CRIME SYSTEMS | AML TRANSACTION REVIEW | TRANSACTION DATA INTEGRITY | PAYMENTS INTEGRATION',
+  headline: 'AML COMPLIANCE & FINANCIAL CRIME | TRANSACTION REVIEW & KYC | FINANCIAL SYSTEMS',
   sections: [
     { h: 'PROFESSIONAL SUMMARY', p: [
-      'Financial systems professional with 9+ years across ERP, payments and financial transaction data, bringing hands-on AML-related transaction review experience to financial crime technology roles. Performed AML-related transaction reviews and KYC-related checks on client workstreams at Panni Management & Technology and Softcodes International, escalated suspicious or inconsistent activity to compliance teams, and distinguished genuine risk indicators from ERP data-quality and migration defects. Strengths in SQL-based investigation, transaction reconciliation, payment API integration and ERP data integrity. Now a Senior Support Engineer at Acumatica, investigating transaction anomalies with SQL, diagnostic logs and repeatable testing. Completed AML training (LinkedIn Learning).',
+      'AML and financial crime professional whose 9+ years in financial systems include AML-related transaction reviews, KYC checks, suspicious transaction identification and compliance escalation, strengthened by ERP, SQL and payment integration experience. Performed AML-related reviews across financial-institution, microfinance banking, and oil and gas client engagements at Softcodes International and on AML-related Sage X3 workstreams at Panni Management & Technology. Applies investigative judgment to separate genuine risk indicators from ERP data-quality and migration defects before escalation, and reconciles reviewed transactions against finance records. As Senior Support Engineer at Acumatica, investigates complex transaction anomalies with SQL and Kibana and coordinates high-impact cases across Product, Engineering and Consulting.',
     ] },
     { h: 'CORE COMPETENCIES', p: [
-      'AML Transaction Review & Exception Analysis | KYC-Related Checks | Suspicious Activity Identification & Compliance Escalation | Transaction Data Integrity & Reconciliation | SQL-Based Investigation | Root-Cause Analysis | Distinguishing Risk Indicators from Data Defects | Source-to-Target Data Mapping & Validation | Payment API Integration | Business Requirements, Functional Specifications & UAT | Case Documentation | Stakeholder Communication',
+      'AML Compliance & Transaction Review | Exception Analysis | KYC Checks | Suspicious Transaction Identification | Compliance Escalation | Risk Indicator Analysis | Financial Data Investigations | Financial Controls & Transaction Reconciliation | SQL-Based Investigation | Root-Cause Analysis | Payment API Integration | Case Documentation | Stakeholder Coordination',
+    ] },
+    { h: 'AML & FINANCIAL CRIME EXPERIENCE', bulletsOnly: [
+      'Transaction review and KYC: AML-related reviews and KYC checks across financial-institution, microfinance banking and oil and gas client engagements (Softcodes, 2016–2021) and AML-related Sage X3 workstreams (Panni, 2022–2023).',
+      'Suspicious activity and escalation: identified suspicious or inconsistent transactions and escalated findings to compliance teams.',
+      'Financial data investigations and controls: separated ERP migration data corruption from genuine risk indicators, and reconciled reviewed transactions against finance records.',
+      'Systems advantage: SQL investigation, Kibana log analysis and payment API integration experience applied to complex transaction anomalies (Acumatica, 2023–present).',
     ] },
     { h: 'TECHNICAL SKILLS', kv: [
       ['Investigation & data', 'SQL Server; SQL-based investigation; data validation; source-to-target mapping; reconciliation; migration testing; Microsoft Excel; Crystal Reports'],
@@ -113,7 +119,6 @@ export const AML = {
       ['Investigation tools', 'Kibana log analysis (since 2025); SQL; diagnostic logs; reproducible test scenarios'],
       ['Payments & integration', 'Bank payment API to Sage 300 integration; ERP interfaces; REST/GraphQL API-related integration troubleshooting; commerce connector troubleshooting (Shopify, Amazon, BigCommerce); transactional test scenarios'],
       ['Documentation', 'Case and defect documentation; functional specifications; UAT; Jira; Smartsheet'],
-      ['Portfolio (simulated)', 'Rule-based transaction monitoring logic, alert scoring, disposition workflow, data lineage and data-quality metrics'],
     ] },
     { h: 'PROFESSIONAL EXPERIENCE', roles: [
       { title: 'Senior Support Engineer', org: 'Acumatica Canada Inc.', place: 'Canada', dates: 'Apr 2026 – Present', bullets: [
@@ -128,20 +133,19 @@ export const AML = {
         'Reviewed configuration, test results and case evidence with engineering and consulting teams; documented findings for accurate hand-offs and future investigation.',
       ] },
       { title: 'Finance Analyst (Sage X3)', org: 'Panni Management & Technology', place: 'Remote, Canada', dates: 'Jun 2022 – Jul 2023', bullets: [
-        'Reviewed financial transactions and performed KYC-related checks on AML-related workstreams; flagged suspicious or inconsistent activity to compliance teams.',
+        'Performed AML-related transaction reviews and KYC checks; flagged suspicious or inconsistent activity to compliance teams.',
         'Reconciled reviewed transactions against Sage X3 finance records; led validation and reconciliation of migrated financial and operational records and correction of data-quality exceptions.',
         'Led the Sage X3 finance workstream on each client implementation (GL, AP, AR, Fixed Assets, migration and UAT) for food services, marine and cannabis clients.',
       ] },
       { title: 'Senior Technical Consultant', org: 'Softcodes International Ltd.', place: 'Lagos, Nigeria', dates: 'Oct 2016 – Dec 2021', bullets: [
-        'Reviewed transactions and performed KYC-related checks for financial-institution, microfinance banking, and oil and gas client projects; traced some exceptions to ERP migration-related data corruption rather than fraud before escalating suspicious findings to compliance teams.',
+        'Performed AML-related transaction reviews and KYC checks for financial-institution, microfinance banking, and oil and gas clients; traced some exceptions to migration data corruption rather than fraud before escalating suspicious findings.',
         'Implementation Lead for an approximately 18-month, phased Sage 300 implementation, coordinating the client, the development team and the implementation team.',
         'Partnered with an internal developer and client stakeholders to integrate a bank payment API with Sage 300 for a financial-services client, aligning payment processing with ERP and finance workflows.',
         'Led or supported data migration, validation, reconciliation, functional testing and UAT across Sage X3 and Sage 300 engagements.',
       ] },
     ] },
-    { h: 'PORTFOLIO PROJECTS (SIMULATED, SYNTHETIC DATA)', note: 'Independent portfolio simulations built with AI-assisted development. These are demonstrations, not client engagements or production AML platform experience. gabtun2t.github.io/Gabriel-portfolio', p: [
+    { h: 'PORTFOLIO PROJECTS (SIMULATED, SYNTHETIC DATA)', note: 'Demonstrations on synthetic data, built with AI-assisted development; not client or production AML platform work. gabtun2t.github.io/Gabriel-portfolio', p: [
       'AML transaction monitoring and investigation lab: seven explainable monitoring rules, alert scoring, KYC-related profile review, evidence checklist, disposition workflow with rationale, and exportable case narrative; five of the rules written in SQL and parity-checked against the application logic, plus a SQL ledger-to-ERP cross-check verified to isolate a seeded decimal-shift posting error.',
-      'Supporting labs: ERP migration reconciliation with root-cause tracing; mock bank payment API with idempotency, retries and audit trail; financial data pipeline with validation, lineage and data-quality metrics; SQL checked against SQLite.',
     ] },
     { h: 'EARLIER EXPERIENCE', earlier: EARLIER },
     { h: 'TEACHING EXPERIENCE', p: [

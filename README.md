@@ -1,6 +1,6 @@
 # Gabriel Olatundun — Interactive Professional Portfolio
 
-**Senior Financial Systems & Integration Specialist** · Ottawa, Ontario, Canada
+**Senior ERP Implementation & Financial Systems Specialist** · Ottawa, Ontario, Canada
 
 **Live site:** https://gabtun2t.github.io/Gabriel-portfolio/ (GitHub Pages, deployed by GitHub Actions on every push to `main`)
 
@@ -44,6 +44,7 @@ npm run dev          # http://localhost:5173 (rebuilds on change)
 | `npm run test:sql` | Run the SQL files on SQLite and assert parity with the TypeScript engines; refresh `src/generated/sql_snapshot.json` |
 | `npm run test:e2e` | Browser smoke test of every route and core lab flow (needs `npm run preview` running; `npx playwright install chromium` once) |
 | `npm run preview:pages` | Serve `dist/` at http://localhost:4174/Gabriel-portfolio/ — the same base path as GitHub Pages |
+| `npm run test:ux` | Recruiter usability journeys (clicks, above-the-fold), overflow at 320–1280 px, real interactions; writes `test-results/ux.json` |
 | `npm run test:release` | The 20-point release QA (pathways, AML workflow incl. persistence and export, reconciliation, payments, data lab, downloads, links, mobile, keyboard, assets) against `preview:pages`; writes `test-results/release-qa.json` |
 | `npm run images` | Regenerate `public/og-image.png` and `public/apple-touch-icon.png` |
 | `npm run typecheck` | Strict TypeScript check of engines, data generators, scripts and tests |

@@ -411,3 +411,37 @@ details.disclosure > .body { padding: 0 16px 16px; }
 .featured-engagement { border-left: 4px solid var(--blue, #1f5fbf); }
 @media (max-width: 640px) { .btn { white-space: normal; text-align: center; max-width: 100%; } }
 @media (max-width: 640px) { .badge { white-space: normal; } }
+
+/* ---- Recruiter-first homepage (Oct 2026) ---- */
+.hero-title { color: #fff; font-size: clamp(18px, 2.2vw, 22px); font-weight: 600; margin: 0 0 12px; line-height: 1.3; }
+.hero-actions { margin-top: 22px; gap: 10px; }
+.resume-choice { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; background: rgba(255,255,255,0.03); max-width: 640px; }
+.resume-choice > span { color: #fff; font-weight: 600; font-size: 14px; margin-right: 4px; }
+.hero-panel-title { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #6fd6ca; }
+.glance { display: grid; grid-template-columns: max-content 1fr; gap: 8px 14px; margin: 0; font-size: 14.5px; }
+.glance dt { color: var(--navy-muted); font-weight: 500; }
+.glance dd { margin: 0; color: #fff; }
+.glance-roles { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.12); color: var(--navy-ink); font-size: 13.5px; line-height: 1.55; }
+.glance-roles strong { color: #fff; }
+.home-section { padding-top: 44px; padding-bottom: 8px; }
+.home-h2 { font-size: clamp(22px, 2.6vw, 28px); margin: 0 0 18px; }
+.reason { border-top: 3px solid var(--teal); }
+.reason-num { font-family: var(--mono); color: var(--teal-ink); font-size: 13px; font-weight: 600; }
+.track-card { gap: 10px; }
+.tight-list { padding-left: 18px; margin: 0; }
+.tight-list li + li { margin-top: 4px; }
+.project-card { gap: 8px; }
+.contact-band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+@media (max-width: 640px) { .glance { grid-template-columns: 1fr; gap: 2px; } .glance dd { margin-bottom: 8px; } .resume-choice .btn { flex: 1 1 100%; } .hero-actions .btn { flex: 1 1 100%; } }
+/* Lab brief: progressive disclosure */
+.brief-lead { display: grid; gap: 16px 28px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.brief-lead h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal-ink); margin: 0 0 6px; }
+.brief-lead p { font-size: 14.5px; color: var(--ink-2); margin: 0; }
+.brief-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; align-items: center; }
+/* Narrow phones (320–360 px): single-column grids, shrinkable form controls and code headers */
+@media (max-width: 360px) {
+  .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: minmax(0, 1fr); }
+  .field select, .field input, .field textarea { min-width: 0; max-width: 100%; width: 100%; }
+  .code-head { flex-wrap: wrap; }
+  .code-head > * { min-width: 0; overflow-wrap: anywhere; }
+}
