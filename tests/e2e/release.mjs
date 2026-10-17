@@ -66,12 +66,16 @@ await check(2, 'Recruiter pathways open the right demo and resume', async () => 
   assert(!/confidential/i.test(exp), 'blanket confidentiality wording should be replaced');
   await go(p, '/');
   const home = await p.textContent('main');
-  for (const t of ['Featured project · led implementation', 'Implementation Lead', 'ERP resume (PDF)', 'AML resume (PDF)']) assert(home.includes(t), `home missing ${t}`);
+  for (const t of ['Featured project · led implementation', 'Implementation Lead', 'ERP Implementation & Integration resume (PDF)', 'AML & Financial Crime Systems resume (PDF)']) assert(home.includes(t), `home missing ${t}`);
   const heroDl = await p.$$eval('.hero-home a[download]', (as) => as.map((a) => a.getAttribute('href')));
   assert(new Set(heroDl).size === 2, 'hero must offer two different resumes');
   const sizes = [];
   for (const h of heroDl) { const r = await p.request.get(BASE + h); assert(r.status() === 200 && (await r.body()).subarray(0, 4).toString() === '%PDF', `${h} not a PDF`); sizes.push((await r.body()).length); }
   assert(sizes[0] !== sizes[1], 'ERP resume must be a separate document');
+  await go(p, '/guide');
+  const guideDl = await p.$$eval('[aria-label="Resumes"] a[download]', (as) => as.map((a) => a.textContent + '|' + a.getAttribute('href')));
+  assert(guideDl.length === 2 && guideDl.some((x) => x.startsWith('ERP Implementation')) && guideDl.some((x) => x.startsWith('AML')), 'recruiter guide must offer both labelled resumes');
+  for (const x of guideDl) assert((await p.request.get(BASE + x.split('|')[1])).status() === 200, `${x} not 200`);
   return '3 pathways (ERP first), two separate resumes, featured led implementation, engagement types, anonymised wording, no client list';
 });
 

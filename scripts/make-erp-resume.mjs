@@ -17,22 +17,33 @@ body { font-family: Calibri, Carlito, 'Liberation Sans', Arial, sans-serif; font
 h1 { font-size: 20pt; letter-spacing: 1.5px; text-align: center; margin: 0; }
 .sub { text-align: center; font-weight: 700; color: #2b5c9e; font-size: 10.6pt; margin: 3px 0 2px; letter-spacing: .4px; }
 .contact { text-align: center; font-size: 9.6pt; margin-bottom: 6px; }
-h2 { font-size: 10.8pt; letter-spacing: 1px; color: #2b5c9e; border-bottom: 1.2px solid #2b5c9e; margin: 10px 0 4px; padding-bottom: 1px; }
+h2 { break-after: avoid; font-size: 10.8pt; letter-spacing: 1px; color: #2b5c9e; border-bottom: 1.2px solid #2b5c9e; margin: 10px 0 4px; padding-bottom: 1px; }
 p { margin: 0 0 3px; }
 ul { margin: 2px 0 4px; padding-left: 16px; } li { margin: 0 0 2px; }
-.role { margin-bottom: 5px; break-inside: avoid; }
+.role { margin-bottom: 5px; } .rh { break-after: avoid; } li { break-inside: avoid; }
 .rh { display: flex; justify-content: space-between; gap: 10px; }
-.proj { border-left: 3px solid #2b5c9e; padding: 2px 0 2px 8px; margin: 3px 0 5px; }
+.proj { border-left: 3px solid #2b5c9e; padding: 2px 0 2px 8px; margin: 3px 0 6px; break-inside: avoid; }
 .proj .ph { font-weight: 700; }
 .kv b { color: #1b1f24; }
 .muted { color: #555; font-size: 9.2pt; }
 </style></head><body>
 <h1>GABRIEL OLATUNDUN</h1>
-<div class="sub">ERP IMPLEMENTATION &amp; INTEGRATION | SAGE 300 · SAGE X3 · ACUMATICA</div>
+<div class="sub">ERP IMPLEMENTATION &amp; INTEGRATION | SAGE 300 | SAGE X3 | ACUMATICA</div>
 <div class="contact">Ottawa, Ontario, Canada | 902-880-9877 | gabriel.olatundun@gmail.com | linkedin.com/in/tunde-o-tech</div>
 
 <h2>PROFESSIONAL SUMMARY</h2>
-<p>ERP and financial systems professional with 9+ years across ERP implementation, integration, data migration and enterprise support. As Implementation Lead at Softcodes International, led an approximately 18-month, phased, estate-wide Sage 300 implementation, coordinating client stakeholders, the development team and a multidisciplinary implementation team from requirements to go-live, and led a Sage 300 implementation for a public-sector water utility. Delivered further Sage X3 and Sage 300 implementations and advisory support. Now resolves complex enterprise ERP production issues at Acumatica using SQL, diagnostic logs and repeatable testing.</p>
+<p>ERP implementation and integration professional with 9+ years across Sage 300, Sage X3 and Acumatica. Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation, coordinating the client, the development team and a multidisciplinary implementation team from requirements to go-live. Also led a Sage 300 implementation for a public-sector water utility and delivered further Sage X3 and Sage 300 implementations, integrations and advisory support. Now resolves complex enterprise ERP production issues at Acumatica using SQL, diagnostic logs and repeatable testing.</p>
+
+<h2>SELECTED PROJECT LEADERSHIP</h2>
+<div class="proj"><div class="rh"><span class="ph">Sage 300 ERP Implementation Lead | Estate management organisation, Lagos, Nigeria</span><span>Softcodes International</span></div>
+<p class="muted">Approximately 18 months | Phased, estate-wide implementation | Estate dues, billing, collections and property-related financial transactions</p>
+${ul([
+  'Led the implementation across its full lifecycle: led business requirements gathering and process analysis, directed Sage 300 configuration, and oversaw data migration, testing and validation.',
+  'Coordinated the client, the development team and a multidisciplinary implementation team throughout delivery.',
+  'Coordinated delivery of a custom integration with the client’s existing estate management software, built by the Softcodes development team.',
+  'Coordinated user training, phased deployment and go-live across the estate.',
+])}</div>
+<div class="proj"><div class="rh"><span class="ph">Sage 300 Implementation Lead | Public-sector water utility (government project)</span><span>Softcodes International</span></div></div>
 
 <h2>CORE COMPETENCIES</h2>
 <p>ERP Implementation Leadership | Requirements &amp; Process Analysis | Sage 300 &amp; Sage X3 Configuration | Data Migration, Validation &amp; Reconciliation | Functional Testing &amp; UAT | Integration Delivery Coordination | User Training, Phased Deployment &amp; Go-Live | ERP Upgrades | Production Troubleshooting | Stakeholder Communication</p>
@@ -55,25 +66,17 @@ ${role('Product Support Specialist', 'Acumatica Canada Inc.', 'Canada', 'Jul 202
   'Reviewed system configuration, test results and case evidence; worked with engineering and consulting teams to resolve issues and improve supportability.',
 ])}
 ${role('Finance Analyst (Sage X3)', 'Panni Management & Technology', 'Remote, Canada', 'Jun 2022 – Jul 2023', [
-  'Analyzed financial business requirements and supported Sage X3 configurations for GL, AP, AR and Fixed Assets during ERP implementations.',
-  'Worked across Sage X3 financial processes, including GL, AP, AR and financial reporting, validating configuration and resolving financial data issues.',
-  'Mapped, validated and reconciled migrated financial and operational records; investigated mismatches and supported correction of data-quality exceptions.',
-  'Performed functional testing and UAT for financial transaction flows, documented issues, and supported post-go-live user troubleshooting.',
+  'Analyzed financial business requirements and supported Sage X3 configuration for GL, AP, AR, Fixed Assets and financial reporting during ERP implementations; validated configuration and resolved financial data issues.',
+  'Mapped, validated and reconciled migrated financial and operational records, investigating mismatches and correcting data-quality exceptions.',
+  'Performed functional testing and UAT of financial transaction flows and supported post-go-live user troubleshooting.',
 ])}
 ${role('Senior Technical Consultant', 'Softcodes International Ltd.', 'Lagos, Nigeria', 'Oct 2016 – Dec 2021', [
+  'Implementation Lead for two Sage 300 implementations (see Selected Project Leadership).',
   'Delivered Sage X3 and Sage 300 implementations and advisory support across finance, manufacturing, distribution and other enterprise environments, translating client requirements into workable system processes.',
   'Partnered with an internal developer and client stakeholders to integrate a bank payment API with Sage 300 for a financial-services client; helped align payment processing with ERP and finance workflows.',
   'Supported Sage X3 integrations with investment and payroll applications, resolving data mapping, interface and process issues through cross-functional investigation.',
   'Led or supported data migration, validation, reconciliation, functional testing, user acceptance, upgrade delivery (Sage X3 V11 to V12) and post-implementation troubleshooting.',
-], `<div class="proj"><div class="ph">Implementation Lead, Sage 300: estate management organisation, Lagos (approx. 18 months, phased, estate-wide)</div>
-<p>Led the implementation across its full lifecycle for estate-wide financial operations, including estate dues, billing, collections and property-related financial transactions.</p>
-${ul([
-  'Led business requirements gathering and process analysis; directed Sage 300 configuration and implementation activities.',
-  'Oversaw data migration, testing and validation.',
-  'Coordinated delivery of a custom integration with the client’s existing estate management software, developed by the Softcodes team.',
-  'Coordinated the client’s stakeholders, the development team and a multidisciplinary implementation team; coordinated user training, phased deployment and go-live.',
-])}</div>
-<div class="proj"><div class="ph">Implementation Lead, Sage 300: public-sector water utility (government project)</div></div>`)}
+])}
 
 <h2>EARLIER EXPERIENCE</h2>
 <p><b>Software Intern</b> | Sage Software West Africa | Nigeria | Jun 2016 – Sep 2016: structured training in Sage accounting, business-management software, ERP configurations and support.</p>
@@ -83,7 +86,7 @@ ${ul([
 <p>Master of Technology Entrepreneurship and Innovation (MTEI) | Saint Mary’s University, Halifax, NS | 2022–2023</p>
 <p>Bachelor of Technology, Computer Engineering | Ladoke Akintola University of Technology, Nigeria | 2008–2014</p>
 
-<h2>CERTIFICATIONS &amp; PRODUCT BADGES</h2>
+<h2>CERTIFICATIONS, TRAINING &amp; PRODUCT BADGES</h2>
 <p>Sage X3 Certified Technical Consultant | Sage X3 Certified Financial Consultant | Sage X3 Certified Distribution Consultant | Sage CRM Certification | Sage X3 Project Management Training | Acumatica Finance, Distribution, Manufacturing &amp; Commerce Product Badges</p>
 </body></html>`;
 

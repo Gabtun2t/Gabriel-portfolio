@@ -7,7 +7,7 @@ export const DEPLOYMENT = {
   workflowRuns: 'https://github.com/gabtun2t/Gabriel-portfolio/actions',
   pipeline: 'Every push to main runs the type check, unit tests, data export, SQL parity check and production build. The site is published only if all of them pass.',
   /** Updated by hand only after the live site has been checked. Null until then. */
-  lastVerified: { date: '2026-10-17', commit: '07ce2c7', how: 'live HTML, build metadata, resume PDF and sitemap fetched from the public URL; the 20-point browser QA passed in CI on the same build' } as null | { date: string; commit: string; how: string },
+  lastVerified: { date: '2026-10-17', commit: '27f525c', how: 'live HTML, build metadata, resume PDF and sitemap fetched from the public URL; the 20-point browser QA passed in CI on the same build' } as null | { date: string; commit: string; how: string },
 };
 
 export const FEATURE_STATUS: { area: string; feature: string; status: 'Implemented' | 'Partial' | 'Planned'; tested: string; note?: string }[] = [

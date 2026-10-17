@@ -46,8 +46,8 @@ export function Home() {
             <div className="row" style={{ marginTop: 24 }}>
               <Link to="/experience" query={{ section: 'erp-implementation' }} className="btn btn-primary">ERP implementation experience</Link>
               <Link to="/labs/aml" className="btn btn-secondary">AML investigation lab</Link>
-              <a href={erpResume.file} className="btn btn-secondary" download>ERP resume (PDF)</a>
-              <a href={amlResume.file} className="btn btn-secondary" download>AML resume (PDF)</a>
+              <a href={erpResume.file} className="btn btn-secondary" download>{erpResume.label} (PDF)</a>
+              <a href={amlResume.file} className="btn btn-secondary" download>{amlResume.label} (PDF)</a>
               {PROFILE.linkedinUrl && <a href={PROFILE.linkedinUrl} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>}
               <a href={`mailto:${PROFILE.email}`} className="btn btn-secondary">Email</a>
             </div>
@@ -144,7 +144,7 @@ export function Home() {
                 <div className="row" style={{ marginTop: 'auto' }}>
                   <Link to={p.to} query={p.query} className="btn btn-primary btn-sm">{p.cta}</Link>
                   {p.second && <Link to={p.second.to} className="btn btn-secondary btn-sm">{p.second.label}</Link>}
-                  <a href={p.resume.file} className="btn btn-secondary btn-sm" download title={p.resume.label}>Resume (PDF)</a>
+                  <a href={p.resume.file} className="btn btn-secondary btn-sm" download title={p.resume.label}>{p.resume.label.replace(' resume', '')} resume (PDF)</a>
                 </div>
               </div>
             ))}

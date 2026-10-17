@@ -1,5 +1,6 @@
 import { Link } from '../router';
 import { aml } from '../data/instances';
+import { RESUMES } from '../content/profile';
 
 export function Guide() {
   const { alerts } = aml();
@@ -41,6 +42,13 @@ export function Guide() {
       </section>
       <section className="section">
         <div className="container stack">
+          <div className="card" aria-label="Resumes">
+            <h2 style={{ fontSize: 20, margin: '0 0 6px' }}>Resumes</h2>
+            <p className="small muted" style={{ margin: '0 0 10px' }}>Two separate resumes. Choose the one that matches the role.</p>
+            <div className="row">
+              {RESUMES.filter((r) => r.file).map((r, i) => <a key={r.id} href={r.file!} className={`btn btn-sm ${i === 0 ? 'btn-primary' : 'btn-secondary'}`} download>{r.label} (PDF)</a>)}
+            </div>
+          </div>
           <div className="grid cols-3">
             {paths.map((p) => (
               <div key={p.who} className="card">
