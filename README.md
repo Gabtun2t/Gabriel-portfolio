@@ -108,6 +108,14 @@ Alternatives (not in use): Netlify ([`netlify.toml`](netlify.toml)) or Vercel ([
 
 ## Owner checklist (not published on the site)
 
+Facts to confirm before they can be published (the site currently states only what the resume supports):
+- [ ] Industries for **banking, microfinance and oil & gas**: were these ERP implementations, or consulting/support engagements? The site shows them as “client projects (consulting)”.
+- [ ] Your role on Softcodes implementations: lead consultant, or member of the delivery team? The site says “delivered … implementations and advisory support”, as on the resume.
+- [ ] Industries of the Panni implementation clients (not shown today).
+- [ ] Retail & e-commerce: confirm this comes from Acumatica support (commerce connectors) and not from an implementation.
+- [ ] Logistics: confirm MDS Logistics was in-house IT support, not ERP implementation.
+- [ ] Sage 300 modules you configured (beyond the bank payment integration), if you want them listed.
+
 - [ ] **ERP / Integration / Financial Systems resume** — not supplied yet. When a verified PDF exists, add it to `public/resume/` and set its `file` in `RESUMES` (`src/content/profile.ts`). Until then the ERP and architecture pathways link to the current resume.
 - [ ] Decide whether the phone number stays public (`showPhone`).
 - [ ] After each release, open the live build-status page and confirm the commit, then record it in `DEPLOYMENT.lastVerified` (`src/content/status.ts`) if you want it shown.

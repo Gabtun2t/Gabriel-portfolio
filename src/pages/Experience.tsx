@@ -1,10 +1,14 @@
-import { Link } from '../router';
-import { CREDENTIALS, EDUCATION, PROFILE, ROLES, SKILLS, SKILL_EVIDENCE } from '../content/profile';
+import { useEffect } from 'react';
+import { Link, useRoute } from '../router';
+import { CREDENTIALS, EDUCATION, ERP_FUNCTIONS, ERP_LIFECYCLE, ERP_PLATFORMS, INDUSTRIES, PROFILE, ROLES, SKILLS, SKILL_EVIDENCE } from '../content/profile';
 import { Badge } from '../components/ui';
 
-const TRACK_TONE: Record<string, string> = { AML: 'teal', ERP: 'blue', Data: 'violet', Architecture: 'amber' };
+const TRACK_TONE: Record<string, string> = { 'ERP implementation': 'blue', 'ERP support': 'neutral', AML: 'teal', Data: 'violet', Architecture: 'amber' };
+const KIND_TONE: Record<string, string> = { 'Implementation & consulting': 'blue', 'Implementation & advisory': 'blue', 'Implementation support': 'blue', 'Client projects (consulting)': 'teal', 'Integration project': 'violet', 'Enterprise support': 'neutral', 'In-house IT': 'neutral', Training: 'neutral' };
 
 export function Experience() {
+  const section = useRoute().query.get('section');
+  useEffect(() => { if (section) document.getElementById(section)?.scrollIntoView(); }, [section]);
   return (
     <>
       <section className="page-hero">
@@ -18,6 +22,47 @@ export function Experience() {
 
       <section className="section">
         <div className="container">
+          <section id="erp-implementation" className="stack" style={{ marginBottom: 28, scrollMarginTop: 80 }} aria-labelledby="erp-h">
+            <div>
+              <div className="eyebrow">Professional experience</div>
+              <h2 id="erp-h">ERP implementation experience</h2>
+              <p className="lead" style={{ maxWidth: 820 }}>Five years of Sage X3 and Sage 300 implementation and consulting at Softcodes International, a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica. Client names are confidential and are not shown.</p>
+            </div>
+            <div className="card">
+              <h3>Platforms</h3>
+              <div className="table-wrap">
+                <table className="data">
+                  <thead><tr><th>Platform</th><th>Type of work</th><th>What it covered</th><th>Where</th></tr></thead>
+                  <tbody>{ERP_PLATFORMS.map((p) => <tr key={p.platform}><td><strong>{p.platform}</strong></td><td><Badge tone={KIND_TONE[p.kind]}>{p.kind}</Badge></td><td className="small">{p.work}</td><td className="small">{p.where}</td></tr>)}</tbody>
+                </table>
+              </div>
+            </div>
+            <div className="card">
+              <h3>Implementation lifecycle</h3>
+              <p className="small muted">The stages Gabriel has worked across on Sage X3 and Sage 300 projects, and the role that evidences each one.</p>
+              <ol className="lifecycle">
+                {ERP_LIFECYCLE.map((l) => (
+                  <li key={l.stage}><strong>{l.stage}</strong><span>{l.what}</span><small className="muted">{l.evidence}</small></li>
+                ))}
+              </ol>
+            </div>
+            <div className="card">
+              <h3>Business functions</h3>
+              <div className="row" style={{ gap: 6 }}>{ERP_FUNCTIONS.map((f) => <Badge key={f} tone="blue">{f}</Badge>)}</div>
+            </div>
+          </section>
+
+          <section id="industries" className="card" style={{ marginBottom: 28, scrollMarginTop: 80 }} aria-labelledby="ind-h">
+            <h2 id="ind-h" style={{ fontSize: 22 }}>Industry experience</h2>
+            <p className="small muted">Each industry is labelled with the kind of involvement the resume supports. Implementation is claimed only where the resume states it; not every industry listed was an implementation project.</p>
+            <div className="table-wrap">
+              <table className="data">
+                <thead><tr><th>Industry</th><th>Type of involvement</th><th>What it involved</th><th>Where</th></tr></thead>
+                <tbody>{INDUSTRIES.map((i) => <tr key={i.industry}><td><strong>{i.industry}</strong></td><td><Badge tone={KIND_TONE[i.kind]}>{i.kind}</Badge></td><td className="small">{i.involvement}</td><td className="small">{i.where}</td></tr>)}</tbody>
+              </table>
+            </div>
+          </section>
+
           <div className="card" style={{ marginBottom: 28 }}>
             <h2 style={{ fontSize: 20 }}>How to read this portfolio</h2>
             <p className="small muted">Five levels of evidence, kept separate on purpose.</p>
@@ -26,7 +71,7 @@ export function Experience() {
                 <thead><tr><th>Level</th><th>What it covers</th><th>Where to see it</th></tr></thead>
                 <tbody>
                   <tr><td><Badge tone="green">Employment</Badge></td><td>Employers, job titles and dates, exactly as on the resume.</td><td>Timeline below</td></tr>
-                  <tr><td><Badge tone="green">Responsibilities</Badge></td><td>What the resume says Gabriel did in each role, including AML-related transaction reviews and KYC-related checks. Client names are withheld.</td><td>Timeline below</td></tr>
+                  <tr><td><Badge tone="green">Responsibilities</Badge></td><td>What the resume says Gabriel did in each role: ERP implementation and consulting, enterprise ERP support, and AML-related transaction reviews and KYC-related checks. Client names are withheld.</td><td>Timeline below</td></tr>
                   <tr><td><Badge tone="amber">Portfolio projects</Badge></td><td>Four independent labs on synthetic data. They are not client work, production systems, or software approved for regulatory use.</td><td><Link to="/labs">Project lab</Link></td></tr>
                   <tr><td><Badge tone="blue">Demonstrated skills</Badge></td><td>Rule design, alert investigation workflow, source-to-target reconciliation, SQL, idempotent API design, data-quality pipelines. Behaviour is checked by automated tests.</td><td><Link to="/status">Build status</Link></td></tr>
                   <tr><td><Badge tone="neutral">Not claimed</Badge></td><td>Filing regulatory reports (e.g. FINTRAC STRs or LCTRs), hands-on use of vendor AML platforms or sanctions screening tools, AML certifications such as CAMS, production cloud architecture. These would need further study or professional validation.</td><td>—</td></tr>

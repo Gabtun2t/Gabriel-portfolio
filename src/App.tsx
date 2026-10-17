@@ -25,8 +25,8 @@ const NAV = [
 ];
 
 const ROUTES: Record<string, { title: string; desc: string; el: () => ReactNode }> = {
-  '/': { title: 'Senior Financial Systems & Integration Specialist', desc: 'Gabriel Olatundun (Ottawa): financial systems, AML investigations, ERP reconciliation and payment integration, with four working labs on synthetic data.', el: () => <Home /> },
-  '/experience': { title: 'Experience', desc: 'Career timeline, education, credentials and skill evidence for Gabriel Olatundun, from his resume.', el: () => <Experience /> },
+  '/': { title: 'Senior Financial Systems & Integration Specialist', desc: 'Gabriel Olatundun (Ottawa): Sage X3 and Sage 300 ERP implementation and financial systems, with AML investigations, reconciliation and payment integration. Four working labs on synthetic data.', el: () => <Home /> },
+  '/experience': { title: 'Experience', desc: 'ERP implementation experience (Sage X3, Sage 300), industry experience, career timeline, education and credentials for Gabriel Olatundun.', el: () => <Experience /> },
   '/labs': { title: 'Project lab', desc: 'Four working technical demonstrations on synthetic data: AML investigation, ERP reconciliation, payment API integration and financial data engineering.', el: () => <Labs /> },
   '/labs/aml': { title: 'AML investigation lab', desc: 'Rule-based transaction monitoring and case investigation on synthetic data: alert queue, KYC-related evidence, dispositions and case narratives.', el: () => <AmlLab /> },
   '/labs/reconciliation': { title: 'ERP reconciliation lab', desc: 'Legacy-to-ERP migration reconciliation with transparent matching rules, root-cause tracing, audited corrections and SQL verified on SQLite.', el: () => <ReconLab /> },
@@ -65,7 +65,7 @@ export function App() {
       <a href="#main" className="skip-link" onClick={(e) => { e.preventDefault(); mainRef.current?.focus(); }}>Skip to content</a>
       <header className="site-header">
         <div className="container bar">
-          <Link to="/" className="brand">{PROFILE.name}<span>Financial systems · AML · Integration</span></Link>
+          <Link to="/" className="brand">{PROFILE.name}<span>ERP · Financial systems · AML · Integration</span></Link>
           <button className="nav-toggle" aria-expanded={menuOpen} aria-controls="site-nav" onClick={() => setMenuOpen((o) => !o)}>Menu</button>
           <nav id="site-nav" className={`nav ${menuOpen ? 'open' : ''}`} aria-label="Main">
             {NAV.map((n) => <Link key={n.to} to={n.to} aria-current={active(n.to) ? 'page' : undefined}>{n.label}</Link>)}

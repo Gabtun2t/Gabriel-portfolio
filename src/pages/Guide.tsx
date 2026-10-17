@@ -6,20 +6,20 @@ export function Guide() {
   const caseOf = (cid: string) => alerts.find((a) => a.customerId === cid)!.caseId;
   const paths = [
     {
+      who: 'Hiring for ERP / financial systems', time: '5 minutes', steps: [
+        <>Read the <Link to="/experience" query={{ section: 'erp-implementation' }}>ERP implementation experience</Link>: platforms, the implementation lifecycle and industries.</>,
+        <>Read the <Link to="/case-studies" query={{ study: 'erp' }}>ERP implementation case study</Link> (real experience, anonymised).</>,
+        <>Open the <Link to="/labs/reconciliation">reconciliation lab</Link>, run it, and inspect the ×100 decimal shift and a “Missing in ERP” row.</>,
+        <>Apply all corrections and re-run; note the two manual journals left for finance review.</>,
+      ], look: 'Real Sage X3 and Sage 300 implementation and consulting experience, plus source-to-target thinking, root-cause tracing and controlled corrections.',
+    },
+    {
       who: 'Hiring for AML / financial crime', time: '5 minutes', steps: [
         <>Open <Link to="/labs/aml" query={{ tab: 'case', case: caseOf('CUS-1015') }}>{caseOf('CUS-1015')}</Link> (cash just below $10,000). Read the triggered rules and the KYC-related profile.</>,
         <>Review the evidence panel; note that “Close as explained exception” is disabled and why.</>,
         <>Record “Escalate to compliance” with a rationale, then open the case narrative (marked SIMULATION) and the teaching note.</>,
         <>Compare with <Link to="/labs/aml" query={{ tab: 'case', case: caseOf('CUS-1031') }}>{caseOf('CUS-1031')}</Link>: same rules, but lineage and the ERP cross-check show a decimal-shift defect.</>,
       ], look: 'Proportionate dispositions, evidence before conclusions, no automated “fraud” verdicts, explainable non-demographic risk factors.',
-    },
-    {
-      who: 'Hiring for ERP / financial systems', time: '5 minutes', steps: [
-        <>Open the <Link to="/labs/reconciliation">reconciliation lab</Link> and run it.</>,
-        <>Filter to “Amount difference” — inspect the ×100 decimal shift and the divisible-by-9 transposition.</>,
-        <>Open a “Missing in ERP” row to see the staging-log rejection, then apply all corrections and re-run.</>,
-        <>Notice what remains: two manual journals that need finance review.</>,
-      ], look: 'Source-to-target thinking, root-cause tracing through staging and load runs, controlled corrections with an audit journal.',
     },
     {
       who: 'Hiring for architecture / data', time: '5–10 minutes', steps: [
@@ -56,6 +56,7 @@ export function Guide() {
               <h3>Real (from the resume)</h3>
               <ul className="small" style={{ paddingLeft: 18 }}>
                 <li>Employment, dates, education, skills, certifications and training.</li>
+                <li>Sage X3 and Sage 300 implementation and consulting (Softcodes), Sage X3 implementation support (Panni), and enterprise ERP support (Acumatica).</li>
                 <li>AML-related transaction reviews and KYC-related checks at Panni and on Softcodes client projects; escalation to compliance; tracing some exceptions to migration-related data corruption.</li>
                 <li>Support for a bank payment API ↔ Sage 300 integration with an internal developer.</li>
               </ul>

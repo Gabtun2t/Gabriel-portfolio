@@ -9,6 +9,7 @@ export const PROFILE = {
   title: 'Senior Financial Systems & Integration Specialist',
   headline: 'Financial Systems. Financial Crime. Data Integrity. Enterprise Integration.',
   specializations: [
+    'ERP implementation and enterprise systems consulting',
     'AML and financial crime investigations',
     'ERP financial reconciliation',
     'SQL and financial data analytics',
@@ -24,7 +25,7 @@ export const PROFILE = {
   linkedinUrl: 'https://www.linkedin.com/in/tunde-o-tech' as string | null,
   resumePdf: 'resume/Gabriel_Olatundun_Resume.pdf',
   intro:
-    'I investigate complex financial transactions, resolve ERP data discrepancies, and support reliable integrations between financial systems. My experience spans enterprise applications, banking-related projects, payment workflows, financial reconciliation, and AML-related transaction investigations.',
+    'I implement, configure and support ERP and financial systems, mainly Sage X3, Sage 300 and Acumatica. I investigate complex financial transactions, resolve ERP data discrepancies, and support reliable integrations between financial systems. My experience spans enterprise applications, banking-related projects, payment workflows, financial reconciliation, and AML-related transaction investigations.',
   proposition:
     'I investigate financial and transactional problems across business processes, ERP systems, payments and data; I identify root causes and design reliable integrations and controls.',
   summary:
@@ -55,12 +56,12 @@ export interface Role {
   start: string;
   end: string;
   bullets: string[];
-  tracks: ('AML' | 'ERP' | 'Data' | 'Architecture')[];
+  tracks: ('ERP implementation' | 'ERP support' | 'AML' | 'Data' | 'Architecture')[];
 }
 
 export const ROLES: Role[] = [
   {
-    title: 'Senior Support Engineer', org: 'Acumatica Canada Inc.', place: 'Canada', start: 'Apr 2026', end: 'Present', tracks: ['ERP', 'Data', 'Architecture'],
+    title: 'Senior Support Engineer', org: 'Acumatica Canada Inc.', place: 'Canada', start: 'Apr 2026', end: 'Present', tracks: ['ERP support', 'Data', 'Architecture'],
     bullets: [
       'Investigate complex ERP production issues involving financial transactions, commerce, configuration and external integrations; use SQL, diagnostic logs and repeatable testing to distinguish data, process and system defects.',
       'Analyze expected versus actual transaction behaviour and trace interdependent workflows to isolate anomalies, document evidence, and recommend supported corrective actions or engineering escalations.',
@@ -69,7 +70,7 @@ export const ROLES: Role[] = [
     ],
   },
   {
-    title: 'Product Support Specialist', org: 'Acumatica Canada Inc.', place: 'Canada', start: 'Jul 2023', end: 'Mar 2026', tracks: ['ERP', 'Data'],
+    title: 'Product Support Specialist', org: 'Acumatica Canada Inc.', place: 'Canada', start: 'Jul 2023', end: 'Mar 2026', tracks: ['ERP support', 'Data'],
     bullets: [
       'Supported enterprise finance, inventory, distribution and related transactional workflows, reproducing complex behaviour and assessing process and data impacts.',
       'Reviewed system configuration, test results and case evidence; worked with engineering and consulting teams to resolve issues and improve supportability.',
@@ -77,16 +78,18 @@ export const ROLES: Role[] = [
     ],
   },
   {
-    title: 'Finance Analyst (Sage X3)', org: 'Panni Management & Technology', place: 'Remote, Canada', start: 'Jun 2022', end: 'Jul 2023', tracks: ['AML', 'ERP', 'Data'],
+    title: 'Finance Analyst (Sage X3)', org: 'Panni Management & Technology', place: 'Remote, Canada', start: 'Jun 2022', end: 'Jul 2023', tracks: ['ERP implementation', 'AML', 'Data'],
     bullets: [
       'Analyzed financial business requirements and supported Sage X3 configurations for GL, AP, AR and Fixed Assets during ERP implementations.',
+      // Confirmed by Gabriel (Oct 2026): Sage X3 financial reporting and financial data issues.
+      'Worked across Sage X3 financial processes, including GL, AP, AR and financial reporting, validating configuration and resolving financial data issues.',
       'Mapped, validated and reconciled migrated financial and operational records; investigated mismatches and supported correction of data-quality exceptions.',
       'Performed functional testing and UAT for financial transaction flows, documented issues, and supported post-go-live user troubleshooting.',
       'Reviewed financial transactions and performed KYC-related checks on AML-related workstreams; flagged suspicious or inconsistent activity to compliance teams and reconciled transactions against Sage X3 finance records.',
     ],
   },
   {
-    title: 'Senior Technical Consultant', org: 'Softcodes International Ltd.', place: 'Lagos, Nigeria', start: 'Oct 2016', end: 'Dec 2021', tracks: ['AML', 'ERP', 'Architecture', 'Data'],
+    title: 'Senior Technical Consultant', org: 'Softcodes International Ltd.', place: 'Lagos, Nigeria', start: 'Oct 2016', end: 'Dec 2021', tracks: ['ERP implementation', 'Architecture', 'AML', 'Data'],
     bullets: [
       'Delivered Sage X3 and Sage 300 implementations and advisory support across finance, manufacturing, distribution and other enterprise environments, translating client requirements into workable system processes.',
       'Partnered with an internal developer and client stakeholders to integrate a bank payment API with Sage 300 for a financial-services client; helped align payment processing with ERP and finance workflows.',
@@ -96,11 +99,11 @@ export const ROLES: Role[] = [
     ],
   },
   {
-    title: 'Software Intern', org: 'Sage Software West Africa', place: 'Nigeria', start: 'Jun 2016', end: 'Sep 2016', tracks: ['ERP'],
+    title: 'Software Intern', org: 'Sage Software West Africa', place: 'Nigeria', start: 'Jun 2016', end: 'Sep 2016', tracks: ['ERP implementation'],
     bullets: ['Completed structured training in Sage accounting, business-management software, ERP configurations and support.'],
   },
   {
-    title: 'IT Consultant', org: 'MDS Logistics', place: 'Lagos, Nigeria', start: 'Mar 2015', end: 'Oct 2015', tracks: ['ERP', 'Data'],
+    title: 'IT Consultant', org: 'MDS Logistics', place: 'Lagos, Nigeria', start: 'Mar 2015', end: 'Oct 2015', tracks: ['ERP support', 'Data'],
     bullets: ['Supported logistics enterprise applications, data validation, documentation, and inventory / order-processing workflows.'],
   },
 ];
@@ -129,6 +132,9 @@ export const SKILLS = {
 
 /** Skill → where it was used professionally (resume) → where it is demonstrated on this site (simulation). */
 export const SKILL_EVIDENCE: { skill: string; professional: string; demo: string; demoLink: string }[] = [
+  { skill: 'ERP implementation (Sage X3, Sage 300)', professional: 'Delivered Sage X3 and Sage 300 implementations and advisory support (Softcodes); supported Sage X3 configuration during implementations (Panni).', demo: 'ERP implementation experience (professional, not a simulation)', demoLink: '/experience' },
+  { skill: 'Requirements, configuration, UAT, training & go-live', professional: 'Requirements analysis, GL/AP/AR/FA configuration, functional testing and UAT, user training, post-go-live troubleshooting (Panni; Softcodes).', demo: 'ERP implementation case study (professional)', demoLink: '/case-studies' },
+  { skill: 'ERP upgrades & integrations', professional: 'Sage X3 V11 to V12 upgrade; Sage X3 integrations with investment and payroll apps; Sage 300 bank payment API integration (Softcodes).', demo: 'Payment API lab (synthetic)', demoLink: '/labs/payments' },
   { skill: 'AML transaction review & exception analysis', professional: 'Transaction reviews and KYC-related checks on AML-related workstreams (Panni; Softcodes client projects).', demo: 'AML investigation lab — alert queue, evidence, dispositions', demoLink: '/labs/aml' },
   { skill: 'Suspicious-activity identification & compliance escalation', professional: 'Flagged suspicious or inconsistent activity and escalated findings to compliance teams (Panni; Softcodes).', demo: 'Escalation workflow and case narrative (scenarios S3, S6)', demoLink: '/labs/aml' },
   { skill: 'Distinguishing risk indicators from data defects', professional: 'Traced some exceptions to ERP migration-related data corruption rather than fraud (Softcodes).', demo: 'Migration-defect vs. unresolved-activity comparison (S5 vs. S6)', demoLink: '/case-studies' },
@@ -137,4 +143,43 @@ export const SKILL_EVIDENCE: { skill: string; professional: string; demo: string
   { skill: 'Payment API integration support', professional: 'Partnered with an internal developer on a bank payment API ↔ Sage 300 integration (Softcodes).', demo: 'Mock bank payment API ↔ ERP lab (idempotency, retries, audit)', demoLink: '/labs/payments' },
   { skill: 'Data quality & financial data pipelines', professional: 'Data validation, source-to-target mapping and migration testing (resume skills).', demo: 'Financial data engineering lab', demoLink: '/labs/data' },
   { skill: 'Root-cause analysis & documentation', professional: 'Case documentation and reusable troubleshooting guidance; engineering escalations (Acumatica).', demo: 'Root-cause tracing and technical case studies', demoLink: '/case-studies' },
+];
+
+// ---------------------------------------------------------------------------
+// ERP implementation experience. Every line maps to the resume or to facts Gabriel
+// confirmed in writing (Oct 2026). No client names, project counts or outcomes.
+// ---------------------------------------------------------------------------
+export const ERP_PLATFORMS: { platform: string; work: string; where: string; kind: 'Implementation & consulting' | 'Implementation support' | 'Enterprise support' | 'Training' }[] = [
+  { platform: 'Sage X3 (V11 / V12)', work: 'Implementations and advisory support; GL, AP, AR and Fixed Assets configuration; data migration; UAT; V11 → V12 upgrade; integrations with investment and payroll applications', where: 'Softcodes International · Panni Management & Technology', kind: 'Implementation & consulting' },
+  { platform: 'Sage 300', work: 'Implementations and advisory support; bank payment API integration with an internal developer', where: 'Softcodes International', kind: 'Implementation & consulting' },
+  { platform: 'Acumatica', work: 'Complex production issues across finance, inventory, distribution, commerce and external integrations (support, not implementation ownership)', where: 'Acumatica Canada', kind: 'Enterprise support' },
+  { platform: 'Sage accounting & business-management software', work: 'Structured training in configuration and support', where: 'Sage Software West Africa (internship)', kind: 'Training' },
+];
+
+/** Implementation lifecycle — what Gabriel did at each stage, with the role that evidences it. */
+export const ERP_LIFECYCLE: { stage: string; what: string; evidence: string }[] = [
+  { stage: 'Requirements & process analysis', what: 'Analysed financial business requirements and translated client requirements into workable system processes.', evidence: 'Panni · Softcodes' },
+  { stage: 'Configuration', what: 'Supported Sage X3 configuration for GL, AP, AR and Fixed Assets; validated configuration against expected financial behaviour.', evidence: 'Panni · Softcodes' },
+  { stage: 'Data migration', what: 'Led or supported migration, mapping, validation and reconciliation of financial and operational records; investigated mismatches and supported correction.', evidence: 'Softcodes · Panni' },
+  { stage: 'Testing & UAT', what: 'Functional testing and user acceptance testing of financial transaction flows; documented issues.', evidence: 'Softcodes · Panni' },
+  { stage: 'Training', what: 'User training as part of implementation delivery.', evidence: 'Resume skills (delivery & documentation)' },
+  { stage: 'Go-live & post-go-live', what: 'Post-implementation and post-go-live troubleshooting for users.', evidence: 'Softcodes · Panni' },
+  { stage: 'Upgrades', what: 'Sage X3 V11 to V12 upgrade delivery.', evidence: 'Softcodes' },
+  { stage: 'Integrations', what: 'Sage X3 integrations with investment and payroll applications; Sage 300 bank payment API integration with an internal developer.', evidence: 'Softcodes' },
+];
+
+export const ERP_FUNCTIONS = ['General Ledger', 'Accounts Payable', 'Accounts Receivable', 'Fixed Assets', 'Financial reporting', 'Inventory & distribution', 'Manufacturing (implementation environments)', 'Commerce & e-commerce integrations (support)', 'Payroll & investment application integrations', 'Bank payment integration'];
+
+/**
+ * Industry exposure, labelled by the KIND of involvement the resume supports.
+ * Implementation is claimed only where the resume says so.
+ */
+export const INDUSTRIES: { industry: string; involvement: string; where: string; kind: 'Implementation & advisory' | 'Client projects (consulting)' | 'Integration project' | 'Enterprise support' | 'In-house IT' }[] = [
+  { industry: 'Manufacturing', involvement: 'Sage X3 / Sage 300 implementations and advisory support', where: 'Softcodes', kind: 'Implementation & advisory' },
+  { industry: 'Distribution', involvement: 'Sage X3 / Sage 300 implementations and advisory support; later, Acumatica distribution workflows in support', where: 'Softcodes · Acumatica', kind: 'Implementation & advisory' },
+  { industry: 'Banking & financial services', involvement: 'Financial-institution client projects, incl. transaction reviews and KYC-related checks; bank payment API ↔ Sage 300 integration for a financial-services client', where: 'Softcodes', kind: 'Client projects (consulting)' },
+  { industry: 'Microfinance', involvement: 'Microfinance banking client projects, incl. transaction reviews and KYC-related checks', where: 'Softcodes', kind: 'Client projects (consulting)' },
+  { industry: 'Oil & gas', involvement: 'Client projects, incl. transaction reviews and KYC-related checks', where: 'Softcodes', kind: 'Client projects (consulting)' },
+  { industry: 'Retail & e-commerce', involvement: 'Commerce workflows and external integrations in enterprise ERP support', where: 'Acumatica', kind: 'Enterprise support' },
+  { industry: 'Logistics', involvement: 'Supported logistics enterprise applications, inventory and order-processing workflows', where: 'MDS Logistics', kind: 'In-house IT' },
 ];

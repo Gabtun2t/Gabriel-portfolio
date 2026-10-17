@@ -1,5 +1,5 @@
 import { Link } from '../router';
-import { PROFILE, resumeFor } from '../content/profile';
+import { ERP_LIFECYCLE, PROFILE, resumeFor } from '../content/profile';
 import { aml } from '../data/instances';
 import { Badge, StatusPill } from '../components/ui';
 import { Diagram } from '../components/Diagram';
@@ -15,21 +15,21 @@ export function Home() {
   const amlResume = resumeFor('aml');
   const erpResume = resumeFor('erp');
 
-  const pathways = [
+  const pathways: { tone: string; track: string; title: string; text: string; to: string; query?: Record<string, string>; cta: string; second?: { to: string; label: string }; resume: { label: string; file: string } }[] = [
+    {
+      tone: 'blue', track: 'ERP / Financial systems', title: 'ERP implementation & financial systems',
+      text: 'Five years implementing and consulting on Sage X3 and Sage 300: requirements, configuration, data migration, UAT, training, go-live, a V11 → V12 upgrade and integrations. Then run the migration reconciliation lab that mirrors that validation work.',
+      to: '/experience', query: { section: 'erp-implementation' }, cta: 'See ERP implementation experience', second: { to: '/labs/reconciliation', label: 'Reconciliation lab' }, resume: erpResume,
+    },
     {
       tone: 'teal', track: 'AML / Financial crime', title: 'Investigate an alert',
       text: 'Open a case with repeated cash deposits just under $10,000. Review the KYC-related profile, the rules that fired, the evidence checklist and the escalation decision, then export the case narrative.',
       to: '/labs/aml', query: { tab: 'case', case: s6.caseId }, cta: 'Open the AML case', resume: amlResume,
     },
     {
-      tone: 'blue', track: 'ERP / Financial systems', title: 'Reconcile a migrated ledger',
-      text: 'Run a legacy-to-ERP reconciliation. Inspect missing, duplicate and corrupted records, trace each one to its root cause, apply audited corrections and re-run the match.',
-      to: '/labs/reconciliation', query: undefined, cta: 'Open the reconciliation lab', resume: erpResume,
-    },
-    {
       tone: 'violet', track: 'Architecture / Data', title: 'Break a payment integration',
       text: 'Make the bank accept a payment and lose the response. Compare the result with and without idempotency keys, then trace a data-pipeline record back to its raw source.',
-      to: '/labs/payments', query: undefined, cta: 'Open the payment lab', resume: erpResume,
+      to: '/labs/payments', cta: 'Open the payment lab', second: { to: '/labs/data', label: 'Data lab' }, resume: erpResume,
     },
   ];
 
@@ -41,6 +41,7 @@ export function Home() {
             <div className="eyebrow">{PROFILE.name} · {PROFILE.location}</div>
             <h1 style={{ fontSize: 'clamp(30px, 4.2vw, 46px)' }}>{PROFILE.headline}</h1>
             <p style={{ color: '#fff', fontSize: 19, fontWeight: 600, margin: '0 0 10px' }}>{PROFILE.title}</p>
+            <ul className="hero-chips" aria-label="Specializations">{PROFILE.specializations.map((x) => <li key={x}>{x}</li>)}</ul>
             <p className="lead">{PROFILE.intro}</p>
             <div className="row" style={{ marginTop: 24 }}>
               <Link to="/labs/aml" className="btn btn-primary">Open the AML investigation lab</Link>
@@ -77,11 +78,11 @@ export function Home() {
           <div className="tracks">
             <div>
               <div className="eyebrow">Experience</div>
-              <p style={{ margin: 0 }}><strong>9+ years</strong> in ERP and financial systems: Sage X3, Sage 300 and Acumatica, across GL, AP, AR, migration, reconciliation and integration support. Currently Senior Support Engineer at Acumatica.</p>
+              <p style={{ margin: 0 }}><strong>9+ years</strong> in ERP and financial systems, including <strong>five years implementing and consulting on Sage X3 and Sage 300</strong>. Now Senior Support Engineer at Acumatica, resolving complex enterprise ERP issues.</p>
             </div>
             <div>
               <div className="eyebrow">Industry exposure</div>
-              <p style={{ margin: 0 }}>Client projects for a <strong>financial institution, microfinance banking and oil and gas</strong> organizations, plus enterprise ERP software support across finance, distribution and commerce.</p>
+              <p style={{ margin: 0 }}>Implementations in <strong>manufacturing and distribution</strong>; client projects in <strong>banking, microfinance and oil &amp; gas</strong>; support for retail/e-commerce and logistics systems. <Link to="/experience" query={{ section: 'industries' }}>Industry detail</Link>.</p>
             </div>
             <div>
               <div className="eyebrow">What is different</div>
@@ -91,6 +92,25 @@ export function Home() {
               <div className="eyebrow">Proof of work</div>
               <p style={{ margin: 0 }}><strong>Four working labs</strong> on synthetic data, with automated tests and SQL checked against SQLite. <Link to="/labs">See the project lab</Link>.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="erp-home">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <div className="eyebrow">Core capability · professional experience</div>
+              <h2 id="erp-home">ERP implementation & enterprise systems consulting</h2>
+            </div>
+            <p>Real client work, not a simulation. Sage X3 and Sage 300 implementations and advisory support at Softcodes International, Sage X3 implementation support at Panni, and enterprise ERP support at Acumatica. Client names are confidential.</p>
+          </div>
+          <ol className="lifecycle">
+            {ERP_LIFECYCLE.map((l) => <li key={l.stage}><strong>{l.stage}</strong><span>{l.what}</span></li>)}
+          </ol>
+          <div className="row" style={{ marginTop: 16 }}>
+            <Link to="/experience" query={{ section: 'erp-implementation' }} className="btn btn-primary btn-sm">ERP implementation experience</Link>
+            <Link to="/case-studies" query={{ study: 'erp' }} className="btn btn-secondary btn-sm">ERP implementation case study</Link>
           </div>
         </div>
       </section>
@@ -112,6 +132,7 @@ export function Home() {
                 <p className="muted small" style={{ margin: 0 }}>{p.text}</p>
                 <div className="row" style={{ marginTop: 'auto' }}>
                   <Link to={p.to} query={p.query} className="btn btn-primary btn-sm">{p.cta}</Link>
+                  {p.second && <Link to={p.second.to} className="btn btn-secondary btn-sm">{p.second.label}</Link>}
                   <a href={p.resume.file} className="btn btn-secondary btn-sm" download title={p.resume.label}>Resume (PDF)</a>
                 </div>
               </div>

@@ -8,7 +8,7 @@ export function Contact() {
         <div className="container">
           <div className="eyebrow">Resume & contact</div>
           <h1>Get in touch</h1>
-          <p className="lead">For roles in AML and financial-crime technology, ERP and financial systems, financial data engineering, or solution and integration architecture, reach Gabriel by email{PROFILE.showPhone ? ', phone' : ''} or LinkedIn.</p>
+          <p className="lead">For roles in ERP implementation and financial systems, AML and financial-crime technology, financial data engineering, or solution and integration architecture, reach Gabriel by email{PROFILE.showPhone ? ', phone' : ''} or LinkedIn.</p>
         </div>
       </section>
       <section className="section">

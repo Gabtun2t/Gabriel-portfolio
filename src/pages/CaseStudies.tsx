@@ -1,19 +1,19 @@
-import type { ReactNode } from 'react';
-import { Link } from '../router';
+import { useEffect, type ReactNode } from 'react';
+import { Link, useRoute } from '../router';
 import { aml, recon, pipeline } from '../data/instances';
 import { buildEvidence } from '../engine/aml/alerts';
 import { reconcile } from '../engine/recon/match';
 import { applyAll } from '../engine/recon/corrections';
 import { runPipeline, sourceControls } from '../engine/pipeline/pipeline';
 import { IntegrationEnvironment, SAMPLE_REQUEST } from '../engine/payments/payments';
-import { CodeBlock, SimBanner, extractBlock } from '../components/ui';
+import { Badge, CodeBlock, extractBlock } from '../components/ui';
 import { SqlPanel } from '../components/SqlPanel';
-import { AI_DISCLOSURE } from '../content/profile';
+import { AI_DISCLOSURE, ERP_LIFECYCLE } from '../content/profile';
 import { money, pct } from '../lib/format';
 import rulesSrc from '../engine/aml/rules.ts?raw';
 import paymentsSrc from '../engine/payments/payments.ts?raw';
 
-interface Study { id: string; short: string; title: string; lab: string; sections: { h: string; body: ReactNode }[] }
+interface Study { id: string; short: string; title: string; lab: string; real?: boolean; labLabel?: string; sections: { h: string; body: ReactNode }[] }
 
 function compute() {
   const { ds, alerts } = aml();
@@ -38,7 +38,23 @@ const UL = ({ items }: { items: ReactNode[] }) => <ul>{items.map((x, i) => <li k
 
 export function CaseStudies() {
   const c = compute();
+  const study = useRoute().query.get('study');
+  useEffect(() => { if (study) document.getElementById(`cs-${study}`)?.scrollIntoView(); }, [study]);
   const studies: Study[] = [
+    {
+      id: 'erp', short: 'ERP implementation', real: true, lab: '/experience', labLabel: 'See the ERP implementation experience',
+      title: 'Implementing and supporting Sage X3 and Sage 300 for client organisations',
+      sections: [
+        { h: 'Business context', body: <p>Client organisations moving finance and operations onto Sage X3 or Sage 300 needed the system configured to their processes, their historical data migrated and reconciled, users trained, and the system kept working after go-live: through upgrades, integrations with other applications and day-to-day issues. Client names and engagement details are confidential.</p> },
+        { h: 'Gabriel’s role', body: <UL items={[<>At <strong>Softcodes International</strong> (Senior Technical Consultant, Oct 2016 – Dec 2021): delivered Sage X3 and Sage 300 implementations and advisory support across finance, manufacturing, distribution and other enterprise environments.</>, <>At <strong>Panni Management & Technology</strong> (Finance Analyst, Sage X3, Jun 2022 – Jul 2023): supported Sage X3 configuration and financial processes during ERP implementations.</>, <>At <strong>Acumatica Canada</strong> (since Jul 2023): enterprise ERP support and issue investigation. This is a support role, not implementation ownership.</>]} /> },
+        { h: 'Approach across the implementation lifecycle', body: <UL items={ERP_LIFECYCLE.map((l) => <><strong>{l.stage}:</strong> {l.what} <span className="muted">({l.evidence})</span></>)} /> },
+        { h: 'Systems and integrations', body: <UL items={['Sage X3 finance: General Ledger, Accounts Payable, Accounts Receivable, Fixed Assets and financial reporting.', 'Sage X3 integrations with investment and payroll applications: data mapping, interface and process issues resolved through cross-functional investigation.', 'Sage 300 bank payment API integration, delivered with an internal developer and client stakeholders, aligning payment processing with ERP and finance workflows.', 'Sage X3 V11 to V12 upgrade delivery.']} /> },
+        { h: 'Testing', body: <p>Functional testing and user acceptance testing of financial transaction flows, with issues documented for resolution; migrated records validated and reconciled against source data.</p> },
+        { h: 'Results', body: <p>Specific project outcomes, client counts and measures are not published. They are confidential, and the portfolio does not invent figures.</p> },
+        { h: 'What this does not claim', body: <UL items={['That Gabriel led every implementation, or worked on implementations in every industry listed on the Experience page.', 'Ownership of implementations in his Acumatica support role.', 'Any client name, project count or outcome figure.']} /> },
+        { h: 'How the labs relate', body: <p>The <Link to="/labs/reconciliation">reconciliation lab</Link> rebuilds, on synthetic data, the kind of source-to-target validation done during data migration. The <Link to="/labs/payments">payment lab</Link> explores the integration concerns behind a bank payment API ↔ ERP connection. Both are independent simulations, not reproductions of client systems.</p> },
+      ],
+    },
     {
       id: 'aml', short: 'AML investigation', title: 'Suspicious activity or data defect? Two alerts, two outcomes', lab: '/labs/aml',
       sections: [
@@ -101,17 +117,17 @@ export function CaseStudies() {
         <div className="container">
           <div className="eyebrow">Case studies</div>
           <h1>Technical case studies</h1>
-          <p className="lead">For each lab: business context, approach, architecture, key design decisions, testing, results, limitations and professional relevance. Results are computed live by the same engines the labs use.</p>
+          <p className="lead">Gabriel’s ERP implementation experience, followed by one case study per lab. For each: business context, approach, architecture, key design decisions, testing, results, limitations and professional relevance. Results are computed live by the same engines the labs use.</p>
           <nav className="row" aria-label="Case studies">{studies.map((s) => <a key={s.id} href="#/case-studies" onClick={(e) => { e.preventDefault(); document.getElementById(`cs-${s.id}`)?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-secondary btn-sm">{s.short}</a>)}</nav>
         </div>
       </section>
       <section className="section" style={{ paddingTop: 24 }}>
         <div className="container stack">
-          <SimBanner>Case studies describe portfolio simulations on synthetic data. They are not accounts of client engagements, and the software is not approved for regulatory use.</SimBanner>
+          <div className="callout info"><p className="small"><strong>Two kinds of case study.</strong> Case study 1 describes Gabriel’s real ERP implementation experience in general terms, with confidential details removed. Case studies 2–5 describe synthetic portfolio simulations. Those are not accounts of client engagements, and the software is not approved for regulatory use.</p></div>
           {studies.map((s, i) => (
             <article key={s.id} id={`cs-${s.id}`} className="card case-study" style={{ scrollMarginTop: 80 }}>
-              <div className="eyebrow">Case study {i + 1} · {s.short}</div>
-              <h2>{s.title}</h2>
+              <div className="row" style={{ gap: 8 }}><div className="eyebrow" style={{ margin: 0 }}>Case study {i + 1} · {s.short}</div>{s.real ? <Badge tone="green">Professional experience · anonymised</Badge> : <Badge tone="amber">Synthetic demonstration</Badge>}</div>
+              <h2 style={{ marginTop: 8 }}>{s.title}</h2>
               <div className="stack">
                 {s.sections.map((sec) => (
                   <section key={sec.h}>
@@ -120,7 +136,7 @@ export function CaseStudies() {
                   </section>
                 ))}
               </div>
-              <Link to={s.lab} className="btn btn-primary btn-sm" style={{ marginTop: 14 }}>Open the lab</Link>
+              <Link to={s.lab} query={s.real ? { section: 'erp-implementation' } : undefined} className="btn btn-primary btn-sm" style={{ marginTop: 14 }}>{s.labLabel ?? 'Open the lab'}</Link>
             </article>
           ))}
           <div className="callout info">

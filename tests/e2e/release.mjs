@@ -45,7 +45,7 @@ await check(1, 'Homepage navigation', async () => {
 });
 
 await check(2, 'Recruiter pathways open the right demo and resume', async () => {
-  const targets = [['Open the AML case', 'AML transaction monitoring'], ['Open the reconciliation lab', 'ERP financial reconciliation'], ['Open the payment lab', 'Mock bank payment API']];
+  const targets = [['See ERP implementation experience', 'Career timeline'], ['Open the AML case', 'AML transaction monitoring'], ['Reconciliation lab', 'ERP financial reconciliation'], ['Open the payment lab', 'Mock bank payment API']];
   for (const [cta, h1] of targets) {
     await go(p, '/');
     await p.click(`a:has-text("${cta}")`);
@@ -55,7 +55,12 @@ await check(2, 'Recruiter pathways open the right demo and resume', async () => 
   const hrefs = await p.$$eval('.card a[download]', (as) => as.map((a) => a.getAttribute('href')));
   assert(hrefs.length === 3, `resume links ${hrefs.length}`);
   for (const h of new Set(hrefs)) assert((await p.request.get(BASE + h)).status() === 200, `${h} not 200`);
-  return '3 pathways, resume links resolve';
+  await go(p, '/experience?section=erp-implementation');
+  const exp = await p.textContent('main');
+  for (const t of ['ERP implementation experience', 'Implementation lifecycle', 'Sage X3 (V11 / V12)', 'Industry experience', 'Manufacturing', 'Microfinance', 'Logistics']) assert(exp.includes(t), `experience missing ${t}`);
+  await go(p, '/case-studies?study=erp');
+  assert((await p.textContent('#cs-erp')).includes('Professional experience · anonymised'), 'ERP case study label');
+  return '3 pathways (ERP first), resume links resolve, ERP sections present';
 });
 
 await check(3, 'AML alert queue: search, filter, sort', async () => {
