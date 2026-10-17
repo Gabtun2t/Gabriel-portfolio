@@ -26,7 +26,7 @@ export function Experience() {
             <div>
               <div className="eyebrow">Professional experience</div>
               <h2 id="erp-h">ERP implementation & consulting experience</h2>
-              <p className="lead" style={{ maxWidth: 820 }}>Five years of Sage X3 and Sage 300 implementation and consulting at Softcodes International, a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica. Client names are confidential and are not shown.</p>
+              <p className="lead" style={{ maxWidth: 820 }}>Five years of Sage X3 and Sage 300 implementation and consulting at Softcodes International, a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica. Client names are confidential and are not shown anywhere on this site.</p>
             </div>
             {LED_ENGAGEMENTS.map((e) => (
               <div key={e.role + e.client} className="card" aria-label="Led engagement">
