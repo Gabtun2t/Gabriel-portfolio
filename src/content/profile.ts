@@ -25,7 +25,7 @@ export const PROFILE = {
   linkedinUrl: 'https://www.linkedin.com/in/tunde-o-tech' as string | null,
   resumePdf: 'resume/Gabriel_Olatundun_Resume.pdf',
   intro:
-    'I lead and deliver ERP implementations, mainly Sage 300 and Sage X3. At Softcodes International I led an approximately 18-month, phased, estate-wide Sage 300 implementation and a Sage 300 implementation for a public-sector water utility. Today I resolve complex enterprise ERP issues at Acumatica. My work also covers integrations, data migration and reconciliation, payment workflows and AML-related transaction reviews.',
+    'I lead and deliver ERP implementations, mainly Sage 300 and Sage X3. At Softcodes International I led an approximately 18-month, phased, estate-wide Sage 300 implementation as Implementation Lead. Today I resolve complex enterprise ERP issues at Acumatica. My work also covers integrations, data migration and reconciliation, payment workflows and AML-related transaction reviews.',
   proposition:
     'I investigate financial and transactional problems across business processes, ERP systems, payments and data; I identify root causes and design reliable integrations and controls.',
   summary:
@@ -95,11 +95,13 @@ export const ROLES: Role[] = [
       // Confirmed by Gabriel (Oct 2026).
       'Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation for an estate management organisation in Lagos. Led requirements and process analysis, directed configuration, oversaw data migration and testing, and coordinated training and phased go-live. Coordinated the client\u2019s stakeholders, the development team and a multidisciplinary implementation team.',
       'Coordinated delivery of a custom integration between Sage 300 and the client\u2019s existing estate management software. The integration was developed by the Softcodes team.',
-      'Implementation Lead for the Sage 300 implementation for a public-sector water utility (government project).',
+      'Worked on a Sage 300 project for a public-sector water utility (government project).',
       'Delivered Sage X3 and Sage 300 implementations and advisory support across finance, manufacturing, distribution and other enterprise environments, translating client requirements into workable system processes.',
       'Partnered with an internal developer and client stakeholders to integrate a bank payment API with Sage 300 for a financial-services client; helped align payment processing with ERP and finance workflows.',
       'Supported Sage X3 integrations with investment and payroll applications, resolving data mapping, interface and process issues through cross-functional investigation.',
-      'Led or supported data migration, validation, reconciliation, functional testing, user acceptance, upgrade delivery (Sage X3 V11 to V12) and post-implementation troubleshooting.',
+      'Led or supported data migration, validation, reconciliation, functional testing, user acceptance and post-implementation troubleshooting.',
+      // Confirmed by Gabriel (Oct 2026): consultant on the upgrade, not the overall project lead.
+      'Participated as a consultant in a Sage X3 V11 to V12 upgrade.',
       'Reviewed transactions and performed KYC-related checks on financial institution, microfinance banking, and oil and gas client projects; escalated suspicious findings to compliance teams and traced some exceptions to ERP migration-related data corruption rather than fraud.',
     ],
   },
@@ -137,9 +139,9 @@ export const SKILLS = {
 
 /** Skill → where it was used professionally (resume) → where it is demonstrated on this site (simulation). */
 export const SKILL_EVIDENCE: { skill: string; professional: string; demo: string; demoLink: string }[] = [
-  { skill: 'ERP implementation leadership (Sage 300, Sage X3)', professional: 'Led an approximately 18-month, phased, estate-wide Sage 300 implementation and a Sage 300 implementation for a public-sector water utility; delivered other Sage X3 and Sage 300 implementations and advisory support (Softcodes); supported Sage X3 configuration during implementations (Panni).', demo: 'ERP implementation experience (professional, not a simulation)', demoLink: '/experience' },
+  { skill: 'ERP implementation leadership (Sage 300, Sage X3)', professional: 'Led an approximately 18-month, phased, estate-wide Sage 300 implementation as Implementation Lead; delivered other Sage X3 and Sage 300 implementations and advisory support (Softcodes); supported Sage X3 configuration during implementations (Panni).', demo: 'ERP implementation experience (professional, not a simulation)', demoLink: '/experience' },
   { skill: 'Requirements, configuration, UAT, training & go-live', professional: 'Requirements analysis, GL/AP/AR/FA configuration, functional testing and UAT, user training, post-go-live troubleshooting (Panni; Softcodes).', demo: 'ERP implementation case study (professional)', demoLink: '/case-studies' },
-  { skill: 'ERP upgrades & integrations', professional: 'Led or supported a Sage X3 V11 to V12 upgrade; coordinated delivery of a team-developed Sage 300 ↔ estate management software integration; supported Sage X3 integrations with investment and payroll apps; partnered with an internal developer on a Sage 300 bank payment API integration (Softcodes).', demo: 'Payment API lab (synthetic)', demoLink: '/labs/payments' },
+  { skill: 'ERP upgrades & integrations', professional: 'Participated as a consultant in a Sage X3 V11 to V12 upgrade; coordinated delivery of a team-developed Sage 300 ↔ estate management software integration; supported Sage X3 integrations with investment and payroll apps; partnered with an internal developer on a Sage 300 bank payment API integration (Softcodes).', demo: 'Payment API lab (synthetic)', demoLink: '/labs/payments' },
   { skill: 'AML transaction review & exception analysis', professional: 'Transaction reviews and KYC-related checks on AML-related workstreams (Panni; Softcodes client projects).', demo: 'AML investigation lab — alert queue, evidence, dispositions', demoLink: '/labs/aml' },
   { skill: 'Suspicious-activity identification & compliance escalation', professional: 'Flagged suspicious or inconsistent activity and escalated findings to compliance teams (Panni; Softcodes).', demo: 'Escalation workflow and case narrative (scenarios S3, S6)', demoLink: '/labs/aml' },
   { skill: 'Distinguishing risk indicators from data defects', professional: 'Traced some exceptions to ERP migration-related data corruption rather than fraud (Softcodes).', demo: 'Migration-defect vs. unresolved-activity comparison (S5 vs. S6)', demoLink: '/case-studies' },
@@ -155,8 +157,8 @@ export const SKILL_EVIDENCE: { skill: string; professional: string; demo: string
 // confirmed in writing (Oct 2026). No client names, project counts or outcomes.
 // ---------------------------------------------------------------------------
 export const ERP_PLATFORMS: { platform: string; work: string; where: string; kind: 'Implementation & consulting' | 'Implementation support' | 'Enterprise support' | 'Training' }[] = [
-  { platform: 'Sage X3 (V11 / V12)', work: 'Implementations and advisory support; GL, AP, AR and Fixed Assets configuration; data migration; UAT; V11 → V12 upgrade (led or supported); supported integrations with investment and payroll applications', where: 'Softcodes International · Panni Management & Technology', kind: 'Implementation & consulting' },
-  { platform: 'Sage 300', work: 'Led an approximately 18-month, phased, estate-wide implementation (estate dues, billing, collections) and an implementation for a public-sector water utility; other implementations and advisory support; coordinated delivery of a team-developed custom integration with a client\u2019s estate management software; bank payment API integration with an internal developer', where: 'Softcodes International', kind: 'Implementation & consulting' },
+  { platform: 'Sage X3 (V11 / V12)', work: 'Implementations and advisory support; GL, AP, AR and Fixed Assets configuration; data migration; UAT; consultant on a V11 → V12 upgrade; supported integrations with investment and payroll applications', where: 'Softcodes International · Panni Management & Technology', kind: 'Implementation & consulting' },
+  { platform: 'Sage 300', work: 'Led an approximately 18-month, phased, estate-wide implementation (estate dues, billing, collections) as Implementation Lead; a Sage 300 project for a public-sector water utility (government project); other implementations and advisory support; coordinated delivery of a team-developed custom integration with a client\u2019s estate management software; bank payment API integration with an internal developer', where: 'Softcodes International', kind: 'Implementation & consulting' },
   { platform: 'Acumatica', work: 'Complex production issues across finance, inventory, distribution, commerce and external integrations (support, not implementation ownership)', where: 'Acumatica Canada', kind: 'Enterprise support' },
   { platform: 'Sage accounting & business-management software', work: 'Structured training in configuration and support', where: 'Sage Software West Africa (internship)', kind: 'Training' },
 ];
@@ -167,8 +169,8 @@ export const ERP_PLATFORMS: { platform: string; work: string; where: string; kin
  * activity for that client AND that the name may be disclosed publicly.
  */
 export const ERP_CAPABILITIES: { area: string; what: string; evidence: string; clients: string[] }[] = [
-  { area: 'ERP implementation & deployment', what: 'Led Sage 300 implementations for an estate management organisation (about 18 months, phased) and a public-sector water utility. Delivered other Sage X3 and Sage 300 implementations and advisory support. Supported Sage X3 configuration during implementations.', evidence: 'Softcodes · Panni', clients: [] },
-  { area: 'ERP upgrades & migration', what: 'Led or supported Sage X3 V11 to V12 upgrade delivery. Led or supported data migration, mapping, validation and reconciliation; oversaw data migration on the estate-wide implementation.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'ERP implementation & deployment', what: 'Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation for an estate management organisation. Delivered other Sage X3 and Sage 300 implementations and advisory support. Supported Sage X3 configuration during implementations.', evidence: 'Softcodes · Panni', clients: [] },
+  { area: 'ERP upgrades & migration', what: 'Participated as a consultant in a Sage X3 V11 to V12 upgrade (not the overall project lead). Led or supported data migration, mapping, validation and reconciliation; oversaw data migration on the estate-wide implementation.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'Business requirements & process analysis', what: 'Led requirements gathering and process analysis on the estate-wide implementation. Analysed financial business requirements and translated client requirements into workable system processes.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'Financial module configuration & workflows', what: 'Directed Sage 300 configuration for estate dues, billing, collections and property-related transactions. Supported Sage X3 configuration for GL, AP, AR and Fixed Assets; validated configuration and resolved financial data issues.', evidence: 'Softcodes · Panni', clients: [] },
   { area: 'Testing, UAT & validation', what: 'Oversaw testing and validation on the estate-wide implementation. Functional testing and UAT of financial transaction flows; migrated data validated against source.', evidence: 'Softcodes · Panni', clients: [] },
@@ -179,11 +181,12 @@ export const ERP_CAPABILITIES: { area: string; what: string; evidence: string; c
 
 /** Types of ERP work, kept distinct so no engagement is presented as more than it was. */
 export const ENGAGEMENT_TYPES: { type: string; examples: string; role: string; where: string }[] = [
-  { type: 'Led implementation', examples: 'Estate-wide Sage 300 implementation for an estate management organisation (about 18 months, phased); Sage 300 implementation for a public-sector water utility', role: 'Implementation Lead', where: 'Softcodes' },
+  { type: 'Led implementation', examples: 'Estate-wide Sage 300 implementation for an estate management organisation (approximately 18 months, phased)', role: 'Implementation Lead', where: 'Softcodes' },
   { type: 'Implementation or advisory support', examples: 'Other Sage X3 and Sage 300 engagements across finance, manufacturing, distribution and other environments', role: 'Senior Technical Consultant; role varied by engagement', where: 'Softcodes' },
   { type: 'Implementation support', examples: 'Sage X3 configuration for GL, AP, AR and Fixed Assets during ERP implementations', role: 'Finance Analyst (Sage X3)', where: 'Panni' },
   { type: 'Integration', examples: 'Custom Sage 300 ↔ estate management software integration (team-developed; Gabriel coordinated delivery). Bank payment API ↔ Sage 300 (with an internal developer). Sage X3 ↔ investment and payroll applications (supported)', role: 'Delivery coordination and integration support', where: 'Softcodes' },
-  { type: 'Upgrade', examples: 'Sage X3 V11 to V12', role: 'Led or supported', where: 'Softcodes' },
+  { type: 'Upgrade', examples: 'Sage X3 V11 to V12', role: 'Consultant (not the overall project lead)', where: 'Softcodes' },
+  { type: 'Other client project', examples: 'Sage 300 project for a public-sector water utility (government project)', role: 'Senior Technical Consultant', where: 'Softcodes' },
   { type: 'Support', examples: 'Post-go-live troubleshooting for users; enterprise ERP production issues', role: 'Consultant / analyst; Senior Support Engineer', where: 'Softcodes · Panni · Acumatica' },
 ];
 
@@ -193,24 +196,24 @@ export const ERP_LIFECYCLE = ERP_CAPABILITIES.map((c) => ({ stage: c.area, what:
 export const ERP_FUNCTIONS = ['General Ledger', 'Accounts Payable', 'Accounts Receivable', 'Fixed Assets', 'Financial reporting', 'Inventory & distribution', 'Manufacturing (implementation environments)', 'Commerce & e-commerce integrations (support)', 'Payroll & investment application integrations', 'Bank payment integration'];
 
 /**
- * Industry exposure, labelled by the KIND of involvement the resume supports.
- * Implementation is claimed only where the resume says so.
+ * Industries, listed separately from project types (see ENGAGEMENT_TYPES). Being listed here
+ * says nothing about the type of project delivered in that industry.
  */
-export const INDUSTRIES: { industry: string; involvement: string; where: string; kind: 'Led implementation' | 'Implementation or advisory' | 'Integration' | 'Client engagement' | 'Enterprise support' | 'In-house IT' }[] = [
-  { industry: 'Real estate & estate management', involvement: 'Led a phased, estate-wide Sage 300 implementation covering estate dues, billing, collections and property-related financial transactions', where: 'Softcodes', kind: 'Led implementation' },
-  { industry: 'Water utilities (public sector)', involvement: 'Led the Sage 300 implementation for a public-sector water utility (government project)', where: 'Softcodes', kind: 'Led implementation' },
-  { industry: 'Manufacturing', involvement: 'Sage X3 / Sage 300 implementations or advisory support', where: 'Softcodes', kind: 'Implementation or advisory' },
-  { industry: 'Distribution', involvement: 'Sage X3 / Sage 300 implementations or advisory support; later, distribution workflows in Acumatica support', where: 'Softcodes · Acumatica', kind: 'Implementation or advisory' },
-  { industry: 'Banking & financial services', involvement: 'Bank payment API ↔ Sage 300 integration with an internal developer; transaction reviews and KYC-related checks on financial-institution projects', where: 'Softcodes', kind: 'Integration' },
-  { industry: 'Microfinance', involvement: 'Transaction reviews and KYC-related checks on microfinance banking client projects', where: 'Softcodes', kind: 'Client engagement' },
-  { industry: 'Oil & gas (incl. downstream)', involvement: 'Client projects, including a downstream oil and gas client; transaction reviews and KYC-related checks', where: 'Softcodes', kind: 'Client engagement' },
-  { industry: 'Investment holding', involvement: 'Client engagement with an investment holding company', where: 'Softcodes', kind: 'Client engagement' },
-  { industry: 'Construction', involvement: 'Client engagement', where: 'Softcodes', kind: 'Client engagement' },
-  { industry: 'Food services', involvement: 'Client engagement', where: 'Panni', kind: 'Client engagement' },
-  { industry: 'Marine', involvement: 'Client engagement', where: 'Panni', kind: 'Client engagement' },
-  { industry: 'Cannabis', involvement: 'Client engagement', where: 'Panni', kind: 'Client engagement' },
-  { industry: 'Retail & e-commerce', involvement: 'Commerce workflows and external integrations in enterprise ERP support', where: 'Acumatica', kind: 'Enterprise support' },
-  { industry: 'Logistics', involvement: 'Supported logistics enterprise applications, inventory and order-processing workflows', where: 'MDS Logistics', kind: 'In-house IT' },
+export const INDUSTRIES: { industry: string; context: string; where: string }[] = [
+  { industry: 'Real estate & estate management', context: 'Featured project: the estate-wide Sage 300 implementation above', where: 'Softcodes' },
+  { industry: 'Water utilities (public sector)', context: 'Sage 300 project for a public-sector water utility (government project)', where: 'Softcodes' },
+  { industry: 'Manufacturing', context: 'Client environments for Sage X3 / Sage 300 work', where: 'Softcodes' },
+  { industry: 'Distribution', context: 'Client environments for Sage X3 / Sage 300 work; distribution workflows in Acumatica support', where: 'Softcodes · Acumatica' },
+  { industry: 'Banking & financial services', context: 'Financial-institution and financial-services clients', where: 'Softcodes' },
+  { industry: 'Microfinance', context: 'Microfinance banking clients', where: 'Softcodes' },
+  { industry: 'Oil & gas (incl. downstream)', context: 'Clients including a downstream oil and gas company', where: 'Softcodes' },
+  { industry: 'Investment holding', context: 'An investment holding company', where: 'Softcodes' },
+  { industry: 'Construction', context: 'Client organisation', where: 'Softcodes' },
+  { industry: 'Food services', context: 'Client organisation', where: 'Panni' },
+  { industry: 'Marine', context: 'Client organisation', where: 'Panni' },
+  { industry: 'Cannabis', context: 'Client organisation', where: 'Panni' },
+  { industry: 'Retail & e-commerce', context: 'Commerce workflows in enterprise ERP support', where: 'Acumatica' },
+  { industry: 'Logistics', context: 'Logistics enterprise applications (in-house IT)', where: 'MDS Logistics' },
 ];
 
 /**
@@ -238,16 +241,6 @@ export const LED_ENGAGEMENTS: { featured: boolean; role: string; client: string;
       'Coordinated user training, phased deployment and go-live.',
       'Managed implementation activities across the project team.',
     ],
-  },
-  {
-    featured: false,
-    role: 'Sage 300 Implementation Lead',
-    client: 'Public-sector water utility (government project), Nigeria',
-    publicName: null,
-    employer: 'Softcodes International',
-    platform: 'Sage 300',
-    summary: 'Led the Sage 300 implementation for a public-sector water utility.',
-    responsibilities: [],
   },
 ];
 

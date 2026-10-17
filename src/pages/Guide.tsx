@@ -64,7 +64,7 @@ export function Guide() {
               <h3>Real (from the resume)</h3>
               <ul className="small" style={{ paddingLeft: 18 }}>
                 <li>Employment, dates, education, skills, certifications and training.</li>
-                <li>Implementation Lead on Sage 300 projects, including an approximately 18-month, phased, estate-wide implementation; other Sage X3 and Sage 300 implementations and consulting (Softcodes); Sage X3 implementation support (Panni); and enterprise ERP support (Acumatica).</li>
+                <li>Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation; other Sage X3 and Sage 300 implementations and consulting (Softcodes); Sage X3 implementation support (Panni); and enterprise ERP support (Acumatica).</li>
                 <li>AML-related transaction reviews and KYC-related checks at Panni and on Softcodes client projects; escalation to compliance; tracing some exceptions to migration-related data corruption.</li>
                 <li>Support for a bank payment API ↔ Sage 300 integration with an internal developer.</li>
               </ul>

@@ -26,7 +26,7 @@ export function Experience() {
             <div>
               <div className="eyebrow">Professional experience</div>
               <h2 id="erp-h">ERP implementation & consulting experience</h2>
-              <p className="lead" style={{ maxWidth: 820 }}>Five years of ERP implementation and consulting at Softcodes International, including Sage 300 implementations Gabriel led as Implementation Lead. Then a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica.</p>
+              <p className="lead" style={{ maxWidth: 820 }}>Five years of ERP implementation and consulting at Softcodes International, including an approximately 18-month, phased Sage 300 implementation Gabriel led as Implementation Lead. Then a year supporting Sage X3 implementations at Panni Management & Technology, and three years resolving complex enterprise ERP issues at Acumatica.</p>
               <p className="small muted" style={{ maxWidth: 820 }}>Project examples are anonymised: clients are described by sector and location rather than by name.</p>
             </div>
             {LED_ENGAGEMENTS.filter((e) => e.featured).map((e) => (
@@ -38,16 +38,9 @@ export function Experience() {
                 <ul className="small" style={{ paddingLeft: 18 }}>{e.responsibilities.map((r) => <li key={r}>{r}</li>)}</ul>
               </div>
             ))}
-            {LED_ENGAGEMENTS.filter((e) => !e.featured).map((e) => (
-              <div key={e.role + e.client} className="card" aria-label="Led engagement">
-                <div className="row" style={{ gap: 6, marginBottom: 6 }}><Badge tone="blue">Led implementation</Badge><Badge tone="green">Professional experience · anonymised</Badge></div>
-                <h3 style={{ fontSize: 17 }}>{e.role}</h3>
-                <p className="small" style={{ margin: 0 }}><strong>Client:</strong> {e.publicName ?? e.client} · <strong>Employer:</strong> {e.employer}. {e.summary}</p>
-              </div>
-            ))}
             <div className="card">
               <h3>Types of ERP work</h3>
-              <p className="small muted">Implementations, integrations, upgrades and support are listed separately. Only the projects marked “Led implementation” are presented as implementations Gabriel led.</p>
+              <p className="small muted">Implementations, integrations, upgrades and support are listed separately. Only the project marked “Led implementation” is presented as an implementation Gabriel led.</p>
               <div className="table-wrap">
                 <table className="data">
                   <thead><tr><th>Type</th><th>Examples</th><th>Gabriel’s role</th><th>Where</th></tr></thead>
@@ -81,11 +74,11 @@ export function Experience() {
 
           <section id="industries" className="card" style={{ marginBottom: 28, scrollMarginTop: 80 }} aria-labelledby="ind-h">
             <h2 id="ind-h" style={{ fontSize: 22 }}>Industry experience</h2>
-            <p className="small muted">{INDUSTRIES.length} industries, each labelled with the type of involvement. “Led implementation” marks the projects Gabriel led. “Implementation or advisory” means Sage X3 / Sage 300 work whose type varied by engagement. “Client engagement” means client work whose type is not specified here; it is not presented as an implementation.</p>
+            <p className="small muted">{INDUSTRIES.length} industries, listed separately from the types of projects delivered (see “Types of ERP work” above). An industry appearing here does not mean a full implementation was delivered in it.</p>
             <div className="table-wrap">
               <table className="data">
-                <thead><tr><th>Industry</th><th>Type of involvement</th><th>What it involved</th><th>Where</th></tr></thead>
-                <tbody>{INDUSTRIES.map((i) => <tr key={i.industry}><td><strong>{i.industry}</strong></td><td><Badge tone={KIND_TONE[i.kind]}>{i.kind}</Badge></td><td className="small">{i.involvement}</td><td className="small">{i.where}</td></tr>)}</tbody>
+                <thead><tr><th>Industry</th><th>Context</th><th>Where</th></tr></thead>
+                <tbody>{INDUSTRIES.map((i) => <tr key={i.industry}><td><strong>{i.industry}</strong></td><td className="small">{i.context}</td><td className="small">{i.where}</td></tr>)}</tbody>
               </table>
             </div>
           </section>

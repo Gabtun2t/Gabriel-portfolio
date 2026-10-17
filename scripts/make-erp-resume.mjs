@@ -32,7 +32,7 @@ ul { margin: 2px 0 4px; padding-left: 16px; } li { margin: 0 0 2px; }
 <div class="contact">Ottawa, Ontario, Canada | 902-880-9877 | gabriel.olatundun@gmail.com | linkedin.com/in/tunde-o-tech</div>
 
 <h2>PROFESSIONAL SUMMARY</h2>
-<p>ERP implementation and integration professional with 9+ years across Sage 300, Sage X3 and Acumatica. Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation, coordinating the client, the development team and a multidisciplinary implementation team from requirements to go-live. Also led a Sage 300 implementation for a public-sector water utility and delivered further Sage X3 and Sage 300 implementations, integrations and advisory support. Now resolves complex enterprise ERP production issues at Acumatica using SQL, diagnostic logs and repeatable testing.</p>
+<p>ERP implementation and integration professional with 9+ years across Sage 300, Sage X3 and Acumatica. Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation, coordinating the client, the development team and a multidisciplinary implementation team from requirements to go-live. Delivered further Sage X3 and Sage 300 implementations, integrations, upgrade work and advisory support across multiple industries. Now resolves complex enterprise ERP production issues at Acumatica using SQL, diagnostic logs and repeatable testing.</p>
 
 <h2>SELECTED PROJECT LEADERSHIP</h2>
 <div class="proj"><div class="rh"><span class="ph">Sage 300 ERP Implementation Lead | Estate management organisation, Lagos, Nigeria</span><span>Softcodes International</span></div>
@@ -43,10 +43,9 @@ ${ul([
   'Coordinated delivery of a custom integration with the client’s existing estate management software, built by the Softcodes development team.',
   'Coordinated user training, phased deployment and go-live across the estate.',
 ])}</div>
-<div class="proj"><div class="rh"><span class="ph">Sage 300 Implementation Lead | Public-sector water utility (government project)</span><span>Softcodes International</span></div></div>
 
 <h2>CORE COMPETENCIES</h2>
-<p>ERP Implementation Leadership | Requirements &amp; Process Analysis | Sage 300 &amp; Sage X3 Configuration | Data Migration, Validation &amp; Reconciliation | Functional Testing &amp; UAT | Integration Delivery Coordination | User Training, Phased Deployment &amp; Go-Live | ERP Upgrades | Production Troubleshooting | Stakeholder Communication</p>
+<p>ERP Implementation Leadership | Requirements &amp; Process Analysis | Sage 300 &amp; Sage X3 Configuration | Data Migration, Validation &amp; Reconciliation | Functional Testing &amp; UAT | Integration Delivery Coordination | User Training, Phased Deployment &amp; Go-Live | ERP Upgrade Consulting | Production Troubleshooting | Stakeholder Communication</p>
 
 <h2>TECHNICAL SKILLS</h2>
 <p class="kv"><b>ERP systems:</b> Sage 300, Sage X3 (V11/V12), Acumatica; General Ledger, Accounts Payable, Accounts Receivable, Fixed Assets, distribution and commerce processes</p>
@@ -71,11 +70,13 @@ ${role('Finance Analyst (Sage X3)', 'Panni Management & Technology', 'Remote, Ca
   'Performed functional testing and UAT of financial transaction flows and supported post-go-live user troubleshooting.',
 ])}
 ${role('Senior Technical Consultant', 'Softcodes International Ltd.', 'Lagos, Nigeria', 'Oct 2016 – Dec 2021', [
-  'Implementation Lead for two Sage 300 implementations (see Selected Project Leadership).',
+  'Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation (see Selected Project Leadership).',
+  'Worked on a Sage 300 project for a public-sector water utility (government project).',
   'Delivered Sage X3 and Sage 300 implementations and advisory support across finance, manufacturing, distribution and other enterprise environments, translating client requirements into workable system processes.',
   'Partnered with an internal developer and client stakeholders to integrate a bank payment API with Sage 300 for a financial-services client; helped align payment processing with ERP and finance workflows.',
   'Supported Sage X3 integrations with investment and payroll applications, resolving data mapping, interface and process issues through cross-functional investigation.',
-  'Led or supported data migration, validation, reconciliation, functional testing, user acceptance, upgrade delivery (Sage X3 V11 to V12) and post-implementation troubleshooting.',
+  'Led or supported data migration, validation, reconciliation, functional testing, user acceptance and post-implementation troubleshooting.',
+  'Participated as a consultant in a Sage X3 V11 to V12 upgrade.',
 ])}
 
 <h2>EARLIER EXPERIENCE</h2>

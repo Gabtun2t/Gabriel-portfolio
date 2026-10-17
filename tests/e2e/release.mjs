@@ -64,6 +64,8 @@ await check(2, 'Recruiter pathways open the right demo and resume', async () => 
   assert(!exp.includes('Selected client organisations'), 'client list shown although no names are approved');
   for (const t of ['Featured project · led implementation', 'Types of ERP work', 'Project examples are anonymised', 'developed by the Softcodes team']) assert(exp.includes(t), `experience missing ${t}`);
   assert(!/confidential/i.test(exp), 'blanket confidentiality wording should be replaced');
+  assert(!/Led the Sage 300 implementation for a public-sector|led or supported a Sage X3|upgrade \(led or supported\)/i.test(exp), 'unconfirmed leadership wording present');
+  assert(exp.includes('Participated as a consultant in a Sage X3 V11 to V12 upgrade'), 'upgrade role wording');
   await go(p, '/');
   const home = await p.textContent('main');
   for (const t of ['Featured project · led implementation', 'Implementation Lead', 'ERP Implementation & Integration resume (PDF)', 'AML & Financial Crime Systems resume (PDF)']) assert(home.includes(t), `home missing ${t}`);

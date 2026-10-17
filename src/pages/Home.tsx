@@ -18,7 +18,7 @@ export function Home() {
   const pathways: { tone: string; track: string; title: string; text: string; to: string; query?: Record<string, string>; cta: string; second?: { to: string; label: string }; resume: { label: string; file: string } }[] = [
     {
       tone: 'blue', track: 'ERP / Financial systems', title: 'ERP implementation & financial systems',
-      text: 'Implementation Lead on Sage 300 projects, including an approximately 18-month, phased, estate-wide implementation. Five years of Sage X3 and Sage 300 work in total: requirements, configuration, data migration, UAT, go-live, integrations and an upgrade. Then run the migration reconciliation lab, which mirrors that validation work.',
+      text: 'Implementation Lead for an approximately 18-month, phased, estate-wide Sage 300 implementation. Five years of Sage X3 and Sage 300 consulting in total: requirements, configuration, data migration, UAT, go-live, integrations and upgrade work. Then run the migration reconciliation lab, which mirrors that validation work.',
       to: '/experience', query: { section: 'erp-implementation' }, cta: 'See ERP implementation experience', second: { to: '/labs/reconciliation', label: 'Reconciliation lab' }, resume: erpResume,
     },
     {
@@ -80,11 +80,11 @@ export function Home() {
           <div className="tracks">
             <div>
               <div className="eyebrow">Experience</div>
-              <p style={{ margin: 0 }}><strong>9+ years</strong> in ERP and financial systems. <strong>Implementation Lead on Sage 300 projects</strong> during five years of Sage X3 and Sage 300 consulting. Now Senior Support Engineer at Acumatica, resolving complex enterprise ERP issues.</p>
+              <p style={{ margin: 0 }}><strong>9+ years</strong> in ERP and financial systems. <strong>Implementation Lead for an approximately 18-month, phased Sage 300 implementation</strong> during five years of Sage X3 and Sage 300 consulting. Now Senior Support Engineer at Acumatica, resolving complex enterprise ERP issues.</p>
             </div>
             <div>
-              <div className="eyebrow">Industry exposure</div>
-              <p style={{ margin: 0 }}>Led implementations in <strong>estate management and public-sector water utilities</strong>. Implementation or advisory work in manufacturing and distribution, a bank payment integration, and client engagements in microfinance, oil &amp; gas, investment holding, construction, food services, marine and cannabis. <Link to="/experience" query={{ section: 'industries' }}>Industry detail</Link>.</p>
+              <div className="eyebrow">Industries</div>
+              <p style={{ margin: 0 }}>Estate management, public-sector water utilities, manufacturing, distribution, banking, microfinance, oil &amp; gas, investment holding, construction, food services, marine and cannabis, plus retail/e-commerce and logistics systems. Project types are listed separately. <Link to="/experience" query={{ section: 'industries' }}>Industry detail</Link>.</p>
             </div>
             <div>
               <div className="eyebrow">What is different</div>
@@ -115,7 +115,7 @@ export function Home() {
               <p className="small" style={{ margin: 0 }}>{e.summary} Requirements and process analysis, Sage 300 configuration, data migration, testing, delivery of a custom integration with the client’s estate management software (developed by the team), user training and phased go-live.</p>
             </div>
           ))}
-          <p className="small" style={{ margin: '0 0 16px' }}>Also Implementation Lead for a Sage 300 implementation for a public-sector water utility. Other work: Sage X3 and Sage 300 implementations and advisory support at Softcodes International, Sage X3 implementation support at Panni, and enterprise ERP support at Acumatica.</p>
+          <p className="small" style={{ margin: '0 0 16px' }}>Other work: a Sage 300 project for a public-sector water utility, Sage X3 and Sage 300 implementations and advisory support at Softcodes International, Sage X3 implementation support at Panni, and enterprise ERP support at Acumatica.</p>
           <ol className="lifecycle">
             {ERP_LIFECYCLE.map((l) => <li key={l.stage}><strong>{l.stage}</strong><span>{l.what}</span></li>)}
           </ol>
