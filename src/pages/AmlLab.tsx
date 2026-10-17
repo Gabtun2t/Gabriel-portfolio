@@ -484,7 +484,7 @@ function RulesView() {
       <div className="card">
         <h3>Automated tests ({testNames.length})</h3>
         <p className="small muted">From <span className="mono">tests/aml.test.ts</span>, run with <span className="mono">npm test</span> (Node’s built-in test runner). All passing at the time of publishing — see the build status page.</p>
-        <ul className="small" style={{ columns: 2, paddingLeft: 18, margin: 0 }}>{testNames.map((t, i) => <li key={i}>{t}</li>)}</ul>
+        <ul className="small two-col" style={{ paddingLeft: 18, margin: 0 }}>{testNames.map((t, i) => <li key={i}>{t}</li>)}</ul>
       </div>
       <SqlPanel file="aml_rules.sql" intro="The same rules expressed in SQL. scripts/check_sql.py runs these against SQLite and asserts they flag exactly the customers the TypeScript rules flag." />
     </div>

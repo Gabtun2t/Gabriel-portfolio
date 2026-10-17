@@ -43,7 +43,7 @@ export function Labs() {
                 <div className="row between"><span className="mono small muted">{l.code}</span><StatusPill status={l.status} /></div>
                 <h2 style={{ fontSize: 22, marginTop: 8 }}>{l.title}</h2>
                 <p className="muted">{l.blurb}</p>
-                <ul className="small" style={{ columns: 2, paddingLeft: 18, margin: '0 0 14px' }}>
+                <ul className="small two-col" style={{ paddingLeft: 18, margin: '0 0 14px' }}>
                   {l.features.map((f) => <li key={f}>{f}</li>)}
                 </ul>
                 <Link to={l.to} className="btn btn-primary btn-sm">Open {l.code.toLowerCase()}</Link>

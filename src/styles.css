@@ -375,3 +375,7 @@ details.disclosure > .body { padding: 0 16px 16px; }
   .report { background: none; border: none; padding: 0; color: #000; }
   body:has(> .modal-backdrop) #root { display: none !important; }
 }
+
+.two-col { columns: 2; column-gap: 28px; }
+.two-col li { break-inside: avoid; }
+@media (max-width: 640px) { .two-col { columns: 1; } }
