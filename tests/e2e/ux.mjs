@@ -8,7 +8,7 @@ const browser = await chromium.launch({ headless: true, ...(process.env.CHROMIUM
 const out = { scenarios: [], responsive: [], interactions: [], failures: [] };
 const go = async (p, r) => { await p.goto(`${BASE}#${r}`); await p.waitForSelector('main h1'); };
 const aboveFold = (p, sel) => p.$eval(sel, (el) => { const r = el.getBoundingClientRect(); return r.top >= 0 && r.bottom <= window.innerHeight; }).catch(() => false);
-const fail = (m) => { out.failures.push(m); console.log('FAIL', m); };
+const fail = (m) => { out.failures.push(m); console.log('FAIL', m); if (process.env.GITHUB_ACTIONS) console.log(`::error title=UX check::${String(m).replace(/[\r\n%]/g, ' ')}`); };
 
 for (const [w, h, label] of [[1280, 800, 'desktop'], [390, 844, 'mobile']]) {
   const p = await browser.newPage({ viewport: { width: w, height: h } });
